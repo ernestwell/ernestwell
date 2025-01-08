@@ -1,42 +1,45 @@
-import React from 'react';
+import React from "react";
+import { FaFacebookF, FaLinkedinIn, FaTwitter, FaInstagram } from "react-icons/fa";
+import "./footer.css"
 
 const Footer = () => {
   return (
-    <footer className="bg-[#2E5077] text-white py-8">
-      <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-          <div>
-            <h3 className="text-xl font-bold mb-4">YourCompany</h3>
-            <p className="text-silver">Innovative IT solutions for modern businesses</p>
-          </div>
-          <div>
-            <h4 className="text-lg font-semibold mb-2">Services</h4>
-            <ul className="space-y-2">
-              <li><a href="#web" className="text-white">Web Development</a></li>
-              <li><a href="#erp" className="text-white">ERP Solutions</a></li>
-              <li><a href="#mobile" className="text-white">Mobile Apps</a></li>
-            </ul>
-          </div>
-          <div>
-            <h4 className="text-lg font-semibold mb-2">Quick Links</h4>
-            <ul className="space-y-2">
-              <li><a href="#about" className="text-white">About Us</a></li>
-              <li><a href="#contact" className="text-white">Contact Us</a></li>
-            </ul>
-          </div>
-          <div>
-            <h4 className="text-lg font-semibold mb-2">Follow Us</h4>
-            <ul className="space-y-2">
-              <li><a href="#" className="text-white">Facebook</a></li>
-              <li><a href="#" className="text-white">LinkedIn</a></li>
-              <li><a href="#" className="text-white">Twitter</a></li>
-            </ul>
+    <footer className="footer">
+      <div className="footer-container">
+        <div>
+          <h3 className="footer-title">YourCompany</h3>
+          <p className="footer-description">Innovative IT solutions for modern businesses</p>
+        </div>
+        <div>
+          <h4 className="footer-title">Services</h4>
+          <ul className="footer-links">
+            <li><a href="#web">Web Development</a></li>
+            <li><a href="#erp">ERP Solutions</a></li>
+            <li><a href="#mobile">Mobile Apps</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 className="footer-title">Quick Links</h4>
+          <ul className="footer-links">
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#contact">Contact Us</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 className="footer-title">Follow Us</h4>
+          <div className="footer-social">
+            <a href="#"><FaFacebookF /></a>
+            <a href="#"><FaLinkedinIn /></a>
+            <a href="#"><FaTwitter /></a>
+            <a href="#"><FaInstagram /></a>
           </div>
         </div>
+      </div>
+      <div className="footer-bottom">
+        &copy; {new Date().getFullYear()} YourCompany. All rights reserved.
       </div>
     </footer>
   );
 };
 
 export default Footer;
-

@@ -1,39 +1,127 @@
+// import React from 'react';
+// import './services.css';
+
+// const Service = () => {
+//   return (
+//     <section id="services" className="services">
+//       <div className="container">
+//         <h2 className="section-title">Our Services</h2>
+//         <div className="services-list">
+//           {/* First Row of Services */}
+//           <div className="service-item">
+//             <i className="service-icon fa fa-laptop-code"></i>
+//             <h3 className="service-title">Web Development</h3>
+//             <p className="service-description">Build responsive, high-performing websites tailored to your needs.</p>
+//           </div>
+//           <div className="service-item">
+//             <i className="service-icon fa fa-mobile-alt"></i>
+//             <h3 className="service-title">Mobile Apps Development</h3>
+//             <p className="service-description">Develop user-friendly mobile apps for iOS and Android platforms.</p>
+//           </div>
+//           <div className="service-item">
+//             <i className="service-icon fa fa-cogs"></i>
+//             <h3 className="service-title">ERP Solutions</h3>
+//             <p className="service-description">Optimize business operations with our ERP system integrations.</p>
+//           </div>
+//           <div className="service-item">
+//             <i className="service-icon fa fa-code"></i>
+//             <h3 className="service-title">Custom Software</h3>
+//             <p className="service-description">Create custom software solutions to meet specific business needs.</p>
+//           </div>
+
+//           {/* Second Row of Services */}
+//           <div className="service-item">
+//             <i className="service-icon fa fa-bullhorn"></i>
+//             <h3 className="service-title">Digital Marketing</h3>
+//             <p className="service-description">Reach your audience effectively through digital marketing strategies.</p>
+//           </div>
+//           <div className="service-item">
+//             <i className="service-icon fa fa-cloud"></i>
+//             <h3 className="service-title">Cloud Solutions</h3>
+//             <p className="service-description">Secure and scalable cloud solutions to manage your data and applications.</p>
+//           </div>
+//           <div className="service-item">
+//             <i className="service-icon fa fa-shield-alt"></i>
+//             <h3 className="service-title">Cybersecurity</h3>
+//             <p className="service-description">Protect your business from cyber threats with robust security measures.</p>
+//           </div>
+//           <div className="service-item">
+//             <i className="service-icon fa fa-tools"></i>
+//             <h3 className="service-title">IT Support</h3>
+//             <p className="service-description">Reliable IT support to keep your systems up and running smoothly.</p>
+//           </div>
+//         </div>
+//       </div>
+//     </section>
+//   );
+// };
+
+// export default Service;
+
 import React from 'react';
+import './services.css';
 
-const Services = () => {
-  const services = [
-    'Web Development',
-    'ERP Solutions',
-    'Mobile Apps',
-    'Custom Software',
-    'Digital Marketing',
-    'Cloud Solutions',
-    'Cybersecurity',
-    'IT Support'
-  ];
-
+const Service = () => {
   return (
-    <section className="py-16 bg-gray-50">
-      <div className="container mx-auto px-4">
-        <h2 className="text-3xl font-bold text-center mb-12">Our Services</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {services.map((service) => (
-            <div key={service} className="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow">
-              <h3 className="text-xl font-semibold mb-4">{service}</h3>
-              <p className="text-gray-600 mb-4">
-                Professional {service.toLowerCase()} solutions tailored to your needs
-              </p>
-              <a href={`#${service.toLowerCase()}`} className="text-[#2E5077] flex items-center">
-                Learn More
-                {/* Assuming you have a component for ArrowRight */}
-                <span className="ml-2 h-4 w-4">→</span>
-              </a>
-            </div>
-          ))}
+    <section id="services" className="services">
+      <div className="container">
+        <h2 className="section-title">Our Services</h2>
+        <div className="services-list">
+          {/* Service Item */}
+          <div className="service-item">
+            <i className="service-icon fa fa-laptop-code"></i>
+            <h3 className="service-title">Web Development</h3>
+            <p className="service-description">Build responsive, high-performing websites tailored to your needs.</p>
+            <a href="#" className="btn-primary">Know More</a>
+          </div>
+          <div className="service-item">
+            <i className="service-icon fa fa-mobile-alt"></i>
+            <h3 className="service-title">Mobile Apps Development</h3>
+            <p className="service-description">Develop user-friendly mobile apps for iOS and Android platforms.</p>
+            <a href="#" className="btn-primary">Know More</a>
+          </div>
+          <div className="service-item">
+            <i className="service-icon fa fa-cogs"></i>
+            <h3 className="service-title">ERP Solutions</h3>
+            <p className="service-description">Optimize business operations with our ERP system integrations.</p>
+            <a href="#" className="btn-primary">Know More</a>
+          </div>
+          <div className="service-item">
+            <i className="service-icon fa fa-code"></i>
+            <h3 className="service-title">Custom Software</h3>
+            <p className="service-description">Create custom software solutions to meet specific business needs.</p>
+            <a href="#" className="btn-primary">Know More</a>
+          </div>
+
+          {/* Second Row of Services */}
+          <div className="service-item">
+            <i className="service-icon fa fa-bullhorn"></i>
+            <h3 className="service-title">Digital Marketing</h3>
+            <p className="service-description">Reach your audience effectively through digital marketing strategies.</p>
+            <a href="#" className="btn-primary">Know More</a>
+          </div>
+          <div className="service-item">
+            <i className="service-icon fa fa-cloud"></i>
+            <h3 className="service-title">Cloud Solutions</h3>
+            <p className="service-description">Secure and scalable cloud solutions to manage your data and applications.</p>
+            <a href="#" className="btn-primary">Know More</a>
+          </div>
+          <div className="service-item">
+            <i className="service-icon fa fa-shield-alt"></i>
+            <h3 className="service-title">Cybersecurity</h3>
+            <p className="service-description">Protect your business from cyber threats with robust security measures.</p>
+            <a href="#" className="btn-primary">Know More</a>
+          </div>
+          <div className="service-item">
+            <i className="service-icon fa fa-tools"></i>
+            <h3 className="service-title">IT Support</h3>
+            <p className="service-description">Reliable IT support to keep your systems up and running smoothly.</p>
+            <a href="#" className="btn-primary">Know More</a>
+          </div>
         </div>
       </div>
     </section>
   );
 };
 
-export default Services;
+export default Service;

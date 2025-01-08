@@ -12,8 +12,16 @@ function App() {
     <Router>
       <Navbar />
       <Routes>
-        <Route path="/" element={<HeroSection />} /> {/* Home Page as Hero Section */}
-        <Route path="/services" element={<Services />} /> {/* Services Page Component */}
+        {/* Home Page with Hero Section and Services Section */}
+        <Route
+          path="/"
+          element={
+            <>
+              <HeroSection /> {/* Hero Section */}
+              <Services /> {/* Services Section directly below Hero Section */}
+            </>
+          }
+        />
         <Route path="/portfolio" element={<Portfolio />} /> {/* Portfolio Page Component */}
         <Route path="/contact" element={<Contact />} /> {/* Contact Page Component */}
       </Routes>
