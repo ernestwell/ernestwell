@@ -1,0 +1,359 @@
+/* .hero-section {
+  position: relative;
+  width: 100%;
+  height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+
+.background-slider {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  transition: background-image 1s ease-in-out; 
+}
+
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); 
+}
+
+
+.hero-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
+  z-index: 10;
+  background: rgba(255, 255, 255, 0.15); 
+  backdrop-filter: blur(10px);
+  padding: 30px; 
+  border-radius: 10px;
+  width: 80%; 
+  max-width: 800px; 
+  min-width: 280px; 
+} */
+/* .hero-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
+  z-index: 10;
+  background: rgba(255, 255, 255, 0.15); 
+  backdrop-filter: blur(10px); 
+  padding: 30px; 
+  border-radius: 10px;
+  width: 80%; 
+  max-width: 800px; 
+  min-width: 280px; 
+  border: 2px solid #2E5077;
+} */
+
+
+/* Hero Title */
+/* .hero-title {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+  white-space: nowrap; 
+  overflow: visible;
+  text-overflow: unset;
+}
+
+.hero-title .highlight {
+  color: #2E5077;
+}
+
+
+.hero-description {
+  font-size: 1.4rem;
+  font-weight: 300;
+  color: #f0f0f0;
+}
+
+.hero-button {
+  margin-top: 20px;
+  background: linear-gradient(135deg, #2E5077, #1F3550);
+  color: white;
+  padding: 15px 30px;
+  font-size: 1.1rem;
+  border: none;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.hero-button:hover {
+  background: linear-gradient(135deg, #1F3550, #0D1A28);
+  transform: scale(1.05);
+} */
+
+/* Responsive adjustments */
+/* @media (max-width: 768px) {
+  .hero-content {
+    width: 90%;
+    padding: 15px;
+  }
+
+  .hero-title {
+    font-size: 2rem;
+    white-space: normal; 
+  }
+
+  .hero-description {
+    font-size: 1rem;
+  }
+
+  .hero-button {
+    font-size: 0.9rem;
+    padding: 10px 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-content {
+    width: 95%;
+    padding: 10px;
+  }
+
+  .hero-title {
+    font-size: 1.8rem;
+    white-space: normal; 
+  }
+
+  .hero-description {
+    font-size: 0.9rem;
+  }
+
+  .hero-button {
+    font-size: 0.8rem;
+    padding: 8px 16px;
+  }
+}
+
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+} */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background-color: white;
+  padding-top: 60px; /* Ensure there's no space between navbar and content */
+}
+
+.hero {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  padding: 0 20px;
+  text-align: center;
+  flex-direction: column;
+}
+
+.hero-content {
+  width: 100%;
+  max-width: 800px;
+  text-align: center;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.hero-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #2E5077;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+.hero-subtitle {
+  font-size: 1.2rem;
+  color: #333;
+  margin-bottom: 30px;
+}
+
+.hero-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.btn {
+  padding: 14px 26px;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 6px;
+  transition: 0.3s ease-in-out;
+}
+
+.primary {
+  background: linear-gradient(135deg, #2E5077, #5A7DBD);
+  color: white;
+}
+
+.secondary {
+  background-color: transparent;
+  border: 2px solid #2E5077;
+  color: #2E5077;
+}
+
+.primary:hover {
+  background: linear-gradient(135deg, #1E3A5F, #446AA6);
+  transform: scale(1.05);
+}
+
+.secondary:hover {
+  background-color: #2E5077;
+  color: white;
+  transform: scale(1.05);
+}
+
+.hero-image {
+  width: 100%;
+  margin-top: 20px;
+}
+
+.hero-image img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+@media (max-width: 1024px) {
+  .hero {
+    flex-direction: column;
+  }
+
+  .hero-title {
+    font-size: 2rem;
+  }
+
+  .hero-image img {
+    width: 80%;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    padding: 20px;
+    flex-direction: column;
+    height: auto;
+    text-align: center;
+  }
+
+  /* Ensure no gap between navbar and content */
+  .hero-content {
+    margin-top: 0; /* Remove any space */
+    padding-left: 20px; /* Add padding to the left */
+    padding-right: 20px;
+    text-align: center;
+  }
+
+  .hero-title {
+    font-size: 1.8rem;
+  }
+
+  .hero-image img {
+    width: 100%;
+  }
+
+  /* Aligning the content to the center */
+  .hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: 1.6rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1rem;
+  }
+
+  .btn {
+    padding: 10px 20px;
+    font-size: 0.9rem;
+  }
+}
+
+/* Desktop view - Left side content centered */
+@media (min-width: 1025px) {
+  .hero {
+    display: flex;
+    justify-content: flex-start; /* Align content to the left */
+    align-items: center;
+    text-align: left;
+    flex-direction: row; /* Align text and image side by side */
+  }
+
+  .hero-content {
+    width: 50%; /* Left side takes 50% width */
+    text-align: center; /* Center the content on left */
+    padding: 20px;
+    padding-left: 40px; /* Add padding to the left for alignment */
+  }
+
+  .hero-title {
+    font-size: 2rem; /* Adjust title size for desktop */
+  }
+
+  .hero-image {
+    width: 50%; /* Right side takes 50% width */
+    padding-left: 20px;
+  }
+
+  .hero-image img {
+    width: 100%;
+    object-fit: cover;
+  }
+
+  /* Remove the cutting line in desktop */
+  .cutting-line {
+    display: none;
+  }
+}
+
+
+
