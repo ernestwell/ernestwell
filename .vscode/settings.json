@@ -1,0 +1,8 @@
+{
+    "terminal.integrated.env.windows": {
+      "PATH": "C:\\Users\\Bhagavath\\AppData\\Roaming\\nvm;${env:PATH}",
+      "NODE_OPTIONS": "--openssl-legacy-provider"
+    }
+  }
+  
+
