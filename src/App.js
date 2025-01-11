@@ -6,6 +6,7 @@ import Services from "./components/services/service"; // Add Services Page Compo
 import Portfolio from "./components/porfolio/portfolio"; // Add Portfolio Page Component
 import Contact from "./components/contact/contact"; // Add Contact Page Component
 import Footer from "./components/footer/footer"; // Add Footer Page Component
+import About from "./components/about/about"
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
           element={
             <>
               <HeroSection /> {/* Hero Section */}
+              <About />
               <Services /> {/* Services Section directly below Hero Section */}
             </>
           }
