@@ -150,7 +150,7 @@ import heroImage from "./images/heroimage.png";
 const HeroSection = () => {
   const [text, setText] = useState("");
 
-  const sentence = "Empowering businesses with AI & automation.";
+  const sentence = "Innovating the digital landscape to drive business success"
 
   useEffect(() => {
     let index = 0;
@@ -190,5 +190,6 @@ const HeroSection = () => {
 };
 
 export default HeroSection;
+
 
 
