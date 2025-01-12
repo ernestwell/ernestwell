@@ -172,7 +172,6 @@
 
 body {
   background-color: white;
-  padding-top: 0px; /* Remove extra padding that creates the gap */
   margin: 0;
   font-family: "Josefin Sans", sans-serif;
 }
@@ -181,14 +180,13 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 90vh; /* Adjust height to reduce space */
+  min-height: 90vh;
   padding: 0 20px;
   text-align: center;
   flex-direction: row;
   background-color: white;
-  margin-top: 0px; /* Ensure there's no extra margin pushing it down */
+  margin-top: 0;
 }
-y
 
 .hero-left {
   width: 50%;
@@ -263,7 +261,7 @@ y
 @media (max-width: 1024px) {
   .hero {
     flex-direction: column;
-    padding-top: 40px; /* Slightly increased for clarity */
+    padding-top: 40px;
   }
 
   .hero-title {
@@ -278,12 +276,11 @@ y
 /* ✅ Mobile View (768px) */
 @media (max-width: 768px) {
   .hero {
-    padding-top: 40px; /* Ensures text is visible */
+    padding-top: 40px;
     flex-direction: column;
-    height: auto;
     text-align: center;
   }
-  
+
   .hero-left {
     width: 100%;
     text-align: center;
@@ -297,20 +294,19 @@ y
     width: 100%;
   }
 
-  .hero-content {
-    display: flex;
+  .hero-buttons {
     flex-direction: column;
+    gap: 12px;
     align-items: center;
-    justify-content: center;
+  }
+
+  .btn {
+    width: 80%;
   }
 }
 
 /* ✅ Small Mobile View (480px) */
 @media (max-width: 480px) {
-  .hero {
-    padding-top: 40px; /* Prevents text from hiding behind navbar */
-  }
-
   .hero-title {
     font-size: 1.6rem;
   }
@@ -331,9 +327,8 @@ y
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    text-align: left;
     flex-direction: row;
-    padding-top: 50px; /* Slight reduction in space */
+    padding-top: 50px;
   }
 
   .hero-left {
@@ -355,4 +350,3 @@ y
     object-fit: cover;
   }
 }
-
