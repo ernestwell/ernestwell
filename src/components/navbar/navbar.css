@@ -137,15 +137,19 @@
 /* Navbar Styles */
 /* Navbar Styles */
 /* Navbar Styles */
+/* Navbar */
+/* Navbar Styles */
+/* Navbar */
+/* Navbar */
 .navbar {
   position: fixed;
   top: 0;
   width: 100%;
-  background: white; /* Semi-transparent background */
+  background: white;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  padding: 15px 20px;
+  padding: 8px 30px; /* Reduced height */
   transition: all 0.3s ease-in-out;
   z-index: 1000;
   border-bottom-left-radius: 12px;
@@ -156,13 +160,13 @@
 .navbar.scrolled {
   background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(8px);
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 /* Navbar Container */
 .navbar-container {
   display: flex;
-  width: 90%;
+  width: 100%;
   max-width: 1200px;
   align-items: center;
   justify-content: space-between;
@@ -171,15 +175,29 @@
 
 /* Logo */
 .logo {
-  color: #2E5077;
-  font-size: 24px;
-  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 12px;
   text-decoration: none;
+}
+
+.logo-img {
+  height: 40px; /* Adjusted size */
+  width: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #2E5077;
+}
+
+.company-name {
+  color: #2E5077;
+  font-size: 20px;
+  font-weight: 700;
   letter-spacing: 1px;
   transition: color 0.3s ease;
 }
 
-.logo:hover {
+.company-name:hover {
   color: #1E3A5F;
 }
 
@@ -188,59 +206,53 @@
   list-style: none;
   display: flex;
   gap: 50px;
-  margin: 0;
+  margin-left: auto;
   padding: 0;
 }
 
-/* Link Styles */
+/* Navbar Link Styles */
 .nav-item {
   color: #2E5077;
   text-decoration: none;
-  font-size: 17px;
+  font-size: 16px;
   font-weight: 500;
   position: relative;
   transition: color 0.3s ease;
 }
 
-/* Special Styling for Home and Services (Black Color) */
-.nav-home,
-.nav-services,.contact {
-  color: black;
-}
-
-/* Hover Effects for All Links */
-.nav-item:hover {
-  color: #1E3A5F;
-}
-
-/* Services+ Styling */
-.nav-services {
-  font-weight: 500;
-}
-
+/* Underline Animation on Hover */
 .nav-item::after {
   content: "";
-  position: absolute;
-  left: 50%;
-  bottom: -3px;
+  display: block;
   width: 0;
   height: 2px;
   background: #2E5077;
-  transition: all 0.3s ease;
-  transform: translateX(-50%);
+  transition: width 0.3s ease-in-out;
+  position: absolute;
+  bottom: -3px;
+  left: 0;
 }
 
 .nav-item:hover::after {
   width: 100%;
 }
 
-/* Modern Sign In Link */
+/* Special Styling */
+.nav-home, .nav-services, .contact {
+  color: black;
+}
+
+.nav-item:hover {
+  color: #1E3A5F;
+}
+
+/* Sign In Button */
 .nav-signin {
   color: #2E5077;
-  font-size: 17px;
+  font-size: 16px;
   font-weight: 500;
   text-decoration: none;
-  padding: 6px 12px;
+  padding: 5px 10px;
   border-radius: 5px;
   transition: background-color 0.3s ease, color 0.3s ease;
 }
@@ -253,7 +265,7 @@
 /* Toggle Button */
 .menu-toggle {
   display: none;
-  font-size: 28px;
+  font-size: 26px;
   cursor: pointer;
   color: #2E5077;
 }
@@ -266,7 +278,7 @@
 
   .nav-links {
     position: absolute;
-    top: 80px; /* Adjusted for better alignment */
+    top: 60px;
     left: 0;
     width: 100%;
     background: rgba(255, 255, 255, 0.95);
@@ -274,7 +286,7 @@
     text-align: center;
     display: none;
     border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   }
 
   .nav-links.open {
@@ -282,7 +294,7 @@
   }
 
   .nav-links li {
-    padding: 15px 0;
+    padding: 12px 0;
     width: 100%;
   }
 
@@ -290,3 +302,4 @@
     font-size: 18px;
   }
 }
+

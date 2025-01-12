@@ -158,39 +158,42 @@
     transform: translateY(0);
   }
 } */
+/* Add the font imports in your index.html or separate css file */
+/* Add the font imports in your index.html or separate css file */
+/* Font imports */
+@import url('https://fonts.googleapis.com/css2?family=Shippori+Mincho&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap');
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
-
 }
 
 body {
   background-color: white;
-  padding-top: 60px; /* Ensure there's no space between navbar and content */
+  padding-top: 0px; /* Remove extra padding that creates the gap */
+  margin: 0;
+  font-family: "Josefin Sans", sans-serif;
 }
 
 .hero {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  min-height: 90vh; /* Adjust height to reduce space */
   padding: 0 20px;
   text-align: center;
-  flex-direction: column;
+  flex-direction: row;
   background-color: white;
+  margin-top: 0px; /* Ensure there's no extra margin pushing it down */
 }
+y
 
-.hero-content {
-  width: 100%;
-  max-width: 800px;
-  text-align: center;
+.hero-left {
+  width: 50%;
+  text-align: left;
   padding: 20px;
-  background: white;
-  backdrop-filter: blur(10px);
-  border-radius: 10px;
-  margin-bottom: 20px;
 }
 
 .hero-title {
@@ -199,6 +202,7 @@ body {
   color: #2E5077;
   line-height: 1.5;
   margin-bottom: 20px;
+  font-family: "Shippori Mincho", serif;
 }
 
 .hero-subtitle {
@@ -209,7 +213,6 @@ body {
 
 .hero-buttons {
   display: flex;
-  justify-content: center;
   gap: 15px;
 }
 
@@ -247,8 +250,7 @@ body {
 }
 
 .hero-image {
-  width: 100%;
-  margin-top: 20px;
+  width: 50%;
 }
 
 .hero-image img {
@@ -257,9 +259,11 @@ body {
   object-fit: cover;
 }
 
+/* ✅ Tablet View (1024px) */
 @media (max-width: 1024px) {
   .hero {
     flex-direction: column;
+    padding-top: 40px; /* Slightly increased for clarity */
   }
 
   .hero-title {
@@ -271,19 +275,17 @@ body {
   }
 }
 
+/* ✅ Mobile View (768px) */
 @media (max-width: 768px) {
   .hero {
-    padding: 20px;
+    padding-top: 40px; /* Ensures text is visible */
     flex-direction: column;
     height: auto;
     text-align: center;
   }
-
-  /* Ensure no gap between navbar and content */
-  .hero-content {
-    margin-top: 0; /* Remove any space */
-    padding-left: 20px; /* Add padding to the left */
-    padding-right: 20px;
+  
+  .hero-left {
+    width: 100%;
     text-align: center;
   }
 
@@ -295,7 +297,6 @@ body {
     width: 100%;
   }
 
-  /* Aligning the content to the center */
   .hero-content {
     display: flex;
     flex-direction: column;
@@ -304,7 +305,12 @@ body {
   }
 }
 
+/* ✅ Small Mobile View (480px) */
 @media (max-width: 480px) {
+  .hero {
+    padding-top: 40px; /* Prevents text from hiding behind navbar */
+  }
+
   .hero-title {
     font-size: 1.6rem;
   }
@@ -319,29 +325,28 @@ body {
   }
 }
 
-/* Desktop view - Left side content centered */
+/* ✅ Large Desktop View (Above 1025px) */
 @media (min-width: 1025px) {
   .hero {
     display: flex;
-    justify-content: flex-start; /* Align content to the left */
+    justify-content: flex-start;
     align-items: center;
     text-align: left;
-    flex-direction: row; /* Align text and image side by side */
+    flex-direction: row;
+    padding-top: 50px; /* Slight reduction in space */
   }
 
-  .hero-content {
-    width: 50%; /* Left side takes 50% width */
-    text-align: center; /* Center the content on left */
-    padding: 20px;
-    padding-left: 40px; /* Add padding to the left for alignment */
+  .hero-left {
+    width: 50%;
+    padding-left: 40px;
   }
 
   .hero-title {
-    font-size: 2rem; /* Adjust title size for desktop */
+    font-size: 2rem;
   }
 
   .hero-image {
-    width: 50%; /* Right side takes 50% width */
+    width: 50%;
     padding-left: 20px;
   }
 
@@ -349,9 +354,5 @@ body {
     width: 100%;
     object-fit: cover;
   }
-
-  /* Remove the cutting line in desktop */
-  .cutting-line {
-    display: none;
-  }
 }
+
