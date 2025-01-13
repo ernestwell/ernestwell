@@ -1,114 +1,15 @@
-// import React, { useState, useEffect } from 'react';
-// import './herosection.css';
 
-// // Import local images
-// import image1 from './images/image1.jpg'; 
-// import image2 from './images/image2.jpg'; 
-// import image3 from './images/image3.jpg'; 
-
-// const Hero = () => {
-//   // State to control the current image index
-//   const [currentIndex, setCurrentIndex] = useState(0);
-  
-//   const images = [image1, image2, image3]; // Use imported images
-
-//   useEffect(() => {
-//     // Auto slide every 3 seconds
-//     const timer = setInterval(() => {
-//       setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
-//     }, 3000);
-
-//     return () => clearInterval(timer); // Cleanup on unmount
-//   }, [images.length]);
-
-//   return (
-//     <div className="hero">
-//       <div className="slider">
-//         <img src={images[currentIndex]} alt="Slider" className="slider-image" />
-//       </div>
-//       <div className="hero-content">
-//         <h1 className="hero-title">Welcome to Our Website</h1>
-//         <p className="hero-description">Explore our services and learn more about what we offer.</p>
-//         <button className="hero-button">Learn More</button>
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default Hero;
 // import React, { useState, useEffect } from "react";
-// import "./herosection.css";
-// import Typewriter from "typewriter-effect";
-
-// // Import local images
-// import image1 from "./images/image1.jpg";
-// import image2 from "./images/image2.jpg";
-// import image3 from "./images/image3.jpg";
-
-// const HeroSection = () => {
-//   const [currentIndex, setCurrentIndex] = useState(0);
-//   const images = [image1, image2, image3];
-
-//   useEffect(() => {
-//     // Change background image every 6 seconds
-//     const timer = setInterval(() => {
-//       setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
-//     }, 6000);
-
-//     return () => clearInterval(timer); // Cleanup the timer on component unmount
-//   }, []);
-
-//   return (
-//     <div className="hero-section">
-//       <div
-//         className="background-slider"
-//         style={{
-//           backgroundImage: `url(${images[currentIndex]})`,
-//           transition: "background-image 1s ease-in-out", // Add smooth transition effect
-//         }}
-//       >
-//         <div className="overlay"></div>
-//       </div>
-//       <div className="hero-content">
-//         <h1 className="hero-title">
-//           Welcome to <span className="highlight">Our Platform</span>
-//         </h1>
-//         <p className="hero-description">
-//           <Typewriter
-//             options={{
-//               strings: [
-//                 "Innovating the Future with Technology.",
-//                 "Empowering Businesses with AI Solutions.",
-//                 "Building Smarter Digital Experiences.",
-//               ],
-//               autoStart: true,
-//               loop: true,
-//               deleteSpeed: 30,
-//               delay: 75,
-//             }}
-//           />
-//         </p>
-//         <button className="hero-button">Get Started</button>
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default HeroSection;
-// import React, { useState, useEffect } from "react";
-// import React, { useState, useEffect } from "react";
-// import "./herosection.css";
-// import heroImage from "./images/heroimage.png";
+// import "./herosection.css"; // Make sure to import the CSS file
+// import heroImage from "./images/heroimage.png"; // Import the image
 
 // const HeroSection = () => {
 //   const [text, setText] = useState("");
-
-//   const sentence = "Empowering businesses with AI, automation, and seamless digital transformation.";
+//   const sentence = "Transforming your ideas into digital reality";
 
 //   useEffect(() => {
 //     let index = 0;
 //     setText("");
-
 //     const interval = setInterval(() => {
 //       if (index < sentence.length) {
 //         setText((prev) => prev + sentence.charAt(index));
@@ -116,27 +17,26 @@
 //       } else {
 //         clearInterval(interval);
 //       }
-//     }, 100); // Adjust typing speed (100ms per character)
-
-//     return () => clearInterval(interval); // Cleanup interval on component unmount
+//     }, 100);
+//     return () => clearInterval(interval);
 //   }, []);
 
 //   return (
 //     <section className="hero">
-//       <div className="hero-content">
-//         <h1 className="hero-title">
+//       <div className="hero-left">
+//         <h1 className="hero-title josefin-text-1">
 //           <span>{text}</span>
 //         </h1>
-//         <p className="hero-subtitle">
-//           Unlock the potential of AI, cloud, and automation to elevate your business.
+//         <p className="hero-subtitle josefin-text">
+//           Innovate, create, and launch with cutting-edge technology solutions. We help businesses turn vision into reality.
 //         </p>
 //         <div className="hero-buttons">
-//           <a href="#" className="btn primary">Get Started</a>
-//           <a href="#" className="btn secondary">Learn More</a>
+//           <a href="#" className="btn primary">Explore Now</a>
+//           <a href="#" className="btn secondary">Get in Touch</a>
 //         </div>
 //       </div>
 //       <div className="hero-image">
-//         <img src={heroImage} alt="Business Solutions" />
+//         <img src={heroImage} alt="Tech Solutions" />
 //       </div>
 //     </section>
 //   );
@@ -144,34 +44,44 @@
 
 // export default HeroSection;
 import React, { useState, useEffect } from "react";
-import "./herosection.css"; // Make sure to import the CSS file
-import heroImage from "./images/heroimage.png"; // Import the image
+import "./herosection.css";
+import heroImage from "./images/heroimage.png";
 
 const HeroSection = () => {
-  const [text, setText] = useState("");
-  const sentence = "Transforming your ideas into digital reality";
+  const sentences = [
+    "Transforming your ideas into digital reality",  
+    "Empowering businesses with innovative solutions",
+    "Building a smarter future with technology"
+  ];
+
+  const [text, setText] = useState(sentences[0]);
+  const [sentenceIndex, setSentenceIndex] = useState(0);
+  const [charIndex, setCharIndex] = useState(0);
 
   useEffect(() => {
-    let index = 0;
-    setText("");
     const interval = setInterval(() => {
-      if (index < sentence.length) {
-        setText((prev) => prev + sentence.charAt(index));
-        index++;
+      if (charIndex < sentences[sentenceIndex].length) {
+        setText(sentences[sentenceIndex].slice(0, charIndex + 1));
+        setCharIndex((prev) => prev + 1);
       } else {
         clearInterval(interval);
+        setTimeout(() => {
+          setCharIndex(0);
+          setSentenceIndex((prev) => (prev + 1) % sentences.length);
+        }, 2000); // Pause before switching sentences
       }
     }, 100);
+
     return () => clearInterval(interval);
-  }, []);
+  }, [sentenceIndex, charIndex]);
 
   return (
     <section className="hero">
       <div className="hero-left">
-        <h1 className="hero-title josefin-text-1">
+        <h1 className="hero-title">
           <span>{text}</span>
         </h1>
-        <p className="hero-subtitle josefin-text">
+        <p className="hero-subtitle">
           Innovate, create, and launch with cutting-edge technology solutions. We help businesses turn vision into reality.
         </p>
         <div className="hero-buttons">
@@ -187,3 +97,5 @@ const HeroSection = () => {
 };
 
 export default HeroSection;
+
+
