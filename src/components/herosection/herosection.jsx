@@ -1,48 +1,3 @@
-
-// import React, { useState, useEffect } from "react";
-// import "./herosection.css"; // Make sure to import the CSS file
-// import heroImage from "./images/heroimage.png"; // Import the image
-
-// const HeroSection = () => {
-//   const [text, setText] = useState("");
-//   const sentence = "Transforming your ideas into digital reality";
-
-//   useEffect(() => {
-//     let index = 0;
-//     setText("");
-//     const interval = setInterval(() => {
-//       if (index < sentence.length) {
-//         setText((prev) => prev + sentence.charAt(index));
-//         index++;
-//       } else {
-//         clearInterval(interval);
-//       }
-//     }, 100);
-//     return () => clearInterval(interval);
-//   }, []);
-
-//   return (
-//     <section className="hero">
-//       <div className="hero-left">
-//         <h1 className="hero-title josefin-text-1">
-//           <span>{text}</span>
-//         </h1>
-//         <p className="hero-subtitle josefin-text">
-//           Innovate, create, and launch with cutting-edge technology solutions. We help businesses turn vision into reality.
-//         </p>
-//         <div className="hero-buttons">
-//           <a href="#" className="btn primary">Explore Now</a>
-//           <a href="#" className="btn secondary">Get in Touch</a>
-//         </div>
-//       </div>
-//       <div className="hero-image">
-//         <img src={heroImage} alt="Tech Solutions" />
-//       </div>
-//     </section>
-//   );
-// };
-
-// export default HeroSection;
 import React, { useState, useEffect } from "react";
 import "./herosection.css";
 import heroImage from "./images/heroimage.png";
@@ -97,5 +52,3 @@ const HeroSection = () => {
 };
 
 export default HeroSection;
-
-
