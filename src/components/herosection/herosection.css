@@ -28,7 +28,7 @@ body {
 .hero-left {
   width: 50%;
   text-align: left;
-  padding: 20px;
+  /* padding: 20px; */
 }
 
 /* Typing Effect */
@@ -62,7 +62,7 @@ body {
 .hero-subtitle {
   font-size: 1.2rem;
   color: #333;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
 }
 
 .hero-buttons {
@@ -131,7 +131,7 @@ body {
 
 @media (max-width: 768px) {
   .hero {
-    padding-top: 40px;
+    /* padding-top: 20px; */
     flex-direction: column;
     text-align: center;
   }
@@ -145,7 +145,7 @@ body {
     font-size: 1.8rem;
     text-align: center;
     min-height: 120px;
-    margin-top: 30px;
+    margin-top: 10px;
   }
 
   .hero-image img {
@@ -169,7 +169,7 @@ body {
   .hero-title {
     font-size: 1.5rem;
     text-align: center;
-    padding-top: 20px;
+    padding-top: 10px;
     padding-left: 10px;
     padding-right: 10px;
   }
@@ -179,7 +179,7 @@ body {
   }
 
   .btn {
-    padding: 10px 20px;
+    padding: 5px 20px;
     font-size: 0.9rem;
   }
 }
@@ -191,7 +191,7 @@ body {
     justify-content: flex-start;
     align-items: center;
     flex-direction: row;
-    padding-top: 50px;
+    padding-top: 30px;
   }
 
   .hero-left {
