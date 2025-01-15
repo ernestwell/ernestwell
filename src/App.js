@@ -6,8 +6,8 @@ import Services from "./components/services/service"; // Add Services Page Compo
 import Portfolio from "./components/porfolio/portfolio"; // Add Portfolio Page Component
 import Contact from "./components/contact/contact"; // Add Contact Page Component
 import Footer from "./components/footer/footer"; // Add Footer Page Component
-import About from "./components/about/about"
-
+// import About from "./components/about/about"
+import Chatbot from "./components/chatbot/Chatbot";
 function App() {
   return (
     <Router>
@@ -19,8 +19,9 @@ function App() {
           element={
             <>
               <HeroSection /> {/* Hero Section */}
-              <About />
-              <Services /> {/* Services Section directly below Hero Section */}
+              {/* <About /> */}
+              <Services />
+              <Chatbot /> {/* Services Section directly below Hero Section */}
             </>
           }
         />

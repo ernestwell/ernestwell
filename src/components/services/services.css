@@ -189,7 +189,7 @@
   margin-bottom: 60px;
   opacity: 0;
   transform: translateY(50px);
-  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
 }
 
 .service-row.visible {
@@ -204,6 +204,7 @@
 .right {
   flex-direction: row-reverse;
 }
+
 
 .service-image {
   width: 100%;
