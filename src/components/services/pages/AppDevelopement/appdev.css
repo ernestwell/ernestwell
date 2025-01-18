@@ -1,0 +1,135 @@
+:root {
+    --primary-color: #2e5077;
+    --text-color: #ffffff;
+    --bg-light: #f5f7fa;
+  }
+  
+  body {
+    margin: 0;
+    font-family: "Arial", sans-serif;
+    background: var(--bg-light);
+    color: var(--primary-color);
+  }
+  
+  .mobile-app-page {
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .hero-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background: var(--primary-color);
+    color: var(--text-color);
+    padding: 40px 20px;
+    border-radius: 10px;
+  }
+  
+  .hero-content h1 {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .hero-content p {
+    font-size: 16px;
+    max-width: 600px;
+  }
+  
+  .hero-image img {
+    max-width: 80%;
+    margin-top: 20px;
+  }
+  
+  .about-service, .why-choose, .contact, .faq {
+    margin-top: 40px;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  h2 {
+    color: var(--primary-color);
+  }
+  
+  .contact-btn {
+    background: var(--primary-color);
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 10px;
+  }
+  
+  .contact-btn:hover {
+    background: #1d3652;
+  }
+  
+  /* FAQ Section */
+  .faq {
+    text-align: left;
+    margin-top: 40px;
+  }
+  
+  .faq h2 {
+    text-align: center;
+  }
+  
+  .faq-list {
+    max-width: 700px;
+    margin: 0 auto;
+  }
+  
+  .faq-item {
+    border-bottom: 1px solid var(--primary-color);
+    padding: 10px 0;
+  }
+  
+  .faq-question {
+    width: 100%;
+    text-align: left;
+    font-size: 16px;
+    background: none;
+    border: none;
+    color: var(--primary-color);
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+  }
+  
+  .faq-answer {
+    display: none;
+    padding: 10px;
+    font-size: 14px;
+    color: #333;
+  }
+  
+  .faq-answer.open {
+    display: block;
+  }
+  
+  @media (max-width: 768px) {
+    .hero-content h1 {
+      font-size: 24px;
+    }
+  
+    .hero-content p {
+      font-size: 14px;
+    }
+  
+    .hero-image img {
+      max-width: 100%;
+    }
+  
+    .faq-list {
+      width: 90%;
+    }
+  }
+  

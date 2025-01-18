@@ -95,11 +95,11 @@ const Service = () => {
           if (entry.isIntersecting) {
             entry.target.classList.add("visible");
           } else {
-            entry.target.classList.remove("visible"); // Reapply animation when scrolling
+            entry.target.classList.remove("visible");
           }
         });
       },
-      { threshold: 0.3 } // Adjust to trigger animation earlier or later
+      { threshold: 0.3 }
     );
 
     const serviceElements = document.querySelectorAll(".service-row");
@@ -134,5 +134,3 @@ const Service = () => {
 };
 
 export default Service;
-
-

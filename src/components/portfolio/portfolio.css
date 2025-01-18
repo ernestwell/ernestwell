@@ -1,0 +1,93 @@
+/* Main Portfolio Container */
+.portfolio-container {
+  display: flex;
+  height: 100vh;
+  background-color: #2e5077;
+  color: silver;
+  overflow: hidden; 
+  border: 2px solid red;/* Avoid content overflowing */
+}
+
+/* Left Side of the Portfolio (for cards) */
+.left {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Right Side of the Portfolio (for company info) */
+.right {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+/* Card Design */
+.card {
+  width: 250px;
+  height: 150px;
+  background: silver;
+  margin: 10px;
+  text-align: center;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.5s;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add some shadow for depth */
+}
+
+.card:hover {
+  transform: rotateY(180deg); /* Rotate the card on hover */
+}
+
+/* Card Content */
+.card-content {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
+
+/* Front of the Card */
+.card-front {
+  background: #2e5077;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Logo within the card */
+.logo {
+  width: 100px;
+}
+
+/* Back of the Card */
+.card-back {
+  background: silver;
+  transform: rotateY(180deg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Portfolio Button */
+.portfolio-btn {
+  background: silver;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  color: #2e5077; /* Button text color */
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 5px; /* Rounded corners for the button */
+  transition: background 0.3s;
+}
+
+.portfolio-btn:hover {
+  background: #179bae; /* Add a hover effect to the button */
+  color: white; /* Change text color on hover */
+}

@@ -183,7 +183,7 @@
 
 .service-row {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   justify-content: center;
   gap: 40px;
   margin-bottom: 60px;
@@ -205,11 +205,10 @@
   flex-direction: row-reverse;
 }
 
-
 .service-image {
   width: 100%;
   max-width: 320px;
-  height: auto; /* Let the image adapt based on content */
+  height: auto;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -229,7 +228,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  align-items: center; /* Center everything inside service content */
+  align-items: center;
 }
 
 .service-title {
@@ -245,7 +244,7 @@
   line-height: 1.5;
   margin-bottom: 20px;
   flex-grow: 1;
-  text-align: center; /* Center description text */
+  text-align: center;
 }
 
 .btn-primary {
@@ -260,10 +259,10 @@
   transition: all 0.3s ease-in-out;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
   border: none;
-  margin-top: 20px; /* Space between description and button */
-  max-width: 180px; /* Limit button width */
-  width: 100%; /* Ensure button adapts to content */
-  text-align: center; /* Ensure button text is centered */
+  margin-top: 20px;
+  max-width: 180px;
+  width: 100%;
+  text-align: center;
 }
 
 .btn-primary:hover {
@@ -315,7 +314,7 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    align-items: center; /* Center items on mobile */
+    align-items: center;
   }
 
   .service-title {
