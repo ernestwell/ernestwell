@@ -7,7 +7,7 @@ import Services from "./components/services/service"; // Add Services Page Compo
 import Contact from "./components/contact/contact"; // Add Contact Page Component
 import Footer from "./components/footer/footer"; // Add Footer Page Component
 import Chatbot from "./components/chatbot/Chatbot";
-import WebDevelopment from "./components/services/pages/WebDevelopment";
+import WebDevelopment from "./components/services/pages/webdevelopment/WebDevelopment";
 import MobileAppDevelopment from "./components/services/pages/AppDevelopement/appdev"
 import ERPDevelopment from "./components/services/pages/erp-services/erp"
 import CustomSoftwareSolutions from "./components/services/pages/customsolution/custom"
@@ -49,5 +49,7 @@ function App() {
 }
 
 export default App;
+
+
 
 
