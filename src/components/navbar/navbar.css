@@ -32,20 +32,23 @@
 }
 
 /* Logo */
+/* Logo */
 .logo {
   display: flex;
   align-items: center;
+  justify-content: center; /* Center the logo */
   gap: 8px; /* Reduced gap between logo and text */
   text-decoration: none;
 }
 
 .logo-img {
-  height: 45px; /* Reduced size */
-  width: 45px;  /* Reduced size */
+  height: 45px; /* Logo size */
+  width: 45px;  /* Logo size */
   border-radius: 50%;
-  object-fit: cover;
+  object-fit: contain;  /* Ensure the image is clear and not distorted */
   border: 1px solid #2E5077;
 }
+
 
 .company-name {
   color: #2E5077;
