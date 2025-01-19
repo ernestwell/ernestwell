@@ -6,10 +6,15 @@ import Services from "./components/services/service"; // Add Services Page Compo
 // import Portfolio from "./components/porfolio/portfolio"; // Add Portfolio Page Component
 import Contact from "./components/contact/contact"; // Add Contact Page Component
 import Footer from "./components/footer/footer"; // Add Footer Page Component
-// import About from "./components/about/about"
 import Chatbot from "./components/chatbot/Chatbot";
 import WebDevelopment from "./components/services/pages/WebDevelopment";
 import MobileAppDevelopment from "./components/services/pages/AppDevelopement/appdev"
+import ERPDevelopment from "./components/services/pages/erp-services/erp"
+import CustomSoftwareSolutions from "./components/services/pages/customsolution/custom"
+import DigitalMarketingSolutions from "./components/services/pages/digital/digital"
+import CloudSolutions from "./components/services/pages/cloud/cloud"
+import CybersecuritySolutions from "./components/services/pages/cybersecurity/cyber"
+import ITSupport from "./components/services/pages/ITsupport/itsupport"
 function App() {
   return (
     <Router>
@@ -31,7 +36,12 @@ function App() {
         <Route path="/contact" element={<Contact />} />
         <Route path="/web-development" element={<WebDevelopment />} />
         <Route path="/app-development" element={<MobileAppDevelopment />} />
-
+        <Route path="/erp-development" element={<ERPDevelopment />} />
+        <Route path="/custom-development" element={<CustomSoftwareSolutions />} />
+        <Route path="/digitalmarketing" element={<DigitalMarketingSolutions />} />
+        <Route path="/cloudsolutions" element={<CloudSolutions/>} />
+        <Route path="/CybersecuritySolutions" element={<CybersecuritySolutions/>} />
+        <Route path="/ITsupport" element={<ITSupport/>} />
       </Routes>
       <Footer /> {/* Add Footer to the end of the app */}
     </Router>

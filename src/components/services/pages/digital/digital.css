@@ -10,32 +10,35 @@ body {
 }
 
 /* Header */
-.webdev-header {
+.digital-marketing-header {
   text-align: center;
   padding: 30px 20px;
   background: #2e5077;
   color: white;
   border-radius: 10px;
-  margin: 20px auto;
+  margin-top: 20px;
   max-width: 90%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-.webdev-header h1 {
+.digital-marketing-header h1 {
   font-size: 2rem;
   font-weight: bold;
 }
 
-.webdev-header p {
+.digital-marketing-header p {
   font-size: 1.1rem;
 }
 
-/* Container Section */
-.webdev-container {
+/* Digital Marketing Services Section */
+.digital-marketing-container {
+  font-family: 'Josefin Sans', sans-serif;
   color: #2e5077;
   padding: 0 20px;
 }
 
-.webdev-services {
+.digital-marketing-services {
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -43,7 +46,7 @@ body {
   margin-top: 50px;
 }
 
-.webdev-service {
+.digital-marketing-service {
   background-color: #ffffff;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -55,10 +58,11 @@ body {
   align-items: center;
 }
 
-.webdev-service.reverse {
+.digital-marketing-service.reverse {
   flex-direction: row-reverse;
 }
 
+/* Service Icon and Title */
 .service-icon-container {
   display: flex;
   align-items: center;
@@ -75,14 +79,16 @@ body {
   font-weight: 600;
 }
 
-.webdev-service h2 {
+.digital-marketing-service h2 {
   font-weight: 900;
   font-size: 1.8rem;
+  display: flex;
+  align-items: center;
   margin-bottom: 10px;
   color: #2e5077;
 }
 
-.webdev-service p {
+.digital-marketing-service p {
   color: #4a4a4a;
   line-height: 1.5;
   margin-bottom: 10px;
@@ -130,6 +136,11 @@ body {
   text-align: center;
 }
 
+.faq-icon {
+  font-size: 30px;
+  margin-right: 10px;
+}
+
 .faq-item {
   background: white;
   color: #2e5077;
@@ -157,9 +168,12 @@ body {
   color: #2e5077;
   border-radius: 10px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-  margin: 60px auto 20px;
-  max-width: 800px;
+  margin-top: 60px;
   transition: transform 0.3s ease, background-color 0.3s ease;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 20px;
 }
 
 .contact-cta h2 {
@@ -175,7 +189,8 @@ body {
   line-height: 1.4;
   font-weight: 300;
   max-width: 600px;
-  margin: 0 auto;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .contact-btn {
@@ -199,15 +214,35 @@ body {
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
 }
 
+.contact-btn:focus {
+  outline: none;
+}
+
 @media (max-width: 768px) {
-  .webdev-service {
+  .contact-cta {
+    padding: 20px 15px;
+  }
+
+  .contact-cta h2 {
+    font-size: 1.8rem;
+  }
+
+  .contact-cta p {
+    font-size: 0.9rem;
+  }
+
+  .contact-btn {
+    padding: 10px 25px;
+  }
+
+  .digital-marketing-service {
     flex-direction: column;
     text-align: center;
     padding: 20px;
     width: 90%;
   }
 
-  .webdev-service.reverse {
+  .digital-marketing-service.reverse {
     flex-direction: column;
   }
 
@@ -220,14 +255,28 @@ body {
     padding-left: 0;
     text-align: center;
   }
+
+  .service-title-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .service-title-container h2 {
+    margin-left: 0;
+    text-align: center;
+  }
+
+  .service-icon-container {
+    font-size: 40px;
+  }
 }
 
 @media (max-width: 480px) {
-  .webdev-header h1 {
+  .digital-marketing-header h1 {
     font-size: 1.8rem;
   }
 
-  .webdev-header p {
+  .digital-marketing-header p {
     font-size: 0.9rem;
   }
 
@@ -239,4 +288,3 @@ body {
     font-size: 1.2rem;
   }
 }
-

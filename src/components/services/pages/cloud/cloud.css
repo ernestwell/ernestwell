@@ -1,8 +1,9 @@
+/* Import Font */
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap');
 
 /* General Styles */
 body {
-  font-family: 'Josefin Sans', sans-serif, "Poppins", sans-serif;
+  font-family: 'Josefin Sans', sans-serif, 'Poppins', sans-serif;
   background: #f4f4f4;
   color: #2e5077;
   margin-top: 30px;
@@ -10,32 +11,35 @@ body {
 }
 
 /* Header */
-.webdev-header {
+.cloud-header {
   text-align: center;
   padding: 30px 20px;
-  background: #2e5077;
+  background: #1a3d5d;
   color: white;
   border-radius: 10px;
-  margin: 20px auto;
+  margin-top: 20px;
   max-width: 90%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-.webdev-header h1 {
+.cloud-header h1 {
   font-size: 2rem;
   font-weight: bold;
 }
 
-.webdev-header p {
+.cloud-header p {
   font-size: 1.1rem;
 }
 
-/* Container Section */
-.webdev-container {
-  color: #2e5077;
-  padding: 0 20px;
+/* Cloud Solution Service Section */
+.cloud-container {
+  font-family: 'Josefin Sans', sans-serif;
+  color: #1a3d5d;
+  padding: 0 20px; /* Added padding from the screen */
 }
 
-.webdev-services {
+.cloud-services {
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -43,7 +47,7 @@ body {
   margin-top: 50px;
 }
 
-.webdev-service {
+.cloud-service {
   background-color: #ffffff;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -55,10 +59,11 @@ body {
   align-items: center;
 }
 
-.webdev-service.reverse {
+.cloud-service.reverse {
   flex-direction: row-reverse;
 }
 
+/* Service Icon and Title */
 .service-icon-container {
   display: flex;
   align-items: center;
@@ -67,7 +72,7 @@ body {
 
 .service-icon {
   font-size: 3rem;
-  color: #2e5077;
+  color: #1a3d5d;
 }
 
 .service-title {
@@ -75,14 +80,16 @@ body {
   font-weight: 600;
 }
 
-.webdev-service h2 {
+.cloud-service h2 {
   font-weight: 900;
   font-size: 1.8rem;
+  display: flex;
+  align-items: center;
   margin-bottom: 10px;
-  color: #2e5077;
+  color: #1a3d5d;
 }
 
-.webdev-service p {
+.cloud-service p {
   color: #4a4a4a;
   line-height: 1.5;
   margin-bottom: 10px;
@@ -104,7 +111,7 @@ body {
 }
 
 .primary-btn {
-  background-color: #2e5077;
+  background-color: #1a3d5d;
   color: white;
   padding: 10px 20px;
   border: none;
@@ -114,13 +121,13 @@ body {
 }
 
 .primary-btn:hover {
-  background-color: #4a6e9e;
+  background-color: #285e8a;
 }
 
 /* FAQ Section */
 .faq-section {
   margin-top: 60px;
-  background: #2e5077;
+  background: #1a3d5d;
   padding: 40px;
   color: white;
   border-radius: 10px;
@@ -130,9 +137,14 @@ body {
   text-align: center;
 }
 
+.faq-icon {
+  font-size: 30px;
+  margin-right: 10px;
+}
+
 .faq-item {
   background: white;
-  color: #2e5077;
+  color: #1a3d5d;
   padding: 15px;
   margin: 10px 0;
   border-radius: 5px;
@@ -154,12 +166,15 @@ body {
   text-align: center;
   padding: 30px 20px;
   background: silver;
-  color: #2e5077;
+  color: #1a3d5d;
   border-radius: 10px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-  margin: 60px auto 20px;
-  max-width: 800px;
+  margin-top: 60px;
   transition: transform 0.3s ease, background-color 0.3s ease;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 20px;
 }
 
 .contact-cta h2 {
@@ -175,12 +190,13 @@ body {
   line-height: 1.4;
   font-weight: 300;
   max-width: 600px;
-  margin: 0 auto;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .contact-btn {
   background-color: #ffffff;
-  color: #2e5077;
+  color: #1a3d5d;
   padding: 12px 30px;
   border: none;
   border-radius: 30px;
@@ -193,21 +209,26 @@ body {
 }
 
 .contact-btn:hover {
-  background-color: #2e5077;
+  background-color: #1a3d5d;
   color: white;
   transform: scale(1.05);
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
 }
 
+.contact-btn:focus {
+  outline: none;
+}
+
+/* Responsive Design */
 @media (max-width: 768px) {
-  .webdev-service {
+  .cloud-service {
     flex-direction: column;
     text-align: center;
     padding: 20px;
     width: 90%;
   }
 
-  .webdev-service.reverse {
+  .cloud-service.reverse {
     flex-direction: column;
   }
 
@@ -220,14 +241,28 @@ body {
     padding-left: 0;
     text-align: center;
   }
+
+  .service-title-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .service-title-container h2 {
+    margin-left: 0;
+    text-align: center;
+  }
+
+  .service-icon-container {
+    font-size: 40px;
+  }
 }
 
 @media (max-width: 480px) {
-  .webdev-header h1 {
+  .cloud-header h1 {
     font-size: 1.8rem;
   }
 
-  .webdev-header p {
+  .cloud-header p {
     font-size: 0.9rem;
   }
 

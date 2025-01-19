@@ -8,6 +8,7 @@
 }
 
 body {
+  font-family:  sans-serif;
   background-color: white;
   margin: 0;
   font-family: "Josefin Sans", sans-serif;
@@ -109,18 +110,35 @@ body {
   object-fit: cover;
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1024px) and (min-width: 768px) {
   .hero {
-    flex-direction: column;
-    padding-top: 40px;
+    flex-direction: row; /* Keep desktop-like layout */
+    padding-top: 0;
+  }
+
+  .hero-left {
+    width: 50%;
+    text-align: left;
   }
 
   .hero-title {
-    font-size: 2rem;
+    font-size: 2.5rem; /* Match desktop title size */
+    text-align: left;
   }
 
   .hero-image img {
-    width: 80%;
+    width: 100%;
+    display: block;
+  }
+
+  .hero-buttons {
+    flex-direction: row; /* Side-by-side buttons */
+    gap: 15px;
+    justify-content: flex-start;
+  }
+
+  .btn {
+    width: auto;
   }
 }
 
@@ -206,3 +224,4 @@ body {
     object-fit: cover;
   }
 }
+

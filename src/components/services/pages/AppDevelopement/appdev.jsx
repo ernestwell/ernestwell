@@ -1,102 +1,114 @@
-import React, { useState } from "react";
-import "./appdev.css"; // Importing custom styles
+import React from "react";
+import { 
+  FaMobileAlt, FaShoppingCart, FaDatabase, FaTools, 
+  FaQuestionCircle
+} from "react-icons/fa";
+import "./appdev.css";
+import image1 from "./appimages/image1.png";
+import image2 from "./appimages/image2.png";
+import image3 from "./appimages/image3.png";
+import image4 from "./appimages/image4.png";
 
-const MobileAppDevelopment = () => {
-  const [openIndex, setOpenIndex] = useState(null);
+const services = [
+  {
+    id: 1,
+    title: "Native Mobile Apps",
+    description: "Native mobile apps offer the best performance and user experience on iOS and Android devices. These apps are built specifically for each platform, ensuring smooth navigation, optimal performance, and the ability to fully leverage device features. We provide native app development services that include high-performance mobile solutions tailored to your business needs, with features like push notifications, GPS, and offline capabilities. Services include personalized app design, robust coding, seamless integration, and timely updates.",
+    image: image1,
+    buttons: (
+      <div className="service-buttons">
+        <button className="primary-btn">See Demo</button>
+      </div>
+    ),
+  },
+  {
+    id: 2,
+    title: "Cross-Platform Apps",
+    description: "Cross-platform apps are designed to work seamlessly across multiple platforms (iOS, Android, etc.) with a single codebase. We specialize in building cross-platform apps using frameworks like Flutter and React Native, ensuring fast development, cost-effectiveness, and consistent performance across devices. Whether you're targeting a broad audience or looking to simplify your app development process, our cross-platform solutions deliver the best value while maintaining a native-like experience.",
+    image: image2,
+    buttons: (
+      <div className="service-buttons">
+        <button className="primary-btn">See Demo</button>
+      </div>
+    ),
+  },
+  {
+    id: 3,
+    title: "E-commerce Mobile Apps",
+    description: "We create secure, feature-rich e-commerce mobile apps that provide users with an intuitive shopping experience. From product catalogs and shopping cart functionality to secure payment gateways, our e-commerce mobile solutions offer a seamless mobile shopping experience. We focus on mobile optimization to ensure fast load times, easy navigation, and mobile-optimized checkout processes. Our apps come with features like inventory management, real-time tracking, and personalized shopping experiences to enhance user engagement.",
+    image: image3,
+    buttons: (
+      <div className="service-buttons">
+        <button className="primary-btn">See Demo</button>
+      </div>
+    ),
+  },
+  {
+    id: 4,
+    title: "Custom Mobile Applications",
+    description: "Our custom mobile applications are designed to meet specific business requirements. Whether you need an internal tool, CRM, or any unique functionality, we offer scalable and secure custom mobile solutions. Our team works closely with you to understand your goals and deliver a mobile app that fits perfectly into your workflow. We provide features like real-time updates, data syncing, third-party integrations, and user-friendly interfaces that ensure high efficiency and a seamless user experience.",
+    image: image4,
+    buttons: (
+      <div className="service-buttons">
+        <button className="primary-btn">See Demo</button>
+      </div>
+    ),
+  },
+];
 
-  const faqs = [
-    {
-      question: "What types of mobile apps does Ernstwell develop?",
-      answer:
-        "We specialize in developing both native and cross-platform applications for iOS and Android. Whether it's a startup MVP or a complex enterprise solution, we ensure high-performance and scalability.",
-    },
-    {
-      question: "How long does it take to build a mobile app?",
-      answer:
-        "The development timeline depends on the complexity and features required. A simple app may take 2-3 months, while more complex solutions can take 6 months or more.",
-    },
-    {
-      question: "Do you provide post-launch support and maintenance?",
-      answer:
-        "Yes! We offer ongoing support, updates, and maintenance to ensure your app remains secure, functional, and up-to-date with the latest technologies.",
-    },
-    {
-      question: "Can you help with UI/UX design for the app?",
-      answer:
-        "Absolutely! Our team ensures that every app we develop has a seamless and engaging user experience, combining modern UI trends with user-centric designs.",
-    },
-    {
-      question: "How can I get started with Ernstwell?",
-      answer:
-        "You can contact us through our website or email us directly. Our team will reach out to discuss your requirements and initiate the development process.",
-    },
-  ];
-
-  const toggleFAQ = (index) => {
-    setOpenIndex(openIndex === index ? null : index);
-  };
-
+const MobileDevelopment = () => {
   return (
-    <div className="mobile-app-page">
-      <header className="hero-section">
-        <div className="hero-content">
-          <h1>Innovative Mobile App Solutions by Ernstwell</h1>
-          <p>
-            Transforming ideas into feature-rich mobile applications tailored for business success.
-            At <span className="brand-name">Ernstwell</span>, we craft intuitive, scalable, and high-performance 
-            mobile applications designed to enhance user engagement and streamline business operations.
-          </p>
-        </div>
-        <div className="hero-image">
-          <img src="https://undraw.co/illustrations" alt="Mobile App Development" />
-        </div>
+    <div className="mobiledev-container">
+      {/* Header */}
+      <header className="mobiledev-header">
+        <h1>Expert Mobile App Development Services</h1>
+        <p>Transform your business with high-quality, custom mobile app solutions.</p>
       </header>
 
-      <section className="about-service">
-        <p>
-          Our expertise spans across **native** and **cross-platform development**, delivering robust iOS and Android applications 
-          optimized for exceptional performance. Whether it's a startup MVP or a complex enterprise-grade solution, we ensure seamless 
-          experiences with **cutting-edge UI/UX**, **secure architectures**, and **scalable frameworks**.
-        </p>
-      </section>
-
-      <section className="why-choose">
-        <h2>Why Choose Ernstwell?</h2>
-        <p>
-          We don’t just build apps; we create digital experiences. Our team focuses on user-centered designs, leveraging 
-          the latest technologies to develop high-quality mobile applications. Every project is approached with a strategic mindset, 
-          ensuring that your app aligns with your business objectives while delivering a seamless user journey.
-        </p>
-      </section>
-
-      <section className="contact">
-        <h2>Let's Build Something Extraordinary</h2>
-        <p>
-          Whether you're envisioning a cutting-edge mobile app or need expert consultation, **Ernstwell** is here to bring your vision to life. 
-          Connect with us today to explore how we can help elevate your digital presence.
-        </p>
-        <button className="contact-btn">Contact Us</button>
+      {/* Services Section */}
+      <section className="mobiledev-services">
+        {services.map((service, index) => (
+          <div key={service.id} className={`mobiledev-service ${index % 2 === 0 ? "reverse" : ""}`}>
+            <div className="image-container">
+              <img src={service.image} alt={service.title} />
+            </div>
+            <div className="content-container">
+              <div className="service-icon-container">{service.icon}</div>
+              <h2>{service.title}</h2>
+              <p>{service.description}</p>
+              {service.buttons}
+            </div>
+          </div>
+        ))}
       </section>
 
       {/* FAQ Section */}
-      <section className="faq">
-        <h2>Frequently Asked Questions</h2>
-        <div className="faq-list">
-          {faqs.map((faq, index) => (
-            <div key={index} className="faq-item">
-              <button className="faq-question" onClick={() => toggleFAQ(index)}>
-                {faq.question}
-                <span>{openIndex === index ? "−" : "+"}</span>
-              </button>
-              <div className={`faq-answer ${openIndex === index ? "open" : ""}`}>
-                <p>{faq.answer}</p>
-              </div>
-            </div>
-          ))}
-        </div>
+      <section className="faq-section">
+        <h2><FaQuestionCircle className="faq-icon" /> Frequently Asked Questions</h2>
+        {/* Sample FAQs */}
+        <details className="faq-item">
+          <summary>Which type of mobile app is best for my business?</summary>
+          <p>If you need a high-performance, platform-specific app, a native mobile app is the best. For broader reach and faster development, cross-platform apps are ideal.</p>
+        </details>
+        <details className="faq-item">
+          <summary>Can my app be upgraded in the future?</summary>
+          <p>Absolutely! We build scalable apps that allow for future upgrades and feature additions as your business grows.</p>
+        </details>
+        <details className="faq-item">
+          <summary>Do you offer maintenance and support?</summary>
+          <p>Yes! We offer ongoing support and maintenance to ensure your app remains up-to-date and secure with regular updates and performance enhancements.</p>
+        </details>
+      </section>
+
+      {/* Contact Section */}
+      <section className="contact-cta">
+        <h2>Ready to Build Your Mobile App?</h2>
+        <p>From startups to established businesses, we offer custom mobile solutions that fit your needs.</p>
+        <button className="contact-btn">Get in Touch</button>
       </section>
     </div>
   );
 };
 
-export default MobileAppDevelopment;
+export default MobileDevelopment;
+

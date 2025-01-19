@@ -10,7 +10,7 @@ body {
 }
 
 /* Header */
-.webdev-header {
+.itsupport-header {
   text-align: center;
   padding: 30px 20px;
   background: #2e5077;
@@ -20,22 +20,22 @@ body {
   max-width: 90%;
 }
 
-.webdev-header h1 {
+.itsupport-header h1 {
   font-size: 2rem;
   font-weight: bold;
 }
 
-.webdev-header p {
+.itsupport-header p {
   font-size: 1.1rem;
 }
 
 /* Container Section */
-.webdev-container {
+.itsupport-container {
   color: #2e5077;
   padding: 0 20px;
 }
 
-.webdev-services {
+.itsupport-services {
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -43,7 +43,7 @@ body {
   margin-top: 50px;
 }
 
-.webdev-service {
+.itsupport-service {
   background-color: #ffffff;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -55,7 +55,7 @@ body {
   align-items: center;
 }
 
-.webdev-service.reverse {
+.itsupport-service.reverse {
   flex-direction: row-reverse;
 }
 
@@ -75,14 +75,14 @@ body {
   font-weight: 600;
 }
 
-.webdev-service h2 {
+.itsupport-service h2 {
   font-weight: 900;
   font-size: 1.8rem;
   margin-bottom: 10px;
   color: #2e5077;
 }
 
-.webdev-service p {
+.itsupport-service p {
   color: #4a4a4a;
   line-height: 1.5;
   margin-bottom: 10px;
@@ -200,14 +200,14 @@ body {
 }
 
 @media (max-width: 768px) {
-  .webdev-service {
+  .itsupport-service {
     flex-direction: column;
     text-align: center;
     padding: 20px;
     width: 90%;
   }
 
-  .webdev-service.reverse {
+  .itsupport-service.reverse {
     flex-direction: column;
   }
 
@@ -223,11 +223,11 @@ body {
 }
 
 @media (max-width: 480px) {
-  .webdev-header h1 {
+  .itsupport-header h1 {
     font-size: 1.8rem;
   }
 
-  .webdev-header p {
+  .itsupport-header p {
     font-size: 0.9rem;
   }
 
@@ -239,4 +239,3 @@ body {
     font-size: 1.2rem;
   }
 }
-
