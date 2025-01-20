@@ -1,4 +1,4 @@
-/* Navbar Styles */
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap');
 .navbar {
   position: fixed;
   top: 0;
@@ -12,6 +12,7 @@
   z-index: 1000;
   border-bottom-left-radius: 12px;
   border-bottom-right-radius: 12px;
+  font-family: 'Josefin Sans';
 }
 
 /* Navbar Scroll Effect */

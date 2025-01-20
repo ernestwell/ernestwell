@@ -107,9 +107,9 @@ const Navbar = () => {
         {/* Navbar Links */}
         <ul className={`nav-links ${menuOpen ? "open" : ""}`}>
           <li><Link to="/" className="nav-item nav-home">Home</Link></li>
-          <li><Link to="/about" className="nav-item">About</Link></li>
-          <li><Link to="/services" className="nav-item nav-services">Services+</Link></li>
           <li><Link to="/portfolio" className="nav-item">Portfolio</Link></li>
+          <li><Link to="/services" className="nav-item nav-services">Services+</Link></li>
+          <li><Link to="/careers" className="nav-item">Careers</Link></li>
           <li><Link to="/contact" className="nav-item contact">Contact</Link></li>
           <li><Link to="/signin" className="nav-item nav-signin">Sign In</Link></li>
         </ul>
