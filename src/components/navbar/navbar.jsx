@@ -1,70 +1,47 @@
+
 // import React, { useState, useEffect } from "react";
 // import { Link } from "react-router-dom";
+// import { FaBars, FaTimes } from "react-icons/fa";
 // import "./navbar.css";
+// import logo from "./ernest logo.png"; // Ensure the logo image is placed in the correct directory
 
 // const Navbar = () => {
 //   const [menuOpen, setMenuOpen] = useState(false);
-//   const [servicesOpen, setServicesOpen] = useState(false);
 //   const [scrolled, setScrolled] = useState(false);
 
-//   const servicesList = [
-//     "Web Development", 
-//     "Mobile Apps Development", 
-//     "ERP Solutions", 
-//     "Custom Software",
-//     "Digital Marketing", 
-//     "Cloud Solutions", 
-//     "Cybersecurity", 
-//     "IT Support"
-//   ];
-
-//   // Scroll event to change navbar color
-//   const handleScroll = () => {
-//     if (window.scrollY > 50) {
-//       setScrolled(true);
-//     } else {
-//       setScrolled(false);
-//     }
-//   };
-
 //   useEffect(() => {
-//     window.addEventListener("scroll", handleScroll);
-//     return () => {
-//       window.removeEventListener("scroll", handleScroll);
+//     const handleScroll = () => {
+//       setScrolled(window.scrollY > 50);
 //     };
+//     window.addEventListener("scroll", handleScroll);
+//     return () => window.removeEventListener("scroll", handleScroll);
 //   }, []);
-
-//   const toggleMenu = () => setMenuOpen((prev) => !prev);
-//   const toggleServices = () => setServicesOpen((prev) => !prev);
 
 //   return (
 //     <nav className={`navbar ${scrolled ? "scrolled" : ""}`}>
 //       <div className="navbar-container">
-//         <h2 className="navbar-logo">ErnestWell</h2>
+        
+//         {/* Logo and Company Name (Moved to Left) */}
+//         <Link to="/" className="logo">
+//           <img src={logo} alt="Logo" className="logo-img" />
+//           <span className="company-name">ErnestWell</span>
+//         </Link>
 
-//         <ul className={`nav-links ${menuOpen ? "open" : ""}`}>
-//           <li><Link to="/" className="nav-link">Home</Link></li>
-//           <li><Link to="/about" className="nav-link">About</Link></li>
-
-//           <li className="nav-item">
-//             <span className="nav-link" onClick={toggleServices}>Services</span>
-//             {servicesOpen && (
-//               <ul className="dropdown">
-//                 {servicesList.map((service, index) => (
-//                   <li key={index} className="dropdown-item">{service}</li>
-//                 ))}
-//               </ul>
-//             )}
-//           </li>
-
-//           <li><Link to="/portfolio" className="nav-link">Portfolio</Link></li>
-//           <li><Link to="/apply-jobs" className="nav-link">Apply Jobs</Link></li>
-//           <li><Link to="/contact" className="nav-link">Contact Us</Link></li>
-//         </ul>
-
-//         <div className="menu-icon" onClick={toggleMenu}>
-//           ☰
+//         {/* Toggle Button */}
+//         <div className="menu-toggle" onClick={() => setMenuOpen(!menuOpen)}>
+//           {menuOpen ? <FaTimes /> : <FaBars />}
 //         </div>
+
+//         {/* Navbar Links */}
+//         <ul className={`nav-links ${menuOpen ? "open" : ""}`}>
+//           <li><Link to="/" className="nav-item nav-home">Home</Link></li>
+//           <li><Link to="/portfolio" className="nav-item">Portfolio</Link></li>
+//           <li><Link to="/services" className="nav-item nav-services">Services+</Link></li>
+//           <li><Link to="/careers" className="nav-item">Careers</Link></li>
+//           <li><Link to="/contact" className="nav-item contact">Contact</Link></li>
+//           <li><Link to="/signin" className="nav-item nav-signin">Sign In</Link></li>
+//         </ul>
+        
 //       </div>
 //     </nav>
 //   );
@@ -75,11 +52,13 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { FaBars, FaTimes } from "react-icons/fa";
 import "./navbar.css";
-import logo from "./ernest logo.png"; // Ensure the logo image is placed in the correct directory
+import logo from "./ernest logo.png";
+ // Ensure the logo image is placed correctly
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [dropdownOpen, setDropdownOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -92,8 +71,7 @@ const Navbar = () => {
   return (
     <nav className={`navbar ${scrolled ? "scrolled" : ""}`}>
       <div className="navbar-container">
-        
-        {/* Logo and Company Name (Moved to Left) */}
+        {/* Logo and Company Name */}
         <Link to="/" className="logo">
           <img src={logo} alt="Logo" className="logo-img" />
           <span className="company-name">ErnestWell</span>
@@ -108,18 +86,38 @@ const Navbar = () => {
         <ul className={`nav-links ${menuOpen ? "open" : ""}`}>
           <li><Link to="/" className="nav-item nav-home">Home</Link></li>
           <li><Link to="/portfolio" className="nav-item">Portfolio</Link></li>
-          <li><Link to="/services" className="nav-item nav-services">Services+</Link></li>
+          
+          <li 
+            className="nav-item nav-services"
+            onMouseEnter={() => setDropdownOpen(true)}
+            onMouseLeave={() => setDropdownOpen(false)}
+          >
+            <Link to="/services">Services+</Link>
+            {dropdownOpen && (
+              <ul className="dropdown-menu">
+                <li><Link to="/web-development">Web Development</Link></li>
+                <li><Link to="/app-development">App Development</Link></li>
+                <li><Link to="/cloudsolutions">Cloud Solutions</Link></li>
+                <li><Link to="/CybersecuritySolutions">Cyber Security</Link></li>
+                <li><Link to="/ITsupport">IT Support</Link></li>
+                <li><Link to="/erp-development">ERP Services</Link></li>
+                <li><Link to="/custom-development">Custom Solutions</Link></li>
+                <li><Link to="/digitalmarketing">Digital Marketing</Link></li>
+              </ul>
+            )}
+          </li>
+
           <li><Link to="/careers" className="nav-item">Careers</Link></li>
           <li><Link to="/contact" className="nav-item contact">Contact</Link></li>
           <li><Link to="/signin" className="nav-item nav-signin">Sign In</Link></li>
         </ul>
-        
       </div>
     </nav>
   );
 };
 
 export default Navbar;
+
 
 
 

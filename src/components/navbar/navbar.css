@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap');
 .navbar {
   position: fixed;
   top: 0;
@@ -7,7 +7,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 5px 20px; /* Reduced padding */
+  padding: 5px 20px; 
   transition: all 0.3s ease-in-out;
   z-index: 1000;
   border-bottom-left-radius: 12px;
@@ -15,14 +15,14 @@
   font-family: 'Josefin Sans';
 }
 
-/* Navbar Scroll Effect */
+
 .navbar.scrolled {
   background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(8px);
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Navbar Container */
+
 .navbar-container {
   display: flex;
   width: 100%;
@@ -32,28 +32,26 @@
   position: relative;
 }
 
-/* Logo */
-/* Logo */
 .logo {
   display: flex;
   align-items: center;
-  justify-content: center; /* Center the logo */
-  gap: 8px; /* Reduced gap between logo and text */
+  justify-content: center;
+  gap: 8px;
   text-decoration: none;
 }
 
 .logo-img {
-  height: 45px; /* Logo size */
-  width: 45px;  /* Logo size */
+  height: 45px; 
+  width: 45px;  
   border-radius: 50%;
-  object-fit: contain;  /* Ensure the image is clear and not distorted */
+  object-fit: contain;  
   border: 1px solid #2E5077;
 }
 
 
 .company-name {
   color: #2E5077;
-  font-size: 18px; /* Reduced font size */
+  font-size: 18px; 
   font-weight: 700;
   letter-spacing: 1px;
   transition: color 0.3s ease;
@@ -63,36 +61,36 @@
   color: #1E3A5F;
 }
 
-/* Navbar Links */
+
 .nav-links {
   list-style: none;
   display: flex;
-  gap: 40px; /* Reduced gap between navbar items */
+  gap: 40px; 
   margin-left: auto;
   padding: 0;
 }
 
-/* Navbar Link Styles */
+
 .nav-item {
   color: #2E5077;
   text-decoration: none;
-  font-size: 14px; /* Reduced font size */
+  font-size: 14px; 
   font-weight: 500;
   position: relative;
   transition: color 0.3s ease;
 }
 
 .nav-links .contact {
-  appearance: none; /* Resets browser default button styles */
+  appearance: none; 
   background: none;
   border: none;
   padding: 0;
   cursor: pointer;
-  font-size: 14px; /* Reduced font size */
+  font-size: 14px; 
   font-weight: 500;
 }
 
-/* Underline Animation on Hover */
+
 .nav-item::after {
   content: "";
   display: block;
@@ -109,7 +107,7 @@
   width: 100%;
 }
 
-/* Special Styling */
+
 .nav-home,
 .nav-services,
 .contact {
@@ -120,10 +118,9 @@
   color: #1E3A5F;
 }
 
-/* Sign In Button */
 .nav-signin {
   color: #2E5077;
-  font-size: 14px; /* Reduced font size */
+  font-size: 14px; 
   font-weight: 500;
   text-decoration: none;
   padding: 5px 10px;
@@ -136,15 +133,15 @@
   color: white;
 }
 
-/* Toggle Button */
+
 .menu-toggle {
   display: none;
-  font-size: 22px; /* Reduced font size */
+  font-size: 22px; 
   cursor: pointer;
   color: #2E5077;
 }
 
-/* Mobile Responsive */
+
 @media (max-width: 768px) {
   .menu-toggle {
     display: block;
@@ -173,11 +170,11 @@
   }
 
   .nav-links li a {
-    font-size: 16px; /* Reduced font size */
+    font-size: 16px; 
   }
 }
 
-/* Ensure 1024px screens maintain desktop design */
+
 @media (max-width: 1024px) and (min-width: 769px) {
   .navbar {
     position: fixed;
@@ -187,7 +184,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 5px 20px; /* Reduced padding */
+    padding: 5px 20px; 
     transition: all 0.3s ease-in-out;
     z-index: 1000;
     border-bottom-left-radius: 12px;
@@ -195,9 +192,9 @@
   }
 
   .nav-links {
-    display: flex !important; /* Ensure desktop-style links */
-    flex-direction: row; /* Horizontal alignment */
-    gap: 40px; /* Reduced gap between items */
+    display: flex !important; 
+    flex-direction: row; 
+    gap: 40px; 
     background: none;
     position: static;
     width: auto;
@@ -206,13 +203,268 @@
   }
 
   .nav-item {
-    font-size: 14px; /* Reduced font size */
+    font-size: 14px; 
     color: #2E5077;
   }
 
   .menu-toggle {
-    display: none; /* Hide the toggle for desktop */
+    display: none; 
+  }
+} */
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;500;700&display=swap');
+
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 20px;
+  transition: all 0.3s ease-in-out;
+  z-index: 1000;
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
+  font-family: 'Josefin Sans', sans-serif;
+}
+
+.navbar.scrolled {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(8px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-container {
+  display: flex;
+  width: 100%;
+  max-width: 1200px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+}
+
+.logo-img {
+  height: 45px;
+  width: 45px;
+  border-radius: 50%;
+  object-fit: contain;
+  border: 1px solid #2E5077;
+}
+
+.company-name {
+  color: #2E5077;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.company-name:hover {
+  color: #1E3A5F;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 40px;
+  margin-left: auto;
+  padding: 0;
+}
+
+.nav-item {
+  color: #2E5077;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  position: relative;
+}
+
+.nav-item:hover {
+  color: #1E3A5F;
+}
+
+.nav-item::after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 2px;
+  background: #2E5077;
+  transition: width 0.3s ease-in-out;
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+}
+
+.nav-item:hover::after {
+  width: 100%;
+}
+
+.nav-services {
+  position: relative;
+  cursor: pointer;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(12px);
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  list-style: none;
+  padding: 15px 0;
+  min-width: 250px;
+  display: none;
+  text-align: center;
+}
+
+.dropdown-menu li {
+  padding: 12px 20px;
+  font-size: 16px;
+  font-weight: 500;
+  color: #2E5077;
+}
+
+.dropdown-menu li:hover {
+  color:#2E5077;
+  background: white;
+  border-radius: 5px;
+}
+
+.nav-services:hover .dropdown-menu,
+.nav-services:focus-within .dropdown-menu {
+  display: block;
+}
+
+.dropdown-menu li a {
+  text-decoration: none;
+  color: #2E5077;
+}
+
+.dropdown-menu li a:hover {
+  color: #2e5077;
+}
+
+.nav-signin {
+  padding: 5px 10px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.nav-signin:hover {
+  background-color: #2E5077;
+  color: white;
+}
+
+.menu-toggle {
+  display: none;
+  font-size: 22px;
+  cursor: pointer;
+  color: #2E5077;
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    padding: 10px 15px;
+  }
+
+  .menu-toggle {
+    display: block;
+    font-size: 22px;
+    cursor: pointer;
+    color: #2E5077;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    flex-direction: column;
+    text-align: center;
+    display: none;
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+  }
+
+  .nav-links.open {
+    display: flex;
+  }
+
+  .nav-item {
+    padding: 15px 0;
+    font-size: 16px;
+    font-weight: 500;
+  }
+
+  .nav-services {
+    position: relative;
+    cursor: pointer;
+  }
+
+  .nav-services .dropdown-menu {
+    position: relative;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    padding: 10px 0;
+    width: 80%;
+    display: none;
+    text-align: center;
+  }
+
+  .nav-services.active .dropdown-menu {
+    display: block;
+  }
+
+  .dropdown-menu li {
+    padding: 12px 20px;
+    font-size: 16px;
+    font-weight: 500;
+    color: silver;
+    transition: all 0.3s ease;
+  }
+
+  .dropdown-menu li:hover {
+    color:silver;
+    background: rgba(46, 80, 119, 0.8);
+    border-radius: 5px;
+  }
+
+  .dropdown-menu li a {
+    text-decoration: none;
+    color: #2E5077;
+  }
+
+  .dropdown-menu li a:hover {
+    color:silver;
+  }
+
+  /* Centering the dropdown list on mobile */
+  .nav-services .dropdown-menu {
+    text-align: center;
+    width: 100%;
   }
 }
+
+@media (max-width: 1024px) and (min-width: 769px) {
+  .nav-links {
+    display: flex !important;
+  }
+}
+
 
 

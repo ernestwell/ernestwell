@@ -115,7 +115,7 @@ const Footer = () => {
         <div className="footer-section contact">
           <h3>Contact</h3>
           <div>
-            <div className="footer-social">
+            <div className="footer-social-2">
               <a href="#"><FaFacebookF /></a>
               <a href="#"><FaLinkedinIn /></a>
               <a href="#"><FaTwitter /></a>
