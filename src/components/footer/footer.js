@@ -131,7 +131,7 @@ const Footer = () => {
 
       {/* Copyright Statement */}
       <div className="copyright">
-        &copy; 2025 Your Company Name. All Rights Reserved.
+        &copy; 2025 Ernestwell. All Rights Reserved.
       </div>
     </footer>
   );
