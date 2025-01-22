@@ -88,24 +88,25 @@ const Navbar = () => {
           <li><Link to="/portfolio" className="nav-item">Portfolio</Link></li>
           
           <li 
-            className="nav-item nav-services"
-            onMouseEnter={() => setDropdownOpen(true)}
-            onMouseLeave={() => setDropdownOpen(false)}
-          >
-            <Link to="/services">Services+</Link>
-            {dropdownOpen && (
-              <ul className="dropdown-menu">
-                <li><Link to="/web-development">Web Development</Link></li>
-                <li><Link to="/app-development">App Development</Link></li>
-                <li><Link to="/cloudsolutions">Cloud Solutions</Link></li>
-                <li><Link to="/CybersecuritySolutions">Cyber Security</Link></li>
-                <li><Link to="/ITsupport">IT Support</Link></li>
-                <li><Link to="/erp-development">ERP Services</Link></li>
-                <li><Link to="/custom-development">Custom Solutions</Link></li>
-                <li><Link to="/digitalmarketing">Digital Marketing</Link></li>
-              </ul>
-            )}
+              className="nav-item nav-services"
+              onMouseEnter={() => setDropdownOpen(true)}
+              onMouseLeave={() => setDropdownOpen(false)}
+            >
+              <span onClick={() => setDropdownOpen(!dropdownOpen)}>Services+</span>
+              {dropdownOpen && (
+                <ul className="dropdown-menu">
+                  <li><Link to="/web-development">Web Development</Link></li>
+                  <li><Link to="/app-development">App Development</Link></li>
+                  <li><Link to="/cloudsolutions">Cloud Solutions</Link></li>
+                  <li><Link to="/CybersecuritySolutions">Cyber Security</Link></li>
+                  <li><Link to="/ITsupport">IT Support</Link></li>
+                  <li><Link to="/erp-development">ERP Services</Link></li>
+                  <li><Link to="/custom-development">Custom Solutions</Link></li>
+                  <li><Link to="/digitalmarketing">Digital Marketing</Link></li>
+                </ul>
+              )}
           </li>
+
 
           <li><Link to="/careers" className="nav-item">Careers</Link></li>
           <li><Link to="/contact" className="nav-item contact">Contact</Link></li>
