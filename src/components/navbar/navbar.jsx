@@ -110,7 +110,7 @@ const Navbar = () => {
 
           <li><Link to="/careers" className="nav-item">Careers</Link></li>
           <li><Link to="/contact" className="nav-item contact">Contact</Link></li>
-          <li><Link to="/signin" className="nav-item nav-signin">Sign In</Link></li>
+          <li><Link to="/sign-in" className="nav-item nav-signin">Sign In</Link></li>
         </ul>
       </div>
     </nav>

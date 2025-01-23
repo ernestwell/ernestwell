@@ -14,7 +14,7 @@ import DigitalMarketingSolutions from "./components/services/pages/digital/digit
 import CloudSolutions from "./components/services/pages/cloud/cloud";
 import CybersecuritySolutions from "./components/services/pages/cybersecurity/cyber";
 import ITSupport from "./components/services/pages/ITsupport/itsupport";
-
+import SignIn from "./components/sign-in/sign"
 function App() {
   useEffect(() => {
     // Disable right-click functionality on the page for text, images, etc.
@@ -80,6 +80,7 @@ function App() {
         <Route path="/cloudsolutions" element={<CloudSolutions />} />
         <Route path="/CybersecuritySolutions" element={<CybersecuritySolutions />} />
         <Route path="/ITsupport" element={<ITSupport />} />
+        <Route path="/sign-in" element={<SignIn/>}/>
       </Routes>
       <Footer />
     </Router>
