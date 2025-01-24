@@ -1,0 +1,331 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap');
+* {
+  font-family: "Josefin Sans";
+  margin:0px;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.contact-container {
+  font-family: "Josefin Sans";
+  display: flex;
+  height: 100%;
+  min-height: 100vh;
+  width: 100%;
+  background: #f4f7fc;
+}
+
+
+.contact-left {
+  margin-top: 30px;
+  margin-left:20px;
+  margin-bottom: 30px;
+  border-top-left-radius: 15px;
+  border-bottom-left-radius:15px ;
+  flex: 1;
+  background: linear-gradient(135deg, #2e5077, #1e3c5a);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+  color: #fff;
+  text-align: center;
+  position: relative;
+}
+
+.content-wrapper {
+  max-width: 500px;
+  animation: fadeInUp 1.2s ease-in-out;
+}
+
+.contact-left h1 {
+  font-size: 50px;
+  font-weight: 700;
+}
+
+.contact-left p {
+  font-size: 18px;
+  margin-bottom: 40px;
+  opacity: 0.9;
+}
+
+.contact-image {
+  width: 100%;
+  max-width: 250px;
+  margin-left: 130px;
+  margin-bottom: 50px;
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+}
+
+.contact-page-mode footer{
+  display: none;
+}
+.social-links a {
+  color: #ffffff;
+  font-size: 28px;
+  transition: all 0.3s ease-in-out;
+}
+
+.social-links a:hover {
+  transform: translateY(-5px);
+  color: #a1c4fd;
+}
+
+
+.contact-right {
+  flex: 1;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  margin-right: 30px;
+  padding: 50px 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: #ffffff;
+  box-shadow: -10px 0 20px rgba(0, 0, 0, 0.1);
+  overflow-y: auto;
+  border-right: 5px solid #2e5077;
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+}
+
+.contact-right h2 {
+  margin-top: 10px;  
+  font-size: 36px;
+  color: #2e5077;
+  margin-bottom: 20px;  
+  text-align: center;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+
+.contact-form {
+
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 800px;  
+  margin: 0; 
+  margin-left:auto;
+  margin-right: 170px;
+  position: relative;
+  overflow: visible;
+  border-right: 15px;
+}
+
+.input-group {
+  position: relative;
+  width: 100%;
+}
+
+.input-group input,
+.input-group textarea {
+  width: 190%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 30px;
+  font-size: 16px;
+  outline: none;
+  background: #f9f9f9;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.input-group input:focus,
+.input-group textarea:focus {
+  border-left: 4px solid #2e5077;
+  box-shadow: 0 0 12px rgba(46, 80, 119, 0.3);
+}
+
+.input-group textarea {
+  resize: vertical;
+  min-height: 150px;
+  border-radius: 30px;
+}
+.submit-btn {
+  background: #2e5077;
+  color: #fff;
+  border: none;
+  padding: 18px;
+  font-size: 13px;
+  border-radius: 30px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.3s ease, transform 0.2s ease-in-out;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  box-shadow: 0 4px 10px rgba(46, 80, 119, 0.1);
+  margin: 0 auto;  /* This will center the button horizontally */
+}
+.submit-btn:hover {
+  background: #1e3c5a;
+  transform: scale(1.05);
+}
+
+
+@keyframes fadeInUp {
+  from {
+      opacity: 0;
+      transform: translateY(50px);
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+.fade-in {
+  animation: fadeInUp 1s ease-in-out;
+}
+
+@keyframes zoomIn {
+  from {
+      opacity: 0;
+      transform: scale(0.8);
+  }
+  to {
+      opacity: 1;
+      transform: scale(1);
+  }
+}
+
+.zoom-in {
+  animation: zoomIn 1.2s ease-in-out;
+}
+
+@keyframes slideInRight {
+  from {
+      opacity: 0;
+      transform: translateX(50px);
+  }
+  to {
+      opacity: 1;
+      transform: translateX(0);
+  }
+}
+
+.slide-in {
+  animation: slideInRight 1.2s ease-in-out;
+}
+
+@keyframes pulseEffect {
+  0% {
+      box-shadow: 0 0 0 0 rgba(46, 80, 119, 0.5);
+  }
+  50% {
+      box-shadow: 0 0 10px 5px rgba(46, 80, 119, 0.3);
+  }
+  100% {
+      box-shadow: 0 0 0 0 rgba(46, 80, 119, 0.5);
+  }
+}
+
+.pulse {
+  animation: pulseEffect 2s infinite;
+}
+
+
+@media (max-width: 1024px) {
+  .contact-container {
+      flex-direction: column;
+      height: auto;
+  }
+
+  .contact-left {
+      padding: 40px;
+  }
+
+  .contact-right {
+      padding: 40px;
+  }
+
+  .contact-form {
+      max-width: 90%; /* Reduce width for smaller screens */
+      margin-left: auto;
+      margin-right: auto;
+  }
+
+  .input-group input,
+  .input-group textarea {
+      width: 100%; /* Make inputs fill available space */
+  }
+
+  .submit-btn {
+      width: 100%; /* Ensure button fills available space */
+      padding: 15px;
+  }
+}
+
+@media (max-width: 768px) {
+  .contact-left h1 {
+      font-size: 35px; /* Slightly reduce header font size */
+  }
+
+  .contact-right {
+      padding: 30px; /* Adjust padding for mobile */
+  }
+
+  .contact-form {
+      max-width: 90%;
+      margin-left: auto;
+      margin-right: auto;
+  }
+  .fade-in{
+    text-align: center;
+    margin-left: 50px;
+    margin-right: 50px;
+  }
+
+  .submit-btn {
+      width: 100%; /* Full-width button */
+      padding: 15px;
+  }
+  .contact-image{
+    margin-right: 400px;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-left {
+      padding: 20px; /* More padding for small screens */
+  }
+
+  .contact-right {
+      padding: 20px; /* Adjust for mobile view */
+  }
+
+  .contact-form {
+      max-width: 100%; /* Make form full width on very small screens */
+  }
+
+  .contact-left h1 {
+      font-size: 30px; /* Adjust text size */
+  }
+
+  .contact-right h2 {
+      font-size: 28px; /* Adjust header size for mobile */
+  }
+
+  .submit-btn {
+      padding: 15px;
+      font-size: 14px; /* Increase button font size for readability */
+  }
+
+  .input-group input,
+  .input-group textarea {
+      width: 100%; /* Ensure inputs take full width */
+      padding: 12px;
+  }
+
+  .contact-image {
+      margin-left: 0;
+      margin-bottom: 20px; /* Adjust image margins */
+  }
+}
