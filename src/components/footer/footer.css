@@ -1,359 +1,9 @@
-
-/* .footer {
-  background-color: #2e5077;
-  color: silver;
-  padding: 20px 0;
-  font-family: Arial, sans-serif;
-  font-size: 14px;
-  text-align: center;  
-}
-
-.footer-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: stretch;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding-bottom: 20px;
-}
-
-.footer-section {
-  flex: 1;
-  margin-right: 20px;
-  padding: 0 10px;
-  min-height: 350px; 
-}
-
-.footer-section:last-child {
-  margin-right: 0;
-}
-
-.logo-foot {
-  width: 120px;
-  margin-bottom: 15px;
-}
-
-footer p {
-  font-size: 14px;
-  color: #ddd;
-}
-
-.footer-section h3 {
-  font-size: 18px;
-  color: silver;
-  margin-bottom: 10px;
-}
-
-.footer-section ul {
-  list-style-type: none;
-  padding: 0;
-}
-
-.footer-section ul li {
-  margin-bottom: 8px;
-}
-
-.footer-section ul li a {
-  color: silver;
-  text-decoration: none;
-}
-
-.footer-section ul li a:hover {
-  color: silver;
-}
-.services-foot{
-  background: #2e5077;
-}
-.email-form {
-  color: black;
-  margin-top: 20px;
-  position: relative;
-  display: flex;
-  align-items: center;
-  margin-bottom: 20px;
-  margin-left: 30px;  
-}
-
-.email-form input {
-  background: silver;
-  color:#2e5077;
-  padding: 8px;
-  border: none;
-  border-radius: 25px;
-  width: 200px;
-  font-size: 14px;
-  margin-right: 10px;
-  padding-left: 15px;
-}
-
-.paperplane-icon {
-  position: absolute;
-  right: 10px;
-  font-size: 20px;
-  color: silver;
-  cursor: pointer;
-}
-
-.contact-details {
-  display: flex;
-  align-items: center;
-  margin-bottom: 10px;
-}
-
-.contact-details p {
-  margin-left: 10px;
-}
-
-.footer-social {
-  display: flex;
-  gap: 20px;
-  margin-top: 20px;
-}
-
-.footer-social a {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  background-color: silver; 
-  transition: background-color 0.3s ease;
-}
-
-.footer-social a i {
-  color: silver;
-  font-size: 1.5rem;
-}
-
-.footer-social a:hover {
-  background-color: #ffd700; 
-  color: #1e3a5f; 
-}
-
-
-@media (max-width: 768px) {
-  .footer-container {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .footer-section {
-    margin-bottom: 20px;
-  }
-
-  .email-form input {
-    width: 80%;
-    margin-bottom: 10px;
-  }
-
-  .social-links {
-    flex-direction: column;
-    margin-top: 20px;
-  }
-
-  .social-links a {
-    margin: 5px 0;
-  }
-} */
-/* @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap');
-.footer {
-  font-family: 'Josefin Sans';
-  background-color: #2e5077;
-  color:silver;
-  padding: 20px 0;
-  font-size: 14px;
-  text-align: center;
-  position: relative;
-  border-top-left-radius: 100px; 
-  overflow: hidden; 
-}
-
-.footer-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: stretch;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding-bottom: 10px; 
-}
-
-.footer-section {
-  flex: 1;
-  margin-right: 20px;
-  padding: 0 10px;
-  min-height: 280px;
-}
-
-.footer-section:last-child {
-  margin-right: 0;
-}
-
-.logo-foot {
-  width: 120px;
-  margin-bottom: 15px;
-}
-
-footer p {
-  margin-top: 50px;
-  font-size: 17px;
-  color: silver;
-}
-.footer-section h3 {
-  font-size: 18px;
-  color: silver;
-  margin-bottom: 10px;
-  font-weight: bold;
-  text-align: center; 
-  position: relative;
-}
-
-.footer-section h3::after {
-  content: '';
-  position: absolute;
-  bottom: -5px;
-  left: 50%;
-  transform: translateX(-50%); 
-  width: 30%; 
-  height: 2px;
-  background-color: #ffd700;
-}
-
-
-
-.footer-section ul {
-  margin-top: 20px;
-  list-style-type: none;
-  padding: 0;
-}
-
-.footer-section ul li {
-  margin-bottom: 8px;
-}
-
-.footer-section ul li a {
-  color: silver;
-  text-decoration: none;
-}
-
-.footer-section ul li a:hover {
-  color: silver;
-}
-
-.services-foot {
-  background: #2e5077;
-}
-
-.email-form {
-  color: black;
-  margin-top: 20px;
-  position: relative;
-  display: flex;
-  align-items: center;
-  margin-bottom: 20px;
-  margin-left: 30px;
-}
-
-.email-form input {
-  background: silver;
-  color: #2e5077;
-  padding: 8px;
-  border: none;
-  border-radius: 25px;
-  width: 200px;
-  font-size: 14px;
-  margin-right: 10px;
-  padding-left: 15px;
-}
-
-.paperplane-icon {
-  position: absolute;
-  right: 10px;
-  font-size: 20px;
-  color: silver;
-  cursor: pointer;
-}
-
-.contact-details {
-  display: flex;
-  align-items: center;
-  margin-bottom: 10px;
-}
-
-.contact-details p {
-  margin-left: 10px;
-}
-
-.footer-social {
-  display: flex;
-  gap: 20px;
-  margin-top: 20px;
-}
-
-.footer-social a {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  background-color: silver;
-  transition: background-color 0.3s ease;
-}
-
-.footer-social a i {
-  color: silver;
-  font-size: 1.5rem;
-}
-
-.footer-social a:hover {
-  background-color: #ffd700;
-  color: #1e3a5f;
-}
-
-
-@media (max-width: 768px) {
-  .footer-container {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .footer-section {
-    margin-bottom: 20px;
-  }
-
-  .email-form input {
-    width: 80%;
-    margin-bottom: 10px;
-  }
-
-  .social-links {
-    flex-direction: column;
-    margin-top: 20px;
-  }
-
-  .social-links a {
-    margin: 5px 0;
-  }
-}
-
-
-.footer .copyright {
-  background-color: #2e5077;
-  color: silver;
-  padding: 10px 0;
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  font-size: 12px;
-  text-align: center;
-} */
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap');
 
 .footer {
   font-family: 'Josefin Sans';
   background-color: #2e5077;
-  color: silver;
+  color: white;
   padding: 15px 0;  /* Reduced padding */
   font-size: 14px;
   text-align: center;
@@ -404,19 +54,19 @@ footer p {
 
 .company-name-1 {
   font-size: 24px;
-  color: silver;
+  color: white;
   font-weight: bold;
 }
 
 footer p {
   margin-top: 5px;  /* Reduced margin */
   font-size: 17px;
-  color: silver;
+  color:white;
 }
 
 .footer-section h3 {
   font-size: 18px;
-  color: silver;
+  color: white;
   margin-bottom: 10px;
   font-weight: bold;
   text-align: center;
@@ -444,7 +94,7 @@ footer p {
 }
 
 .footer-section ul li a {
-  color: silver;
+  color: white;
   text-decoration: none;
 }
 
@@ -473,7 +123,7 @@ footer p {
 }
 
 .services-foot .service-list ul li a {
-  color: silver;
+  color: white;
   text-decoration: none;
 }
 
@@ -484,7 +134,7 @@ footer p {
 .services-foot h3 {
   text-align: center;
   font-size: 22px;
-  color: silver;
+  color: white;
   font-weight: bold;
 }
 
@@ -498,7 +148,7 @@ footer p {
 }
 
 .email-form input {
-  background: silver;
+  background: white;
   color: #2e5077;
   padding: 8px;
   border: none;
@@ -513,7 +163,7 @@ footer p {
   position: absolute;
   right: 10px;
   font-size: 20px;
-  color: silver;
+  color: white;
   cursor: pointer;
 }
 
@@ -534,13 +184,13 @@ footer p {
   width: 50px;
   height: 50px;
   border-radius: 50%;
-  background-color:silver;
+  background-color:white;
   color:#2e5077 ;
   transition: background-color 0.3s ease;
 }
 
 .footer-social-2 a i {
-  color:silver;
+  color:white;
   font-size: 1.5rem;
 }
 

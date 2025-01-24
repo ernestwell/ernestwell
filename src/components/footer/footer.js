@@ -15,7 +15,7 @@ const Footer = () => {
         {/* Company Section */}
         <div className="footer-section company">
           <div className="company-name-logo-1">
-            <h3>ERNESTWELL</h3>
+            <h3 id='name-c'>ERNESTWELL</h3>
           </div>
           <p className="para">We specialize in crafting exceptional digital experiences. Our mission is to make your business stand out with creative and innovative solutions.</p>
         </div>
