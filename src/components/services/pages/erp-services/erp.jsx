@@ -58,13 +58,10 @@ const services = [
 const ERPDevelopment = () => {
   return (
     <div className="erp-container">
-      {/* Header */}
       <header className="erp-header">
         <h1>Expert ERP Solutions for Your Business</h1>
         <p>Transform your enterprise operations with our tailored ERP solutions.</p>
       </header>
-
-      {/* Services Section */}
       <section className="erp-services">
         {services.map((service, index) => (
           <div key={service.id} className={`erp-service ${index % 2 === 0 ? "reverse" : ""}`}>
@@ -80,11 +77,8 @@ const ERPDevelopment = () => {
           </div>
         ))}
       </section>
-
-      {/* FAQ Section */}
       <section className="faq-section">
         <h2><FaQuestionCircle className="faq-icon" /> Frequently Asked Questions</h2>
-        {/* Sample FAQs */}
         <details className="faq-item">
           <summary>What is ERP implementation?</summary>
           <p>ERP implementation is the process of installing and configuring ERP software to integrate various business processes, such as accounting, inventory management, and human resources, into a unified system.</p>
@@ -98,8 +92,6 @@ const ERPDevelopment = () => {
           <p>ERP integration involves connecting your ERP system with other business tools, such as CRM or accounting software, to ensure seamless data flow and avoid duplicating efforts.</p>
         </details>
       </section>
-
-      {/* Contact Section */}
       <section className="contact-cta">
         <h2>Ready to Upgrade Your Business with ERP?</h2>
         <p>Our ERP solutions are designed to enhance your business operations, improve data accuracy, and streamline workflows. Let us help you transform your business!</p>

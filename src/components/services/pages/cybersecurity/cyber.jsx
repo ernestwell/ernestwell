@@ -1,9 +1,9 @@
 import React from "react";
 import { FaQuestionCircle } from "react-icons/fa";
 import "./cyber.css";
-import image1 from "./cyberimages/image1.png"; // Replace with actual images
-import image2 from "./cyberimages/image2.png"; // Replace with actual images
-import image3 from "./cyberimages/image3.png"; // Replace with actual images
+import image1 from "./cyberimages/image1.png"; 
+import image2 from "./cyberimages/image2.png"; 
+import image3 from "./cyberimages/image3.png"; 
 
 const cybersecurityServices = [
   {
@@ -44,15 +44,12 @@ const cybersecurityServices = [
 const CybersecuritySolutions = () => {
   return (
     <div className="cybersecurity-container">
-      {/* Header */}
       <header className="cybersecurity-header">
         <h1>Enhance Your Security with Expert Cybersecurity Solutions</h1>
         <p>
           Protect your systems, data, and infrastructure with our comprehensive cybersecurity services. From securing client systems against hacking to custom firewalls, compliance checks, and more, we have the expertise to safeguard your business.
         </p>
       </header>
-
-      {/* Cybersecurity Services Section */}
       <section className="cybersecurity-services">
         {cybersecurityServices.map((service, index) => (
           <div key={service.id} className={`cybersecurity-service ${index % 2 === 0 ? "reverse" : ""}`}>
@@ -67,8 +64,6 @@ const CybersecuritySolutions = () => {
           </div>
         ))}
       </section>
-
-      {/* FAQ Section */}
       <section className="faq-section">
         <h2>
           <FaQuestionCircle className="faq-icon" /> Frequently Asked Questions
@@ -92,8 +87,6 @@ const CybersecuritySolutions = () => {
           </p>
         </details>
       </section>
-
-      {/* Contact Section */}
       <section className="contact-cta">
         <h2>Ready to Secure Your Business?</h2>
         <p>

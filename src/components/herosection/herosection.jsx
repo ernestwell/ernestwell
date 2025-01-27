@@ -23,7 +23,7 @@ const HeroSection = () => {
         setTimeout(() => {
           setCharIndex(0);
           setSentenceIndex((prev) => (prev + 1) % sentences.length);
-        }, 2000); // Pause before switching sentences
+        }, 2000); 
       }
     }, 100);
 

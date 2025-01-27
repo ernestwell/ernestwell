@@ -63,13 +63,11 @@ const services = [
 const WebDevelopment = () => {
   return (
     <div className="webdev-container">
-      {/* Header */}
       <header className="webdev-header">
         <h1>Expert Web Development Services</h1>
         <p>Build your digital presence with high-quality, custom-built web solutions.</p>
       </header>
 
-      {/* Services Section */}
       <section className="webdev-services">
         {services.map((service, index) => (
           <div key={service.id} className={`webdev-service ${index % 2 === 0 ? "reverse" : ""}`}>
@@ -86,10 +84,9 @@ const WebDevelopment = () => {
         ))}
       </section>
 
-      {/* FAQ Section */}
       <section className="faq-section">
         <h2><FaQuestionCircle className="faq-icon" /> Frequently Asked Questions</h2>
-        {/* Sample FAQs */}
+
         <details className="faq-item">
           <summary>Which type of website is best for my business?</summary>
           <p>If you need a simple presence, a static website is sufficient. If you require real-time updates, go for a dynamic website. E-commerce is for selling online, and custom web apps fit specialized needs.</p>
@@ -103,8 +100,6 @@ const WebDevelopment = () => {
           <p>Yes! We provide regular updates, security monitoring, and performance optimizations to ensure your website runs smoothly.</p>
         </details>
       </section>
-
-      {/* Contact Section */}
       <section className="contact-cta">
         <h2>Let's Build Your Website</h2>
         <p>Whether it's a business website, online store, or custom solution, we’ve got you covered.</p>

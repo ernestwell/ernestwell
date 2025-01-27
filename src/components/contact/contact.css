@@ -162,7 +162,7 @@
   letter-spacing: 1px;
   text-transform: uppercase;
   box-shadow: 0 4px 10px rgba(46, 80, 119, 0.1);
-  margin: 0 auto;  /* This will center the button horizontally */
+  margin: 0 auto;  
 }
 .submit-btn:hover {
   background: #1e3c5a;
@@ -247,29 +247,29 @@
   }
 
   .contact-form {
-      max-width: 90%; /* Reduce width for smaller screens */
+      max-width: 90%; 
       margin-left: auto;
       margin-right: auto;
   }
 
   .input-group input,
   .input-group textarea {
-      width: 100%; /* Make inputs fill available space */
+      width: 100%;
   }
 
   .submit-btn {
-      width: 100%; /* Ensure button fills available space */
+      width: 100%; 
       padding: 15px;
   }
 }
 
 @media (max-width: 768px) {
   .contact-left h1 {
-      font-size: 35px; /* Slightly reduce header font size */
+      font-size: 35px; 
   }
 
   .contact-right {
-      padding: 30px; /* Adjust padding for mobile */
+      padding: 30px; 
   }
 
   .contact-form {
@@ -284,7 +284,7 @@
   }
 
   .submit-btn {
-      width: 100%; /* Full-width button */
+      width: 100%; 
       padding: 15px;
   }
   .contact-image{
@@ -294,38 +294,38 @@
 
 @media (max-width: 480px) {
   .contact-left {
-      padding: 20px; /* More padding for small screens */
+      padding: 20px; 
   }
 
   .contact-right {
-      padding: 20px; /* Adjust for mobile view */
+      padding: 20px; 
   }
 
   .contact-form {
-      max-width: 100%; /* Make form full width on very small screens */
+      max-width: 100%; 
   }
 
   .contact-left h1 {
-      font-size: 30px; /* Adjust text size */
+      font-size: 30px; 
   }
 
   .contact-right h2 {
-      font-size: 28px; /* Adjust header size for mobile */
+      font-size: 28px;
   }
 
   .submit-btn {
       padding: 15px;
-      font-size: 14px; /* Increase button font size for readability */
+      font-size: 14px; 
   }
 
   .input-group input,
   .input-group textarea {
-      width: 100%; /* Ensure inputs take full width */
+      width: 100%; 
       padding: 12px;
   }
 
   .contact-image {
       margin-left: 0;
-      margin-bottom: 20px; /* Adjust image margins */
+      margin-bottom: 20px; 
   }
 }

@@ -14,7 +14,6 @@ const ContactForm = () => {
 
   return (
     <div className="contact-container">
-      {/* Left Section */}
       <div className="contact-left">
         <div className="content-wrapper">
           <h1 className="fade-in">Get in Touch</h1>
@@ -28,8 +27,6 @@ const ContactForm = () => {
           </div>
         </div>
       </div>
-
-      {/* Right Section */}
       <div className="contact-right slide-in">
         <h2>Contact Us</h2>
         <form className="contact-form">

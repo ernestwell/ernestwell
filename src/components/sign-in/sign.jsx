@@ -86,7 +86,7 @@ const SignInSignUp = () => {
               Sign up
             </button>
           </div>
-          {/* <img src={logImage} className="image" alt="" /> */}
+
         </div>
         <div className="panel right-panel">
           <div className="content-s">
@@ -100,7 +100,6 @@ const SignInSignUp = () => {
               Sign in
             </button>
           </div>
-          {/* <img src={registerImage} className="image" alt="" /> */}
         </div>
       </div>
     </div>

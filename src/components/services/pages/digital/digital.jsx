@@ -60,13 +60,10 @@ const services = [
 const DigitalMarketingSolutions = () => {
   return (
     <div className="digital-marketing-container">
-      {/* Header */}
       <header className="mobiledev-header">
         <h1>Digital Marketing Solutions to Grow Your Business</h1>
         <p>Enhance your online presence with tailored strategies in SEO, social media, email marketing, branding, and content management.</p>
       </header>
-
-      {/* Services Section */}
       <section className="mobiledev-container">
         <div className="mobiledev-services">
           {services.map((service, index) => (
@@ -84,10 +81,8 @@ const DigitalMarketingSolutions = () => {
         </div>
       </section>
 
-      {/* FAQ Section */}
       <section className="faq-section">
         <h2><FaQuestionCircle className="faq-icon" /> Frequently Asked Questions</h2>
-        {/* Sample FAQs */}
         <details className="faq-item">
           <summary>Which digital marketing service is right for my business?</summary>
           <p>It depends on your business needs. SEO is great for long-term visibility, social media can help you engage directly with your audience, email marketing is effective for lead nurturing, branding establishes your company’s identity, and content management keeps your audience engaged consistently.</p>
@@ -101,8 +96,6 @@ const DigitalMarketingSolutions = () => {
           <p>Absolutely! We offer ongoing support for all our services, including regular updates, performance analysis, and adjustments to strategies to ensure continuous growth.</p>
         </details>
       </section>
-
-      {/* Contact Section */}
       <section className="contact-cta">
         <h2>Ready to Take Your Digital Marketing to the Next Level?</h2>
         <p>From SEO and social media to email marketing and branding, we offer complete digital marketing solutions tailored to your business needs.</p>

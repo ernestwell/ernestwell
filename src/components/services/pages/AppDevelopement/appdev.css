@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap');
 
-/* General Styles */
+
 body {
   font-family: 'Josefin Sans', sans-serif, "Poppins", sans-serif;
   background: #f4f4f4;
@@ -9,7 +9,7 @@ body {
   padding-top: 20px;
 }
 
-/* Header */
+
 .mobiledev-header {
   text-align: center;
   padding: 30px 20px;
@@ -31,7 +31,7 @@ body {
   font-size: 1.1rem;
 }
 
-/* Mobile Development Service Section */
+
 .mobiledev-container {
   font-family: 'Josefin Sans', sans-serif;
   color: #2e5077;
@@ -62,7 +62,6 @@ body {
   flex-direction: row-reverse;
 }
 
-/* Service Icon and Title */
 .service-icon-container {
   display: flex;
   align-items: center;
@@ -123,7 +122,7 @@ body {
   background-color: #4a6e9e;
 }
 
-/* FAQ Section */
+
 .faq-section {
   margin-top: 60px;
   background: #2e5077;
@@ -160,7 +159,7 @@ body {
   font-size: 16px;
 }
 
-/* Contact CTA Section */
+
 .contact-cta {
   text-align: center;
   padding: 30px 20px;

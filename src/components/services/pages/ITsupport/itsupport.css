@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap');
 
-/* General Styles */
+
 body {
   font-family: 'Josefin Sans', sans-serif, "Poppins", sans-serif;
   background: #f4f4f4;
@@ -9,7 +9,7 @@ body {
   padding-top: 20px;
 }
 
-/* Header */
+
 .itsupport-header {
   text-align: center;
   padding: 30px 20px;
@@ -29,7 +29,6 @@ body {
   font-size: 1.1rem;
 }
 
-/* Container Section */
 .itsupport-container {
   color: #2e5077;
   padding: 0 20px;
@@ -117,7 +116,6 @@ body {
   background-color: #4a6e9e;
 }
 
-/* FAQ Section */
 .faq-section {
   margin-top: 60px;
   background: #2e5077;
@@ -149,7 +147,6 @@ body {
   font-size: 16px;
 }
 
-/* Contact CTA Section */
 .contact-cta {
   text-align: center;
   padding: 30px 20px;

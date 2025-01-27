@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./Chatbot.css";
-import botIcon from "./chatimage/robot.png"; // Ensure this path is correct
+import botIcon from "./chatimage/robot.png"; 
 
 const Chatbot = () => {
   const [messages, setMessages] = useState([
@@ -21,7 +21,6 @@ const Chatbot = () => {
     let botResponse = "";
     const lowerCaseInput = userInput.toLowerCase();
     
-    // Predefined responses
     if (lowerCaseInput.includes("it support")) {
       botResponse = "Our IT Support services offer 24/7 troubleshooting, network management, and hardware repair. How can I help you today?";
     } else if (lowerCaseInput.includes("cybersecurity")) {

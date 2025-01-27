@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import "./portfolio.css"; // Custom styles
+import "./portfolio.css"; 
 
 const projects = [
   { id: 1, title: "Project One", details: "Details about Project One" },
@@ -11,7 +11,6 @@ const projects = [
 const Portfolio = () => {
   return (
     <div className="portfolio-container">
-      {/* Left Side: Cards */}
       <div className="left">
         {projects.map((project, index) => (
           <motion.div
@@ -32,8 +31,6 @@ const Portfolio = () => {
           </motion.div>
         ))}
       </div>
-
-      {/* Right Side: Company Info */}
       <div className="right">
         <h1>Welcome to Ernestwell</h1>
         <p>Providing cutting-edge technical solutions to power your business.</p>

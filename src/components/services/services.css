@@ -110,7 +110,7 @@
   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
 }
 
-/* Media Queries */
+
 @media (max-width: 768px) {
   .services-list {
     display: flex;
@@ -215,7 +215,6 @@
   }
 }
 
-/* Media Query for 1024px */
 @media (max-width: 1024px) and (min-width: 992px) {
   .service-row {
     flex-direction: column !important;

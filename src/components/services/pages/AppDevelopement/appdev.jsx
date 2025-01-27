@@ -59,13 +59,11 @@ const services = [
 const MobileDevelopment = () => {
   return (
     <div className="mobiledev-container">
-      {/* Header */}
+
       <header className="mobiledev-header">
         <h1>Expert Mobile App Development Services</h1>
         <p>Transform your business with high-quality, custom mobile app solutions.</p>
       </header>
-
-      {/* Services Section */}
       <section className="mobiledev-services">
         {services.map((service, index) => (
           <div key={service.id} className={`mobiledev-service ${index % 2 === 0 ? "reverse" : ""}`}>
@@ -82,10 +80,9 @@ const MobileDevelopment = () => {
         ))}
       </section>
 
-      {/* FAQ Section */}
       <section className="faq-section">
         <h2><FaQuestionCircle className="faq-icon" /> Frequently Asked Questions</h2>
-        {/* Sample FAQs */}
+
         <details className="faq-item">
           <summary>Which type of mobile app is best for my business?</summary>
           <p>If you need a high-performance, platform-specific app, a native mobile app is the best. For broader reach and faster development, cross-platform apps are ideal.</p>
@@ -100,7 +97,7 @@ const MobileDevelopment = () => {
         </details>
       </section>
 
-      {/* Contact Section */}
+
       <section className="contact-cta">
         <h2>Ready to Build Your Mobile App?</h2>
         <p>From startups to established businesses, we offer custom mobile solutions that fit your needs.</p>

@@ -22,38 +22,37 @@
   color: #fff;
   border-radius: 12px 12px 0 0;
   font-family: 'Poppins', sans-serif;
-  justify-content: space-between; /* Align title and button at opposite ends */
+  justify-content: space-between; 
 }
 
 .chatbot-header h3 {
-  font-size: 0.9rem; /* Reduced size */
+  font-size: 0.9rem; 
   font-weight: 500;
   margin: 0;
-  text-transform: capitalize; /* Keeps it as 'Service Assistance' */
-  margin-left: 8px; /* Space between the icon and the text */
+  text-transform: capitalize; 
+  margin-left: 8px; 
 }
 
 .chatbot-icon {
-  width: 35px; /* Adjust the size of the icon */
+  width: 35px;
   height: 35px;
   filter: brightness(0) invert(1);
-   /* Adjust the size of the icon */
 }
 
 .chatbot-header .minimize-btn {
-  font-size: 1.5rem; /* Adjust size of the '-' symbol */
+  font-size: 1.5rem;
   cursor: pointer;
   color: #fff;
-  background: none; /* No background */
-  border: none; /* No border */
+  background: none; 
+  border: none; 
   transition: color 0.3s ease;
 }
 
 .chatbot-header .minimize-btn:hover {
-  color: #ddd; /* Color change on hover */
+  color: #ddd; 
 }
 
-/* Body Styles */
+
 .chatbot-body {
   flex: 1;
   padding: 15px;
@@ -63,7 +62,6 @@
   scrollbar-color: #ccc #f5f5f5;
 }
 
-/* Messages */
 .messages {
   display: flex;
   flex-direction: column;
@@ -94,7 +92,7 @@
   border-radius: 12px 12px 12px 0;
 }
 
-/* Typing Indicator */
+
 .typing-indicator span {
   width: 6px;
   height: 6px;
@@ -113,7 +111,7 @@
   40% { opacity: 1; }
 }
 
-/* Quick Replies */
+
 .quick-replies {
   display: flex;
   flex-wrap: wrap;
@@ -140,7 +138,7 @@
   transform: scale(1.05);
 }
 
-/* Footer Styles */
+
 .chatbot-footer {
   display: flex;
   padding: 10px;
@@ -180,7 +178,7 @@
   transform: translateY(-2px);
 }
 
-/* Bot Icon */
+
 .bot-icon {
   position: fixed;
   bottom: 20px;
@@ -202,7 +200,7 @@
   background: #007acc;
 }
 
-/* Dark Mode */
+
 .chatbot-container.dark {
   background: #1a1a1a;
 }
@@ -241,7 +239,6 @@
   color: #333;
 }
 
-/* Responsive Design */
 @media (max-width: 480px) {
   .chatbot-container {
     width: 92%;

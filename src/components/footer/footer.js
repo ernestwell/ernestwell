@@ -12,7 +12,6 @@ const Footer = () => {
   return (
     <footer className="footer" >
       <div className="footer-container">
-        {/* Company Section */}
         <div className="footer-section company">
           <div className="company-name-logo-1">
             <h3 id='name-c'>ERNESTWELL</h3>
@@ -39,7 +38,6 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* Quick Links Section */}
         <div className="footer-section quick-links">
           <h3>Quick Links</h3>
           <ul>
@@ -50,7 +48,6 @@ const Footer = () => {
           </ul>
         </div>
 
-        {/* Contact Section */}
         <div className="footer-section contact">
           <h3>Contact</h3>
           <div>
@@ -68,7 +65,6 @@ const Footer = () => {
         </div>
       </div>
 
-      {/* Copyright Statement */}
       <div className="copyright">
         &copy; 2025 Ernestwell. All Rights Reserved.
       </div>

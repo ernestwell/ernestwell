@@ -1,9 +1,9 @@
 import React from "react";
 import { FaQuestionCircle } from "react-icons/fa";
-import "./itsupport.css"; // Your custom CSS file
-import image1 from "./supportimages/image1.png"; // Image for Managed IT services
-import image2 from "./supportimages/image2.png"; // Image for Remote technical support
-import image3 from "./supportimages/image3.png"; // Image for System setup and maintenance
+import "./itsupport.css";
+import image1 from "./supportimages/image1.png"; 
+import image2 from "./supportimages/image2.png"; 
+import image3 from "./supportimages/image3.png"; 
 
 const services = [
   {
@@ -56,7 +56,6 @@ const services = [
 const ITSupport = () => {
   return (
     <div className="itsupport-container">
-      {/* Header */}
       <header className="itsupport-header">
         <h1>Comprehensive IT Support Solutions</h1>
         <p>
@@ -64,7 +63,6 @@ const ITSupport = () => {
         </p>
       </header>
 
-      {/* Services Section */}
       <section className="itsupport-services">
         {services.map((service, index) => (
           <div key={service.id} className={`itsupport-service ${index % 2 === 0 ? "reverse" : ""}`}>
@@ -80,7 +78,6 @@ const ITSupport = () => {
         ))}
       </section>
 
-      {/* FAQ Section */}
       <section className="faq-section">
         <h2>
           <FaQuestionCircle className="faq-icon" /> Frequently Asked Questions
@@ -104,8 +101,6 @@ const ITSupport = () => {
           </p>
         </details>
       </section>
-
-      {/* Contact Section */}
       <section className="contact-cta">
         <h2>Ready to Enhance Your IT Support?</h2>
         <p>

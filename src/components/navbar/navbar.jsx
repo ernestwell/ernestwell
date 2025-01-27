@@ -1,59 +1,8 @@
-
-// import React, { useState, useEffect } from "react";
-// import { Link } from "react-router-dom";
-// import { FaBars, FaTimes } from "react-icons/fa";
-// import "./navbar.css";
-// import logo from "./ernest logo.png"; // Ensure the logo image is placed in the correct directory
-
-// const Navbar = () => {
-//   const [menuOpen, setMenuOpen] = useState(false);
-//   const [scrolled, setScrolled] = useState(false);
-
-//   useEffect(() => {
-//     const handleScroll = () => {
-//       setScrolled(window.scrollY > 50);
-//     };
-//     window.addEventListener("scroll", handleScroll);
-//     return () => window.removeEventListener("scroll", handleScroll);
-//   }, []);
-
-//   return (
-//     <nav className={`navbar ${scrolled ? "scrolled" : ""}`}>
-//       <div className="navbar-container">
-        
-//         {/* Logo and Company Name (Moved to Left) */}
-//         <Link to="/" className="logo">
-//           <img src={logo} alt="Logo" className="logo-img" />
-//           <span className="company-name">ErnestWell</span>
-//         </Link>
-
-//         {/* Toggle Button */}
-//         <div className="menu-toggle" onClick={() => setMenuOpen(!menuOpen)}>
-//           {menuOpen ? <FaTimes /> : <FaBars />}
-//         </div>
-
-//         {/* Navbar Links */}
-//         <ul className={`nav-links ${menuOpen ? "open" : ""}`}>
-//           <li><Link to="/" className="nav-item nav-home">Home</Link></li>
-//           <li><Link to="/portfolio" className="nav-item">Portfolio</Link></li>
-//           <li><Link to="/services" className="nav-item nav-services">Services+</Link></li>
-//           <li><Link to="/careers" className="nav-item">Careers</Link></li>
-//           <li><Link to="/contact" className="nav-item contact">Contact</Link></li>
-//           <li><Link to="/signin" className="nav-item nav-signin">Sign In</Link></li>
-//         </ul>
-        
-//       </div>
-//     </nav>
-//   );
-// };
-
-// export default Navbar;
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { FaBars, FaTimes } from "react-icons/fa";
 import "./navbar.css";
 import logo from "./ernest logo.png";
- // Ensure the logo image is placed correctly
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -71,18 +20,15 @@ const Navbar = () => {
   return (
     <nav className={`navbar ${scrolled ? "scrolled" : ""}`}>
       <div className="navbar-container">
-        {/* Logo and Company Name */}
         <Link to="/" className="logo">
           <img src={logo} alt="Logo" className="logo-img" />
           <span className="company-name">ErnestWell</span>
         </Link>
 
-        {/* Toggle Button */}
         <div className="menu-toggle" onClick={() => setMenuOpen(!menuOpen)}>
           {menuOpen ? <FaTimes /> : <FaBars />}
         </div>
 
-        {/* Navbar Links */}
         <ul className={`nav-links ${menuOpen ? "open" : ""}`}>
           <li><Link to="/" className="nav-item nav-home">Home</Link></li>
           <li><Link to="/portfolio" className="nav-item">Portfolio</Link></li>

@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { Link } from "react-router-dom";  // Use Link from react-router-dom for routing
+import { Link } from "react-router-dom";  
 import "./services.css";
 import webDevImage from "./serviceimages/image1.png";
 import mobileDevImage from "./serviceimages/image2.png";
@@ -10,7 +10,7 @@ import cloudSolutionsImage from "./serviceimages/image6.png";
 import cybersecurityImage from "./serviceimages/image7.png";
 import itSupportImage from "./serviceimages/image8.png";
 
-// Service Data with correct routes for each service page
+
 const servicesData = [
   { title: "Web Development", description: "Build responsive, high-performing websites tailored to your needs.", image: webDevImage, link: "/web-development" },
   { title: "Mobile Apps Development", description: "Develop user-friendly mobile apps for iOS and Android platforms.", image: mobileDevImage, link: "/app-development" },
@@ -57,7 +57,6 @@ const Service = () => {
               <div className="service-content">
                 <h3 className="service-title">{service.title}</h3>
                 <p className="service-description">{service.description}</p>
-                {/* Link to the specific service page */}
                 <Link to={service.link} className="btn-primary">Know More</Link>
               </div>
             </div>

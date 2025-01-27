@@ -44,15 +44,13 @@ const services = [
 const CloudSolutions = () => {
   return (
     <div className="cloud-container">
-      {/* Header */}
+
       <header className="cloud-header">
         <h1>Transform Your Business with Expert Cloud Solutions</h1>
         <p>
           Unlock new opportunities for growth and efficiency with our comprehensive cloud services. From storage to tailored SaaS products, we provide the tools and expertise to elevate your business to the next level.
         </p>
       </header>
-
-      {/* Services Section */}
       <section className="cloud-services">
         {services.map((service, index) => (
           <div key={service.id} className={`cloud-service ${index % 2 === 0 ? "reverse" : ""}`}>
@@ -67,8 +65,6 @@ const CloudSolutions = () => {
           </div>
         ))}
       </section>
-
-      {/* FAQ Section */}
       <section className="faq-section">
         <h2>
           <FaQuestionCircle className="faq-icon" /> Frequently Asked Questions
@@ -92,8 +88,6 @@ const CloudSolutions = () => {
           </p>
         </details>
       </section>
-
-      {/* Contact Section */}
       <section className="contact-cta">
         <h2>Ready to Take Your Business to the Cloud?</h2>
         <p>

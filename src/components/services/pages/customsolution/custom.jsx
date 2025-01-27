@@ -68,7 +68,6 @@ const customServices = [
 const CustomSoftwareSolutions = () => {
   return (
     <div className="custom-software-container">
-      {/* Header */}
       <header className="custom-header">
         <h1>Custom Software Solutions for Your Business</h1>
         <p>
@@ -77,7 +76,6 @@ const CustomSoftwareSolutions = () => {
         </p>
       </header>
 
-      {/* Services Section */}
       <section className="custom-services">
         {customServices.map((service, index) => (
           <div
@@ -102,13 +100,10 @@ const CustomSoftwareSolutions = () => {
           </div>
         ))}
       </section>
-
-      {/* FAQ Section */}
       <section className="faq-section">
         <h2>
           <FaQuestionCircle className="faq-icon" /> Frequently Asked Questions
         </h2>
-        {/* Sample FAQs */}
         <details className="faq-item">
           <summary>Why choose custom software over off-the-shelf solutions?</summary>
           <p>
@@ -134,8 +129,6 @@ const CustomSoftwareSolutions = () => {
           </p>
         </details>
       </section>
-
-      {/* Contact Section */}
       <section className="contact-cta">
         <h2>Ready to Build Your Custom Solution?</h2>
         <p>

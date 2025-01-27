@@ -4,7 +4,7 @@
   font-family: 'Josefin Sans';
   background-color: #2e5077;
   color: white;
-  padding: 15px 0;  /* Reduced padding */
+  padding: 15px 0;  
   font-size: 14px;
   text-align: center;
   position: relative;
@@ -25,7 +25,7 @@
   flex: 1;
   margin-right: 20px;
   padding: 0 10px;
-  min-height: 180px;  /* Reduced min-height */
+  min-height: 180px;  
 }
 
 .footer-section:last-child {
@@ -38,18 +38,18 @@
 }
 .company-name-logo-1 {
   display: flex;
-  align-items: center;  /* Vertically center the logo and text */
+  align-items: center; 
   justify-content: start;
   margin-left: 65px;
   margin-top: 3px;
 }
 
 .logo-foot {
-  width: 50px;  /* Adjust the size of the logo */
-  height: 50px;  /* Make sure the height and width are equal for a perfect circle */
-  border-radius: 50%;  /* This makes the image rounded */
+  width: 50px;  
+  height: 50px;  
+  border-radius: 50%;  
   margin-right: 15px; 
-  margin-left: 10px; /* Add some space between the logo and the text */
+  margin-left: 10px;
 }
 
 .company-name-1 {
@@ -59,7 +59,7 @@
 }
 
 footer p {
-  margin-top: 5px;  /* Reduced margin */
+  margin-top: 5px;  
   font-size: 17px;
   color:white;
 }
@@ -140,7 +140,7 @@ footer p {
 
 .email-form {
   color: black;
-  margin-top: 20px;  /* Reduced margin-top */
+  margin-top: 20px;  
   position: relative;
   display: flex;
   align-items: center;
@@ -174,7 +174,7 @@ footer p {
 .footer-social-2 {
   display: flex;
   gap: 20px;
-  margin-top: 15px;  /* Reduced margin-top */
+  margin-top: 15px;  
 }
 
 .footer-social-2 a {
@@ -200,67 +200,63 @@ footer p {
 }
 
 @media (max-width: 768px) {
-  /* Make the footer container stack vertically on small screens */
   .footer-container {
     flex-direction: column;
     text-align: center;
-    padding: 10px; /* Reduced padding */
+    padding: 10px; 
   }
 
-  /* Adjust footer sections to stack vertically */
   .footer-section {
     margin-bottom: 20px;
     padding: 0;
-    min-height: auto;  /* Remove the fixed min-height */
+    min-height: auto;  
     text-align: center;
   }
 
-  /* Company logo and name alignment */
   .company-name-logo {
-    justify-content: center; /* Center the logo and name */
+    justify-content: center; 
     margin-left: 0;
     text-align:center
   }
 
   .logo-foot {
-    width: 60px;  /* Adjust logo size for mobile */
+    width: 60px;  
     height: 60px;
     margin-right: 10px; 
-    margin-left: 0; /* Remove margin left */
+    margin-left: 0; 
   }
 
   .company-name {
-    font-size: 20px;  /* Adjust font size for mobile */
+    font-size: 20px; 
   }
 
-  /* Footer text */
   footer p {
-    font-size: 14px; /* Smaller font size for mobile */
+    font-size: 14px; 
   }
 
-  /* Email form adjustments */
+  
   .email-form {
-    flex-direction: column; /* Stack form elements vertically */
+    flex-direction: column; 
     align-items: center;
-    margin-left: 0; /* Center align the form */
+    margin-left: 0; 
   }
 
   .email-form input {
-    width: 80%;  /* Make input fields responsive */
+    width: 80%;  
     margin-right: 0;
-    margin-bottom: 10px;  /* Add space below input */
+    margin-bottom: 10px; 
   }
 
   .paperplane-icon {
     position: static;
-    margin-top: 10px; /* Adjust for mobile */
+    margin-top: 10px;
   }
 
-  /* Social icons stacking and alignment */
+
   .footer-social-2 {
     gap: 15px;
     margin-top: 10px;
-    flex-wrap: wrap;  /* Allow social icons to wrap */
+    flex-wrap: wrap;  
     justify-content: center;
   }
 
@@ -269,9 +265,8 @@ footer p {
     height: 40px;
   }
 
-  /* Copyright text */
   .footer .copyright {
-    font-size: 10px; /* Smaller font size for mobile */
+    font-size: 10px; 
     padding: 5px 0; 
   }
 }
