@@ -269,6 +269,116 @@
 // };
 
 // export default Service;
+// import React, { useState } from "react";
+// import "./services.css";
+// import webDevImage from "./serviceimages/web.svg";
+// import mobileDevImage from "./serviceimages/mobile.svg";
+// import erpImage from "./serviceimages/erp.svg";
+// import customSoftwareImage from "./serviceimages/custom.svg";
+// import digitalMarketingImage from "./serviceimages/digital.svg";
+// import cloudSolutionsImage from "./serviceimages/cloud.svg";
+// import cybersecurityImage from "./serviceimages/security.svg";
+// import itSupportImage from "./serviceimages/it.svg";
+
+// const servicesData = [
+//   {
+//     title: "Web Development",
+//     description: "Build responsive, high-performing websites tailored to your needs.",
+//     image: webDevImage,
+//     className: "web-development-card",
+//   },
+//   {
+//     title: "Apps Development",
+//     description: "Develop user-friendly mobile apps for iOS and Android platforms.",
+//     image: mobileDevImage,
+//     className: "apps-development-card",
+//   },
+//   {
+//     title: "ERP Solutions",
+//     description: "Optimize business operations with our ERP system integrations.",
+//     image: erpImage,
+//     className: "erp-solutions-card",
+//   },
+//   {
+//     title: "Custom Software",
+//     description: "Create custom software solutions to meet specific business needs.",
+//     image: customSoftwareImage,
+//     className: "custom-software-card",
+//   },
+//   {
+//     className: "exclusive-service-card", 
+//   },
+//   {
+//     title: "IT Support",
+//     description: "Reliable IT support to keep your systems up and running smoothly.",
+//     image: itSupportImage,
+//     className: "it-support-card",
+//   },
+//   {
+//     title: "Cloud Solutions",
+//     description: "Secure and scalable cloud solutions to manage your data and applications.",
+//     image: cloudSolutionsImage,
+//     className: "cloud-solutions-card",
+//   },
+//   {
+//     title: "Cybersecurity",
+//     description: "Protect your business from cyber threats with robust security measures.",
+//     image: cybersecurityImage,
+//     className: "cybersecurity-card",
+//   },
+//   {
+//     title: "Digital Marketing",
+//     description:"Reach your audience effectively through digital marketing strategies.",
+//     image: digitalMarketingImage,
+//     className: "digital-marketing-card",
+//   },
+// ];
+
+// const Service = () => {
+//   const [expandedCard, setExpandedCard] = useState(null);
+
+//   const toggleCard = (index) => {
+//     setExpandedCard(expandedCard === index ? null : index);
+//   };
+
+//   return (
+//     <section id="services" className="services">
+//       <div className="container">
+//         <h2 className="section-title">Our Services</h2>
+//         <div className="services-list">
+//           {servicesData.map((service, index) => (
+//             <div
+//               key={index}
+//               className={`service-card ${service.className} ${expandedCard === index ? "expanded" : ""}`}
+//               style={{
+//                 backgroundColor: service.className === "exclusive-service-card" ? "rgba(46, 80, 119, 0.1)" : "",
+//               }}
+//               onClick={() => toggleCard(index)}
+//             >
+//               {service.image && (
+//                 <div className="service-image">
+//                   <img src={service.image} alt={service.title} />
+//                 </div>
+//               )}
+//               <div className="service-content">
+//                 {service.title && <h3 className="service-title-2">{service.title}</h3>}
+//                 {service.description && <p className="service-description">{service.description}</p>}
+//                 {service.title && (
+//                   <button className="learn-more-btn">
+//                     Learn More
+//                     <span className="arrow">→</span>
+//                   </button>
+//                 )}
+//               </div>
+//             </div>
+//           ))}
+//         </div>
+//       </div>
+//     </section>
+//   );
+// };
+
+// export default Service;
 import React, { useState } from "react";
 import "./services.css";
 import webDevImage from "./serviceimages/web.svg";
@@ -286,51 +396,59 @@ const servicesData = [
     description: "Build responsive, high-performing websites tailored to your needs.",
     image: webDevImage,
     className: "web-development-card",
+    link: "/web-development",
   },
   {
     title: "Apps Development",
     description: "Develop user-friendly mobile apps for iOS and Android platforms.",
     image: mobileDevImage,
     className: "apps-development-card",
+    link: "/app-development",
   },
   {
     title: "ERP Solutions",
     description: "Optimize business operations with our ERP system integrations.",
     image: erpImage,
     className: "erp-solutions-card",
+    link: "/erp-development",
   },
   {
     title: "Custom Software",
     description: "Create custom software solutions to meet specific business needs.",
     image: customSoftwareImage,
     className: "custom-software-card",
+    link: "/custom-development",
   },
   {
-    className: "exclusive-service-card", 
+    className: "exclusive-service-card",
   },
   {
     title: "IT Support",
     description: "Reliable IT support to keep your systems up and running smoothly.",
     image: itSupportImage,
     className: "it-support-card",
+    link: "/ITsupport",
   },
   {
     title: "Cloud Solutions",
     description: "Secure and scalable cloud solutions to manage your data and applications.",
     image: cloudSolutionsImage,
     className: "cloud-solutions-card",
+    link: "/cloudsolutions",
   },
   {
     title: "Cybersecurity",
     description: "Protect your business from cyber threats with robust security measures.",
     image: cybersecurityImage,
     className: "cybersecurity-card",
+    link: "/CybersecuritySolutions",
   },
   {
     title: "Digital Marketing",
-    description:"Reach your audience effectively through digital marketing strategies.",
+    description: "Reach your audience effectively through digital marketing strategies.",
     image: digitalMarketingImage,
     className: "digital-marketing-card",
+    link: "/digitalmarketing",
   },
 ];
 
@@ -351,7 +469,8 @@ const Service = () => {
               key={index}
               className={`service-card ${service.className} ${expandedCard === index ? "expanded" : ""}`}
               style={{
-                backgroundColor: service.className === "exclusive-service-card" ? "rgba(46, 80, 119, 0.1)" : "",
+                backgroundColor:
+                  service.className === "exclusive-service-card" ? "rgba(46, 80, 119, 0.1)" : "",
               }}
               onClick={() => toggleCard(index)}
             >
@@ -363,11 +482,11 @@ const Service = () => {
               <div className="service-content">
                 {service.title && <h3 className="service-title-2">{service.title}</h3>}
                 {service.description && <p className="service-description">{service.description}</p>}
-                {service.title && (
-                  <button className="learn-more-btn">
+                {service.title && service.link && (
+                  <a href={service.link} className="learn-more-btn">
                     Learn More
                     <span className="arrow">→</span>
-                  </button>
+                  </a>
                 )}
               </div>
             </div>
@@ -379,7 +498,3 @@ const Service = () => {
 };
 
 export default Service;
-
-
-
-

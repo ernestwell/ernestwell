@@ -550,12 +550,12 @@ body {
 }
 @media (min-width: 1024px) and (max-width: 1900px) {
   .service-image {
-    margin: 20px 0px;
+    margin: 15px 0px;
     height: 180px;
     object-fit: cover;
     width: 95%;
     border-top-left-radius: 0px;
-    border-bottom-right-radius: 15px;
+    border-bottom-right-radius: 12px;
   }
 
   .services-list {
@@ -566,6 +566,9 @@ body {
     padding: 0 20px;
     max-width: 90%;
     margin: 0 auto; 
+  }
+  .service-title-2 {
+    font-size: 25px;
   }
 }
 
