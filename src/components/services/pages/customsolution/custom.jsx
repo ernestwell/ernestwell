@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   FaTools,
   FaLaptopCode,
@@ -23,11 +23,7 @@ const customServices = [
       - **Seamless Integration:** Connect with your existing tools like CRM or ERP.
       - **Custom Workflows:** Tailor automation to your business needs.`,
     image: workflowImage,
-    buttons: (
-      <div className="service-buttons">
-        <button className="primary-btn">See Demo</button>
-      </div>
-    ),
+    
   },
   {
     id: 2,
@@ -39,12 +35,7 @@ const customServices = [
       - **Performance Analysis:** Identify top performers and improvement areas.
       - **Time Management:** Track working hours, breaks, and idle time.
       - **Data Security:** Prevent breaches with detailed access logs.`,
-    image: monitoringImage,
-    buttons: (
-      <div className="service-buttons">
-        <button className="primary-btn">See Demo</button>
-      </div>
-    ),
+    image: monitoringImage
   },
   {
     id: 3,
@@ -57,15 +48,36 @@ const customServices = [
       - **Multi-Channel Integration:** Sync bookings with calendars and CRM tools.
       - **Analytics:** Gain insights into peak times and customer preferences.`,
     image: schedulingImage,
-    buttons: (
-      <div className="service-buttons">
-        <button className="primary-btn">See Demo</button>
-      </div>
-    ),
   },
 ];
 
 const CustomSoftwareSolutions = () => {
+  const [showForm, setShowForm] = useState(false);
+    const [selectedService, setSelectedService] = useState(null);
+    const [showPopup, setShowPopup] = useState(false);
+    const [scheduleMeeting, setScheduleMeeting] = useState(false);
+  
+    const handleShowForm = (service) => {
+      setSelectedService(service);
+      setShowForm(true);
+    };
+  
+    const handleCloseForm = () => {
+      setShowForm(false);
+      setSelectedService(null);
+      setScheduleMeeting(false);
+    };
+  
+    const handleFormSubmit = (event) => {
+      event.preventDefault();
+      handleCloseForm(); // Close form after submission
+      setShowPopup(true); // Show popup after form submission
+    };
+  
+    const handlePopupClose = () => {
+      setShowPopup(false); // Manually close the popup when user clicks "Close"
+    };
+  
   return (
     <div className="custom-software-container">
       <header className="custom-header">
@@ -95,11 +107,82 @@ const CustomSoftwareSolutions = () => {
                 <h3>Key Features:</h3>
                 <p>{service.details}</p>
               </div>
-              {service.buttons}
+              <button className="primary-btn" onClick={() => handleShowForm(service)}>See Demo</button>
             </div>
           </div>
         ))}
       </section>
+      {showForm && (
+        <div className="demo-form-container">
+          <h2>Request a Demo for {selectedService.title}</h2>
+          <form className="demo-form" onSubmit={handleFormSubmit}>
+            <div className="form-group">
+              <label htmlFor="name">Your Name</label>
+              <input type="text" id="name" placeholder="Enter your name" required />
+            </div>
+            <div className="form-group">
+              <label htmlFor="email">Your Email</label>
+              <input type="email" id="email" placeholder="Enter your email" required />
+            </div>
+            {/* <div className="form-group">
+              <label htmlFor="message">Your Message</label>
+              <textarea id="message" rows="4" placeholder="Enter your message"></textarea>
+            </div> */}
+
+            {/* Schedule Meeting Option */}
+            <div className="form-group" style={{ display: "flex", alignItems: "center" }}>
+              <input 
+                type="checkbox" 
+                id="scheduleMeeting" 
+                checked={scheduleMeeting} 
+                onChange={() => setScheduleMeeting(!scheduleMeeting)} 
+                style={{ marginRight: "10px",marginTop:"0px" }} // Adds spacing between checkbox and label
+              />
+              <label htmlFor="scheduleMeeting">I want to schedule a meeting</label>
+            </div>
+
+            {scheduleMeeting && (
+                  <div 
+                    className="form-group centered" 
+                    style={{
+                      display: "flex", 
+                      flexDirection: "column", 
+                      alignItems: "center", 
+                      justifyContent: "center", 
+                      height: "10vh"
+                    }}
+                  >
+                    <label htmlFor="meetingDate">Select a Date & Time</label>
+                    <input 
+                      type="datetime-local" 
+                      id="meetingDate" 
+                      name="meetingDate" 
+                      required 
+                      style={{ marginTop: "10px" }} // Adds space between label and input
+                    />
+                  </div>
+            )}
+
+
+            <div className="form-buttons">
+              <button type="submit" className="primary-btn">Submit Request</button>
+              <button type="button" className="secondary-btn" onClick={handleCloseForm}>Close</button>
+            </div>
+          </form>
+        </div>
+      )}
+
+      {/* Success Popup with Manual Close */}
+      {showPopup && (
+        <div className="popup-overlay">
+          <div className="popup">
+            <p>✅ Thank you! Your request has been received. We will get back to you soon.</p>
+            <button onClick={handlePopupClose} className="primary-btn">
+              Close
+            </button>
+          </div>
+        </div>
+      )}
       <section className="faq-section">
         <h2>
           <FaQuestionCircle className="faq-icon" /> Frequently Asked Questions

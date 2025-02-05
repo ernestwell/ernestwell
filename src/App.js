@@ -16,6 +16,8 @@ import CybersecuritySolutions from "./components/services/pages/cybersecurity/cy
 import ITSupport from "./components/services/pages/ITsupport/itsupport";
 import SignIn from "./components/sign-in/sign"
 import WeWorkForSec from "./components/weworkfor/wework"
+import Profile from "./components/profile/profile";
+
 function App() {
   // useEffect(() => {
   //   // Disable right-click functionality on the page for text, images, etc.
@@ -74,6 +76,7 @@ function App() {
           }
         />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/profile" element={<Profile />} />
         <Route path="/web-development" element={<WebDevelopment />} />
         <Route path="/app-development" element={<MobileAppDevelopment />} />
         <Route path="/erp-development" element={<ERPDevelopment />} />

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { 
   FaLaptopCode, FaShoppingCart, FaDatabase, FaTools, 
   FaQuestionCircle
@@ -15,36 +15,21 @@ const services = [
     // icon: <FaLaptopCode className="service-icon" />,
     title: "Static Websites",
     description: "Static websites offer a streamlined, high-performance solution for businesses looking to establish a professional online presence without the need for complex backend processes. These websites are designed to be fast, secure, and easy to maintain, as they are powered by fixed content that does not rely on a database. Ideal for businesses that want to showcase portfolios, company profiles, or promotional landing pages, static websites ensure a seamless user experience across devices with responsive layouts and mobile optimization. The focus is on fast loading times, a strong SEO foundation, and providing an elegant yet simple browsing experience. Services include personalized design, mobile responsiveness, SEO-friendly architecture, and reliable hosting solutions.",
-    image: image1,
-    buttons: (
-      <div className="service-buttons">
-        <button className="primary-btn">See Demo</button>
-      </div>
-    ),
+    image: image1
   },
   {
     id: 2,
     // icon: <FaDatabase className="service-icon" />,
     title: "Dynamic Websites",
     description: "Dynamic websites are built to cater to businesses that need real-time content updates and enhanced interactivity with their audience. These websites integrate dynamic features such as content management systems (CMS), user authentication, and personalized user experiences through database-driven content. Ideal for blogs, news platforms, and business portals, dynamic websites are built to handle frequent content updates, provide complex functionality, and engage users with tailored experiences. Our dynamic solutions ensure easy management, enhanced user experience, and scalability for future growth. The service includes content management tools, customized themes, SEO-optimized architecture, and user-friendly dashboards.",
-    image: image2,
-    buttons: (
-      <div className="service-buttons">
-        <button className="primary-btn">See Demo</button>
-      </div>
-    ),
+    image: image2
   },
   {
     id: 3,
     // icon: <FaShoppingCart className="service-icon" />,
     title: "E-commerce Platforms",
     description: "We specialize in building secure, high-performance e-commerce platforms that drive sales and provide a seamless shopping experience. Our services include secure payment gateways, user-friendly product catalogs, shopping cart functionality, and mobile-optimized designs. From start-ups to well-established businesses, we create custom-tailored e-commerce solutions that are optimized for fast loading, high scalability, and top-notch security. Your customers will enjoy a smooth shopping experience with easy navigation, safe payments, and a variety of payment options. Additionally, we provide features like product recommendation engines, inventory management, and real-time order tracking.",
-    image: image3,
-    buttons: (
-      <div className="service-buttons">
-        <button className="primary-btn">See Demo</button>
-      </div>
-    ),
+    image: image3
   },
   {
     id: 4,
@@ -52,15 +37,35 @@ const services = [
     title: "Custom Web Applications",
     description: "Our custom web applications are built to address specific business needs, from CRM systems to booking platforms and automation tools. These applications are designed with scalability, security, and seamless integrations in mind. Whether you're looking to automate tasks, improve business processes, or offer a unique user experience, we provide tailored solutions that drive efficiency. Our services include advanced security protocols, real-time data processing, third-party service integration, and responsive user interfaces across all devices. We ensure your web application is reliable, intuitive, and easy to maintain.",
     image: image4,
-    buttons: (
-      <div className="service-buttons">
-        <button className="primary-btn">See Demo</button>
-      </div>
-    ),
   },
 ];
 
 const WebDevelopment = () => {
+  const [showForm, setShowForm] = useState(false);
+      const [selectedService, setSelectedService] = useState(null);
+      const [showPopup, setShowPopup] = useState(false);
+      const [scheduleMeeting, setScheduleMeeting] = useState(false);
+    
+      const handleShowForm = (service) => {
+        setSelectedService(service);
+        setShowForm(true);
+      };
+    
+      const handleCloseForm = () => {
+        setShowForm(false);
+        setSelectedService(null);
+        setScheduleMeeting(false);
+      };
+    
+      const handleFormSubmit = (event) => {
+        event.preventDefault();
+        handleCloseForm(); // Close form after submission
+        setShowPopup(true); // Show popup after form submission
+      };
+    
+      const handlePopupClose = () => {
+        setShowPopup(false); // Manually close the popup when user clicks "Close"
+      };
   return (
     <div className="webdev-container">
       <header className="webdev-header">
@@ -78,12 +83,82 @@ const WebDevelopment = () => {
               <div className="service-icon-container">{service.icon}</div>
               <h2>{service.title}</h2>
               <p>{service.description}</p>
-              {service.buttons}
+              <button className="primary-btn" onClick={() => handleShowForm(service)}>See Demo</button>
             </div>
           </div>
         ))}
       </section>
+      {showForm && (
+        <div className="demo-form-container">
+          <h2>Request a Demo for {selectedService.title}</h2>
+          <form className="demo-form" onSubmit={handleFormSubmit}>
+            <div className="form-group">
+              <label htmlFor="name">Your Name</label>
+              <input type="text" id="name" placeholder="Enter your name" required />
+            </div>
+            <div className="form-group">
+              <label htmlFor="email">Your Email</label>
+              <input type="email" id="email" placeholder="Enter your email" required />
+            </div>
+            {/* <div className="form-group">
+              <label htmlFor="message">Your Message</label>
+              <textarea id="message" rows="4" placeholder="Enter your message"></textarea>
+            </div> */}
 
+            {/* Schedule Meeting Option */}
+            <div className="form-group" style={{ display: "flex", alignItems: "center" }}>
+              <input 
+                type="checkbox" 
+                id="scheduleMeeting" 
+                checked={scheduleMeeting} 
+                onChange={() => setScheduleMeeting(!scheduleMeeting)} 
+                style={{ marginRight: "10px",marginTop:"0px" }} // Adds spacing between checkbox and label
+              />
+              <label htmlFor="scheduleMeeting">I want to schedule a meeting</label>
+            </div>
+
+            {scheduleMeeting && (
+                  <div 
+                    className="form-group centered" 
+                    style={{
+                      display: "flex", 
+                      flexDirection: "column", 
+                      alignItems: "center", 
+                      justifyContent: "center", 
+                      height: "10vh"
+                    }}
+                  >
+                    <label htmlFor="meetingDate">Select a Date & Time</label>
+                    <input 
+                      type="datetime-local" 
+                      id="meetingDate" 
+                      name="meetingDate" 
+                      required 
+                      style={{ marginTop: "10px" }} // Adds space between label and input
+                    />
+                  </div>
+            )}
+
+
+            <div className="form-buttons">
+              <button type="submit" className="primary-btn">Submit Request</button>
+              <button type="button" className="secondary-btn" onClick={handleCloseForm}>Close</button>
+            </div>
+          </form>
+        </div>
+      )}
+
+      {/* Success Popup with Manual Close */}
+      {showPopup && (
+        <div className="popup-overlay">
+          <div className="popup">
+            <p>✅ Thank you! Your request has been received. We will get back to you soon.</p>
+            <button onClick={handlePopupClose} className="primary-btn">
+              Close
+            </button>
+          </div>
+        </div>
+      )}
       <section className="faq-section">
         <h2><FaQuestionCircle className="faq-icon" /> Frequently Asked Questions</h2>
 

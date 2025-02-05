@@ -234,4 +234,146 @@ body {
     font-size: 1.2rem;
   }
 }
+.form-buttons .secondary-btn {
+  border: 2px solid #2e5077;
+  border-radius: 30px;
+}
+.form-buttons .primary-btn{
+  border-radius: 30px;
+}
+.demo-form-container {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 40px 0px;
+  border-radius: 12px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  z-index: 999;
+  width: 100%;
+  max-width: 500px;
+  box-sizing: border-box;
+  margin-top: 20px; /* Additional padding below navbar */
+}
+.demo-form-container h2 {
+  text-align: center;
+}
+.demo-form {
+  display: flex;
+  flex-direction: column;
+}
 
+
+.demo-form .form-group label {
+  font-size: 16px;
+  color: #555;
+  font-weight: 600;
+  margin-right: 10px;
+}
+
+.demo-form .form-group input,
+.demo-form .form-group textarea {
+  padding: 12px 14px;
+  border-radius: 20px;
+  border: 1px solid #ddd;
+  font-size: 14px;
+  margin-top: 8px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.demo-form .form-group input:focus,
+.demo-form .form-group textarea:focus {
+  border-color: #2e5077;
+  box-shadow: 0 0 4px rgba(0, 123, 255, 0.4);
+  outline: none;
+}
+
+.demo-form .form-group textarea {
+  resize: vertical;
+}
+.form-group{
+  margin-top: 20px;
+}
+
+.demo-form .form-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.primary-btn,
+.secondary-btn {
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  border: none;
+  transition: all 0.3s ease;
+}
+
+.primary-btn {
+  background: #2e5077;
+  color: white;
+  margin-right: 20px;
+}
+
+.secondary-btn {
+  background-color: #f9f9f9;
+  color: #333;
+  border: 1px solid #ddd;
+}
+
+.primary-btn:hover {
+  background: #2e5077;
+}
+
+.secondary-btn:hover {
+  background-color: #e0e0e0;
+}
+
+/* Popup Styling */
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.popup {
+  background-color: white;
+  padding: 20px 30px;
+  border-radius: 10px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  max-width: 400px;
+  width: 100%;
+}
+
+.popup button {
+  margin-top: 20px;
+  padding: 10px 16px;
+  border-radius: 8px;
+  background-color: #2e5077;
+  color: white;
+  border: none;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.popup button:hover {
+  background-color: #2e5077;
+}
+
+/* Add spacing between navbar and the top of the form */
+body {
+  background: linear-gradient(135deg, #f5f7fa, #e4e7ed);
+  margin: 0;
+  padding: 60px 0; /* Adjust this based on your navbar height */
+}

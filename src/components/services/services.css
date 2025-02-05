@@ -313,6 +313,7 @@ body {
   background-color: white;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
   border-radius: 12px;
+  /* border: 5px solid rgba(46, 80, 119, 0.1); */
   overflow: hidden;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   cursor: pointer;
