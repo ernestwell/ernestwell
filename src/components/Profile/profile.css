@@ -1,0 +1,261 @@
+.profile-container {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.profile-header {
+  background-color: #1E3A5F;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+.header-content {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.company-logo {
+  width: 120px;
+  height: auto;
+}
+
+.company-name {
+  font-size: 32px;
+  margin-top: 10px;
+  color: white;
+  transition: color 0.3s ease;
+}
+
+.company-name:hover {
+  color: #179bae;
+}
+
+.tagline {
+  font-size: 18px;
+  font-weight: 300;
+  color: white;
+}
+
+.about-us, .portfolio, .testimonials, .why-choose-us {
+  max-width: 1200px;
+  margin: 20px auto;
+  padding: 20px;
+}
+/* Animation for About Us Section */
+.about-us {
+  background-color: #f9f9f9;
+  color: #1E3A5F;
+  padding: 40px 20px;
+  max-width: auto;
+  margin: 40px auto;
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(22, 1, 71, 0.1);
+  opacity: 0; /* Start with opacity 0 for fade-in effect */
+  transform: translateY(20px); /* Start slightly below for slide-up effect */
+  animation: fadeInUp 1s ease-out forwards; /* Apply the animation */
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.about-us h2 {
+  font-size: 25px;
+  font-weight: 600;
+  color: #1E3A5F;
+  text-align: center;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+
+.about-us p {
+  font-size: 15px;
+  line-height: 1.5;
+  color: black;
+  text-align: left;
+  margin-bottom: 10px;
+  padding: 0 10px;
+}
+
+.about-us strong {
+  font-weight: 600;
+  color: #1E3A5F;
+}
+
+@media (max-width: 768px) {
+  .about-us {
+    padding: 30px 15px;
+  }
+
+  .about-us h2 {
+    font-size: 28px;
+  }
+
+  .about-us p {
+    font-size: 16px;
+  }
+}
+.portfolio {
+  position: relative;
+}
+
+.slider-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.slider {
+  display: flex;
+  transition: transform 0.6s ease;
+}
+
+.project-card {
+  flex: 0 0 calc(33.33% - 20px); /* Adjust the width to show 3 cards at a time */
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  flex-direction: column;
+  text-align: center;
+  margin: 0 10px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.project-img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.project-info {
+  margin-top: 15px;
+}
+
+.project-info h3 {
+  font-size: 24px;
+  color: #1E3A5F;
+}
+
+.project-info p {
+  font-size: 16px;
+  color: #555;
+}
+
+.slider-nav {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  transform: translateY(-50%);
+}
+
+.slider-nav button {
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 10px;
+  font-size: 24px;
+  cursor: pointer;
+  border-radius: 50%;
+}
+
+.slider-nav button:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.testimonials {
+  background-color: #f4f4f4;
+  padding: 20px;
+  text-align: center;
+}
+
+.testimonial {
+  margin-bottom: 15px;
+}
+
+.client-name {
+  font-weight: bold;
+  color: #1E3A5F;
+}
+
+.why-choose-us {
+  background-color: #ffffff;
+  color: #1E3A5F;
+  padding: 20px;
+  max-width: auto;
+  margin: 40px auto;
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: left;
+}
+
+.why-choose-us h2 {
+  font-size: 28px;
+  font-weight: 600;
+  color: #1E3A5F;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+}
+
+.why-choose-us ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.why-choose-us li {
+  font-size: 16px;
+  margin-bottom: 10px;
+  position: relative;
+  padding-left: 25px;
+}
+
+.why-choose-us li::before {
+  content: '\2022';
+  font-size: 18px;
+  color: #179bae;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.why-choose-us li:hover {
+  color: #000000;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+@media (max-width: 768px) {
+  .why-choose-us {
+    padding: 15px;
+  }
+
+  .why-choose-us h2 {
+    font-size: 24px;
+  }
+
+  .why-choose-us li {
+    font-size: 14px;
+  }
+}
