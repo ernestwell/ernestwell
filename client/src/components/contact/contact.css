@@ -329,3 +329,7 @@
       margin-bottom: 20px; 
   }
 }
+body.contact-page-mode footer {
+  display: none !important;
+}
+

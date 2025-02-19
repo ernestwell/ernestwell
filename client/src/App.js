@@ -14,10 +14,11 @@ import DigitalMarketingSolutions from "./components/services/pages/digital/digit
 import CloudSolutions from "./components/services/pages/cloud/cloud";
 import CybersecuritySolutions from "./components/services/pages/cybersecurity/cyber";
 import ITSupport from "./components/services/pages/ITsupport/itsupport";
-import SignIn from "./components/sign-in/sign"
-import WeWorkForSec from "./components/weworkfor/wework"
+import SignIn from "./components/sign-in/sign";
+import WeWorkForSec from "./components/weworkfor/wework";
 import Profile from "./components/profile/profile";
-
+import CareersPage from "./components/Careers/career";
+import TechStack from "./components/techstack/techstack";
 function App() {
   // useEffect(() => {
   //   // Disable right-click functionality on the page for text, images, etc.
@@ -72,11 +73,13 @@ function App() {
               <WeWorkForSec />
               <Services />
               <Chatbot />
+              <TechStack/>
             </>
           }
         />
         <Route path="/contact" element={<Contact />} />
-        {/* <Route path="/profile" element={<Profile />} /> */}
+        <Route path="/profile" element={<Profile />} />
+        <Route path="/careers" element={<CareersPage/>} />
         <Route path="/web-development" element={<WebDevelopment />} />
         <Route path="/app-development" element={<MobileAppDevelopment />} />
         <Route path="/erp-development" element={<ERPDevelopment />} />
@@ -93,8 +96,3 @@ function App() {
 }
 
 export default App;
-
-
-
-
-

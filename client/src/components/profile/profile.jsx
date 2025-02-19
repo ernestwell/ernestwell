@@ -1,76 +1,118 @@
 import React from "react";
 import "./profile.css";
-import img1 from "./images/undraw_in-the-office_ma2b.svg";
-import img2 from "./images/undraw_working_n9u0.svg";
+import AboutUs from "./images/co-workers-sharing-jokes-office.jpg"; // Ensure correct path
 
-function Profile() {
+const VisionSection = () => {
+  const scrollToAbout = () => {
+    const aboutSection = document.getElementById("about-section");
+    if (aboutSection) {
+      aboutSection.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
-    <div className="profile-container">
-      {/* Hero Section */}
-      <section className="hero-section">
-        <div className="hero-content">
-          <h1>Welcome to Our Vision</h1>
-          <p className="hero-text">
-            We deliver innovative solutions that redefine the possibilities of
-            technology and creativity. Let’s embark on this journey together.
-          </p>
-          <a href="#about" className="button-primary">
-            Learn More
-          </a>
-        </div>
-      </section>
-
-      {/* About Section */}
-      <section id="about" className="about-section">
-        <div className="about-container">
-          <div className="about-box">
-            <div className="about-illustration">
-              <img src={img2} alt="About Illustration" />
-            </div>
-            <div className="about-content">
-              <div className="content-box">
-                <h2>About Erneswell</h2>
-                <p>
-                  At Erneswell, we are committed to delivering high-quality web
-                  solutions that combine creativity and technology. Our mission is
-                  to create impactful digital experiences for businesses and
-                  individuals alike.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Projects Section */}
-      <section id="projects" className="projects-section">
-        <h2>Our Projects</h2>
-        <div className="projects-grid">
-          <div className="project-card">
-            <img
-              src="https://via.placeholder.com/350x200"
-              alt="Project 1"
-              className="project-image"
-            />
-            <h3>Project Alpha</h3>
-            <p>Innovative web application that simplifies business processes.</p>
-          </div>
-          <div className="project-card">
-            <img
-              src="https://via.placeholder.com/350x200"
-              alt="Project 2"
-              className="project-image"
-            />
-            <h3>Project Beta</h3>
-            <p>
-              AI-powered platform designed to enhance user experience through
-              automation.
-            </p>
-          </div>
-        </div>
-      </section>
-    </div>
+    <section className="vision-section">
+      <div className="vision-content-1">
+        <h1>Welcome to Our Vision</h1>
+        <p>
+          Redefining the possibilities of technology and creativity with
+          innovative solutions. Join us as we shape a brighter digital future.
+        </p>
+        <button onClick={scrollToAbout} className="learn-more-btn-1">
+          Learn More
+        </button>
+      </div>
+    </section>
   );
-}
+};
 
-export default Profile;
+const AboutUsSection = () => {
+  return (
+    <section id="about-section" className="about-section">
+      <div className="about-content">
+        <h2>About ErnestWell</h2>
+        <p>
+          At ErnestWell, we are committed to delivering high-quality web
+          solutions that combine creativity and technology. Our mission is to
+          create impactful digital experiences for businesses and individuals
+          alike.
+        </p>
+      </div>
+      <div className="about-image">
+        <img src={AboutUs} alt="About Us" />
+      </div>
+    </section>
+  );
+};
+
+const ProjectsSection = () => {
+  const projects = [
+    { id: 1, name: "Project Alpha", desc: "Web application designed to optimize workflows" },
+    { id: 2, name: "Project Beta", desc: "An AI-driven platform to automate processes and boost productivity" },
+    { id: 3, name: "Project Gamma", desc: "A collaborative tool designed for seamless project management" },
+  ];
+
+  return (
+    <section className="projects-section">
+      <h2>Our Professional Projects</h2>
+      <div className="projects-container">
+        {projects.map((project) => (
+          <div key={project.id} className="project-card">
+            <h3>{project.name}</h3>
+            <p>{project.desc}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+  );
+};
+
+const TestimonialsSection = () => {
+  const testimonials = [
+    {
+      id: 1,
+      quote:
+        "ErnestWell transformed our business with their innovative solutions. Their team is professional, creative, and always delivers on time.",
+      name: "Alex Johnson, CEO of InnovateTech",
+    },
+    {
+      id: 2,
+      quote:
+        "We've seen a 200% increase in efficiency after implementing their platform. I highly recommend their services!",
+      name: "Priya Sharma, CTO of Bright Solutions",
+    },
+    {
+      id: 3,
+      quote:
+        "Their creativity and technical expertise are unmatched. The team truly understands our vision and makes it a reality.",
+      name: "Mark Wilson, Founder of Visionary Brands",
+    },
+  ];
+
+  return (
+    <section className="testimonials-section">
+      <h2>What Our Clients Say</h2>
+      <div className="testimonials-container">
+        {testimonials.map((testimonial) => (
+          <div key={testimonial.id} className="testimonial-card">
+            <p>"{testimonial.quote}"</p>
+            <strong>- {testimonial.name}</strong>
+          </div>
+        ))}
+      </div>
+    </section>
+  );
+};
+
+const ProfilePage = () => {
+  return (
+    <>
+      <VisionSection />
+      <AboutUsSection />
+      <ProjectsSection />
+      <TestimonialsSection />
+    </>
+  );
+};
+
+export default ProfilePage;

@@ -431,5 +431,5 @@ body {
 body {
   background: linear-gradient(135deg, #f5f7fa, #e4e7ed);
   margin: 0;
-  padding: 60px 0; /* Adjust this based on your navbar height */
+  /* padding: 60px 0;  */
 }

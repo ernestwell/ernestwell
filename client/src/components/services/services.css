@@ -268,7 +268,9 @@ body {
 }
 
 .services {
-  padding: 80px 20px;
+  padding-top: 80px;
+  padding-left: 20px;
+  padding-right: 20px;
   background-color: #ffffff;
   transition: all 0.3s ease-in-out;
 }
@@ -331,7 +333,7 @@ body {
   width: 100%;
   height: 150px;
   padding: 10px;
-  background-color: rgba(46, 80, 119, 0.1);
+  background-color: rgba(46, 80, 119, 0.20);
   border-radius: 12px 12px 0 0;
   display: flex;
   justify-content: center;
@@ -606,5 +608,30 @@ body {
     font-size: 11px;
   }
 } */
+.exclusive-service-card {
+  background-color: #2e5077;
+  color: white;
+  padding: 1.5rem;
+  border-radius: 1rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  max-width: 300px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.exclusive-service-card:hover {
+  transform: scale(1.05);
+}
+
+.exclusive-service-card h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.exclusive-service-card p {
+  color: #d1d5db;
+  font-size: 0.875rem;
+}
 
 

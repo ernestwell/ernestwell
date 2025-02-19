@@ -31,7 +31,7 @@ const HeroSection = () => {
   }, [sentenceIndex, charIndex]);
 
   return (
-    <section className="hero">
+    <section className="hero-1">
       <div className="hero-left">
         <h1 className="hero-title">
           <span>{text}</span>
