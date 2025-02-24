@@ -341,7 +341,7 @@ const Footer = () => {
             <ul>
               <li><a href="#"><FaCode className="icon" /> Web Dev</a></li>
               <li><a href="#"><FaMobileAlt className="icon" /> App Dev</a></li>
-              <li><a href="#"><FaServer className="icon" /> IT Support</a></li>
+              <li><a href="#"><FaServer className="icon" /> ITSupport</a></li>
               <li><a href="#"><FaCloud className="icon" /> Cloud</a></li>
             </ul>
             <ul>
@@ -379,7 +379,7 @@ const Footer = () => {
       </div>
       <div className="footer-bottom">
         <div className="footer-bottom-left">
-          &copy; 2025 Ernestwell. All rights reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Use</a> | <a href="#">Sitemap</a>
+          &copy; 2025 Ernestwell. All Rights Reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Use</a> | <a href="#">Sitemap</a>
         </div>
       </div>
     </footer>

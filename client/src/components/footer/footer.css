@@ -1114,12 +1114,13 @@ footer p {
 .footer-section .about p{
   color: #2e5077;
 }
-/* Professional Footer Styles */
+
 .footer {
   background: rgba(46, 80, 119, 0.05);
   backdrop-filter: blur(10px);
   color: #2e5077;
   padding: 50px 0;
+  padding-bottom: 0px;
   font-family: "Poppins", sans-serif;
   border-top: 4px solid rgba(46, 80, 119, 0.2);
 }
@@ -1230,4 +1231,21 @@ footer p {
 .footer-bottom a:hover {
   color: #e0a800;
   text-decoration: underline;
+}
+.foot-2 ul{
+  margin-top: 10px;
+}
+.foot-3 ul{
+  margin-top: 15px;
+  margin-left: 20px;
+}
+.foot-2 ul a{
+  font-weight: 600;
+}
+.foot-3 ul a{
+  font-weight: 600;
+}
+.about{
+  color: #2e5077;
+  font-weight: 600;
 }
