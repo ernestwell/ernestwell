@@ -1,7 +1,12 @@
 {
   "build": {
     "env": {
-      "NPM_FLAGS": "--legacy-peer-deps"
-    }
-  }
+      "NODE_ENV": "production"
+    },
+    "outputDirectory": "dist"
+  },
+  "rewrites": [
+    { "source": "/(.*)", "destination": "/index.html" }
+  ]
 }
+
