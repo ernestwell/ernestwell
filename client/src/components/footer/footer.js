@@ -312,15 +312,12 @@ const Footer = () => {
   return (
     <footer className="footer">
       <div className="footer-container">
-        <div className="footer-section about">
+       <div className="footer-section about">
           <h3>ERNESTWELL</h3>
-          <p>
-            We are a passionate team providing innovative solutions. Our mission is to empower businesses through technology.
-            <a href="#">Our Mission</a> |
-            <a href="#">Our Values</a> |
-            <a href="#">Our Vision</a> |
-            <a href="#">Meet the Team</a>
-          </p>
+          <p>Empowering businesses through technology.</p>
+          <div className="links">
+            <a href="#">Mission</a> | <a href="#">Values</a> | <a href="#">Vision</a> | <a href="#">Team</a>
+          </div>
           <div className="social-icons">
             <a href="#"><FaFacebookF /></a>
             <a href="#"><FaLinkedinIn /></a>
@@ -328,6 +325,7 @@ const Footer = () => {
             <a href="#"><FaInstagram /></a>
           </div>
         </div>
+
 
         <div className="footer-section foot-2">
           <h3>Quick Links</h3>
@@ -359,11 +357,17 @@ const Footer = () => {
 
         <div className="footer-section foot-4">
           <h3>Connect</h3>
-          <div className="newsletter">
-            <input type="email" placeholder="Enter email" />
-            <button><FaPaperPlane /></button>
+          <div className="relative w-4/5 max-w-md mx-auto">
+            <input
+              type="email"
+              placeholder="Enter email"
+              className="w-full p-3 pl-10 pr-12 border-2 border-yellow-400 rounded-full text-gray-700 focus:outline-none"
+            />
+            <FaPaperPlane className="absolute top-1/2 right-4 transform -translate-y-1/2 text-blue-700 cursor-pointer" />
           </div>
-          <h2>VISITORS</h2>
+
+
+          <h3 className="visi">VISITORS</h3>
           <div className="visitor-counter">
             {/* <h3>visitor count</h3> */}
             {visitorDigits.map((digit, index) => (
@@ -376,8 +380,10 @@ const Footer = () => {
       </div>
       <div className="footer-bottom">
         <div className="footer-bottom-left">
-          &copy; 2025 Ernestwell. All Rights Reserved. | <a href="#">Site Map</a>
+          &copy; 2025 Ernestwell. All rights reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Use</a> | <a href="#">Sitemap</a>
         </div>
+
+
       </div>
     </footer>
   );

@@ -4,10 +4,10 @@ import {
   FaQuestionCircle
 } from "react-icons/fa";
 import "./WebDevelopment.css";
-import image1 from "./webimages/image1.png";
-import image2 from "./webimages/image2.png";
-import image3 from "./webimages/image3.png";
-import image4 from "./webimages/image4.png";
+import image1 from "../../serviceimages/cloud.svg";
+import image2 from "../../serviceimages/custom.svg";
+import image3 from "../../serviceimages/erp.svg";
+import image4 from "../../serviceimages/no.svg";
 
 const services = [
   {
@@ -59,15 +59,15 @@ const WebDevelopment = () => {
     
       const handleFormSubmit = (event) => {
         event.preventDefault();
-        handleCloseForm(); // Close form after submission
-        setShowPopup(true); // Show popup after form submission
+        handleCloseForm(); 
+        setShowPopup(true); 
       };
     
       const handlePopupClose = () => {
-        setShowPopup(false); // Manually close the popup when user clicks "Close"
+        setShowPopup(false); 
       };
   return (
-    <div className="webdev-container">
+    <div className="webdev-container-1">
       <header className="webdev-header">
         <h1>Expert Web Development Services</h1>
         <p>Build your digital presence with high-quality, custom-built web solutions.</p>
@@ -76,7 +76,7 @@ const WebDevelopment = () => {
       <section className="webdev-services">
         {services.map((service, index) => (
           <div key={service.id} className={`webdev-service ${index % 2 === 0 ? "reverse" : ""}`}>
-            <div className="image-container">
+            <div className="image-container-1">
               <img src={service.image} alt={service.title} />
             </div>
             <div className="content-container">

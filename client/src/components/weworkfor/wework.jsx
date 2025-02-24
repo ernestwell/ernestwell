@@ -77,50 +77,36 @@
 // };
 import React from "react";
 import "./wework.css";
-import {
-  FaRocket,
-  FaBuilding,
-  FaUsers,
-  FaLaptop,
-  FaUniversity,
-  FaShoppingCart,
-} from "react-icons/fa";
-import Illustration from "./image/weimg.svg";
+import { Rocket, Building, Users, User, Landmark, Briefcase } from "lucide-react";
 
-const WeWorkForSec = () => {
-  const services = [
-    { icon: <FaRocket />, title: "Startups" },
-    { icon: <FaBuilding />, title: "Enterprises" },
-    { icon: <FaUsers />, title: "Organizations" },
-    { icon: <FaLaptop />, title: "Individuals" },
-    { icon: <FaUniversity />, title: "Institutions" },
-    { icon: <FaShoppingCart />, title: "Retailers" },
-  ];
+const categories = [
+  { name: "Startups", icon: <Rocket /> },
+  { name: "Enterprises", icon: <Building /> },
+  { name: "Organizations", icon: <Users /> },
+  { name: "Individuals", icon: <User /> },
+  { name: "Institutions", icon: <Landmark /> },
+  { name: "Businesses", icon: <Briefcase /> },
+];
 
+const WeWorkFor = () => {
   return (
-    <div className="we-work-section">
-      <div className="illustrations">
-        <img src={Illustration} alt="Illustration" className="illustration-image" />
+    <section className="we-work-for">
+      <h2 className="title-we sleek-heading">We Work For</h2>
+      <p className="description">
+        Empowering <span>startups</span>, <span>enterprises</span>, and <span>organizations</span> 
+        with innovative digital solutions. We collaborate with visionaries and businesses of all scales 
+        to transform ideas into reality and drive impactful growth.
+      </p>
+      <div className="cards-grid-we">
+        {categories.map((category, index) => (
+          <div className="work-card center-content" key={index}>
+            <div className="icon-we">{category.icon}</div>
+            <h3 className="name-we">{category.name}</h3>
+          </div>
+        ))}
       </div>
-      <div className="we-work-box">
-        <h2 className="sec-title-1">We Work For</h2>
-        <p className="sec-description-1">
-          Collaborating with <strong>startups</strong>, <strong>enterprises</strong>, <strong>organizations</strong>, and more to build innovative solutions.
-        </p>
-        <div className="services-grid">
-          {services.map((service, index) => (
-            <div className="service-box" key={index}>
-              <div className="service-icon">{service.icon}</div>
-              <h3 className="service-title">{service.title}</h3>
-            </div>
-          ))}
-        </div>
-      </div>
-    </div>
+    </section>
   );
 };
 
-export default WeWorkForSec;
-
-
-
+export default WeWorkFor;

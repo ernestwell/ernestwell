@@ -143,7 +143,7 @@ body {
     color: #1e3a5f;
 }
 
-.tech-stack-container {
+/* .tech-stack-container {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -156,7 +156,7 @@ body {
     background: #ffffff;
     padding: 50px;
     border-radius: 20px;
-    /* box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.15); */
+    box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.15);
     text-align: center;
     transition: all 0.3s ease-in-out;
 }
@@ -279,4 +279,403 @@ body {
     .tech-stack-grid {
         grid-template-columns: repeat(1, 1fr);
     }
+} */
+/* .tech-stack-container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 60px 20px;
+  text-align: center;
+  background: #ffffff;
 }
+
+.tech-stack-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #2e5077;
+  margin-bottom: 12px;
+}
+
+.tech-stack-description {
+  font-size: 1.1rem;
+  color: #4a4a4a;
+  margin-bottom: 35px;
+}
+
+.tech-stack-tabs {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 35px;
+}
+
+.tab-button {
+  background: none;
+  border: none;
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 12px 20px;
+  color: #2e5077;
+  cursor: pointer;
+  transition: color 0.3s ease-in-out;
+  position: relative;
+}
+
+.tab-button:hover {
+  color: #1f3b5d;
+}
+
+.tab-button.active-tab {
+  color: #1f3b5d;
+  font-weight: 700;
+}
+
+.tab-button.active-tab::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -6px;
+  width: 50%;
+  height: 3px;
+  background: #1f3b5d;
+  transform: translateX(-50%);
+  border-radius: 2px;
+  transition: width 0.3s ease-in-out;
+}
+
+.tech-stack-grid {
+  display: grid;
+  gap: 16px;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 0;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.tech-icon-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 140px;
+  height: 140px;
+  background: #ffffff;
+  border: 2px solid #e0e0e0;
+  border-radius: 16px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.06);
+  transition: all 0.3s ease-in-out;
+  position: relative;
+}
+
+.tech-icon-container:hover {
+  transform: translateY(-5px);
+  border-color: #2e5077;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.1);
+}
+
+.tech-icon {
+  font-size: 2.6rem;
+  color: #2e5077;
+  transition: color 0.3s ease-in-out;
+}
+
+.tech-icon-container:hover .tech-icon {
+  color: #1f3b5d;
+}
+
+.tech-name {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #333;
+  text-align: center;
+  margin-top: 12px;
+}
+
+
+@media (min-width: 1024px) {
+  .tech-stack-grid {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+
+@media (max-width: 1023px) {
+  .tech-stack-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .tech-stack-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .tech-stack-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+.tech-stack-grid{
+  max-width: 700px;
+  margin-left:250px;
+  margin-right: 180px;
+} */
+/* .tech-stack-container {
+  background-image: 
+  linear-gradient(rgba(58, 57, 57, 0.05) 1px, transparent 1px),
+  linear-gradient(90deg, rgba(53, 52, 52, 0.05) 1px, transparent 1px);
+  background-size: 100px 100px;
+  padding: 60px 20px;
+  text-align: center;
+  border-radius: 15px;
+}
+
+.tech-stack-section {
+  max-width: 900px;
+  margin: auto;
+}
+
+.tech-stack-title {
+  font-size: 2.2rem;
+  color: #2e5077;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.tech-stack-description {
+  font-size: 1.1rem;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+.tech-stack-tabs {
+  display: flex;
+  justify-content: center;
+  flex-wrap: nowrap;
+  overflow-x: auto; 
+  margin-bottom: 30px;
+  max-width: 100%; 
+  padding: 10px 0;
+}
+
+.tab-button {
+  background: #ffffff;
+  border: 2px solid #2e5077;
+  color: #2e5077;
+  padding: 10px 15px;
+  font-size: 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  margin: 5px;
+  transition: all 0.3s ease-in-out;
+}
+
+.tab-button:hover,
+.active-tab {
+  background-color: #2e5077;
+  color: white;
+}
+
+.tech-stack-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 20px;
+  justify-content: center;
+  padding: 20px;
+}
+
+.tech-icon-container {
+  background-image: 
+  linear-gradient(rgba(58, 57, 57, 0.05) 1px, transparent 1px),
+  linear-gradient(90deg, rgba(53, 52, 52, 0.05) 1px, transparent 1px);
+  background-size: 100px 100px;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  border-radius: 12px;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.tech-icon-container:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.tech-icon {
+  font-size: 2.5rem;
+}
+
+.tech-name {
+  display: block;
+  color: #2e5077;
+  margin-top: 10px;
+  font-weight: 600;
+} */
+.tech-stack-container {
+  background-image: 
+    linear-gradient(rgba(58, 57, 57, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(53, 52, 52, 0.05) 1px, transparent 1px);
+  background-size: 100px 100px;
+  padding: 60px 15px;
+  text-align: center;
+  border-radius: 20px;
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.05);
+  width: 100%;
+  max-width: 1300px;
+  margin: auto;
+}
+
+.tech-stack-section {
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 15px;
+}
+
+.tech-stack-title {
+  font-size: clamp(1.8rem, 2.5vw, 2.5rem);
+  color: #2e5077;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 15px;
+}
+
+.tech-stack-title::after {
+  content: '';
+  width: 80px;
+  height: 4px;
+  background: rgba(255, 193, 7, 0.7);
+  display: block;
+  margin: 2px auto;
+  border-radius: 10px;
+}
+
+.tech-stack-description {
+  font-size: clamp(1rem, 1.2vw, 1.2rem);
+  color: #444;
+  margin-bottom: 30px;
+  line-height: 1.6;
+  padding: 0 10px;
+}
+
+/* Tabs Navigation */
+.tech-stack-tabs {
+  display: flex;
+  justify-content: center;
+  overflow-x: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  gap: 10px;
+  margin-bottom: 20px;
+  padding: 10px 5px;
+  max-width: 100%;
+}
+
+.tech-stack-tabs::-webkit-scrollbar {
+  display: none;
+}
+
+.tab-button {
+  background: rgba(255, 255, 255, 0.2);
+  border: 2px solid rgba(46, 80, 119, 0.4);
+  color: #2e5077;
+  padding: 10px 15px;
+  font-size: clamp(0.9rem, 1vw, 1rem);
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.1);
+  white-space: nowrap;
+}
+
+.tab-button:hover,
+.active-tab {
+  background: rgba(46, 80, 119, 0.2);
+  color: #ffc107;
+  border-color: #2e5077;
+}
+
+/* Tech Stack Grid */
+.tech-stack-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  gap: 15px;
+  justify-content: center;
+  padding: 20px;
+  max-width: 900px;
+  margin: auto;
+}
+
+.tech-icon-container {
+  background: rgba(255, 255, 255, 0.15);
+  padding: 15px;
+  border-radius: 12px;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.tech-icon-container:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.tech-icon {
+  font-size: clamp(2rem, 2.5vw, 2.5rem);
+  color: #2e5077;
+}
+
+.tech-name {
+  display: block;
+  color: #2e5077;
+  margin-top: 8px;
+  font-weight: 600;
+  font-size: clamp(0.9rem, 1vw, 1rem);
+}
+
+/* Responsive Tweaks */
+@media (max-width: 768px) {
+  .tech-stack-container {
+    padding: 50px 10px;
+  }
+
+  .tech-stack-grid {
+    grid-template-columns: repeat(auto-fit, minmax(90px, 1fr));
+    gap: 10px;
+  }
+
+  .tab-button {
+    padding: 8px 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .tech-stack-title {
+    font-size: 1.8rem;
+  }
+
+  .tech-stack-description {
+    font-size: 1rem;
+  }
+
+  .tech-stack-grid {
+    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+  }
+
+  .tech-icon-container {
+    padding: 12px;
+  }
+
+  .tab-button {
+    font-size: 0.85rem;
+    padding: 6px 10px;
+  }
+}
+

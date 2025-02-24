@@ -384,7 +384,7 @@ import "./services.css";
 import webDevImage from "./serviceimages/web.svg";
 import mobileDevImage from "./serviceimages/mobile.svg";
 import erpImage from "./serviceimages/erp.svg";
-import customSoftwareImage from "./serviceimages/custom.svg";
+import customSoftwareImage from "./serviceimages/no.svg";
 import digitalMarketingImage from "./serviceimages/digital.svg";
 import cloudSolutionsImage from "./serviceimages/cloud.svg";
 import cybersecurityImage from "./serviceimages/security.svg";
@@ -419,8 +419,17 @@ const servicesData = [
     className: "custom-software-card",
     link: "/custom-development",
   },
+  // {
+  //   className: "exclusive-service-card",
+  // },
   {
+    // **Exclusive Center Card with Unique Content**
+    title: "SERVICES",
+    description:
+      "Unlock exclusive, tailor-made tech solutions designed for businesses that demand innovation.",
+    // image: cloudSolutionsImage, // You can replace this with a special image
     className: "exclusive-service-card",
+    link: "/exclusive-services",
   },
   {
     title: "IT Support",
@@ -470,7 +479,7 @@ const Service = () => {
               className={`service-card ${service.className} ${expandedCard === index ? "expanded" : ""}`}
               style={{
                 backgroundColor:
-                  service.className === "exclusive-service-card" ? "rgba(46, 80, 119, 0.1)" : "",
+                  service.className === "exclusive-service-card" ? "rgba(255, 193, 7, 0.4)" : "",
               }}
               onClick={() => toggleCard(index)}
             >
@@ -485,7 +494,7 @@ const Service = () => {
                 {service.title && service.link && (
                   <a href={service.link} className="learn-more-btn">
                     Learn More
-                    <span className="arrow">→</span>
+                    <span className="arrow">➜</span>
                   </a>
                 )}
               </div>
