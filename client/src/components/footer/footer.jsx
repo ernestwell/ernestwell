@@ -288,44 +288,42 @@ import {
   FaShieldAlt,
   FaLightbulb,
   FaCogs,
-  FaUsers
+  FaUsers,
 } from "react-icons/fa";
-import { useLocation } from "react-router-dom";
 
 const Footer = () => {
   const [visitorCount, setVisitorCount] = useState(0);
 
   useEffect(() => {
     let count = localStorage.getItem("visitorCount");
-    if (!count) {
-      count = 1;
-    } else {
-      count = parseInt(count) + 1;
-    }
+    count = count ? parseInt(count) + 1 : 1;
     localStorage.setItem("visitorCount", count);
     setVisitorCount(count);
   }, []);
 
-  // Convert visitor count to an array of digits
-  const visitorDigits = visitorCount.toString().split("");
-
   return (
     <footer className="footer">
       <div className="footer-container">
-       <div className="footer-section about">
+        <div className="footer-section about">
           <h3>ERNESTWELL</h3>
           <p>Empowering businesses through technology.</p>
-          <div className="links">
-            <a href="#">Mission</a> | <a href="#">Values</a> | <a href="#">Vision</a> | <a href="#">Team</a>
-          </div>
+           <div className="footer-links">
+                <a href="#" className="footer-link">Mission</a>
+                <span className="footer-separator">|</span>
+                <a href="#" className="footer-link">Values</a>
+                <span className="footer-separator">|</span>
+                <a href="#" className="footer-link">Vision</a>
+                <span className="footer-separator">|</span>
+                <a href="#" className="footer-link">Team</a>
+            </div>
+
           <div className="social-icons">
-            <a href="#"><FaFacebookF /></a>
-            <a href="#"><FaLinkedinIn /></a>
-            <a href="#"><FaTwitter /></a>
-            <a href="#"><FaInstagram /></a>
+                <a href="#" className="social-icon"><FaFacebookF /></a>
+                <a href="#" className="social-icon"><FaLinkedinIn /></a>
+                <a href="#" className="social-icon"><FaTwitter /></a>
+                <a href="#" className="social-icon"><FaInstagram /></a>
           </div>
         </div>
-
 
         <div className="footer-section foot-2">
           <h3>Quick Links</h3>
@@ -357,20 +355,21 @@ const Footer = () => {
 
         <div className="footer-section foot-4">
           <h3>Connect</h3>
-          <div className="relative w-4/5 max-w-md mx-auto">
-            <input
-              type="email"
-              placeholder="Enter email"
-              className="w-full p-3 pl-10 pr-12 border-2 border-yellow-400 rounded-full text-gray-700 focus:outline-none"
-            />
-            <FaPaperPlane className="absolute top-1/2 right-4 transform -translate-y-1/2 text-blue-700 cursor-pointer" />
+          <div className="email-container">
+                <input
+                    type="email"
+                    placeholder="Enter email"
+                    className="email-input"
+                />
+                <button className="email-button">
+                    <FaPaperPlane />
+                </button>
           </div>
 
 
           <h3 className="visi">VISITORS</h3>
           <div className="visitor-counter">
-            {/* <h3>visitor count</h3> */}
-            {visitorDigits.map((digit, index) => (
+            {visitorCount.toString().split("").map((digit, index) => (
               <span key={index} className={`visitor-digit digit-${digit}`}>
                 {digit}
               </span>
@@ -382,12 +381,9 @@ const Footer = () => {
         <div className="footer-bottom-left">
           &copy; 2025 Ernestwell. All rights reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Use</a> | <a href="#">Sitemap</a>
         </div>
-
-
       </div>
     </footer>
   );
 };
 
 export default Footer;
-

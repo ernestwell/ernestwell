@@ -94,7 +94,7 @@ body {
 
 .webdev-service h2 {
   font-weight: 900;
-  font-size: 1.8rem;
+  font-size: 2rem;
   margin-bottom: 10px;
   color: #2e5077;
 }
@@ -106,7 +106,7 @@ body {
 }
 
 
-.content-container {
+.content-container-1 {
   flex: 1;
 }
 
@@ -114,7 +114,7 @@ body {
   margin-top: 20px;
 }
 
-.primary-btn {
+.primary-btn-1 {
   background-color: #2e5077;
   color: white;
   padding: 10px 20px;
@@ -122,6 +122,9 @@ body {
   cursor: pointer;
   border-radius: 5px;
   text-align: center;
+  display: block;
+  margin: 10px auto;
+  margin-top: 20px;
 }
 
 .primary-btn:hover {
@@ -391,10 +394,11 @@ body {
   margin: 0;
   /* padding: 60px 0; */
 }
-.content-container h2 {
+.content-container-1 h2 {
   display: block;
   margin: 0 auto;
-  text-align: center; /* Ensures text stays centered */
+  text-align: center;
+  margin-bottom: 20px; /* Ensures text stays centered */
 }
 .image-container-1 img {
   width: 300px;
@@ -402,4 +406,9 @@ body {
   fill: transparent;
   stroke: #2e5077; 
   stroke-width: 3px;
+  margin: 40px;
+}
+.content-container-1{
+  max-width: 70%;
+  margin: 20px;
 }
