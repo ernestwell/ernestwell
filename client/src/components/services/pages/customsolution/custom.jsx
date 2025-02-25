@@ -1,15 +1,10 @@
-import React, { useState } from "react";
-import {
-  FaTools,
-  FaLaptopCode,
-  FaUsers,
-  FaClock,
-  FaQuestionCircle,
-} from "react-icons/fa";
+import { useState } from "react";
+
 import "./customSoftware.css";
-import workflowImage from "./customimages/image1.png";
-import monitoringImage from "./customimages/image2.png";
-import schedulingImage from "./customimages/image3.png";
+import image1 from "../../serviceimages/cloud.svg";
+import image2 from "../../serviceimages/custom.svg";
+import image3 from "../../serviceimages/erp.svg";
+
 
 const customServices = [
   {
@@ -22,7 +17,7 @@ const customServices = [
       - **Real-Time Monitoring:** Track progress and identify inefficiencies.
       - **Seamless Integration:** Connect with your existing tools like CRM or ERP.
       - **Custom Workflows:** Tailor automation to your business needs.`,
-    image: workflowImage,
+    image: image1,
     
   },
   {
@@ -35,7 +30,7 @@ const customServices = [
       - **Performance Analysis:** Identify top performers and improvement areas.
       - **Time Management:** Track working hours, breaks, and idle time.
       - **Data Security:** Prevent breaches with detailed access logs.`,
-    image: monitoringImage
+    image: image2
   },
   {
     id: 3,
@@ -47,7 +42,7 @@ const customServices = [
       - **Reminders and Notifications:** Send alerts to reduce no-shows.
       - **Multi-Channel Integration:** Sync bookings with calendars and CRM tools.
       - **Analytics:** Gain insights into peak times and customer preferences.`,
-    image: schedulingImage,
+    image: image3
   },
 ];
 
@@ -96,10 +91,10 @@ const CustomSoftwareSolutions = () => {
               index % 2 === 0 ? "reverse" : ""
             }`}
           >
-            <div className="image-container">
+            <div className="image-container-4">
               <img src={service.image} alt={service.title} />
             </div>
-            <div className="content-container">
+            <div className="content-container-4">
               <div className="service-icon-container">{service.icon}</div>
               <h2>{service.title}</h2>
               <p>{service.description}</p>
@@ -107,7 +102,7 @@ const CustomSoftwareSolutions = () => {
                 <h3>Key Features:</h3>
                 <p>{service.details}</p>
               </div>
-              <button className="primary-btn" onClick={() => handleShowForm(service)}>See Demo</button>
+              <button className="primary-btn-4" onClick={() => handleShowForm(service)}>See Demo</button>
             </div>
           </div>
         ))}
@@ -184,8 +179,7 @@ const CustomSoftwareSolutions = () => {
         </div>
       )}
       <section className="faq-section">
-        <h2>
-          <FaQuestionCircle className="faq-icon" /> Frequently Asked Questions
+        <h2> Frequently Asked Questions
         </h2>
         <details className="faq-item">
           <summary>Why choose custom software over off-the-shelf solutions?</summary>
@@ -211,15 +205,6 @@ const CustomSoftwareSolutions = () => {
             without compromising on quality.
           </p>
         </details>
-      </section>
-      <section className="contact-cta">
-        <h2>Ready to Build Your Custom Solution?</h2>
-        <p>
-          Let us help you streamline your operations and achieve your business
-          goals with our custom software solutions. Contact us to get started
-          today!
-        </p>
-        <button className="contact-btn">Get in Touch</button>
       </section>
     </div>
   );

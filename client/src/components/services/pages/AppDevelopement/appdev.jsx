@@ -402,13 +402,12 @@
 // };
 
 // export default MobileDevelopment;
-import React, { useState } from "react";
-import { FaQuestionCircle } from "react-icons/fa";
+import  { useState } from "react";
 import "./appdev.css"; // Make sure to apply updated styles in your appdev.css
-import image1 from "./appimages/image1.png";
-import image2 from "./appimages/image2.png";
-import image3 from "./appimages/image3.png";
-import image4 from "./appimages/image4.png";
+import image1 from "../../serviceimages/cloud.svg";
+import image2 from "../../serviceimages/custom.svg";
+import image3 from "../../serviceimages/erp.svg";
+import image4 from "../../serviceimages/no.svg";
 
 const services = [
   { id: 1, title: "Native Mobile Apps", description: "Native mobile apps offer the best performance and user experience on iOS and Android devices. These apps are built specifically for each platform, ensuring smooth navigation, optimal performance, and the ability to fully leverage device features. We provide native app development services that include high-performance mobile solutions tailored to your business needs, with features like push notifications, GPS, and offline capabilities. Services include personalized app design, robust coding, seamless integration, and timely updates.", image: image1 },
@@ -454,11 +453,11 @@ const MobileDevelopment = () => {
       <section className="mobiledev-services">
         {services.map((service, index) => (
           <div key={service.id} className={`mobiledev-service ${index % 2 === 0 ? "reverse" : ""}`}>
-            <div className="image-container"><img src={service.image} alt={service.title} /></div>
-            <div className="content-container">
+            <div className="image-container-2"><img src={service.image} alt={service.title} /></div>
+            <div className="content-container-2">
               <h2>{service.title}</h2>
               <p>{service.description}</p>
-              <button className="primary-btn" onClick={() => handleShowForm(service)}>See Demo</button>
+              <button className="primary-btn-2" onClick={() => handleShowForm(service)}>See Demo</button>
             </div>
           </div>
         ))}
@@ -538,16 +537,10 @@ const MobileDevelopment = () => {
       )}
 
       <section className="faq-section">
-        <h2><FaQuestionCircle className="faq-icon" /> Frequently Asked Questions</h2>
+        <h2>Frequently Asked Questions</h2>
         <details className="faq-item"><summary>Which type of mobile app is best for my business?</summary><p>If you need a high-performance, platform-specific app, go with native. For cost-effective solutions, choose cross-platform.</p></details>
         <details className="faq-item"><summary>Can my app be upgraded in the future?</summary><p>Yes! We build scalable apps for future upgrades and feature additions.</p></details>
         <details className="faq-item"><summary>Do you offer maintenance and support?</summary><p>Yes! We provide ongoing support and maintenance for regular updates.</p></details>
-      </section>
-
-      <section className="contact-cta">
-        <h2>Ready to Build Your Mobile App?</h2>
-        <p>From startups to enterprises, we offer tailored mobile solutions.</p>
-        <button className="contact-btn">Get in Touch</button>
       </section>
     </div>
   );

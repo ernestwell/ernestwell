@@ -379,7 +379,7 @@
 // };
 
 // export default Service;
-import React, { useState } from "react";
+import { useState } from "react";
 import "./services.css";
 import webDevImage from "./serviceimages/web.svg";
 import mobileDevImage from "./serviceimages/mobile.svg";

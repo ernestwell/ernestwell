@@ -2,29 +2,47 @@
 
 
 body {
-  font-family: 'Josefin Sans', sans-serif, 'Poppins', sans-serif;
-  background: #f4f4f4;
+  font-family: 'Josefin Sans', sans-serif, "Poppins", sans-serif;
+  background-image: 
+    linear-gradient(rgba(58, 57, 57, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(53, 52, 52, 0.05) 1px, transparent 1px);
+  background-size: 100px 100px;
   color: #2e5077;
   margin-top: 30px;
   padding-top: 20px;
 }
 
 
+
 .cloud-header {
   text-align: center;
   padding: 30px 20px;
-  background: #1a3d5d;
-  color: white;
-  border-radius: 10px;
-  margin-top: 20px;
-  max-width: 90%;
-  margin-left: auto;
-  margin-right: auto;
+  background-image: 
+  linear-gradient(rgba(58, 57, 57, 0.05) 1px, transparent 1px),
+  linear-gradient(90deg, rgba(53, 52, 52, 0.05) 1px, transparent 1px);
+  background-size: 100px 100px;
+  color: #ffc107;
+  border-radius: 20%;
+  margin: 90px auto;
+  margin-bottom: 20px;
+  max-width: 80%;
+  /* border: 10px double #2e5077; */
 }
 
 .cloud-header h1 {
-  font-size: 2rem;
+  font-size: 3rem;
   font-weight: bold;
+  color: #2e5077;
+}
+.cloud-header h1::after {
+  content: '';
+  width: 80px;
+  height: 4px;
+  background: rgba(255, 193, 7, 0.7);
+  display: block;
+  margin: 5px auto;
+  margin-bottom: 20px;
+  border-radius: 10px;
 }
 
 .cloud-header p {
@@ -32,9 +50,10 @@ body {
 }
 
 .cloud-container {
-  font-family: 'Josefin Sans', sans-serif;
-  color: #1a3d5d;
-  padding: 0 20px; 
+  color: #2e5077;
+  padding: 0 20px;
+  max-width: 90%;
+  margin: auto; 
 }
 
 .cloud-services {
@@ -93,14 +112,14 @@ body {
   margin-bottom: 10px;
 }
 
-.image-container img {
+.image-container-3 img {
   width: 100%;
   max-width: 450px;
   height: auto;
   border-radius: 8px;
 }
 
-.content-container {
+.content-container-3 {
   flex: 1;
 }
 
@@ -108,7 +127,7 @@ body {
   margin-top: 20px;
 }
 
-.primary-btn {
+.primary-btn-3 {
   background-color: #1a3d5d;
   color: white;
   padding: 10px 20px;
@@ -118,7 +137,7 @@ body {
   text-align: center;
 }
 
-.primary-btn:hover {
+.primary-btn-3:hover {
   background-color: #285e8a;
 }
 
@@ -332,7 +351,7 @@ body {
   margin-top: 20px;
 }
 
-.primary-btn,
+.primary-btn-3,
 .secondary-btn {
   padding: 12px 20px;
   border-radius: 8px;
@@ -342,7 +361,7 @@ body {
   transition: all 0.3s ease;
 }
 
-.primary-btn {
+.primary-btn-3 {
   background: #2e5077;
   color: white;
   margin-right: 20px;
@@ -354,7 +373,7 @@ body {
   border: 1px solid #ddd;
 }
 
-.primary-btn:hover {
+.primary-btn-3:hover {
   background: #2e5077;
 }
 
@@ -401,10 +420,71 @@ body {
   background-color: #2e5077;
 }
 
-/* Add spacing between navbar and the top of the form */
-body {
-  background: linear-gradient(135deg, #f5f7fa, #e4e7ed);
-  margin: 0;
-  /* padding: 60px 0; */
+.image-container-3 img{
+  width: 250px;
+  height: 250px;
+  margin:30px;
+}
+.content-container-3{
+  max-width: 700px;
+}
+.content-container-3 h2 {
+  display: block;
+  text-align: center; 
+  margin-top: 20px;
+}
+.content-container-3 h2::after{
+  content: '';
+  width: 80px;
+  height: 4px;
+  background: rgba(255, 193, 7, 0.7);
+  display: block;
+  margin: 10px auto;
+  border-radius: 10px;
+}
+.cloud-services{
+  background-image: 
+    linear-gradient(rgba(58, 57, 57, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(53, 52, 52, 0.05) 1px, transparent 1px);
+  background-size: 100px 100px;
+}
+.cloud-service{
+  border-radius: 100px;
+  border-top: 5px solid #2e5077;
+  border-right: 5px solid #ffc107;
+}
+.content-container-3 p{
+  margin: 30px auto;
+  text-align: center;
+}
+.primary-btn-3{
+  border-radius: 50px;
+}
+.faq-section h2{
+   margin-bottom: 20px;
+}
+.faq-section{
+  margin-bottom: 50px;
+}
+.faq-section h2::after{
+  content: '';
+  width: 80px;
+  height: 4px;
+  background: rgba(255, 193, 7, 0.7);
+  display: block;
+  margin: 10px auto;
+  border-radius: 10px;
+}
+.primary-btn-3 {
+  background-color: #2e5077;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  border-radius: 50px;
+  text-align: center;
+  display: block;
+  margin: 10px auto;
+  margin-top: 20px;
 }
 

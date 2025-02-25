@@ -1,9 +1,9 @@
-import React, { useState } from "react"; // React core import
-import { FaQuestionCircle } from "react-icons/fa"; // React-icons
+import  { useState } from "react"; // React core import
 import "./cloud.css"; // Stylesheet
-import image1 from "./cloudimages/image1.png"; // Assets
-import image2 from "./cloudimages/image2.png";
-import image3 from "./cloudimages/image3.png";
+import image1 from "../../serviceimages/cloud.svg";
+import image2 from "../../serviceimages/custom.svg";
+import image3 from "../../serviceimages/erp.svg";
+
 
 const services = [
   {
@@ -64,13 +64,13 @@ const CloudSolutions = () => {
       <section className="cloud-services">
         {services.map((service, index) => (
           <div key={service.id} className={`cloud-service ${index % 2 === 0 ? "reverse" : ""}`}>
-            <div className="image-container">
+            <div className="image-container-3">
               <img src={service.image} alt={service.title} />
             </div>
-            <div className="content-container">
+            <div className="content-container-3">
               <h2>{service.title}</h2>
               <p>{service.description}</p>
-              <button className="primary-btn" onClick={() => handleShowForm(service)}>See Demo</button>
+              <button className="primary-btn-3" onClick={() => handleShowForm(service)}>See Demo</button>
               
             </div>
           </div>
@@ -148,8 +148,7 @@ const CloudSolutions = () => {
         </div>
       )}
       <section className="faq-section">
-        <h2>
-          <FaQuestionCircle className="faq-icon" /> Frequently Asked Questions
+        <h2> Frequently Asked Questions
         </h2>
         <details className="faq-item">
           <summary>How does cloud storage improve business efficiency?</summary>
@@ -169,13 +168,6 @@ const CloudSolutions = () => {
             Tailored SaaS solutions streamline your operations by providing software designed specifically for your workflows. These solutions reduce inefficiencies, scale effortlessly, and adapt to your growth.
           </p>
         </details>
-      </section>
-      <section className="contact-cta">
-        <h2>Ready to Take Your Business to the Cloud?</h2>
-        <p>
-          Partner with us to unlock the full potential of cloud technology. Contact us today to get started.
-        </p>
-        <button className="contact-btn">Contact Us</button>
       </section>
     </div>
   );

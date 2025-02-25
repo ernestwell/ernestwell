@@ -2,7 +2,10 @@
 
 body {
   font-family: 'Josefin Sans', sans-serif, "Poppins", sans-serif;
-  background: #f4f4f4;
+  background-image: 
+    linear-gradient(rgba(58, 57, 57, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(53, 52, 52, 0.05) 1px, transparent 1px);
+  background-size: 100px 100px;
   color: #2e5077;
   margin-top: 30px;
   padding-top: 20px;
@@ -11,18 +14,33 @@ body {
 .cybersecurity-header {
   text-align: center;
   padding: 30px 20px;
-  background: #2e5077;
-  color: white;
-  border-radius: 10px;
-  margin: 20px auto;
-  max-width: 90%;
+  background-image: 
+  linear-gradient(rgba(58, 57, 57, 0.05) 1px, transparent 1px),
+  linear-gradient(90deg, rgba(53, 52, 52, 0.05) 1px, transparent 1px);
+  background-size: 100px 100px;
+  color: #ffc107;
+  border-radius: 20%;
+  margin: 90px auto;
+  margin-bottom: 20px;
+  max-width: 80%;
+  /* border: 10px double #2e5077; */
 }
 
 .cybersecurity-header h1 {
-  font-size: 2rem;
+  font-size: 3rem;
   font-weight: bold;
+  color: #2e5077;
 }
-
+.cybersecurity-header h1::after {
+  content: '';
+  width: 80px;
+  height: 4px;
+  background: rgba(255, 193, 7, 0.7);
+  display: block;
+  margin: 5px auto;
+  margin-bottom: 20px;
+  border-radius: 10px;
+}
 .cybersecurity-header p {
   font-size: 1.1rem;
 }
@@ -30,6 +48,8 @@ body {
 .cybersecurity-container {
   color: #2e5077;
   padding: 0 20px;
+  max-width: 90%;
+  margin: auto; 
 }
 
 .cybersecurity-services {
@@ -370,10 +390,70 @@ body {
   background-color: #2e5077;
 }
 
-/* Add spacing between navbar and the top of the form */
-body {
-  background: linear-gradient(135deg, #f5f7fa, #e4e7ed);
-  margin: 0;
-  /* padding: 60px 0;  */
+.image-container-5 img{
+  width: 250px;
+  height: 250px;
+  margin:30px;
 }
-
+.content-container-5{
+  max-width: 700px;
+}
+.content-container-5 h2 {
+  display: block;
+  text-align: center; 
+  margin-top: 20px;
+}
+.content-container-5 h2::after{
+  content: '';
+  width: 80px;
+  height: 4px;
+  background: rgba(255, 193, 7, 0.7);
+  display: block;
+  margin: 10px auto;
+  border-radius: 10px;
+}
+.cybersecurity-services{
+  background-image: 
+    linear-gradient(rgba(58, 57, 57, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(53, 52, 52, 0.05) 1px, transparent 1px);
+  background-size: 100px 100px;
+}
+.cybersecurity-service{
+  border-radius: 100px;
+  border-top: 5px solid #2e5077;
+  border-right: 5px solid #ffc107;
+}
+.content-container-5 p{
+  margin: 30px auto;
+  text-align: center;
+}
+.primary-btn-5{
+  border-radius: 50px;
+}
+.faq-section h2{
+   margin-bottom: 20px;
+}
+.faq-section{
+  margin-bottom: 50px;
+}
+.faq-section h2::after{
+  content: '';
+  width: 80px;
+  height: 4px;
+  background: rgba(255, 193, 7, 0.7);
+  display: block;
+  margin: 10px auto;
+  border-radius: 10px;
+}
+.primary-btn-5 {
+  background-color: #2e5077;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  border-radius: 50px;
+  text-align: center;
+  display: block;
+  margin: 10px auto;
+  margin-top: 20px;
+}

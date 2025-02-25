@@ -1,37 +1,34 @@
-import React, { useState } from "react";
-import { 
-  FaTools, FaDatabase, FaUsers, FaCogs, FaQuestionCircle
-} from "react-icons/fa";
+import  { useState } from "react";
 import "./erp.css";
-import erpImage1 from "./erpimages/image1.png";
-import erpImage2 from "./erpimages/image2.png";
-import erpImage3 from "./erpimages/image3.png";
-import erpImage4 from "./erpimages/image4.png";
+import image1 from "../../serviceimages/cloud.svg";
+import image2 from "../../serviceimages/custom.svg";
+import image3 from "../../serviceimages/erp.svg";
+import image4 from "../../serviceimages/no.svg";
 
 const services = [
   {
     id: 1,
     title: "ERP Implementation",
     description: "Our ERP implementation services are designed to integrate the entire business process into one seamless system. We work with your team to understand your requirements, customize ERP solutions, and ensure smooth deployment across your organization. From inventory and accounting to human resources and customer relationship management (CRM), we enable your business to function more efficiently by streamlining and automating key processes.",
-    image: erpImage1
+    image: image1
   },
   {
     id: 2,
     title: "ERP Customization",
     description: "We provide ERP customization services to adapt the system to your specific business needs. Whether you need modifications to the user interface or additional modules for finance, sales, or supply chain management, we tailor the ERP solution to suit your business workflows and processes. Our team ensures that the system is fully aligned with your operational needs and can scale as your business grows.",
-    image: erpImage2
+    image: image2
   },
   {
     id: 3,
     title: "ERP Integration",
     description: "We help businesses integrate ERP with other systems such as CRM, accounting software, and e-commerce platforms. Our integration services ensure data consistency across platforms, improve decision-making, and enhance collaboration among departments. Our ERP integrations help businesses automate processes, reduce manual effort, and create a unified system that provides real-time information.",
-    image: erpImage3
+    image: image3
   },
   {
     id: 4,
     title: "ERP Support & Maintenance",
     description: "Our ERP support and maintenance services ensure that your system remains efficient and up-to-date. We offer regular updates, bug fixes, and performance optimization. Additionally, we provide on-demand troubleshooting and problem resolution. Our support team is available to ensure that your ERP system is always running smoothly, minimizing downtime and disruptions to your business.",
-    image: erpImage4
+    image: image4
   },
 ];
 
@@ -70,14 +67,14 @@ const ERPDevelopment = () => {
       <section className="erp-services">
         {services.map((service, index) => (
           <div key={service.id} className={`erp-service ${index % 2 === 0 ? "reverse" : ""}`}>
-            <div className="image-container">
+            <div className="image-container-7">
               <img src={service.image} alt={service.title} />
             </div>
-            <div className="content-container">
+            <div className="content-container-7">
               <div className="service-icon-container">{service.icon}</div>
               <h2>{service.title}</h2>
               <p>{service.description}</p>
-              <button className="primary-btn" onClick={() => handleShowForm(service)}>See Demo</button>
+              <button className="primary-btn-7" onClick={() => handleShowForm(service)}>See Demo</button>
             </div>
           </div>
         ))}
@@ -154,7 +151,7 @@ const ERPDevelopment = () => {
         </div>
       )}
       <section className="faq-section">
-        <h2><FaQuestionCircle className="faq-icon" /> Frequently Asked Questions</h2>
+        <h2> Frequently Asked Questions</h2>
         <details className="faq-item">
           <summary>What is ERP implementation?</summary>
           <p>ERP implementation is the process of installing and configuring ERP software to integrate various business processes, such as accounting, inventory management, and human resources, into a unified system.</p>
@@ -167,11 +164,6 @@ const ERPDevelopment = () => {
           <summary>What is ERP integration?</summary>
           <p>ERP integration involves connecting your ERP system with other business tools, such as CRM or accounting software, to ensure seamless data flow and avoid duplicating efforts.</p>
         </details>
-      </section>
-      <section className="contact-cta">
-        <h2>Ready to Upgrade Your Business with ERP?</h2>
-        <p>Our ERP solutions are designed to enhance your business operations, improve data accuracy, and streamline workflows. Let us help you transform your business!</p>
-        <button className="contact-btn">Get in Touch</button>
       </section>
     </div>
   );

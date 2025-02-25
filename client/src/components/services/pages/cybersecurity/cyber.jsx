@@ -1,9 +1,8 @@
-import React, { useState } from "react";
-import { FaQuestionCircle } from "react-icons/fa";
+import  { useState } from "react";
 import "./cyber.css";
-import image1 from "./cyberimages/image1.png"; 
-import image2 from "./cyberimages/image2.png"; 
-import image3 from "./cyberimages/image3.png"; 
+import image1 from "../../serviceimages/cloud.svg";
+import image2 from "../../serviceimages/custom.svg";
+import image3 from "../../serviceimages/erp.svg";
 
 const cybersecurityServices = [
   {
@@ -63,13 +62,13 @@ const CybersecuritySolutions = () => {
       <section className="cybersecurity-services">
         {cybersecurityServices.map((service, index) => (
           <div key={service.id} className={`cybersecurity-service ${index % 2 === 0 ? "reverse" : ""}`}>
-            <div className="image-container">
+            <div className="image-container-5">
               <img src={service.image} alt={service.title} />
             </div>
-            <div className="content-container">
+            <div className="content-container-5">
               <h2>{service.title}</h2>
               <p>{service.description}</p>
-              <button className="primary-btn" onClick={() => handleShowForm(service)}>See Demo</button>
+              <button className="primary-btn-5" onClick={() => handleShowForm(service)}>See Demo</button>
             </div>
           </div>
         ))}
@@ -146,8 +145,7 @@ const CybersecuritySolutions = () => {
         </div>
       )}
       <section className="faq-section">
-        <h2>
-          <FaQuestionCircle className="faq-icon" /> Frequently Asked Questions
+        <h2> Frequently Asked Questions
         </h2>
         <details className="faq-item">
           <summary>How do you secure client systems from hacking?</summary>
@@ -164,16 +162,9 @@ const CybersecuritySolutions = () => {
         <details className="faq-item">
           <summary>Why are security audits important for my business?</summary>
           <p>
-            Regular security audits help identify any gaps or weaknesses in your system's security. They also ensure that your business stays compliant with regulatory standards, ultimately protecting your data and preventing costly breaches.
+            Regular security audits help identify any gaps or weaknesses in your system security. They also ensure that your business stays compliant with regulatory standards, ultimately protecting your data and preventing costly breaches.
           </p>
         </details>
-      </section>
-      <section className="contact-cta">
-        <h2>Ready to Secure Your Business?</h2>
-        <p>
-          Don't wait until it's too late. Contact us today to learn how we can enhance your business's cybersecurity and protect you from emerging threats.
-        </p>
-        <button className="contact-btn">Contact Us</button>
       </section>
     </div>
   );

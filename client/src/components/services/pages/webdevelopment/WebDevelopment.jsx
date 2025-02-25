@@ -1,8 +1,4 @@
-import React, { useState } from "react";
-import { 
-  FaLaptopCode, FaShoppingCart, FaDatabase, FaTools, 
-  FaQuestionCircle
-} from "react-icons/fa";
+import  { useState } from "react";
 import "./WebDevelopment.css";
 import image1 from "../../serviceimages/cloud.svg";
 import image2 from "../../serviceimages/custom.svg";
@@ -12,33 +8,34 @@ import image4 from "../../serviceimages/no.svg";
 const services = [
   {
     id: 1,
-    // icon: <FaLaptopCode className="service-icon" />,
     title: "Static Websites",
-    description: "Static websites offer a streamlined, high-performance solution for businesses looking to establish a professional online presence without the need for complex backend processes. These websites are designed to be fast, secure, and easy to maintain, as they are powered by fixed content that does not rely on a database. Ideal for businesses that want to showcase portfolios, company profiles, or promotional landing pages, static websites ensure a seamless user experience across devices with responsive layouts and mobile optimization. The focus is on fast loading times, a strong SEO foundation, and providing an elegant yet simple browsing experience. Services include personalized design, mobile responsiveness, SEO-friendly architecture, and reliable hosting solutions.",
-    image: image1
+    description:
+      "Fast, secure, and easy-to-maintain websites for businesses needing a strong online presence. Ideal for portfolios, company profiles, and landing pages with mobile responsiveness and SEO-friendly architecture.",
+    image: image1,
   },
   {
     id: 2,
-    // icon: <FaDatabase className="service-icon" />,
     title: "Dynamic Websites",
-    description: "Dynamic websites are built to cater to businesses that need real-time content updates and enhanced interactivity with their audience. These websites integrate dynamic features such as content management systems (CMS), user authentication, and personalized user experiences through database-driven content. Ideal for blogs, news platforms, and business portals, dynamic websites are built to handle frequent content updates, provide complex functionality, and engage users with tailored experiences. Our dynamic solutions ensure easy management, enhanced user experience, and scalability for future growth. The service includes content management tools, customized themes, SEO-optimized architecture, and user-friendly dashboards.",
-    image: image2
+    description:
+      "Engaging, database-driven websites with real-time updates and personalized user experiences. Perfect for blogs, news platforms, and business portals requiring seamless content management.",
+    image: image2,
   },
   {
     id: 3,
-    // icon: <FaShoppingCart className="service-icon" />,
     title: "E-commerce Platforms",
-    description: "We specialize in building secure, high-performance e-commerce platforms that drive sales and provide a seamless shopping experience. Our services include secure payment gateways, user-friendly product catalogs, shopping cart functionality, and mobile-optimized designs. From start-ups to well-established businesses, we create custom-tailored e-commerce solutions that are optimized for fast loading, high scalability, and top-notch security. Your customers will enjoy a smooth shopping experience with easy navigation, safe payments, and a variety of payment options. Additionally, we provide features like product recommendation engines, inventory management, and real-time order tracking.",
-    image: image3
+    description:
+      "High-performance online stores with secure payment gateways, user-friendly catalogs, and mobile-optimized designs. Features include inventory management, order tracking, and product recommendations.",
+    image: image3,
   },
   {
     id: 4,
-    // icon: <FaTools className="service-icon" />,
     title: "Custom Web Applications",
-    description: "Our custom web applications are built to address specific business needs, from CRM systems to booking platforms and automation tools. These applications are designed with scalability, security, and seamless integrations in mind. Whether you're looking to automate tasks, improve business processes, or offer a unique user experience, we provide tailored solutions that drive efficiency. Our services include advanced security protocols, real-time data processing, third-party service integration, and responsive user interfaces across all devices. We ensure your web application is reliable, intuitive, and easy to maintain.",
+    description:
+      "Tailor-made web applications for business automation, CRM systems, and booking platforms. Built with scalability, security, and seamless third-party integrations in mind for enhanced efficiency.",
     image: image4,
   },
 ];
+
 
 const WebDevelopment = () => {
   const [showForm, setShowForm] = useState(false);
@@ -73,17 +70,17 @@ const WebDevelopment = () => {
         <p>Build your digital presence with high-quality, custom-built web solutions.</p>
       </header>
 
-      <section className="webdev-services">
+      <section className="webdev-services-1">
         {services.map((service, index) => (
           <div key={service.id} className={`webdev-service ${index % 2 === 0 ? "reverse" : ""}`}>
             <div className="image-container-1">
               <img src={service.image} alt={service.title} />
             </div>
-            <div className="content-container">
+            <div className="content-container-1">
               <div className="service-icon-container">{service.icon}</div>
               <h2>{service.title}</h2>
               <p>{service.description}</p>
-              <button className="primary-btn" onClick={() => handleShowForm(service)}>See Demo</button>
+              <button className="primary-btn-1" onClick={() => handleShowForm(service)}>See Demo</button>
             </div>
           </div>
         ))}
@@ -134,7 +131,7 @@ const WebDevelopment = () => {
                       id="meetingDate" 
                       name="meetingDate" 
                       required 
-                      style={{ marginTop: "10px" }} // Adds space between label and input
+                      style={{ marginTop: "10px" }} 
                     />
                   </div>
             )}
@@ -148,7 +145,6 @@ const WebDevelopment = () => {
         </div>
       )}
 
-      {/* Success Popup with Manual Close */}
       {showPopup && (
         <div className="popup-overlay">
           <div className="popup">
@@ -160,8 +156,9 @@ const WebDevelopment = () => {
         </div>
       )}
       <section className="faq-section">
-        <h2><FaQuestionCircle className="faq-icon" /> Frequently Asked Questions</h2>
-
+        <div>
+          <h2>Frequently Asked Questions</h2>
+        </div>
         <details className="faq-item">
           <summary>Which type of website is best for my business?</summary>
           <p>If you need a simple presence, a static website is sufficient. If you require real-time updates, go for a dynamic website. E-commerce is for selling online, and custom web apps fit specialized needs.</p>
@@ -174,11 +171,6 @@ const WebDevelopment = () => {
           <summary>Do you provide ongoing support and maintenance?</summary>
           <p>Yes! We provide regular updates, security monitoring, and performance optimizations to ensure your website runs smoothly.</p>
         </details>
-      </section>
-      <section className="contact-cta">
-        <h2>Let's Build Your Website</h2>
-        <p>Whether it's a business website, online store, or custom solution, we’ve got you covered.</p>
-        <button className="contact-btn">Get in Touch</button>
       </section>
     </div>
   );

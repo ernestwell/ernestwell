@@ -1,9 +1,9 @@
-import React, { useState } from "react";
+import  { useState } from "react";
 import { FaQuestionCircle } from "react-icons/fa";
 import "./itsupport.css";
-import image1 from "./supportimages/image1.png"; 
-import image2 from "./supportimages/image2.png"; 
-import image3 from "./supportimages/image3.png"; 
+import image1 from "../../serviceimages/cloud.svg";
+import image2 from "../../serviceimages/custom.svg";
+import image3 from "../../serviceimages/erp.svg";
 
 const services = [
   {
@@ -64,7 +64,7 @@ const ITSupport = () => {
       <header className="itsupport-header">
         <h1>Comprehensive IT Support Solutions</h1>
         <p>
-          Our IT support services are designed to ensure that your technology infrastructure runs smoothly and securely. From managed IT services to system setup and remote technical support, we provide the tools and expertise your business needs to stay ahead in today's digital landscape.
+          Our IT support services are designed to ensure that your technology infrastructure runs smoothly and securely. From managed IT services to system setup and remote technical support, we provide the tools and expertise your business needs to stay ahead in today digital landscape.
         </p>
       </header>
 
@@ -74,14 +74,14 @@ const ITSupport = () => {
             key={service.id}
             className={`itsupport-service ${index % 2 === 0 ? "reverse" : ""}`}
           >
-            <div className="image-container">
+            <div className="image-container-8">
               <img src={service.image} alt={service.title} />
             </div>
-            <div className="content-container">
+            <div className="content-container-8">
               <h2>{service.title}</h2>
               <p>{service.description}</p>
               <button
-                className="primary-btn"
+                className="primary-btn-8"
                 onClick={() => handleShowForm(service)}
               >
                 See Demo

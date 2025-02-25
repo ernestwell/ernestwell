@@ -1,10 +1,10 @@
-import React, { useState } from "react";
-import { FaSearch, FaEnvelope, FaPaintBrush, FaFileAlt, FaQuestionCircle } from "react-icons/fa";
+import { useState } from "react";
+import {  FaQuestionCircle } from "react-icons/fa";
 import "./digital.css";
-import image1 from "./digitalimages/image1.png";
-import image2 from "./digitalimages/image2.png";
-import image3 from "./digitalimages/image3.png";
-import image4 from "./digitalimages/image4.png";
+import image1 from "../../serviceimages/cloud.svg";
+import image2 from "../../serviceimages/custom.svg";
+import image3 from "../../serviceimages/erp.svg";
+import image4 from "../../serviceimages/no.svg";
 
 const services = [
   {
@@ -73,13 +73,13 @@ const DigitalMarketingSolutions = () => {
         <div className="mobiledev-services">
           {services.map((service, index) => (
             <div key={service.id} className={`mobiledev-service ${index % 2 === 0 ? "reverse" : ""}`}>
-              <div className="image-container">
+              <div className="image-container-6">
                 <img src={service.image} alt={service.title} />
               </div>
-              <div className="content-container">
+              <div className="content-container-6">
                 <h2>{service.title}</h2>
                 <p>{service.description}</p>
-                <button className="primary-btn" onClick={() => handleShowForm(service)}>See Demo</button>
+                <button className="primary-btn-6" onClick={() => handleShowForm(service)}>See Demo</button>
               </div>
             </div>
           ))}
@@ -170,11 +170,6 @@ const DigitalMarketingSolutions = () => {
           <summary>Can you help with ongoing management of my digital marketing efforts?</summary>
           <p>Absolutely! We offer ongoing support for all our services, including regular updates, performance analysis, and adjustments to strategies to ensure continuous growth.</p>
         </details>
-      </section>
-      <section className="contact-cta">
-        <h2>Ready to Take Your Digital Marketing to the Next Level?</h2>
-        <p>From SEO and social media to email marketing and branding, we offer complete digital marketing solutions tailored to your business needs.</p>
-        <button className="contact-btn">Get in Touch</button>
       </section>
     </div>
   );
