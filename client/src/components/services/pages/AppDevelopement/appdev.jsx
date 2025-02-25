@@ -446,7 +446,7 @@ const MobileDevelopment = () => {
   return (
     <div className="mobiledev-container">
       <header className="mobiledev-header">
-        <h1>Expert Mobile App Development Services</h1>
+        <h1>Mobile App Development Services</h1>
         <p>Transform your business with high-quality, custom mobile app solutions.</p>
       </header>
 

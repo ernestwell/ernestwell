@@ -5,37 +5,37 @@ import image1 from "../../serviceimages/cloud.svg";
 import image2 from "../../serviceimages/custom.svg";
 import image3 from "../../serviceimages/erp.svg";
 import image4 from "../../serviceimages/no.svg";
-
 const services = [
   {
     id: 1,
     title: "SEO & Social Media Management",
     description:
-      "SEO and Social Media Management are crucial for boosting your online presence and engagement. We provide tailored SEO strategies to help improve your website’s ranking and optimize it for search engines. Our social media management services ensure that your business connects with the right audience through well-curated posts, campaigns, and strategic engagement across all platforms.",
+      "Boost your online presence with tailored SEO strategies and strategic social media management. We optimize your website for search engines and engage your audience with curated posts, campaigns, and platform-specific strategies.",
     image: image1
   },
   {
     id: 2,
     title: "Email Marketing Solutions",
     description:
-      "Effective email marketing is key to maintaining customer relationships and driving sales. Our email marketing services include creating personalized campaigns, optimizing open rates, and improving customer engagement. We help you build automated workflows, segmented campaigns, and track performance for better results.",
+      "Drive sales and customer engagement with effective email marketing. We create personalized campaigns, automate workflows, segment audiences, and track performance to maximize open rates and conversions.",
     image: image2
   },
   {
     id: 3,
     title: "Branding & Logo Design",
     description:
-      "Your brand’s identity is crucial to its success. We offer professional branding and logo design services that reflect your company’s core values and vision. From creating a strong visual identity to establishing a cohesive brand strategy, we ensure that your brand stands out in the market.",
+      "Build a strong brand identity with professional branding and logo design. We craft visually striking logos and cohesive brand strategies that reflect your vision and make a lasting impact.",
     image: image3
   },
   {
     id: 4,
     title: "Content Creation & Management",
     description:
-      "Content is king, and we help you create high-quality content that resonates with your target audience. From blogs and articles to video content and graphics, we manage the entire content creation process. Our team ensures content is optimized for SEO and delivered consistently across all platforms.",
+      "Engage your audience with high-quality content, from blogs and articles to videos and graphics. Our team ensures SEO optimization and consistent content delivery across all platforms.",
     image: image4
   },
 ];
+
 
 const DigitalMarketingSolutions = () => {
   const [showForm, setShowForm] = useState(false);

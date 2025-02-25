@@ -8,21 +8,21 @@ import image3 from "../../serviceimages/erp.svg";
 const services = [
   {
     id: 1,
-    title: "Cloud Storage & File Sharing Solutions",
-    description: `In today's dynamic business environment, seamless access to data is essential. Our Cloud Storage and File Sharing Solutions provide secure, scalable, and easily accessible storage systems to meet these demands. With global accessibility, you can access your files from anywhere, on any device, as long as you have an internet connection. Our advanced security features ensure your data is protected with end-to-end encryption and multi-factor authentication. The solutions also enable real-time collaboration, allowing teams to share files and work together efficiently, with concurrent editing and version control. These services grow with your business needs, providing the flexibility required for both startups and enterprises. By reducing reliance on costly physical storage infrastructure, these solutions enhance collaboration and simplify workflows.`,
+    title: "Cloud Storage & File Sharing",
+    description: `Our Cloud Storage solutions provide secure, scalable, and globally accessible file storage. Access your data from any device with end-to-end encryption and multi-factor authentication for security. Real-time collaboration enables teams to share, edit, and manage files efficiently, with version control ensuring seamless teamwork. Reduce reliance on physical storage and streamline workflows with flexible, cost-effective solutions.`,
     image: image1,
   },
   {
     id: 2,
     title: "Cloud-Based Backup Systems",
-    description: `Data loss is a significant risk to businesses, and our Cloud-Based Backup Systems are designed to mitigate that risk. These systems automate your backups and secure them on the cloud, ensuring business continuity even in the event of data loss. With automated backups, you can schedule regular intervals to keep your data updated without manual intervention. In case of data loss or corruption, rapid recovery ensures minimal downtime. Our disaster recovery capabilities protect your data from unexpected events, such as hardware failure, cyberattacks, or natural disasters. The solution is scalable and cost-effective, as you only pay for the storage you use, with the flexibility to scale up as your data requirements grow. This solution provides peace of mind by safeguarding business-critical data and ensuring operational resilience.`,
+    description: `Protect your business from data loss with automated cloud backups. Our solution ensures secure, scheduled backups and rapid recovery to minimize downtime. Disaster recovery features safeguard against cyberattacks, hardware failures, and unexpected events. With scalable, cost-efficient storage, you only pay for what you use, ensuring business continuity and resilience.`,
     image: image2,
   },
   {
     id: 3,
-    title: "SaaS Products Tailored to Clients’ Needs",
-    description: `Every business has unique needs, and our tailored SaaS (Software-as-a-Service) solutions help optimize operations with custom tools and software. From CRM systems to project management tools, we develop software that aligns with your specific business processes. We ensure seamless integration with your existing tools, creating a unified platform that simplifies workflows. Our solutions are scalable, adapting to your growing business demands, and we provide effortless updates to ensure your software stays current with the latest features. By using our tailored SaaS products, businesses can focus on growth and reduce operational overhead, all while utilizing cutting-edge technology designed specifically for their industry.`,
-    image: image3
+    title: "Custom SaaS Solutions",
+    description: `Optimize operations with tailored SaaS solutions, from CRM systems to project management tools. We develop software that seamlessly integrates with your existing tools, simplifying workflows and boosting efficiency. Scalable and continuously updated, our solutions grow with your business, reducing operational overhead while keeping you at the forefront of technology.`,
+    image: image3,
   },
 ];
 
