@@ -110,13 +110,11 @@
 
 import React, { useState, useEffect } from "react";
 import "./sign.css";
-import logImage from "./images/log.svg";
-import registerImage from "./images/register.svg";
 import '@fortawesome/fontawesome-free/css/all.min.css';
 
 const SignInSignUp = () => {
   const [isSignUpMode, setIsSignUpMode] = useState(false);
-  const [hideFooter, setHideFooter] = useState(false);
+  const [setHideFooter] = useState(false);
 
   useEffect(() => {
     const footer = document.querySelector(".footer");

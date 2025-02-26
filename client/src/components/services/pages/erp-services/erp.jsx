@@ -61,7 +61,7 @@ const ERPDevelopment = () => {
   return (
     <div className="erp-container">
       <header className="erp-header">
-        <h1>Expert ERP Solutions for Your Business</h1>
+        <h1>ERP Solutions</h1>
         <p>Transform your enterprise operations with our tailored ERP solutions.</p>
       </header>
       <section className="erp-services">

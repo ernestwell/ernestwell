@@ -77,7 +77,7 @@ const ContactForm = () => {
         </div>
       </div>
       <div className="contact-right slide-in">
-        <h2>Contact Us</h2>
+        <h1>Contact Us</h1>
         <form className="contact-form">
           <div className="input-group">
             <input type="text" placeholder="Your Name" required />

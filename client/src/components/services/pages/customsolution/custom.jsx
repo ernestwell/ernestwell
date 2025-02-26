@@ -11,40 +11,25 @@ const customServices = [
     id: 1,
     title: "Workflow Automation Tools",
     description:
-      "Our Workflow Automation Tools are designed to simplify and optimize business processes. By automating repetitive tasks such as data entry, approvals, and notifications, businesses can increase efficiency and reduce human error. Customizable workflows ensure that your unique business processes are streamlined to perfection.",
-    details: `
-      - **Task Automation:** Eliminate manual effort in repetitive tasks.
-      - **Real-Time Monitoring:** Track progress and identify inefficiencies.
-      - **Seamless Integration:** Connect with your existing tools like CRM or ERP.
-      - **Custom Workflows:** Tailor automation to your business needs.`,
+      "Streamline business operations by automating repetitive tasks such as data entry, approvals, and notifications. Real-time monitoring helps track progress and identify inefficiencies, while seamless integration ensures compatibility with CRM, ERP, and other business tools. Custom workflows allow businesses to tailor automation processes to their specific needs, improving accuracy and efficiency.",
     image: image1,
-    
   },
   {
     id: 2,
     title: "Employee Monitoring Systems",
     description:
-      "Track and analyze employee activities to enhance productivity and maintain accountability. Our Employee Monitoring Systems provide detailed insights into time usage, application activity, and compliance, ensuring optimal workforce performance.",
-    details: `
-      - **Activity Tracking:** Monitor apps, websites, and tasks.
-      - **Performance Analysis:** Identify top performers and improvement areas.
-      - **Time Management:** Track working hours, breaks, and idle time.
-      - **Data Security:** Prevent breaches with detailed access logs.`,
-    image: image2
+      "Optimize workforce productivity by tracking and analyzing employee activities, including time usage, application activity, and overall performance. Detailed insights help identify top performers and areas that need improvement. Time management features track working hours, breaks, and idle periods, ensuring accountability. Advanced security measures prevent data breaches with access logs and compliance monitoring.",
+    image: image2,
   },
   {
     id: 3,
     title: "Scheduling and Booking Systems",
     description:
-      "Our Scheduling and Booking Systems streamline the management of appointments, meetings, and reservations. These systems are ideal for businesses needing seamless scheduling with customers and internal teams.",
-    details: `
-      - **Automated Booking:** Allow customers to book services online.
-      - **Reminders and Notifications:** Send alerts to reduce no-shows.
-      - **Multi-Channel Integration:** Sync bookings with calendars and CRM tools.
-      - **Analytics:** Gain insights into peak times and customer preferences.`,
-    image: image3
+      "Simplify appointment scheduling and reservations with an automated booking system that allows customers and employees to manage their time efficiently. Built-in reminders and notifications help reduce no-shows, while seamless integration synchronizes schedules with calendars, CRM tools, and other business platforms. Analytics provide valuable insights into peak hours, customer behavior, and overall booking trends.",
+    image: image3,
   },
 ];
+
 
 const CustomSoftwareSolutions = () => {
   const [showForm, setShowForm] = useState(false);
@@ -76,7 +61,7 @@ const CustomSoftwareSolutions = () => {
   return (
     <div className="custom-software-container">
       <header className="custom-header">
-        <h1>Custom Software Solutions for Your Business</h1>
+        <h1>Custom Software Solutions </h1>
         <p>
           Unlock your business potential with tailored software solutions
           designed to enhance efficiency and productivity.
@@ -99,7 +84,6 @@ const CustomSoftwareSolutions = () => {
               <h2>{service.title}</h2>
               <p>{service.description}</p>
               <div className="service-details">
-                <h3>Key Features:</h3>
                 <p>{service.details}</p>
               </div>
               <button className="primary-btn-4" onClick={() => handleShowForm(service)}>See Demo</button>

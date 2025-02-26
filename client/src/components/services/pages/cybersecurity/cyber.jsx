@@ -54,7 +54,7 @@ const CybersecuritySolutions = () => {
   return (
     <div className="cybersecurity-container">
       <header className="cybersecurity-header">
-        <h1>Enhance Your Security with Expert Cybersecurity Solutions</h1>
+        <h1>Cybersecurity Solutions</h1>
         <p>
           Protect your systems, data, and infrastructure with our comprehensive cybersecurity services. From securing client systems against hacking to custom firewalls, compliance checks, and more, we have the expertise to safeguard your business.
         </p>
