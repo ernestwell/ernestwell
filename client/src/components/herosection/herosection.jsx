@@ -101,10 +101,12 @@
 
 // export default HeroSection;
 
-import React, { useState, useEffect } from "react";
+import  { useState, useEffect } from "react";
 import "./herosection.css";
 import WaveSvg from "./images/undraw_articles_visl.svg";
-import img from "./images/undraw_content-team_i066.svg"
+import img from "./images/undraw_content-team_i066.svg";
+// import About from "../profile/profile";
+
 
 const sentences = [
   { text: ["Transforming your ideas into ", "digital reality"], highlight: 1 },
@@ -162,8 +164,8 @@ const HeroSection = () => {
           that drive growth and seamless digital experiences.
         </p>
         <div className="hero-buttons">
-          <a href="#" className="btn primary">Explore Now</a>
-          <a href="#" className="btn secondary">Get in Touch</a>
+          <a href="/profile" className="btn primary">Explore Now</a>
+          <a href="/contact" className="btn secondary">Get in Touch</a>
         </div>
       </div>
       <img src={img} alt="Wave" className="hero-svg1" />

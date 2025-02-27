@@ -461,6 +461,7 @@ body {
     linear-gradient(rgba(58, 57, 57, 0.05) 1px, transparent 1px),
     linear-gradient(90deg, rgba(53, 52, 52, 0.05) 1px, transparent 1px);
   background-size: 100px 100px;
+  max-width: 1200px;
 }
 
 .hero-content {

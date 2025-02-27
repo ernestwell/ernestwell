@@ -318,9 +318,9 @@ const Footer = () => {
             </div>
 
           <div className="social-icons">
-                <a href="#" className="social-icon"><FaFacebookF /></a>
-                <a href="#" className="social-icon"><FaLinkedinIn /></a>
-                <a href="#" className="social-icon"><FaTwitter /></a>
+                <a href="https://www.linkedin.com/company/ernestwell-business-solution/?viewAsMember=true" className="social-icon"><FaLinkedinIn /></a>
+                <a href="https://www.facebook.com/profile.php?id=61573618348231" className="social-icon"><FaFacebookF /></a>
+                <a href="https://x.com/erneswellBS" className="social-icon"><FaTwitter /></a>
                 <a href="#" className="social-icon"><FaInstagram /></a>
           </div>
         </div>
