@@ -61,7 +61,7 @@ const ITSupport = () => {
   return (
     <div className="itsupport-container">
       <header className="itsupport-header">
-        <h1>Comprehensive IT Support Solutions</h1>
+        <h1>IT Support Solutions</h1>
         <p>
           Our IT support services are designed to ensure that your technology infrastructure runs smoothly and securely. From managed IT services to system setup and remote technical support, we provide the tools and expertise your business needs to stay ahead in today digital landscape.
         </p>

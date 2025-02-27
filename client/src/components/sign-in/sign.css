@@ -63,7 +63,16 @@ form.sign-in-form {
   color: #2e5077;
   margin-bottom: 10px;
 }
-
+.title-s::after{
+  content: '';
+  width: 50px;
+  height: 4px;
+  background: rgba(255, 193, 7, 0.7);
+  display: block;
+  margin: 5px auto;
+  margin-bottom: 20px;
+  border-radius: 10px;
+}
 .input-field-s {
   max-width: 380px;
   width: 100%;
@@ -117,12 +126,13 @@ form.sign-in-form {
   justify-content: center;
   align-items: center;
   margin: 0 0.45rem;
-  color:black;
+  color: #ffc107;
   border-radius: 50%;
-  border: 1px solid #333;
+  border: 2px solid #2e5077;
   text-decoration: none;
   font-size: 1.1rem;
   transition: 0.3s;
+  margin-top: 10px;
 }
 
 .social-icon-s:hover {
@@ -218,16 +228,18 @@ display: none;
 .panel p {
   font-size: 0.95rem;
   padding: 0.7rem 0;
+  margin-top: 10px;
 }
 
 .btn-s.transparent {
   margin: 0;
   background: none;
-  border: 2px solid #fff;
+  border: 2px solid #ffc107;
   width: 130px;
   height: 41px;
   font-weight: 600;
   font-size: 0.8rem;
+  margin-top: 10px;
 }
 .right-panel .image{
     margin-left: auto;
@@ -281,7 +293,15 @@ display: none;
 .container-sign.sign-up-mode .right-panel {
   pointer-events: all;
 }
-
+.content-s{
+  margin: auto;
+}
+.sign-up-form{
+  margin-top: 50px;
+}
+.right-panel .content-s{
+  margin: auto;
+}
 @media (max-width: 870px) {
   .container-sign {
     min-height: 800px;

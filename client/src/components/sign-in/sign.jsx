@@ -108,19 +108,17 @@
 
 // export default SignInSignUp;
 
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import "./sign.css";
-import '@fortawesome/fontawesome-free/css/all.min.css';
+import "@fortawesome/fontawesome-free/css/all.min.css";
 
 const SignInSignUp = () => {
   const [isSignUpMode, setIsSignUpMode] = useState(false);
-  const [setHideFooter] = useState(false);
 
   useEffect(() => {
     const footer = document.querySelector(".footer");
     if (footer) {
       footer.style.display = "none";
-      setHideFooter(true);
     }
 
     return () => {
@@ -159,7 +157,6 @@ const SignInSignUp = () => {
               </a>
             </div>
           </form>
-
           <form action="#" className="sign-up-form">
             <h2 className="title-s">Sign up</h2>
             <div className="input-field-s">
@@ -194,11 +191,12 @@ const SignInSignUp = () => {
         </div>
       </div>
 
+      {/* Panels */}
       <div className="panels-container">
         <div className="panel left-panel">
           <div className="content-s">
             <h3>New here?</h3>
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
+            <p>If you are new, create an account and get started!</p>
             <button
               className="btn-s transparent"
               id="sign-up-btn"
@@ -211,7 +209,8 @@ const SignInSignUp = () => {
         <div className="panel right-panel">
           <div className="content-s">
             <h3>One of us?</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            <p>Glad to have you back! Sign in to pick up where you left off.</p>
+
             <button
               className="btn-s transparent"
               id="sign-in-btn"

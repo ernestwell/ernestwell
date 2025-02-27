@@ -454,6 +454,7 @@ body {
   border-radius: 10px;
 }
 .arrow {
+  text-decoration: none;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -462,8 +463,9 @@ body {
   border-radius: 50%;
   background-color: #2e5077; 
   color: white;
-  padding-top: 2px;
+  /* padding-top: 2px; */
   font-size: 18px;
+
 }
 .learn-more-btn{
   margin-top: 10px;
@@ -474,12 +476,15 @@ body {
   padding-left: 20px;
   padding-right: 0px;
   margin-bottom: 20px;
+  text-decoration: none;
 }
 .service-title-2{
   font-size: 22px;
   font-weight: 400;
   text-transform: uppercase;
   margin-bottom: 10px;
+  font-family:"Josefin Sans" ;
+
 }
 .section-title-2::after{
   content: '';
