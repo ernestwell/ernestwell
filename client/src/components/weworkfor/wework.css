@@ -306,12 +306,14 @@
   max-width: 80%;
   margin: 1.5rem auto;
   line-height: 1.6;
+  font-family: "Josefin Sans";
 }
 
 .description span {
   font-weight: bold;
   color: #2e5077;
   margin: 0 0.3rem;
+  font-family: "Josefin Sans";
 }
 
 .cards-grid-we {
@@ -344,7 +346,7 @@
 .icon-we {
   font-size: 1.5rem;
   color: #2e5077;
-  background-color: #ffc107;
+  background-color: #FAB12F;
   border-radius: 50%;
   width: 3rem;
   height: 3rem;
@@ -360,23 +362,10 @@
   color: #2e5077;
   margin-left: 0.75rem;
   flex-grow: 1;
+  font-family: "Josefin Sans";
 }
 
 @media (max-width: 768px) {
-  .cards-grid-we {
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: 1rem;
-  }
-
-  .title-we {
-    font-size: 2rem;
-  }
-
-  .description {
-    font-size: 1rem;
-    max-width: 90%;
-  }
-
   .work-card {
     flex-direction: column;
     text-align: center;
@@ -393,6 +382,29 @@
     margin: 0.5rem 0 0;
     font-size: 1rem;
   }
+  .cards-grid-we {
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 0.8rem;
+  }
+
+  .work-card {
+    max-width: 180px;
+    padding: 0.75rem;
+    border-radius: 2rem;
+  }
+  .name-we {
+    font-size: 1rem;
+    margin-left: 0.5rem;
+  }
+
+  .title-we {
+    font-size: 2rem;
+  }
+
+  .description {
+    font-size: 1rem;
+    max-width: 85%;
+  }
 }
 
 @media (max-width: 480px) {
@@ -407,5 +419,26 @@
 
   .work-card {
     max-width: 100%;
+  }
+  .cards-grid-we {
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 0.5rem;
+  }
+
+  .work-card {
+    max-width: 150px;
+    padding: 0.5rem;
+    border-radius: 1.5rem;
+  }
+
+  .icon-we {
+    width: 2rem;
+    height: 2rem;
+    font-size: 1rem;
+  }
+
+  .name-we {
+    font-size: 0.85rem;
+    margin-left: 0.4rem;
   }
 }
