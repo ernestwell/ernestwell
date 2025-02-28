@@ -64,7 +64,7 @@
 
 // export default Navbar;
 
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { FaBars, FaTimes } from "react-icons/fa";
 import "./navbar.css";
@@ -98,14 +98,13 @@ const Navbar = () => {
           <li><Link to="/profile" className="nav-item">Profile</Link></li>
           
           <li 
-            className="nav-item nav-services"
-            onMouseEnter={() => setDropdownOpen(true)}
-            onMouseLeave={() => setDropdownOpen(false)}
-          >
-            <span onClick={() => setDropdownOpen(!dropdownOpen)}>Services+</span>
-            {dropdownOpen && (
-              <div className="dropdown-menu-nav">
-                <ul className="dropdown-list">
+              className="nav-item nav-services"
+              onMouseEnter={() => setDropdownOpen(true)}
+              onMouseLeave={() => setDropdownOpen(false)}
+            >
+              <span onClick={() => setDropdownOpen(!dropdownOpen)}>Services+</span>
+              {dropdownOpen && (
+                <ul className="dropdown-menu-nav">
                   <li><Link to="/web-development">Web Development</Link></li>
                   <li><Link to="/app-development">App Development</Link></li>
                   <li><Link to="/cloudsolutions">Cloud Solutions</Link></li>
@@ -115,8 +114,7 @@ const Navbar = () => {
                   <li><Link to="/custom-development">Custom Solutions</Link></li>
                   <li><Link to="/digitalmarketing">Digital Marketing</Link></li>
                 </ul>
-              </div>
-            )}
+              )}
           </li>
 
           <li><Link to="/careers" className="nav-item">Careers</Link></li>

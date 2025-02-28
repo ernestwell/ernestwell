@@ -20,46 +20,7 @@ import Profile from "./components/profile/profile";
 import CareersPage from "./components/Careers/career";
 import TechStack from "./components/techstack/techstack";
 function App() {
-  // useEffect(() => {
-  //   // Disable right-click functionality on the page for text, images, etc.
-  //   const handleRightClick = (e) => {
-  //     // Allow right-click for inspecting, but prevent content copying
-  //     if (e.target.tagName !== "IMG") {
-  //       e.preventDefault();
-  //     }
-  //   };
 
-  //   // Disable text selection across the whole page
-  //   document.body.style.userSelect = "none"; // Prevent text selection
-
-  //   // Prevent copy, cut, and paste actions
-  //   const preventCopy = (e) => {
-  //     e.preventDefault();
-  //     alert("Copying is disabled on this site.");
-  //   };
-  //   const preventCut = (e) => {
-  //     e.preventDefault();
-  //     alert("Cutting is disabled on this site.");
-  //   };
-  //   const preventPaste = (e) => {
-  //     e.preventDefault();
-  //     alert("Pasting is disabled on this site.");
-  //   };
-
-  //   // Add event listeners
-  //   document.addEventListener("contextmenu", handleRightClick); // Right-click is allowed only for inspecting
-  //   document.addEventListener("copy", preventCopy);
-  //   document.addEventListener("cut", preventCut);
-  //   document.addEventListener("paste", preventPaste);
-
-  //   // Cleanup event listeners when component is unmounted
-  //   return () => {
-  //     document.removeEventListener("contextmenu", handleRightClick);
-  //     document.removeEventListener("copy", preventCopy);
-  //     document.removeEventListener("cut", preventCut);
-  //     document.removeEventListener("paste", preventPaste);
-  //   };
-  // }, []);
 
   return (
     <Router>
