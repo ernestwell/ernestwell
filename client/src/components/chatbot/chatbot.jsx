@@ -1,92 +1,103 @@
 import { useState } from "react";
-import emailjs from "emailjs-com";
+import { useNavigate } from "react-router-dom";
 import "./Chatbot.css";
-import botIcon from "./chatimage/robot.png"; 
+import botIcon from "./chatimage/robot.png";
 
 const Chatbot = () => {
   const [isChatOpen, setIsChatOpen] = useState(false);
   const [isBotTyping, setIsBotTyping] = useState(false);
-  const [userDetails, setUserDetails] = useState({ name: "", email: "", service: "" });
-  const [isDetailsCollected, setIsDetailsCollected] = useState(false);
+  const [userName, setUserName] = useState("");
+  const [chatStage, setChatStage] = useState("welcome");
   const [messages, setMessages] = useState([]);
   const [userInput, setUserInput] = useState("");
 
-  const toggleChat = () => setIsChatOpen(!isChatOpen);
+  const navigate = useNavigate();
 
+  const toggleChat = () => setIsChatOpen(!isChatOpen);
   const handleUserInput = (e) => setUserInput(e.target.value);
 
   const handleSendMessage = () => {
     if (!userInput.trim()) return;
-
-    const newMessages = [...messages, { user: "user", text: userInput }];
-    setMessages(newMessages);
-    setIsBotTyping(true);
-
-    setTimeout(() => {
-      let botResponse = generateResponse(userInput);
-      setMessages([...newMessages, { user: "bot", text: botResponse }]);
-      setIsBotTyping(false);
-    }, 1200);
-
+    setMessages((prev) => [...prev, { user: "user", text: userInput }]);
+    handleBotResponse(userInput);
     setUserInput("");
   };
 
-  const generateResponse = (input) => {
-    const lowerCaseInput = input.toLowerCase();
-    if (lowerCaseInput.includes("it support")) {
-      return `Sure, ${userDetails.name}! Our IT Support services offer 24/7 troubleshooting, network management, and hardware repair. How can I assist you?`;
-    } else if (lowerCaseInput.includes("cybersecurity")) {
-      return `${userDetails.name}, we provide comprehensive cybersecurity solutions including threat assessments, vulnerability scans, and incident response. Let us know what you need.`;
-    } else if (lowerCaseInput.includes("custom software")) {
-      return `We build custom software tailored to your business needs, ${userDetails.name}. Whether it’s a web app, desktop solution, or mobile app, we can help!`;
-    } else if (lowerCaseInput.includes("unique query")) {
-      return handleUniqueQuery();
-    } else {
-      return `I’m sorry, ${userDetails.name}, I didn’t understand that. Could you please rephrase or choose a quick option below?`;
-    }
-  };
+  const handleBotResponse = (input) => {
+    setIsBotTyping(true);
+    setTimeout(() => {
+      let botResponse = "";
+      let options = null;
+      const lowerCaseInput = input.toLowerCase().trim();
 
-  const handleUniqueQuery = () => {
-    return `I see you have a unique query, ${userDetails.name}. Would you like us to forward it to our team for further assistance? Please type "yes" to confirm.`;
-  };
+      if (chatStage === "welcome") {
+        setUserName(input);
+        setChatStage("options");
+        botResponse = `Hello, ${input}! How can I assist you today?`;
+        options = ["Our Services", "Get in Touch", "Frequently Asked Questions"];
+      } else if (chatStage === "options") {
+        if (lowerCaseInput === "our services") {
+          setChatStage("serviceSelection");
+          botResponse = "We offer a range of professional services. Please select an option:";
+          options = [
+            "IT Support & Infrastructure",
+            "Cybersecurity Solutions",
+            "Cloud Computing Services",
+            "Digital Marketing Strategy",
+            "Custom Software Development",
+            "Enterprise Resource Planning (ERP)",
+            "Mobile Application Development",
+            "Web Design & Development",
+          ];
+        } else if (lowerCaseInput === "get in touch") {
+          botResponse = "You can reach us at **support@example.com** or call us at **+1234567890**.";
+        } else if (lowerCaseInput === "frequently asked questions") {
+          botResponse =
+            "Here are some common topics: pricing, project timelines, and support services. What would you like to learn more about?";
+        } else {
+          botResponse = "I didn't quite get that. Please select one of the options below.";
+          options = ["Our Services", "Get in Touch", "Frequently Asked Questions"];
+        }
+      } else if (chatStage === "serviceSelection") {
+        const serviceRoutes = {
+          "it support & infrastructure": "/ITsupport",
+          "cybersecurity solutions": "/CybersecuritySolutions",
+          "cloud computing services": "/cloudsolutions",
+          "digital marketing strategy": "/digitalmarketing",
+          "custom software development": "/custom-development",
+          "enterprise resource planning (erp)": "/erp-development",
+          "mobile application development": "/app-development",
+          "web design & development": "/web-development",
+        };
 
-  const sendQueryToEmail = () => {
-    const emailData = {
-      user_name: userDetails.name,
-      user_email: userDetails.email,
-      user_service: userDetails.service,
-      chat_history: messages.map((msg) => `${msg.user}: ${msg.text}`).join("\n"),
-    };
+        const matchedService = Object.keys(serviceRoutes).find(
+          (service) => lowerCaseInput === service
+        );
 
-    emailjs.send("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", emailData, "YOUR_USER_ID")
-      .then(() => {
-        setMessages([...messages, { user: "bot", text: "Your query has been forwarded to our team. We will reach out to you soon!" }]);
-      })
-      .catch(() => {
-        setMessages([...messages, { user: "bot", text: "Sorry, there was an issue forwarding your query. Please try again later." }]);
-      });
-  };
-
-  const handleKeyPress = (e) => {
-    if (e.key === "Enter") {
-      if (!isDetailsCollected) {
-        collectUserDetails();
-      } else {
-        handleSendMessage();
+        if (matchedService) {
+          botResponse = `Redirecting you to our **${matchedService}** page...`;
+          setChatStage("serviceSelected");
+          setTimeout(() => {
+            navigate(serviceRoutes[matchedService]);
+          }, 1000);
+        } else {
+          botResponse = "Please choose from the available services below.";
+          options = [
+            "IT Support & Infrastructure",
+            "Cybersecurity Solutions",
+            "Cloud Computing Services",
+            "Digital Marketing Strategy",
+            "Custom Software Development",
+            "Enterprise Resource Planning (ERP)",
+            "Mobile Application Development",
+            "Web Design & Development",
+          ];
+        }
       }
-    }
-  };
 
-  const collectUserDetails = () => {
-    const detailsArray = userInput.split(",").map((item) => item.trim());
-    if (detailsArray.length === 3) {
-      setUserDetails({ name: detailsArray[0], email: detailsArray[1], service: detailsArray[2] });
-      setIsDetailsCollected(true);
-      setMessages([{ user: "bot", text: `Thanks, ${detailsArray[0]}! How can I assist you today with ${detailsArray[2]}?` }]);
-      setUserInput("");
-    } else {
-      setMessages([{ user: "bot", text: "Please provide your details in this format: Name, Email, Service Interest" }]);
-    }
+      setMessages((prev) => [...prev, { user: "bot", text: botResponse, options }]);
+      setIsBotTyping(false);
+    }, 1200);
   };
 
   return (
@@ -102,7 +113,7 @@ const Chatbot = () => {
           <div className="chatbot-header">
             <img src={botIcon} alt="Bot Icon" className="chatbot-icon" />
             <h3>Service Assistance</h3>
-            <button className="close-btn" onClick={toggleChat}>–</button>
+            <button className="close-btn" onClick={toggleChat}>×</button>
           </div>
 
           <div className="chatbot-body">
@@ -110,6 +121,19 @@ const Chatbot = () => {
               {messages.map((message, index) => (
                 <div key={index} className={`message ${message.user}`}>
                   <p>{message.text}</p>
+                  {message.options && (
+                    <div className="options-container">
+                      {message.options.map((option, i) => (
+                        <button
+                          key={i}
+                          className="option-btn"
+                          onClick={() => handleBotResponse(option)}
+                        >
+                          {option}
+                        </button>
+                      ))}
+                    </div>
+                  )}
                 </div>
               ))}
               {isBotTyping && (
@@ -122,29 +146,16 @@ const Chatbot = () => {
             </div>
           </div>
 
-          {!isDetailsCollected ? (
-            <div className="chatbot-footer">
-              <input
-                type="text"
-                value={userInput}
-                onChange={handleUserInput}
-                onKeyPress={handleKeyPress}
-                placeholder="Enter Name, Email, Service Interest..."
-              />
-              <button onClick={collectUserDetails}>Submit</button>
-            </div>
-          ) : (
-            <div className="chatbot-footer">
-              <input
-                type="text"
-                value={userInput}
-                onChange={handleUserInput}
-                onKeyPress={handleKeyPress}
-                placeholder="Type your message..."
-              />
-              <button onClick={handleSendMessage}>Send</button>
-            </div>
-          )}
+          <div className="chatbot-footer">
+            <input
+              type="text"
+              value={userInput}
+              onChange={handleUserInput}
+              onKeyPress={(e) => e.key === "Enter" && handleSendMessage()}
+              placeholder={chatStage === "welcome" ? "Enter your name..." : "Type your message..."}
+            />
+            <button onClick={handleSendMessage}>Send</button>
+          </div>
         </div>
       )}
     </>
@@ -152,8 +163,4 @@ const Chatbot = () => {
 };
 
 export default Chatbot;
-
-
-
-
 
