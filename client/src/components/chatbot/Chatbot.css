@@ -1,3 +1,6 @@
+body{
+  font-family: "Josefin Sans";
+}
 .chatbot-container {
   width: 360px;
   height: 520px;
@@ -21,16 +24,18 @@
   background: linear-gradient(90deg, #002d62, #0056b3);
   color: #fff;
   border-radius: 12px 12px 0 0;
-  font-family: 'Poppins', sans-serif;
-  justify-content: space-between; 
+  justify-content: space-between;
+  font-family: "Josefin Sans", sans-serif; 
 }
 
 .chatbot-header h3 {
-  font-size: 0.9rem; 
+  font-size: 1.2rem; 
   font-weight: 500;
   margin: 0;
   text-transform: capitalize; 
-  margin-left: 8px; 
+  margin-left: 8px;
+  margin:auto;
+  font-family: "Josefin Sans"; 
 }
 
 .chatbot-icon {
@@ -39,7 +44,7 @@
   filter: brightness(0) invert(1);
 }
 
-.chatbot-header .minimize-btn {
+.chatbot-header .close-btn {
   font-size: 1.5rem;
   cursor: pointer;
   color: #fff;
@@ -48,7 +53,7 @@
   transition: color 0.3s ease;
 }
 
-.chatbot-header .minimize-btn:hover {
+.chatbot-header .close-btn:hover {
   color: #ddd; 
 }
 
@@ -60,12 +65,14 @@
   background: #f5f5f5;
   scrollbar-width: thin;
   scrollbar-color: #ccc #f5f5f5;
+  font-family: "Josefin Sans", sans-serif;
 }
 
 .messages {
   display: flex;
   flex-direction: column;
   gap: 8px;
+  font-family: "Josefin Sans", sans-serif;
 }
 
 .message {
@@ -75,7 +82,7 @@
   word-wrap: break-word;
   font-size: 0.95rem;
   line-height: 1.4;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Josefin Sans", sans-serif;
 }
 
 .message.user {
@@ -83,6 +90,7 @@
   align-self: flex-end;
   color: #004f89;
   border-radius: 12px 12px 0 12px;
+  font-family: "Josefin Sans", sans-serif;
 }
 
 .message.bot {
@@ -90,6 +98,7 @@
   align-self: flex-start;
   color: #333;
   border-radius: 12px 12px 12px 0;
+  font-family: "Josefin Sans", sans-serif;
 }
 
 
@@ -101,6 +110,7 @@
   display: inline-block;
   margin: 0 3px;
   animation: blink 1.5s infinite both;
+  font-family: "Josefin Sans", sans-serif;
 }
 
 .typing-indicator span:nth-child(2) { animation-delay: 0.2s; }
@@ -119,6 +129,7 @@
   background: #f0f0f0;
   padding: 12px;
   gap: 8px;
+  font-family: "Josefin Sans", sans-serif;
 }
 
 .quick-replies button {
@@ -128,9 +139,9 @@
   border-radius: 20px;
   padding: 8px 15px;
   font-size: 0.9rem;
-  font-family: 'Poppins', sans-serif;
   cursor: pointer;
   transition: all 0.3s ease;
+  font-family: "Josefin Sans", sans-serif;
 }
 
 .quick-replies button:hover {
@@ -145,6 +156,7 @@
   border-top: 1px solid #ddd;
   background: #fff;
   align-items: center;
+  font-family: "Josefin Sans", sans-serif;
 }
 
 .chatbot-footer input {
@@ -155,6 +167,7 @@
   font-size: 1rem;
   outline: none;
   transition: border 0.3s ease;
+  font-family: "Josefin Sans", sans-serif;
 }
 
 .chatbot-footer input:focus {
@@ -256,4 +269,7 @@
     padding: 9px 14px;
     font-size: 0.85rem;
   }
+}
+body {
+  font-family: "Josefin Sans", sans-serif;
 }

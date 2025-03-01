@@ -1,61 +1,93 @@
-import React, { useState } from "react";
+import { useState } from "react";
+import emailjs from "emailjs-com";
 import "./Chatbot.css";
 import botIcon from "./chatimage/robot.png"; 
 
 const Chatbot = () => {
-  const [messages, setMessages] = useState([
-    { user: "bot", text: "Hello! How can I assist you with our services today?" },
-  ]);
-  const [userInput, setUserInput] = useState("");
   const [isChatOpen, setIsChatOpen] = useState(false);
   const [isBotTyping, setIsBotTyping] = useState(false);
+  const [userDetails, setUserDetails] = useState({ name: "", email: "", service: "" });
+  const [isDetailsCollected, setIsDetailsCollected] = useState(false);
+  const [messages, setMessages] = useState([]);
+  const [userInput, setUserInput] = useState("");
+
+  const toggleChat = () => setIsChatOpen(!isChatOpen);
 
   const handleUserInput = (e) => setUserInput(e.target.value);
 
   const handleSendMessage = () => {
     if (!userInput.trim()) return;
-    
-    setMessages([...messages, { user: "user", text: userInput }]);
+
+    const newMessages = [...messages, { user: "user", text: userInput }];
+    setMessages(newMessages);
     setIsBotTyping(true);
 
-    let botResponse = "";
-    const lowerCaseInput = userInput.toLowerCase();
-    
-    if (lowerCaseInput.includes("it support")) {
-      botResponse = "Our IT Support services offer 24/7 troubleshooting, network management, and hardware repair. How can I help you today?";
-    } else if (lowerCaseInput.includes("cybersecurity")) {
-      botResponse = "We provide comprehensive cybersecurity solutions including threat assessments, vulnerability scans, and incident response. Let us know what you need.";
-    } else if (lowerCaseInput.includes("cloud solutions")) {
-      botResponse = "Our cloud solutions help businesses scale efficiently with storage, computing, and networking services tailored to your needs.";
-    } else if (lowerCaseInput.includes("digital marketing")) {
-      botResponse = "We specialize in SEO, social media marketing, PPC, and content creation to grow your online presence and increase revenue.";
-    } else if (lowerCaseInput.includes("custom software")) {
-      botResponse = "We build custom software tailored to your business needs, whether it’s a web app, desktop solution, or mobile app.";
-    } else if (lowerCaseInput.includes("erp solutions")) {
-      botResponse = "Our ERP solutions help integrate your core business processes and ensure smooth operations with real-time data insights.";
-    } else if (lowerCaseInput.includes("mobile apps")) {
-      botResponse = "We develop mobile apps for both Android and iOS, providing seamless user experiences and innovative functionalities.";
-    } else if (lowerCaseInput.includes("web development")) {
-      botResponse = "Our web development team creates scalable, secure, and user-friendly websites that can grow with your business.";
-    } else {
-      botResponse = "I’m sorry, I didn’t understand that. Could you please rephrase or choose a quick option below?";
-    }
-
     setTimeout(() => {
-      setMessages((prevMessages) => [...prevMessages, { user: "bot", text: botResponse }]);
+      let botResponse = generateResponse(userInput);
+      setMessages([...newMessages, { user: "bot", text: botResponse }]);
       setIsBotTyping(false);
     }, 1200);
 
     setUserInput("");
   };
 
-  const handleKeyPress = (e) => {
-    if (e.key === "Enter") {
-      handleSendMessage();
+  const generateResponse = (input) => {
+    const lowerCaseInput = input.toLowerCase();
+    if (lowerCaseInput.includes("it support")) {
+      return `Sure, ${userDetails.name}! Our IT Support services offer 24/7 troubleshooting, network management, and hardware repair. How can I assist you?`;
+    } else if (lowerCaseInput.includes("cybersecurity")) {
+      return `${userDetails.name}, we provide comprehensive cybersecurity solutions including threat assessments, vulnerability scans, and incident response. Let us know what you need.`;
+    } else if (lowerCaseInput.includes("custom software")) {
+      return `We build custom software tailored to your business needs, ${userDetails.name}. Whether it’s a web app, desktop solution, or mobile app, we can help!`;
+    } else if (lowerCaseInput.includes("unique query")) {
+      return handleUniqueQuery();
+    } else {
+      return `I’m sorry, ${userDetails.name}, I didn’t understand that. Could you please rephrase or choose a quick option below?`;
     }
   };
 
-  const toggleChat = () => setIsChatOpen(!isChatOpen);
+  const handleUniqueQuery = () => {
+    return `I see you have a unique query, ${userDetails.name}. Would you like us to forward it to our team for further assistance? Please type "yes" to confirm.`;
+  };
+
+  const sendQueryToEmail = () => {
+    const emailData = {
+      user_name: userDetails.name,
+      user_email: userDetails.email,
+      user_service: userDetails.service,
+      chat_history: messages.map((msg) => `${msg.user}: ${msg.text}`).join("\n"),
+    };
+
+    emailjs.send("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", emailData, "YOUR_USER_ID")
+      .then(() => {
+        setMessages([...messages, { user: "bot", text: "Your query has been forwarded to our team. We will reach out to you soon!" }]);
+      })
+      .catch(() => {
+        setMessages([...messages, { user: "bot", text: "Sorry, there was an issue forwarding your query. Please try again later." }]);
+      });
+  };
+
+  const handleKeyPress = (e) => {
+    if (e.key === "Enter") {
+      if (!isDetailsCollected) {
+        collectUserDetails();
+      } else {
+        handleSendMessage();
+      }
+    }
+  };
+
+  const collectUserDetails = () => {
+    const detailsArray = userInput.split(",").map((item) => item.trim());
+    if (detailsArray.length === 3) {
+      setUserDetails({ name: detailsArray[0], email: detailsArray[1], service: detailsArray[2] });
+      setIsDetailsCollected(true);
+      setMessages([{ user: "bot", text: `Thanks, ${detailsArray[0]}! How can I assist you today with ${detailsArray[2]}?` }]);
+      setUserInput("");
+    } else {
+      setMessages([{ user: "bot", text: "Please provide your details in this format: Name, Email, Service Interest" }]);
+    }
+  };
 
   return (
     <>
@@ -90,22 +122,29 @@ const Chatbot = () => {
             </div>
           </div>
 
-          <div className="quick-replies">
-            {["IT Support", "Cybersecurity", "Cloud Solutions", "Digital Marketing", "Custom Software", "ERP Solutions", "Mobile Apps", "Web Development"].map((service, index) => (
-              <button key={index} onClick={() => setUserInput(service)}>{service}</button>
-            ))}
-          </div>
-
-          <div className="chatbot-footer">
-            <input
-              type="text"
-              value={userInput}
-              onChange={handleUserInput}
-              onKeyPress={handleKeyPress}
-              placeholder="Type your message here..."
-            />
-            <button onClick={handleSendMessage}>Send</button>
-          </div>
+          {!isDetailsCollected ? (
+            <div className="chatbot-footer">
+              <input
+                type="text"
+                value={userInput}
+                onChange={handleUserInput}
+                onKeyPress={handleKeyPress}
+                placeholder="Enter Name, Email, Service Interest..."
+              />
+              <button onClick={collectUserDetails}>Submit</button>
+            </div>
+          ) : (
+            <div className="chatbot-footer">
+              <input
+                type="text"
+                value={userInput}
+                onChange={handleUserInput}
+                onKeyPress={handleKeyPress}
+                placeholder="Type your message..."
+              />
+              <button onClick={handleSendMessage}>Send</button>
+            </div>
+          )}
         </div>
       )}
     </>
@@ -113,6 +152,8 @@ const Chatbot = () => {
 };
 
 export default Chatbot;
+
+
 
 
 
