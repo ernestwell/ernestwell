@@ -683,6 +683,7 @@ body {
   padding: 80px 5%;
   text-align: center;
   overflow-x: hidden;
+  padding-bottom: 40px;
 }
 
 .tech-stack-section {

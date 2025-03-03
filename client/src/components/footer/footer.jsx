@@ -306,7 +306,7 @@ const Footer = () => {
       <div className="footer-container">
         <div className="footer-section about">
           <h3>ERNESTWELL</h3>
-          <p>Empowering businesses through technology.</p>
+          <p>Empowering Businesses through Technology.</p>
            <div className="footer-links">
                 <a href="#" className="footer-link">Mission</a>
                 <span className="footer-separator">|</span>
