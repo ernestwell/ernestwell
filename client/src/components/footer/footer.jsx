@@ -307,7 +307,7 @@ const Footer = () => {
         <div className="footer-section about">
           <h3>ERNESTWELL</h3>
           <p>Empowering Businesses through Technology.</p>
-           <div className="footer-links">
+           {/* <div className="footer-links">
                 <a href="#" className="footer-link">Mission</a>
                 <span className="footer-separator">|</span>
                 <a href="#" className="footer-link">Values</a>
@@ -315,7 +315,7 @@ const Footer = () => {
                 <a href="#" className="footer-link">Vision</a>
                 <span className="footer-separator">|</span>
                 <a href="#" className="footer-link">Team</a>
-            </div>
+            </div> */}
 
           <div className="social-icons">
                 <a href="https://www.linkedin.com/company/ernestwell-business-solution/?viewAsMember=true" className="social-icon"><FaLinkedinIn /></a>
