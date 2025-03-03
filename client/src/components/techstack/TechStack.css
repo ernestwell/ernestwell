@@ -514,7 +514,7 @@ body {
   margin-top: 10px;
   font-weight: 600;
 } */
-.tech-stack-container {
+/* .tech-stack-container {
   background-image: 
     linear-gradient(rgba(58, 57, 57, 0.05) 1px, transparent 1px),
     linear-gradient(90deg, rgba(53, 52, 52, 0.05) 1px, transparent 1px);
@@ -561,7 +561,6 @@ body {
   padding: 0 10px;
 }
 
-/* Tabs Navigation */
 .tech-stack-tabs {
   display: flex;
   justify-content: center;
@@ -599,7 +598,6 @@ body {
   border-color: #2e5077;
 }
 
-/* Tech Stack Grid */
 .tech-stack-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
@@ -640,7 +638,7 @@ body {
   font-size: clamp(0.9rem, 1vw, 1rem);
 }
 
-/* Responsive Tweaks */
+
 @media (max-width: 768px) {
   .tech-stack-container {
     padding: 50px 10px;
@@ -678,4 +676,189 @@ body {
     padding: 6px 10px;
   }
 }
+ */
 
+.tech-stack-container {
+  background-image: 
+  linear-gradient(rgba(58, 57, 57, 0.05) 1px, transparent 1px),
+  linear-gradient(90deg, rgba(53, 52, 52, 0.05) 1px, transparent 1px);
+  background-size: 100px 100px;
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.tech-stack-section {
+  max-width: 1200px;
+  margin: auto;
+}
+
+.tech-stack-title {
+  font-size: 2.5rem;
+  color: #2e5077;
+  font-weight: bold;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.tech-stack-description {
+  font-size: 1.2rem;
+  color: #Fabb12;
+  margin-bottom: 40px;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.6;
+  max-width: 800px;
+}
+
+.tech-stack-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 80px;
+  max-width: 1200px;
+  margin:auto;
+}
+
+.tab-button {
+  background: #ffffff;
+  border: 2px solid #2e5077;
+  padding: 12px 10px;
+  border-radius: 15px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #Fabb12;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  margin-bottom:30px ;
+}
+
+.tab-button:hover,
+.active-tab {
+  background: #2e5077;
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Grid Section */
+.tech-stack-grid {
+  display: grid;
+  gap: 18px;
+  justify-content: center;
+  padding: 20px;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  max-width: 800px;
+  margin: auto;
+
+  max-height: 400px;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: #2e5077 #f1f1f1;
+}
+
+.tech-stack-grid::-webkit-scrollbar {
+  width: 6px;
+}
+
+.tech-stack-grid::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+.tech-stack-grid::-webkit-scrollbar-thumb {
+  background: #2e5077;
+  border-radius: 10px;
+}
+
+.tech-icon-container {
+  background: #ffffff;
+  width: 120px;
+  height: 120px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.12);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.tech-icon-container::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(46, 80, 119, 0.05);
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.tech-icon-container:hover::after {
+  opacity: 1;
+}
+
+.tech-icon-container:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 5px 12px rgba(0, 0, 0, 0.15);
+}
+
+.tech-icon {
+  font-size: 2.2rem;
+  margin-bottom: 8px;
+  color: #2e5077;
+}
+
+.tech-name {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #2e5077;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .tech-stack-grid {
+    grid-template-columns: repeat(3, 1fr);
+    max-height: 320px;
+  }
+
+  .tech-icon-container {
+    width: 100px;
+    height: 100px;
+  }
+
+  .tech-icon {
+    font-size: 1.9rem;
+  }
+
+  .tech-name {
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .tech-stack-grid {
+    grid-template-columns: repeat(2, 1fr);
+    max-height: 280px;
+  }
+
+  .tech-icon-container {
+    width: 90px;
+    height: 90px;
+  }
+
+  .tech-icon {
+    font-size: 1.6rem;
+  }
+
+  .tech-name {
+    font-size: 0.75rem;
+  }
+}

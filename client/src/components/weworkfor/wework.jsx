@@ -75,7 +75,6 @@
 //     </div>
 //   );
 // };
-import React from "react";
 import "./wework.css";
 import { Rocket, Building, Users, User, Landmark, Briefcase } from "lucide-react";
 
