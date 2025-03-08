@@ -8,8 +8,8 @@ import {
   FacebookAuthProvider,
   GithubAuthProvider,
   signInWithPopup,
-  onAuthStateChanged,
 } from "firebase/auth";
+import { getFirestore, doc, setDoc, getDoc } from "firebase/firestore";
 
 const firebaseConfig = {
   apiKey: "AIzaSyC_GJY3JdHSFsJEbYT0hKDSyFoIf6da8W4",
@@ -21,22 +21,59 @@ const firebaseConfig = {
   measurementId: "G-FYX0L73HQB",
 };
 
-// Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
+const db = getFirestore(app);
 
-// Email/Password Signup
-const signupWithEmailPassword = async (email, password) => {
+const saveUserToFirestore = async (user, defaultRole = "user") => {
+  if (!user) return;
+
+  const userRef = doc(db, "users", user.uid);
+  const userDoc = await getDoc(userRef);
+
+  if (userDoc.exists()) {
+    const existingRole = userDoc.data().role;
+    if (existingRole) {
+      console.log(`User already has role: ${existingRole}`);
+      return;
+    }
+  }
+
+  await setDoc(userRef, { email: user.email, role: defaultRole }, { merge: true });
+};
+
+export const checkAdmin = async (uid) => {
   try {
-    const userCredential = await createUserWithEmailAndPassword(auth, email, password);
-    return userCredential.user;
+    const userDocRef = doc(db, "users", uid);
+    const userDoc = await getDoc(userDocRef);
+
+    if (userDoc.exists()) {
+      const userData = userDoc.data();
+      console.log("Fetched user data:", userData);
+      
+      // Check if role exists before returning
+      return userData.role && userData.role === "admin";
+    } else {
+      console.log("No user document found in Firestore for UID:", uid);
+      return false;
+    }
   } catch (error) {
-    console.error(error.message);
-    alert("Invalid Credentials");
+    console.error("Error checking admin role:", error);
+    return false;
   }
 };
 
-// Email/Password Login
+
+const signupWithEmailPassword = async (email, password) => {
+  try {
+    const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+    await saveUserToFirestore(userCredential.user, "user");
+    return userCredential.user;
+  } catch (error) {
+    console.error(error.message);
+  }
+};
+
 const loginWithEmailPassword = async (email, password) => {
   try {
     const userCredential = await signInWithEmailAndPassword(auth, email, password);
@@ -46,44 +83,40 @@ const loginWithEmailPassword = async (email, password) => {
   }
 };
 
-// Google Login
 const loginWithGoogle = async () => {
   const provider = new GoogleAuthProvider();
   try {
     const result = await signInWithPopup(auth, provider);
+    await saveUserToFirestore(result.user, "user");
     return result.user;
   } catch (error) {
     console.error(error.message);
   }
 };
 
-// Facebook Login
 const loginWithFacebook = async () => {
   const provider = new FacebookAuthProvider();
   try {
     const result = await signInWithPopup(auth, provider);
+    await saveUserToFirestore(result.user, "user");
     return result.user;
   } catch (error) {
-    console.error("Error Code:", error.code);
-    console.error("Error Message:", error.message);
-    console.error("Email:", error.customData?.email);
-    console.error("Credential:", FacebookAuthProvider.credentialFromError(error));
+    console.error(error.message);
   }
 };
 
-// GitHub Login
 const loginWithGithub = async () => {
   const provider = new GithubAuthProvider();
   provider.setCustomParameters({ prompt: "select_account" });
   try {
     const result = await signInWithPopup(auth, provider);
+    await saveUserToFirestore(result.user, "user");
     return result.user;
   } catch (error) {
     console.error(error.message);
   }
 };
 
-// Logout
 const logout = async () => {
   try {
     await signOut(auth);
@@ -92,13 +125,14 @@ const logout = async () => {
   }
 };
 
-// Export everything
 export {
   auth,
+  db,
   signupWithEmailPassword,
   loginWithEmailPassword,
   loginWithGoogle,
   loginWithFacebook,
   loginWithGithub,
   logout,
+  saveUserToFirestore,
 };

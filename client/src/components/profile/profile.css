@@ -13,7 +13,7 @@
   align-items: center;
   justify-content: center;
   text-align: center;
-  color: #ffc107;
+  color: #FAB12F;
   overflow: hidden;
 }
 
@@ -34,21 +34,24 @@
   z-index: 2;
   text-align: center;
   padding: 20px;
+  margin-top: 70px;
 }
 
 .vision-content-1 h1 {
   font-size: 3rem;
   font-weight: 700;
-  margin-bottom: 15px;
+  margin-bottom: 25px;
   text-transform: uppercase;
   letter-spacing: 1.5px;
   color: white;
+  font-family: "Josefin Sans";
 }
 
 .vision-content-1 p {
   font-size: 1.3rem;
   line-height: 1.8;
-  opacity: 0.9;
+  opacity: 1;
+  font-family: "Josefin Sans";
 }
 
 .learn-more-btn-1 {
@@ -62,6 +65,7 @@
   cursor: pointer;
   transition: all 0.3s ease-in-out;
   box-shadow: 0px 4px 8px rgba(0, 123, 255, 0.3);
+  font-family: "Josefin Sans";
 }
 
 .learn-more-btn-1:hover {
@@ -92,7 +96,7 @@
   color: #2e5077;
   position: relative;
   display: inline-block;
-  padding-bottom: 8px;
+  padding-bottom: 20px;
 }
 
 .about-content h2::after {
@@ -100,7 +104,8 @@
   width: 50%;
   height: 4px;
   margin-bottom: 5px;
-  background: #ffc107;
+  background: #FAB12F;
+  margin-top:10px;
   position: absolute;
   left: 0;
   bottom: 0;
@@ -145,7 +150,15 @@
   text-transform: uppercase;
   letter-spacing: 1px;
 }
-
+.project-section h2::after{
+  content: '';
+  width: 80px;
+  height: 4px;
+  background: rgba(255, 193, 7, 0.7);
+  display: block;
+  margin: 10px auto;
+  border-radius: 10px;
+}
 .projects-container {
   display: flex;
   justify-content: center;
@@ -257,7 +270,7 @@
   text-align: center;
   transition: all 0.3s ease-in-out;
   backdrop-filter: blur(20px);
-  border: 3px solid #ffc107;
+  border: 3px solid #FAB12F;
   position: relative;
 }
 
@@ -271,7 +284,7 @@
   height: 70px;
   border-radius: 50%;
   object-fit: cover;
-  border: 3px solid #ffc107;
+  border: 3px solid #FAB12F;
   position: absolute;
   top: -40px;
   left: 50%;
@@ -291,7 +304,7 @@
   display: block;
   margin-top: 15px;
   font-size: 16px;
-  color: #ffc107;
+  color: #FAB12F;
   font-weight: 700;
 }
 

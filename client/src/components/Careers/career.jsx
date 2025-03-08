@@ -1,77 +1,102 @@
-import React, { useState } from "react";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import Slider from "react-slick";
+import { FaCode, FaMobileAlt, FaDatabase, FaPencilRuler, FaBug } from "react-icons/fa";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 import "./career.css";
 
-import client2 from "./images/client-2.jpg";
-import client3 from "./images/client-3.jpg";
-import offer1 from "./images/offer-1.jpg";
-import offer2 from "./images/offer-2.jpg";
-
 const jobListings = [
-  { id: 1, title: "Web Developer", location: "Remote", type: "Full-Time", image: client2 },
-  { id: 2, title: "App Developer", location: "Remote", type: "Full-Time", image: client2 },
-  { id: 3, title: "ERP Consultant", location: "Hybrid", type: "Contract", image: client3 },
-  { id: 4, title: "UI/UX Designer", location: "On-Site", type: "Full-Time", image: offer1 },
-  { id: 5, title: "Quality Assurance Engineer", location: "Remote", type: "Full-Time", image: offer2 }
+  { id: 1, title: "Web Developer", location: "Remote", type: "Full-Time", icon: <FaCode />, role: "Frontend Developer", skills: "HTML, CSS, JavaScript, React", description: "Develop and maintain modern, responsive websites using React and other frontend technologies." },
+  { id: 2, title: "App Developer", location: "Remote", type: "Full-Time", icon: <FaMobileAlt />, role: "Mobile Developer", skills: "Flutter, React Native, Swift, Kotlin", description: "Design and develop mobile applications with great user experience." },
+  { id: 3, title: "ERP Consultant", location: "Hybrid", type: "Contract", icon: <FaDatabase />, role: "Business Consultant", skills: "SAP, Oracle ERP, Microsoft Dynamics", description: "Assist businesses in implementing and managing ERP solutions efficiently." },
+  { id: 4, title: "UI/UX Designer", location: "On-Site", type: "Full-Time", icon: <FaPencilRuler />, role: "Visual Designer", skills: "Figma, Adobe XD, Wireframing", description: "Create aesthetically pleasing and user-friendly interfaces." },
+  { id: 5, title: "Quality Assurance Engineer", location: "Remote", type: "Full-Time", icon: <FaBug />, role: "QA Engineer", skills: "Automation Testing, Selenium, Jest", description: "Ensure the quality and reliability of software applications before deployment." },
+  { id: 6, title: "Cybersecurity Analyst", location: "Remote", type: "Full-Time", icon: <FaBug />, role: "Security Analyst", skills: "Network Security, Penetration Testing, SIEM", description: "Monitor and protect systems from cybersecurity threats, ensuring data integrity and security compliance." }
 ];
 
 
 const CareersPage = () => {
-  const [showForm, setShowForm] = useState(false);
   const [selectedJob, setSelectedJob] = useState(null);
+  const navigate = useNavigate();
 
-  const handleApplyClick = (job) => {
-    setSelectedJob(job);
-    setShowForm(true);
+  const sliderSettings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 3000,
+    fade: true
   };
 
-  const handleCloseForm = () => {
-    setShowForm(false);
-    setSelectedJob(null);
-  };
-
+  const heroImages = [
+    { src: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f", text: "Innovate with Us" },
+    { src: "https://images.unsplash.com/photo-1565728744382-61accd4aa148", text: "Join a Culture of Excellence" },
+    { src: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d", text: "Transform Your Career" }
+  ];
+  
   return (
     <div className="careers-container">
-      <div className="header">
-        <h1>Join Our Team</h1>
-        <p>We are looking for skilled professionals to build innovative solutions with us.</p>
-      </div>
-
-      <div className="job-listings">
-        {jobListings.map((job) => (
-          <div key={job.id} className="job-card">
-            <img src={job.image} alt={job.title} className="job-image" />
-            <div className="job-content">
-              <h3>{job.title}</h3>
-              <p>{job.location} | {job.type}</p>
-              <button onClick={() => handleApplyClick(job)}>Apply Now</button>
+      {/* Hero Section with Sliding Effect */}
+      <div className="careers-hero">
+        <Slider {...sliderSettings}>
+          {heroImages.map((slide, index) => (
+            <div key={index} className="hero-slide">
+              <img src={slide.src} alt={slide.text} />
+              <div className="hero-overlay">
+                <h1>{slide.text}</h1>
+                <p>Be part of a team that values innovation, creativity, and excellence.</p>
+              </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </Slider>
       </div>
 
-      {showForm && (
-        <div className="application-form-overlay">
-          <div className="application-form">
-            <span className="close-btn" onClick={handleCloseForm}>&times;</span>
-            <h2>Apply for {selectedJob?.title}</h2>
-            <form>
-              <label>Name</label>
-              <input type="text" placeholder="Enter your name" required />
+      {/* Job Listings */}
+      <div className="careers-content">
+        <div className="job-listings">
+          {jobListings.map((job) => (
+            <div key={job.id} className="job-card" onClick={() => setSelectedJob(job)}>
+              <div className="logo-container">{job.icon}</div>
+              <div className="job-info">
+                <h3>{job.title}</h3>
+                <p>{job.location} | {job.type}</p>
+                <button className="details-btn">View Details</button>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
 
-              <label>Email</label>
-              <input type="email" placeholder="Enter your email" required />
-
-              <label>Phone</label>
-              <input type="tel" placeholder="Enter your phone" required />
-
-              <label>Resume</label>
-              <input type="file" accept=".pdf,.doc,.docx" required />
-
-              <button type="submit">Submit Application</button>
-            </form>
+      {/* Job Details Popup */}
+      {selectedJob && (
+        <div className="job-details-overlay" onClick={() => setSelectedJob(null)}>
+          <div className="job-details" onClick={(e) => e.stopPropagation()}>
+            <button className="close-btn" onClick={() => setSelectedJob(null)}>✖</button>
+            
+            <div className="job-header">
+              <div className="job-icon">{selectedJob.icon}</div>
+              <h2>{selectedJob.title}</h2>
+              <p className="job-role">{selectedJob.role}</p>
+            </div>
+            
+            <div className="job-info">
+              <p><strong>📍 Location:</strong> {selectedJob.location}</p>
+              <p><strong>⏳ Type:</strong> {selectedJob.type}</p>
+              <p><strong>🛠 Skills:</strong> {selectedJob.skills}</p>
+            </div>
+            
+            <p className="job-description">{selectedJob.description}</p>
+            
+            <button className="apply-btn" onClick={() => navigate("/apply", { state: { selectedJob } })}>
+              🚀 Apply Now
+            </button>
           </div>
         </div>
       )}
+
     </div>
   );
 };

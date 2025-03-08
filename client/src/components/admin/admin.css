@@ -1,0 +1,96 @@
+.admin-container {
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 20px;
+  background: #f4f4f4;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+h1 {
+  color: #333;
+}
+
+.logout-btn {
+  background: #d9534f;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+  margin-bottom: 20px;
+  border-radius: 5px;
+}
+
+.logout-btn:hover {
+  background: #c9302c;
+}
+
+.content-manager {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.content-manager input {
+  flex: 1;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.content-manager button {
+  background: #5bc0de;
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.content-manager button:hover {
+  background: #31b0d5;
+}
+
+.content-list {
+  list-style: none;
+  padding: 0;
+}
+
+.content-item {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
+  align-items: center;
+}
+
+.content-item input {
+  flex: 1;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.delete-btn {
+  background: #d9534f;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.delete-btn:hover {
+  background: #c9302c;
+}
+
+.loading-text {
+  text-align: center;
+  font-size: 18px;
+  color: #666;
+}
+
+.access-denied {
+  text-align: center;
+  color: #d9534f;
+}
