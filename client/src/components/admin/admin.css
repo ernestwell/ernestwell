@@ -1,96 +1,108 @@
+/* Admin Panel Styles */
 .admin-container {
-  max-width: 600px;
-  margin: 40px auto;
+  max-width: 800px;
+  margin: 50px auto;
   padding: 20px;
-  background: #f4f4f4;
+  background: #ffffff;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
   border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   text-align: center;
 }
 
-h1 {
-  color: #333;
+.admin-container h1 {
+  font-size: 24px;
+  color: #2e5077;
+  margin-bottom: 20px;
 }
 
 .logout-btn {
-  background: #d9534f;
+  background-color: #fabf12;
   color: white;
   border: none;
   padding: 10px 15px;
-  cursor: pointer;
-  margin-bottom: 20px;
   border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: 0.3s;
 }
 
 .logout-btn:hover {
-  background: #c9302c;
+  background-color: #fabf12;
 }
 
-.content-manager {
-  display: flex;
-  gap: 10px;
-  margin-bottom: 20px;
+/* Footer Editor Styles */
+.footer-editor {
+  margin-top: 30px;
+  text-align: left;
 }
 
-.content-manager input {
-  flex: 1;
-  padding: 8px;
+.footer-editor h2 {
+  font-size: 20px;
+  color: #2e5077;
+  margin-bottom: 15px;
+}
+
+.footer-editor label {
+  display: block;
+  font-weight: bold;
+  margin-top: 10px;
+  color: #444;
+}
+
+.footer-editor textarea,
+.footer-editor input {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
   border: 1px solid #ccc;
   border-radius: 5px;
+  font-size: 16px;
+  transition: 0.3s;
 }
 
-.content-manager button {
-  background: #5bc0de;
+.footer-editor textarea {
+  min-height: 80px;
+  resize: vertical;
+}
+
+.footer-editor input:focus,
+.footer-editor textarea:focus {
+  border-color: #2e5077;
+  outline: none;
+  box-shadow: 0 0 5px rgba(46, 80, 119, 0.3);
+}
+
+.footer-editor button {
+  margin-top: 20px;
+  background-color: #2e5077;
   color: white;
   border: none;
-  padding: 8px 15px;
+  padding: 10px 15px;
+  border-radius: 5px;
   cursor: pointer;
-  border-radius: 5px;
+  font-size: 16px;
+  transition: 0.3s;
 }
 
-.content-manager button:hover {
-  background: #31b0d5;
+.footer-editor button:hover {
+  background-color: #1e3b5a;
 }
 
-.content-list {
-  list-style: none;
-  padding: 0;
-}
+/* Responsive Design */
+@media (max-width: 768px) {
+  .admin-container {
+    max-width: 95%;
+    padding: 15px;
+  }
 
-.content-item {
-  display: flex;
-  gap: 10px;
-  margin-bottom: 10px;
-  align-items: center;
-}
+  .footer-editor textarea,
+  .footer-editor input {
+    font-size: 14px;
+  }
 
-.content-item input {
-  flex: 1;
-  padding: 8px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-}
-
-.delete-btn {
-  background: #d9534f;
-  color: white;
-  border: none;
-  padding: 8px 12px;
-  cursor: pointer;
-  border-radius: 5px;
-}
-
-.delete-btn:hover {
-  background: #c9302c;
-}
-
-.loading-text {
-  text-align: center;
-  font-size: 18px;
-  color: #666;
-}
-
-.access-denied {
-  text-align: center;
-  color: #d9534f;
+  .logout-btn,
+  .footer-editor button {
+    font-size: 14px;
+    padding: 8px 12px;
+  }
 }

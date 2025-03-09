@@ -207,8 +207,12 @@ const Navbar = () => {
                 <Link to="/profile" className="profile-dropdown-item" onClick={() => setUserDropdown(false)}>
                   <FaUser style={{ marginRight: "8px" }} /> View Profile
                 </Link>
+                <Link to="/admin" className="profile-dropdown-item" onClick={() => setUserDropdown(false)}>
+                  <FaUser style={{ marginRight: "8px" }} /> admin
+                </Link>
                 <button className="logout-btn" onClick={handleLogout}>Logout</button>
               </div>
+              
             )}
           </div>
         ) : (
