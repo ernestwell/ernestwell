@@ -1,18 +1,21 @@
 
 body {
-  font-family: 'Poppins', sans-serif;
+  font-family: "Josefin Sans";
   margin: 0;
   padding: 0;
   background-color: #f5f7fa;
   color: #333;
 }
+/* div {
+  display: inline; 
+} */
 
 .careers-container {
   margin: auto;
-  margin-top: 50px;
+  margin-top: 30px;
 }
 
-.careers-hero {
+.careers-hero-1 {
   position: relative;
   width: 100%;
   overflow: hidden;
@@ -20,11 +23,11 @@ body {
   margin-bottom: 40px;
 }
 
-.hero-slide {
+.hero-slide-1 {
   position: relative;
 }
 
-.hero-slide img {
+.hero-slide-1 img {
   width: 100%;
   height: 500px;
   object-fit: cover;
@@ -33,11 +36,11 @@ body {
   transition: transform 0.5s ease-in-out;
 }
 
-.hero-slide:hover img {
+.hero-slide-1:hover img {
   transform: scale(1.05);
 }
 
-.hero-overlay {
+.hero-overlay-1 {
   position: absolute;
   top: 0;
   left: 0;
@@ -51,202 +54,256 @@ body {
   color: #fff;
   padding: 20px;
   border-radius: 12px;
-  background: linear-gradient(45deg, rgba(0, 0, 0, 0.7), rgba(46, 80, 119, 0.8));
 }
 
-.hero-overlay h1 {
+.hero-overlay-1 h1 {
   font-size: 2.8rem;
   font-weight: bold;
   text-transform: uppercase;
   margin-bottom: 10px;
   letter-spacing: 2px;
   color: white;
+  font-family: "Josefin Sans";
 }
 
-.hero-overlay p {
+.hero-overlay-1 p {
   font-size: 1.2rem;
   max-width: 600px;
   color: #FAB12F;
+  font-family: "Josefin Sans";
+}
+/* Job Listings Section */
+.careers-content-1 {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-top: 2rem;
 }
 
-.job-listings {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 25px;
-  padding: 20px;
+.role-section {
+  border-bottom: 2px solid #2e5077;
+  padding-bottom: 1.5rem;
 }
+
+.role-title {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #2e5077;
+  margin-bottom: 1rem;
+  font-family: "Josefin Sans";
+}
+
+
+.job-listings{
+  margin-bottom: 30px;
+}
+.logo-container {
+  width: 100%;
+  height: 150px;
+  padding: 12px;
+  background-color: white;
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  /* border: 2px solid rgba(46, 80, 119, 0.3); */
+  /* box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); */
+  transition: all 0.3s ease-in-out;
+  margin-bottom: 10px;
+}
+
+.logo-container img {
+  width: auto;
+  height: 100%;
+  object-fit: contain;
+  /* border-radius: 12px 12px 0 0;*/
+} 
+
 
 .job-card {
   background: #fff;
   padding: 25px;
-  border-radius: 12px;
+  border-radius: 30px;
   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
-  gap: 15px;
+  gap: 20px;
   cursor: pointer;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   position: relative;
   overflow: hidden;
+  max-width: 550px;
 }
 
-.job-card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-  transition: left 0.5s ease-in-out;
-}
 
-.job-card:hover::before {
-  left: 100%;
-}
 
-.job-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
-}
-
-.logo-container {
-  font-size: 2.5rem;
-  color: #2e5077;
-  background: rgba(46, 80, 119, 0.1);
-  padding: 15px;
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.job-info {
+  flex-grow: 1;
 }
 
 .job-info h3 {
-  margin: 0;
-  font-size: 1.6rem;
+  font-size: 1.2rem;
+  font-weight: bold;
   color: #2e5077;
-  font-weight: 600;
+  margin-bottom: 0.3rem;
+  font-family: "Josefin Sans";
+}
+.job-info h3::after {
+  content: '';
+  width: 80px;
+  height: 4px;
+  background: #fab12f;
+  display: block;
+  margin: 10px auto;
+  border-radius: 10px;
+  margin-bottom: 20px;
 }
 
 .job-info p {
-  margin: 8px 0;
-  font-size: 1rem;
-  color: #555;
+  font-size: 0.9rem;
+  color: black;
+  font-family: "Josefin Sans";
 }
 
 .details-btn {
-  background: linear-gradient(45deg, #ffc107, #ff9800);
-  border: none;
-  padding: 12px 18px;
-  border-radius: 8px;
-  color: #fff;
-  cursor: pointer;
+  margin-top: 0.5rem;
+  padding: 0.4rem 0.8rem;
+  font-size: 0.9rem;
   font-weight: bold;
+  color: #2e5077;
+  background: none;
+  border: 2px solid #fab12f;
+  border-radius: 50px;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  font-family: "Josefin Sans";
 }
 
 .details-btn:hover {
-  background: linear-gradient(45deg, #e0a800, #e68a00);
-  transform: scale(1.05);
+  background: #2e5077;
+  color: white;
 }
+
+/* Job Details Popup */
 .job-details-overlay {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.6);
+  background: rgba(0, 0, 0, 0.5);
   display: flex;
   justify-content: center;
   align-items: center;
-  backdrop-filter: blur(8px);
-  animation: fadeIn 0.3s ease-in-out;
+  z-index: 1000;
 }
 
 .job-details {
-  background: rgba(255, 255, 255, 0.2);
-  backdrop-filter: blur(15px);
-  padding: 30px;
+  background: #fff;
+  padding: 2rem;
+  border-radius: 10px;
   width: 90%;
   max-width: 500px;
-  border-radius: 12px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-  text-align: center;
-  color: #2e5077;
-  animation: slideIn 0.3s ease-in-out;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
   position: relative;
 }
 
 .close-btn {
   position: absolute;
-  top: 15px;
+  top: 10px;
   right: 15px;
-  background: transparent;
+  background: none;
   border: none;
   font-size: 1.5rem;
   cursor: pointer;
-  color: #fff;
+  font-family: "Josefin Sans";
 }
 
 .job-header {
   display: flex;
-  flex-direction: column;
   align-items: center;
-  gap: 5px;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  font-family: "Josefin Sans";
 }
 
 .job-icon {
-  font-size: 2.5rem;
-  background: rgba(255, 255, 255, 0.2);
-  padding: 15px;
-  border-radius: 50%;
+  font-size: 2rem;
+  color: #2e5077;
 }
 
 .job-role {
-  font-size: 1.1rem;
-  font-weight: 500;
-  color: #ffc107;
+  font-size: 1rem;
+  color: #555;
 }
 
 .job-info p {
-  margin: 8px 0;
-  font-size: 1rem;
-  color: #fff;
-}
-
-.job-description {
-  margin: 15px 0;
-  font-size: 1rem;
-  color: #eee;
+  margin: 0.5rem 0;
 }
 
 .apply-btn {
-  background: linear-gradient(45deg, #ffc107, #ff9800);
-  border: none;
-  padding: 12px 18px;
-  border-radius: 8px;
-  color: #fff;
-  cursor: pointer;
+  width: 100%;
+  margin-top: 1rem;
+  padding: 0.7rem;
+  background: #2e5077;
+  color: white;
+  font-size: 1rem;
   font-weight: bold;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  font-family: "Josefin Sans";
 }
 
 .apply-btn:hover {
-  background: linear-gradient(45deg, #e0a800, #e68a00);
-  transform: scale(1.05);
+  background: #1e3a5f;
+}
+.careers-content {
+  display: flex;
+  justify-content: center; /* Centers content horizontally */
+  align-items: center; /* Centers content vertically */
+  width: 100%;
+  min-height: 100vh;
+  font-family: "Josefin Sans"; /* Ensures it takes full viewport height */
 }
 
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
+.job-listings {
+  display: grid !important;
+  grid-template-columns: repeat(3, minmax(250px, 2fr)) !important;
+  gap: 3rem;
+  max-width: 1100px;
+  width: 100%; /* Ensures it doesn't shrink */
+}
+.careers-intro {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 40px auto; 
+  font-family: "Josefin Sans";/* Center the section */
 }
 
-@keyframes slideIn {
-  from { transform: translateY(20px); opacity: 0; }
-  to { transform: translateY(0); opacity: 1; }
+.careers-intro h2 {
+  font-size: 2rem;
+  color: #2e5077;
+  margin-bottom: 20px;
+  font-family: "Josefin Sans";
+
+}
+.careers-intro h2::after {
+  content: '';
+  width: 80px;
+  height: 4px;
+  background: #fab12f;
+  display: block;
+  margin: 10px auto;
+  border-radius: 10px;
+}
+.careers-intro p {
+  font-size: 1.2rem;
+  color: black;
+  font-family: "Josefin Sans";
+  line-height: 1.5;
 }
 

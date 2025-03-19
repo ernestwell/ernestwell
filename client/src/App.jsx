@@ -1,4 +1,3 @@
-
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./components/navbar/navbar";
 import HeroSection from "./components/herosection/herosection";
@@ -19,7 +18,7 @@ import WeWorkForSec from "./components/weworkfor/wework";
 import Profile from "./components/profile/profile";
 import CareersPage from "./components/Careers/career";
 import TechStack from "./components/techstack/techstack";
-import JobDescriptionPage from "./components/Careers/description";
+import CareerDescription from "./components/Careers/description";
 import AdminPanel from "./components/admin/admin";
 function App() {
 
@@ -52,7 +51,7 @@ function App() {
         <Route path="/CybersecuritySolutions" element={<CybersecuritySolutions />} />
         <Route path="/ITsupport" element={<ITSupport />} />
         <Route path="/sign-in" element={<SignIn/>}/>
-        <Route path="/job-description" element={<JobDescriptionPage/>}/>
+        <Route path="/job-description" element={<CareerDescription/>}/>
         <Route path="/admin" element={<AdminPanel />} />
       </Routes>
       <Footer />

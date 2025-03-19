@@ -463,6 +463,7 @@ body {
   background-size: 100px 100px;
   max-width:1300px;
   margin:auto;
+  padding-top: 3%;
 }
 
 .hero-content {
@@ -692,7 +693,6 @@ body {
     margin: auto;
     height: auto;
     padding: 12px;
-    padding-top: 60px;
     max-width: 900px;
     text-align: center;
     min-height: 100vh;
@@ -745,12 +745,12 @@ body {
     align-items: center;
     justify-content: center;
     margin: auto;
-    height: auto;
+    /* height: auto; */
     padding: 12px;
-    padding-top: 60px;
     max-width: 1200px;
     text-align: center;
     min-height: 100vh;
+    padding-top: 0px;
   }
   
 
@@ -763,17 +763,6 @@ body {
     font-size: clamp(1.2rem, 2.2vw, 1rem);
     padding: 8px;
   }
-
-  /* .hero-buttons {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .btn {
-    width: 100%;
-    max-width: 250px;
-    text-align: center;
-  } */
   .hero-svg {
     position: absolute;
     left: 0;

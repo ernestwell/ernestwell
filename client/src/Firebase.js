@@ -1,4 +1,4 @@
-import { initializeApp } from "firebase/app";
+import { initializeApp, getApps, getApp } from "firebase/app";
 import {
   getAuth,
   signInWithEmailAndPassword,
@@ -11,6 +11,7 @@ import {
 } from "firebase/auth";
 import { getFirestore, doc, setDoc, getDoc } from "firebase/firestore";
 
+// Firebase Configuration
 const firebaseConfig = {
   apiKey: "AIzaSyC_GJY3JdHSFsJEbYT0hKDSyFoIf6da8W4",
   authDomain: "ernestwellbusiness-29e68.firebaseapp.com",
@@ -21,28 +22,45 @@ const firebaseConfig = {
   measurementId: "G-FYX0L73HQB",
 };
 
-const app = initializeApp(firebaseConfig);
+// Check if Firebase is already initialized to prevent duplicate instances
+const app = getApps().length > 0 ? getApp() : initializeApp(firebaseConfig);
+
+// Initialize Firebase services
 const auth = getAuth(app);
 const db = getFirestore(app);
 
+// Debugging: Check Firebase initialization
+console.log("Firebase initialized:", app.name);
+
+// Function to save user data to Firestore
 const saveUserToFirestore = async (user, defaultRole = "user") => {
-  if (!user) return;
-
-  const userRef = doc(db, "users", user.uid);
-  const userDoc = await getDoc(userRef);
-
-  if (userDoc.exists()) {
-    const existingRole = userDoc.data().role;
-    if (existingRole) {
-      console.log(`User already has role: ${existingRole}`);
-      return;
-    }
+  if (!user) {
+    console.warn("No user data provided to save.");
+    return;
   }
 
-  await setDoc(userRef, { email: user.email, role: defaultRole }, { merge: true });
+  const userRef = doc(db, "users", user.uid);
+  try {
+    const userDoc = await getDoc(userRef);
+
+    if (userDoc.exists()) {
+      const existingRole = userDoc.data().role;
+      console.log(`User already exists with role: ${existingRole}`);
+      return;
+    }
+
+    // Save new user with role
+    await setDoc(userRef, { email: user.email, role: defaultRole }, { merge: true });
+    console.log("User saved to Firestore:", user.email);
+  } catch (error) {
+    console.error("Error saving user to Firestore:", error);
+  }
 };
 
+// Function to check if user is an admin
 export const checkAdmin = async (uid) => {
+  if (!uid) return false;
+
   try {
     const userDocRef = doc(db, "users", uid);
     const userDoc = await getDoc(userDocRef);
@@ -50,11 +68,9 @@ export const checkAdmin = async (uid) => {
     if (userDoc.exists()) {
       const userData = userDoc.data();
       console.log("Fetched user data:", userData);
-      
-      // Check if role exists before returning
-      return userData.role && userData.role === "admin";
+      return userData.role === "admin";
     } else {
-      console.log("No user document found in Firestore for UID:", uid);
+      console.warn("No user document found for UID:", uid);
       return false;
     }
   } catch (error) {
@@ -63,68 +79,66 @@ export const checkAdmin = async (uid) => {
   }
 };
 
-
+// Sign up with email and password
 const signupWithEmailPassword = async (email, password) => {
   try {
     const userCredential = await createUserWithEmailAndPassword(auth, email, password);
     await saveUserToFirestore(userCredential.user, "user");
     return userCredential.user;
   } catch (error) {
-    console.error(error.message);
+    console.error("Signup error:", error.message);
+    throw error;
   }
 };
 
+// Login with email and password
 const loginWithEmailPassword = async (email, password) => {
   try {
     const userCredential = await signInWithEmailAndPassword(auth, email, password);
     return userCredential.user;
   } catch (error) {
-    console.error(error.message);
+    console.error("Login error:", error.message);
+    throw error;
   }
 };
 
-const loginWithGoogle = async () => {
-  const provider = new GoogleAuthProvider();
+// Generic function for social login
+const socialLogin = async (provider) => {
   try {
     const result = await signInWithPopup(auth, provider);
     await saveUserToFirestore(result.user, "user");
     return result.user;
   } catch (error) {
-    console.error(error.message);
+    console.error(`${provider.providerId} login error:`, error.message);
+    throw error;
   }
 };
 
-const loginWithFacebook = async () => {
-  const provider = new FacebookAuthProvider();
-  try {
-    const result = await signInWithPopup(auth, provider);
-    await saveUserToFirestore(result.user, "user");
-    return result.user;
-  } catch (error) {
-    console.error(error.message);
-  }
-};
+// Login with Google
+const loginWithGoogle = () => socialLogin(new GoogleAuthProvider());
 
-const loginWithGithub = async () => {
+// Login with Facebook
+const loginWithFacebook = () => socialLogin(new FacebookAuthProvider());
+
+// Login with Github
+const loginWithGithub = () => {
   const provider = new GithubAuthProvider();
   provider.setCustomParameters({ prompt: "select_account" });
-  try {
-    const result = await signInWithPopup(auth, provider);
-    await saveUserToFirestore(result.user, "user");
-    return result.user;
-  } catch (error) {
-    console.error(error.message);
-  }
+  return socialLogin(provider);
 };
 
+// Logout function
 const logout = async () => {
   try {
     await signOut(auth);
+    console.log("User logged out successfully.");
   } catch (error) {
-    console.error(error.message);
+    console.error("Logout error:", error.message);
+    throw error;
   }
 };
 
+// Export Firebase utilities
 export {
   auth,
   db,
