@@ -158,14 +158,14 @@
 }
 
 /* Buttons Container */
-.button-group {
+.form-navigation {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-top: 25px;
 }
 
-.button-group {
+.form-navigation {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -191,7 +191,7 @@
   border-radius: 10px;
   margin-bottom: 0px;
 }
-.next-button,
+.nav-button,
 .prev-button,
 .submit-button {
   width: 45%;
@@ -210,25 +210,26 @@
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
-.next-button {
+.nav-button{
   background: linear-gradient(135deg, #2e5077, #1e3a5f);
   color: white;
 }
 
-.next-button:hover {
-  background: linear-gradient(135deg, #1e3a5f, #162b44);
+.nav-button:hover {
+  background:#ddd ;
+  color: #2e5077;
   transform: scale(1.05);
 }
 
-.prev-button {
+/* .nav-button {
   background: #ddd;
   color: #2e5077;
-}
+} */
 
-.prev-button:hover {
+/* .nav-button:hover {
   background: #ccc;
   transform: scale(1.05);
-}
+} */
 
 .submit-button {
   color: white;

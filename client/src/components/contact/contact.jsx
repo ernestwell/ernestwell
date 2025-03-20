@@ -99,7 +99,6 @@
 import { useEffect, useState } from "react";
 import "./contact.css";
 import { FaFacebookF, FaTwitter, FaLinkedinIn, FaInstagram } from "react-icons/fa";
-// import image from "./imagesc/contact.svg";
 
 const ContactForm = () => {
   const [formData, setFormData] = useState({
@@ -109,6 +108,7 @@ const ContactForm = () => {
   });
 
   const [status, setStatus] = useState("");
+  const [isSending, setIsSending] = useState(false);
 
   useEffect(() => {
     document.body.classList.add("contact-page-mode");
@@ -123,10 +123,11 @@ const ContactForm = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setIsSending(true);
     setStatus("Sending...");
 
     try {
-      const response = await fetch("http://localhost:5000/send", {
+      const response = await fetch("http://localhost:5000/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
@@ -142,6 +143,8 @@ const ContactForm = () => {
     } catch (err) {
       console.error("Error sending message:", err);
       setStatus("Error sending message. Try again later.");
+    } finally {
+      setIsSending(false);
     }
   };
 
@@ -151,7 +154,6 @@ const ContactForm = () => {
         <div className="content-wrapper">
           <h1 className="fade-in">Get in Touch</h1>
           <p className="fade-in delay-1">We’re here to help and answer any questions you might have.</p>
-          {/* <img src={image} alt="Contact Us" className="contact-image zoom-in delay-2" /> */}
           <div className="social-links fade-in delay-3">
             <a href="https://facebook.com" target="_blank" rel="noopener noreferrer"><FaFacebookF /></a>
             <a href="https://twitter.com" target="_blank" rel="noopener noreferrer"><FaTwitter /></a>
@@ -193,7 +195,9 @@ const ContactForm = () => {
               required
             ></textarea>
           </div>
-          <button type="submit" className="submit-btn pulse">Send Message</button>
+          <button type="submit" className="submit-btn pulse" disabled={isSending}>
+            {isSending ? "Sending..." : "Send Message"}
+          </button>
           {status && <p className="status-message">{status}</p>}
         </form>
       </div>
