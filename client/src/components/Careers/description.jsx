@@ -269,7 +269,7 @@
 
 // export default CareerDescription;
 
-// import { useState } from "react";
+import { useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { FaCode, FaMobileAlt, FaDatabase, FaPencilRuler, FaBug } from "react-icons/fa";
 import "./description.css";
@@ -305,9 +305,7 @@ const CareerDescription = () => {
   const [coverLetter, setCoverLetter] = useState(null);
   const [loading, setLoading] = useState(false);
 
-  const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
+  const handleChange = (e) => setFormData({ ...formData, [e.target.name]: e.target.value });
 
   const handleFileUpload = (e, setFile) => {
     const file = e.target.files[0];
@@ -318,41 +316,49 @@ const CareerDescription = () => {
     }
   };
 
-  const handleNextStep = () => {
-    setFormStep((prev) => prev + 1);
-  };
-
-  const handlePrevStep = () => {
-    setFormStep((prev) => prev - 1);
-  };
+  const handleNextStep = () => setFormStep((prev) => prev + 1);
+  const handlePrevStep = () => setFormStep((prev) => prev - 1);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
 
     const formDataToSend = new FormData();
-    Object.entries(formData).forEach(([key, value]) => {
-      formDataToSend.append(key, value);
-    });
+    Object.entries(formData).forEach(([key, value]) => formDataToSend.append(key, value));
 
     if (resume) formDataToSend.append("resume", resume);
     if (coverLetter) formDataToSend.append("coverLetter", coverLetter);
 
     try {
-      const response = await fetch("https://your-vercel-backend-url.vercel.app/api/send", {
+      const response = await fetch("http://localhost:5000/api/send", {
         method: "POST",
         body: formDataToSend,
       });
 
+      if (!response.ok) throw new Error("Failed to submit application.");
+
       const result = await response.json();
-      setLoading(false);
-      if (result.success) {
-        alert("Application submitted successfully!");
-      } else {
-        alert("Failed to submit application.");
-      }
+      alert(result.message || "Application submitted successfully!");
+
+      setFormData({
+        fullName: "",
+        email: "",
+        phone: "",
+        position: selectedJob.title,
+        jobType: "Full-time",
+        expectedSalary: "",
+        qualification: "",
+        university: "",
+        fieldOfStudy: "",
+      });
+
+      setResume(null);
+      setCoverLetter(null);
+      setFormStep(1);
     } catch (error) {
-      console.error("Error submitting application:", error);
+      alert("Error submitting application. Please try again.");
+      console.error("Submission error:", error);
+    } finally {
       setLoading(false);
     }
   };
@@ -361,7 +367,6 @@ const CareerDescription = () => {
     <div className="career-container">
       <div className="career-content">
         <button className="back-button" onClick={() => navigate(-1)}>←</button>
-
         <h1 className="job-title">{selectedJob.title}</h1>
         <p className="current-openings">📍 {selectedJob.location} | ⏳ {selectedJob.type}</p>
 
@@ -374,7 +379,7 @@ const CareerDescription = () => {
         <h2 className="section-heading">Job Description</h2>
         <ul className="job-list">
           {selectedJob.description.map((point, index) => (
-            <li key={index}>{point}</li>
+            <li key={`desc-${index}`}>{point}</li>
           ))}
         </ul>
       </div>
@@ -384,30 +389,22 @@ const CareerDescription = () => {
         <form className="apply-form" onSubmit={handleSubmit}>
           {formStep === 1 && (
             <>
-              <input type="text" name="fullName" placeholder="Full Name" className="input-field" onChange={handleChange} required />
-              <input type="email" name="email" placeholder="Email Address" className="input-field" onChange={handleChange} required />
-              <input type="tel" name="phone" placeholder="Phone Number" className="input-field" onChange={handleChange} required />
+              <input type="text" name="fullName" placeholder="Full Name" className="input-field" value={formData.fullName} onChange={handleChange} required />
+              <input type="email" name="email" placeholder="Email Address" className="input-field" value={formData.email} onChange={handleChange} required />
+              <input type="tel" name="phone" placeholder="Phone Number" className="input-field" value={formData.phone} onChange={handleChange} required />
             </>
           )}
 
           {formStep === 2 && (
             <>
-              <input type="text" name="position" placeholder="Position Applying For" className="input-field" value={formData.position} readOnly required />
-              <select name="jobType" className="input-field" onChange={handleChange}>
+              <input type="text" name="position" className="input-field" value={formData.position} readOnly required />
+              <select name="jobType" className="input-field" value={formData.jobType} onChange={handleChange}>
                 <option value="Full-time">Full-time</option>
                 <option value="Part-time">Part-time</option>
                 <option value="Contract">Contract</option>
                 <option value="Internship">Internship</option>
               </select>
-              <input type="text" name="expectedSalary" placeholder="Expected Salary" className="input-field" onChange={handleChange} required />
-            </>
-          )}
-
-          {formStep === 3 && (
-            <>
-              <input type="text" name="qualification" placeholder="Highest Qualification" className="input-field" onChange={handleChange} required />
-              <input type="text" name="university" placeholder="University/College Name" className="input-field" onChange={handleChange} required />
-              <input type="text" name="fieldOfStudy" placeholder="Field of Study" className="input-field" onChange={handleChange} required />
+              <input type="text" name="expectedSalary" placeholder="Expected Salary" className="input-field" value={formData.expectedSalary} onChange={handleChange} required />
             </>
           )}
 

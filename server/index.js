@@ -132,17 +132,21 @@ import multer from "multer";
 import cors from "cors";
 import nodemailer from "nodemailer";
 import dotenv from "dotenv";
+import { createServer } from "http";
 
-dotenv.config();
+dotenv.config(); // Load environment variables
 
 const app = express();
+const PORT = process.env.PORT || 5000;
 
-// Middleware
+// ✅ Middleware
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-// Multer Memory Storage (Since Vercel doesn't support filesystem writes)
+console.log("✅ Server is starting...");
+
+// ✅ Multer Memory Storage (For Vercel Deployment)
 const storage = multer.memoryStorage();
 const upload = multer({
   storage: storage,
@@ -152,7 +156,7 @@ const upload = multer({
   { name: "coverLetter", maxCount: 1 },
 ]);
 
-// Nodemailer setup
+// ✅ Nodemailer Setup
 const transporter = nodemailer.createTransport({
   service: "gmail",
   auth: {
@@ -161,24 +165,26 @@ const transporter = nodemailer.createTransport({
   },
 });
 
+console.log("✅ Nodemailer configured");
+
 // ✅ Career Form API (Handles Resume & Cover Letter)
 app.post("/api/send", (req, res) => {
+  console.log("📩 New Career Form Submission...");
+
   upload(req, res, (err) => {
     if (err) {
+      console.error("❌ File Upload Error:", err.message);
       return res.status(400).json({ success: false, message: "File upload error: " + err.message });
     }
 
-    // Extract form data
     const { name, email, message } = req.body;
     const resume = req.files["resume"] ? req.files["resume"][0] : null;
     const coverLetter = req.files["coverLetter"] ? req.files["coverLetter"][0] : null;
 
-    // Prepare email attachments
     const attachments = [];
     if (resume) attachments.push({ filename: resume.originalname, content: resume.buffer });
     if (coverLetter) attachments.push({ filename: coverLetter.originalname, content: coverLetter.buffer });
 
-    // Email options
     const mailOptions = {
       from: process.env.EMAIL_USER,
       to: process.env.RECEIVER_EMAIL,
@@ -187,13 +193,12 @@ app.post("/api/send", (req, res) => {
       attachments: attachments,
     };
 
-    // Send email
     transporter.sendMail(mailOptions, (error, info) => {
       if (error) {
-        console.error("Email error:", error);
+        console.error("❌ Email Sending Error:", error);
         return res.status(500).json({ success: false, message: "Email sending failed!" });
       }
-      console.log("Career email sent:", info.response);
+      console.log("✅ Career email sent:", info.response);
       res.status(200).json({ success: true, message: "Application submitted & email sent!" });
     });
   });
@@ -201,6 +206,7 @@ app.post("/api/send", (req, res) => {
 
 // ✅ Contact Form API (Handles Name, Email, and Message)
 app.post("/api/contact", async (req, res) => {
+  console.log("📧 New Contact Form Submission...");
   const { name, email, message } = req.body;
 
   const mailOptions = {
@@ -212,13 +218,27 @@ app.post("/api/contact", async (req, res) => {
 
   try {
     const info = await transporter.sendMail(mailOptions);
-    console.log("Contact email sent:", info.response);
+    console.log("✅ Contact email sent:", info.response);
     res.status(200).json({ success: true, message: "Message sent successfully!" });
   } catch (error) {
-    console.error("Contact email error:", error);
+    console.error("❌ Contact Email Error:", error);
     res.status(500).json({ success: false, message: "Email sending failed!" });
   }
 });
 
-// Export as Vercel Serverless Function
+// ✅ Health Check Route
+app.get("/", (req, res) => {
+  res.send("🚀 Server is running!");
+});
+
+// ✅ Export for Vercel (Serverless Mode)
 export default app;
+
+// ✅ Local Server Configuration (For Development)
+if (process.env.NODE_ENV !== "production") {
+  const server = createServer(app);
+  server.listen(PORT, () => {
+    console.log(`✅ Server running locally on port ${PORT}`);
+  });
+}
+

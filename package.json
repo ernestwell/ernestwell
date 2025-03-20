@@ -7,12 +7,13 @@
       "server"
     ],
     "scripts": {
-      "install": "npm install --workspaces",
-      "dev": "concurrently \"npm run dev -w client\" \"npm run dev -w server\"",
-      "build": "npm run build -w client",
-      "start": "npm run start -w server",
-      "deploy": "vercel --prod"
+        "postinstall": "echo 'Dependencies installed successfully'", 
+        "dev": "concurrently \"npx npm run dev -w client\" \"npx npm run dev -w server\"",
+        "build": "npx npm run build -w client && npx npm run build -w server",
+        "start": "npx npm run start -w server",
+        "deploy": "npx vercel --prod"
     },
+
     "devDependencies": {
       "concurrently": "^8.2.2"
     }
