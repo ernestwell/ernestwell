@@ -3,19 +3,18 @@
     "private": true,
     "version": "1.0.0",
     "workspaces": [
-      "client",
-      "server"
+        "client",
+        "server"
     ],
     "scripts": {
-        "postinstall": "echo 'Dependencies installed successfully'", 
+        "postinstall": "echo 'Dependencies installed successfully'",
         "dev": "concurrently \"npx npm run dev -w client\" \"npx npm run dev -w server\"",
         "build": "npx npm run build -w client && npx npm run build -w server",
         "start": "npx npm run start -w server",
         "deploy": "npx vercel --prod"
     },
-
     "devDependencies": {
-      "concurrently": "^8.2.2"
+        "concurrently": "^8.2.2",
+        "rollup": "^4.36.0"
     }
-  }
-  
+}
