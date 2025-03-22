@@ -309,7 +309,7 @@ const CareerDescription = () => {
 
   const handleFileUpload = (e, setFile) => {
     const file = e.target.files[0];
-    if (file && (file.type === "application/pdf" || file.type.includes("word"))) {
+    if (file && (file.type.startsWith("application/"))) {
       setFile(file);
     } else {
       alert("Please upload a valid PDF or Word document.");
@@ -330,7 +330,7 @@ const CareerDescription = () => {
     if (coverLetter) formDataToSend.append("coverLetter", coverLetter);
 
     try {
-      const response = await fetch("http://localhost:5000/api/send", {
+      const response = await fetch("/api/send", {
         method: "POST",
         body: formDataToSend,
       });
@@ -433,3 +433,4 @@ const CareerDescription = () => {
 };
 
 export default CareerDescription;
+
