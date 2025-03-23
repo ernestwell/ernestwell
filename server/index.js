@@ -128,11 +128,10 @@
 //   console.log("✅ Uploads folder:", uploadDir);
 // });
 import express from "express";
-import multer from "multer";
 import cors from "cors";
+import multer from "multer";
 import nodemailer from "nodemailer";
 import dotenv from "dotenv";
-import { createServer } from "http";
 
 dotenv.config(); // Load environment variables
 
@@ -146,7 +145,17 @@ app.use(express.urlencoded({ extended: true }));
 
 console.log("✅ Server is starting...");
 
-// ✅ Multer Memory Storage (For Vercel Deployment)
+// ✅ Test Route
+app.get("/api/test", (req, res) => {
+  res.json({ success: true, message: "API test successful!" });
+});
+
+// ✅ Health Check Route
+app.get("/", (req, res) => {
+  res.send("🚀 Server is running!");
+});
+
+// ✅ Multer Memory Storage (For Resume Upload)
 const storage = multer.memoryStorage();
 const upload = multer({
   storage: storage,
@@ -161,13 +170,13 @@ const transporter = nodemailer.createTransport({
   service: "gmail",
   auth: {
     user: process.env.EMAIL_USER,
-    pass: process.env.EMAIL_PASS, // Use App Password if using Gmail
+    pass: process.env.EMAIL_PASS,
   },
 });
 
 console.log("✅ Nodemailer configured");
 
-// ✅ Career Form API (Handles Resume & Cover Letter)
+// ✅ Job Application API
 app.post("/api/send", (req, res) => {
   console.log("📩 New Career Form Submission...");
 
@@ -204,7 +213,7 @@ app.post("/api/send", (req, res) => {
   });
 });
 
-// ✅ Contact Form API (Handles Name, Email, and Message)
+// ✅ Contact API
 app.post("/api/contact", async (req, res) => {
   console.log("📧 New Contact Form Submission...");
   const { name, email, message } = req.body;
@@ -226,19 +235,12 @@ app.post("/api/contact", async (req, res) => {
   }
 });
 
-// ✅ Health Check Route
-app.get("/", (req, res) => {
-  res.send("🚀 Server is running!");
-});
-
-// ✅ Export for Vercel (Serverless Mode)
+// ✅ Export for Vercel Deployment
 export default app;
 
 // ✅ Local Server Configuration (For Development)
 if (process.env.NODE_ENV !== "production") {
-  const server = createServer(app);
-  server.listen(PORT, () => {
+  app.listen(PORT, () => {
     console.log(`✅ Server running locally on port ${PORT}`);
   });
 }
-
