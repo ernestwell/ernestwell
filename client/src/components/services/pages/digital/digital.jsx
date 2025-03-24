@@ -66,7 +66,7 @@ const DigitalMarketingSolutions = () => {
   return (
     <div className="digital-marketing-container">
       <header className="mobiledev-header">
-        <h1>Digital Marketing Solutions</h1>
+        <h1>DIGITAL MARKETING</h1>
         <p>Enhance your online presence with tailored strategies in SEO, social media, email marketing, branding, and content management.</p>
       </header>
       <section className="mobiledev-container">

@@ -66,7 +66,7 @@ const WebDevelopment = () => {
   return (
     <div className="webdev-container-1">
       <header className="webdev-header">
-        <h1>Web Development Services</h1>
+        <h1>WEB DEVELOPEMENT SERVICES</h1>
         <p>Build your digital presence with high-quality, custom-built web solutions.</p>
       </header>
 

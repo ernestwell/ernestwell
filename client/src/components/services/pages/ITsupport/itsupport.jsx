@@ -7,26 +7,20 @@ import image3 from "../../serviceimages/erp.svg";
 const services = [
   {
     id: 1,
-    title: "Managed IT Services",
-    description: `Managed IT services provide businesses with comprehensive support to oversee their IT infrastructure, including network monitoring, troubleshooting, and cloud management. Outsourcing IT operations helps reduce downtime, improve performance, and stay updated with technology trends.
-
-      Services include proactive network security, threat detection, firewall management, and system optimization. Regular software updates, performance tuning, and preventive maintenance ensure peak efficiency. Businesses benefit from 24/7 expert support, available remotely or on-site for immediate issue resolution.`,
+    title: "IT Services",
+    description: `Managed IT services provide businesses with comprehensive support to oversee their IT infrastructure, including network monitoring, troubleshooting, and cloud management. Outsourcing IT operations helps reduce downtime, improve performance, and stay updated with technology trends.`,
     image: image1,
   },
   {
     id: 2,
-    title: "Remote Technical Support",
-    description: `Remote technical support allows businesses to resolve IT issues quickly without on-site visits. Using secure remote tools, technicians diagnose and fix problems in real-time, ensuring minimal disruption.
-
-      Services include troubleshooting desktops, servers, and networks, as well as software installation, updates, and virus removal. This provides rapid response and expert assistance without the overhead of an in-house IT team.`,
+    title: "Technical Support",
+    description: `Remote technical support allows businesses to resolve IT issues quickly without on-site visits. Using secure remote tools, technicians diagnose and fix problems in real-time, ensuring minimal disruption.`,
     image: image2,
   },
   {
     id: 3,
     title: "System Setup & Maintenance",
-    description: `System setup and maintenance ensure businesses have optimized IT infrastructure from the start. Experts handle hardware, software, and network installation, ensuring seamless integration and security.
-
-      Ongoing maintenance includes software updates, security patches, and hardware upkeep to prevent downtime and enhance performance. IT professionals also recommend upgrades to keep systems efficient and scalable, reducing unexpected issues and costly repairs.`,
+    description: `System setup and maintenance ensure businesses have optimized IT infrastructure from the start. Experts handle hardware, software, and network installation, ensuring seamless integration and security.`,
     image: image3,
   },
 ];
@@ -61,9 +55,9 @@ const ITSupport = () => {
   return (
     <div className="itsupport-container">
       <header className="itsupport-header">
-        <h1>IT Support Solutions</h1>
+        <h1>IT SUPPORT</h1>
         <p>
-          Our IT support services are designed to ensure that your technology infrastructure runs smoothly and securely. From managed IT services to system setup and remote technical support, we provide the tools and expertise your business needs to stay ahead in today digital landscape.
+          Our IT support services are designed to ensure that your technology infrastructure runs smoothly and securely. From managed IT services to system setup and remote technical support.
         </p>
       </header>
 

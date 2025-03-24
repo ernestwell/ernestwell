@@ -284,6 +284,17 @@ body {
   .service-icon-container {
     font-size: 40px;
   }
+  .custom-software-container{
+    max-width: 100%;
+  }
+  .custom-header h1{
+    font-size: 2.2rem;
+    line-height: 1.3;
+  }
+  .image-container-4 img{
+      max-width: 200px;
+      max-height: 200px;
+  }
 }
 
 @media (max-width: 480px) {

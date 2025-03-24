@@ -7,20 +7,20 @@ import image3 from "../../serviceimages/erp.svg";
 const cybersecurityServices = [
   {
     id: 1,
-    title: "Secure Client Systems Against Hacking",
-    description: `In today's rapidly evolving digital landscape, protecting client systems from hacking and malicious threats is critical. We offer comprehensive solutions designed to secure your systems against unauthorized access, data breaches, and cyberattacks. Our experts deploy advanced techniques such as intrusion detection systems (IDS), proactive monitoring, and real-time threat analysis to safeguard your critical data and ensure uninterrupted operations. With our services, your systems will remain resilient against the latest hacking tactics and vulnerabilities.`,
+    title: "Secure Client Systems",
+    description: `In today's rapidly evolving digital landscape, protecting client systems from hacking and malicious threats is critical. We offer comprehensive solutions designed to secure your systems against unauthorized access, data breaches, and cyberattacks. Our experts deploy advanced techniques such as intrusion detection systems (IDS), proactive monitoring, and real-time threat analysis to safeguard your critical data and ensure uninterrupted operations.`,
     image: image1
   },
   {
     id: 2,
-    title: "Develop Custom Firewalls and Security Protocols",
-    description: `We understand that each business has unique security needs. Our team specializes in designing and developing custom firewalls tailored to your specific environment. Whether you're protecting an internal network, securing cloud resources, or preventing external intrusions, we provide a robust, multi-layered approach to defend your infrastructure. Additionally, we craft security protocols that align with industry standards, integrating them seamlessly with your systems to ensure maximum protection against cyber threats.`,
+    title: "Develop Custom Firewalls",
+    description: `We understand that each business has unique security needs. Our team specializes in designing and developing custom firewalls tailored to your specific environment. Whether you're protecting an internal network, securing cloud resources, or preventing external intrusions, we provide a robust, multi-layered approach to defend your infrastructure.`,
     image: image2
   },
   {
     id: 3,
-    title: "Security Audits and Compliance Checks",
-    description: `Regular security audits and compliance checks are vital for ensuring your systems meet the latest security standards and regulatory requirements. Our cybersecurity experts perform thorough assessments to identify vulnerabilities, inefficiencies, and potential areas of risk within your systems. We also help your organization stay compliant with industry regulations such as GDPR, HIPAA, and PCI-DSS, reducing the likelihood of costly penalties and reputational damage. Our detailed reports provide actionable insights to improve your security posture.`,
+    title: "Security Audits",
+    description: `Regular security audits and compliance checks are vital for ensuring your systems meet the latest security standards and regulatory requirements.`,
     image: image3
   },
 ];
@@ -54,7 +54,7 @@ const CybersecuritySolutions = () => {
   return (
     <div className="cybersecurity-container">
       <header className="cybersecurity-header">
-        <h1>Cybersecurity Solutions</h1>
+        <h1>CYBERSECURITY SOLUTIONS</h1>
         <p>
           Protect your systems, data, and infrastructure with our comprehensive cybersecurity services. From securing client systems against hacking to custom firewalls, compliance checks, and more, we have the expertise to safeguard your business.
         </p>

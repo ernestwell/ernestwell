@@ -243,6 +243,13 @@ body {
     padding-left: 0;
     text-align: center;
   }
+  .itsupport-container{
+    max-width: 100%;
+  }
+  .image-container-8 img{
+    max-width: 200px;
+    max-height: 200px;
+  }
 }
 
 @media (max-width: 480px) {

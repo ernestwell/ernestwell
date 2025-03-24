@@ -56,7 +56,7 @@ const CloudSolutions = () => {
     <div className="cloud-container">
 
       <header className="cloud-header">
-        <h1>Cloud Solutions</h1>
+        <h1>CLOUD SOLUTIONS</h1>
         <p>
           Unlock new opportunities for growth and efficiency with our comprehensive cloud services. From storage to tailored SaaS products, we provide the tools and expertise to elevate your business to the next level.
         </p>
