@@ -188,6 +188,11 @@ const Navbar = () => {
 
           <li><Link to="/careers" className="nav-item" onClick={() => setMenuOpen(false)}>Careers</Link></li>
           <li><Link to="/contact" className="nav-item contact" onClick={() => setMenuOpen(false)}>Contact</Link></li>
+          {!user && (
+            <li className="signin-dropdown">
+              <Link to="/sign-in" className="signin-link">Sign In</Link>
+            </li>
+          )}
         </ul>
 
         {user ? (
