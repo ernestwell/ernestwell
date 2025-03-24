@@ -207,7 +207,7 @@ const ContactForm = () => {
             ></textarea>
           </div>
           <button type="submit" className="submit-btn pulse" disabled={isSending}>
-            {isSending ? "Sending..." : "Send Message"}
+            {isSending ? "Sending..." : "Send"}
           </button>
           {status && <p className="status-message">{status}</p>}
         </form>
