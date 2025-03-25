@@ -20,6 +20,7 @@ import CareersPage from "./components/Careers/career";
 import TechStack from "./components/techstack/techstack";
 import CareerDescription from "./components/Careers/description";
 import AdminPanel from "./components/admin/admin";
+import PrivacyPolicy from "./components/privacyPolicy/privacypolicy"
 function App() {
 
 
@@ -53,6 +54,7 @@ function App() {
         <Route path="/sign-in" element={<SignIn/>}/>
         <Route path="/job-description" element={<CareerDescription/>}/>
         <Route path="/admin" element={<AdminPanel />} />
+        <Route path="/privacy-policy" element={<PrivacyPolicy />} />
       </Routes>
       <Footer />
     </Router>

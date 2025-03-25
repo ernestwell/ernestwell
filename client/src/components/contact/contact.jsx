@@ -174,8 +174,8 @@ const ContactForm = () => {
         </div>
       </div>
       <div className="contact-right slide-in">
-        <h1>Contact Us</h1>
         <form className="contact-form" onSubmit={handleSubmit}>
+          <h1>Contact Us</h1>
           <div className="input-group">
             <input
               type="text"

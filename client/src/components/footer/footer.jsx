@@ -379,7 +379,7 @@ const Footer = () => {
       </div>
       <div className="footer-bottom">
         <div className="footer-bottom-left">
-          &copy; 2025 Ernestwell. All Rights Reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Use</a> | <a href="#">Sitemap</a>
+          &copy; 2025 Ernestwell. All Rights Reserved. | <a href="/privacy-policy">Privacy Policy</a> | <a href="/privacy-policy">Terms & Conditions</a> | <a href="/privacy-policy">Sitemap</a>
         </div>
       </div>
     </footer>
