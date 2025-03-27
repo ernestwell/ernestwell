@@ -272,59 +272,57 @@
 import { useEffect, useState } from "react";
 import "./footer.css";
 import {
-  FaFacebookF,
-  FaInstagram,
-  FaTwitter,
-  FaLinkedinIn,
-  FaPaperPlane,
-  FaHome,
-  FaBriefcase,
-  FaEnvelope,
-  FaPhone,
-  FaCode,
-  FaMobileAlt,
-  FaServer,
-  FaCloud,
-  FaShieldAlt,
-  FaLightbulb,
-  FaCogs,
-  FaUsers,
+  FaFacebookF, FaInstagram, FaTwitter, FaLinkedinIn, FaPaperPlane, FaHome,
+  FaBriefcase, FaEnvelope, FaPhone, FaCode, FaMobileAlt, FaServer, FaCloud,
+  FaShieldAlt, FaLightbulb, FaCogs, FaUsers
 } from "react-icons/fa";
+
+const GOOGLE_SCRIPT_URL =
+  "https://script.google.com/macros/s/AKfycbyk33lnJ06c9Rfjyb0keAE5zPUXnijTwctKBYlivTtaCoIGU161CdlsleiiK9T86g_Z/exec";
 
 const Footer = () => {
   const [visitorCount, setVisitorCount] = useState(0);
 
   useEffect(() => {
-    let count = localStorage.getItem("visitorCount");
-    count = count ? parseInt(count) + 1 : 1;
-    localStorage.setItem("visitorCount", count);
-    setVisitorCount(count);
+    fetch(`${GOOGLE_SCRIPT_URL}?action=get`)
+      .then((response) => response.json())
+      .then((data) => {
+        if (data.visitorCount) {
+          setVisitorCount(data.visitorCount);
+          updateVisitorCount(); // Increase count after fetching
+        }
+      })
+      .catch((error) => console.error("Error fetching visitor count:", error));
   }, []);
+
+  const updateVisitorCount = () => {
+    fetch(`${GOOGLE_SCRIPT_URL}?action=update`, { method: "POST" })
+      .then((response) => response.json())
+      .then((data) => {
+        if (data.visitorCount) {
+          setVisitorCount(data.visitorCount);
+        }
+      })
+      .catch((error) => console.error("Error updating visitor count:", error));
+  };
 
   return (
     <footer className="footer">
       <div className="footer-container">
+        
+        {/* About Section */}
         <div className="footer-section about">
           <h3>ERNESTWELL</h3>
           <p>Empowering Businesses through Technology.</p>
-           {/* <div className="footer-links">
-                <a href="#" className="footer-link">Mission</a>
-                <span className="footer-separator">|</span>
-                <a href="#" className="footer-link">Values</a>
-                <span className="footer-separator">|</span>
-                <a href="#" className="footer-link">Vision</a>
-                <span className="footer-separator">|</span>
-                <a href="#" className="footer-link">Team</a>
-            </div> */}
-
           <div className="social-icons">
-                <a href="https://www.linkedin.com/company/ernestwell-business-solution/?viewAsMember=true" className="social-icon"><FaLinkedinIn /></a>
-                <a href="https://www.facebook.com/profile.php?id=61573618348231" className="social-icon"><FaFacebookF /></a>
-                <a href="https://x.com/erneswellBS" className="social-icon"><FaTwitter /></a>
-                <a href="#" className="social-icon"><FaInstagram /></a>
+            <a href="https://www.linkedin.com/company/ernestwell-business-solution/?viewAsMember=true" className="social-icon"><FaLinkedinIn /></a>
+            <a href="https://www.facebook.com/profile.php?id=61573618348231" className="social-icon"><FaFacebookF /></a>
+            <a href="https://x.com/erneswellBS" className="social-icon"><FaTwitter /></a>
+            <a href="https://instagram.com/yourpage" className="social-icon"><FaInstagram /></a> 
           </div>
         </div>
 
+        {/* Quick Links Section */}
         <div className="footer-section foot-2">
           <h3>Quick Links</h3>
           <ul>
@@ -335,13 +333,14 @@ const Footer = () => {
           </ul>
         </div>
 
+        {/* Services Section */}
         <div className="footer-section foot-3">
           <h3>Services</h3>
           <div className="services-grid-1">
             <ul>
               <li><a href="#"><FaCode className="icon" /> Web Dev</a></li>
               <li><a href="#"><FaMobileAlt className="icon" /> App Dev</a></li>
-              <li><a href="#"><FaServer className="icon" /> ITSupport</a></li>
+              <li><a href="#"><FaServer className="icon" /> IT Support</a></li>
               <li><a href="#"><FaCloud className="icon" /> Cloud</a></li>
             </ul>
             <ul>
@@ -353,19 +352,15 @@ const Footer = () => {
           </div>
         </div>
 
+        {/* Connect & Visitor Counter */}
         <div className="footer-section foot-4">
           <h3>Connect</h3>
           <div className="email-container">
-                <input
-                    type="email"
-                    placeholder="Enter email"
-                    className="email-input"
-                />
-                <button className="email-button">
-                    <FaPaperPlane />
-                </button>
+            <input type="email" placeholder="Enter email" className="email-input" />
+            <button className="email-button" aria-label="Send Email">
+              <FaPaperPlane />
+            </button>
           </div>
-
 
           <h3 className="visi">VISITORS</h3>
           <div className="visitor-counter">
@@ -377,9 +372,14 @@ const Footer = () => {
           </div>
         </div>
       </div>
+
+      {/* Footer Bottom */}
       <div className="footer-bottom">
         <div className="footer-bottom-left">
-          &copy; 2025 Ernestwell. All Rights Reserved. | <a href="/privacy-policy">Privacy Policy</a> | <a href="/privacy-policy">Terms & Conditions</a> | <a href="/privacy-policy">Sitemap</a>
+          &copy; 2025 Ernestwell. All Rights Reserved. | 
+          <a href="/privacy-policy"> Privacy Policy</a> | 
+          <a href="/terms"> Terms & Conditions</a> | 
+          <a href="/sitemap"> Sitemap</a>
         </div>
       </div>
     </footer>
@@ -387,136 +387,3 @@ const Footer = () => {
 };
 
 export default Footer;
-// import { useEffect, useState } from "react";
-// import { db } from "../../Firebase";
-// import { doc, onSnapshot } from "firebase/firestore";
-// import "./footer.css";
-// import {
-//   FaFacebookF, FaInstagram, FaTwitter, FaLinkedinIn, FaPaperPlane,
-//   FaHome, FaBriefcase, FaEnvelope, FaPhone, FaCode, FaMobileAlt, 
-//   FaServer, FaCloud, FaShieldAlt, FaLightbulb, FaCogs, FaUsers
-// } from "react-icons/fa";
-
-// const ICONS = {
-//   home: FaHome,
-//   briefcase: FaBriefcase,
-//   envelope: FaEnvelope,
-//   phone: FaPhone,
-//   code: FaCode,
-//   mobile: FaMobileAlt,
-//   server: FaServer,
-//   cloud: FaCloud,
-//   shield: FaShieldAlt,
-//   lightbulb: FaLightbulb,
-//   cogs: FaCogs,
-//   users: FaUsers
-// };
-
-// const Footer = () => {
-//   const [footerContent, setFooterContent] = useState({});
-//   const [visitorCount, setVisitorCount] = useState(0);
-
-//   useEffect(() => {
-//     // Fetch footer content in real-time
-//     const footerRef = doc(db, "websiteContent", "footer");
-//     const unsubscribe = onSnapshot(footerRef, (doc) => {
-//       if (doc.exists()) {
-//         setFooterContent(doc.data());
-//       }
-//     });
-
-//     return () => unsubscribe();
-//   }, []);
-
-//   useEffect(() => {
-//     // Visitor count logic using localStorage
-//     let count = localStorage.getItem("visitorCount");
-//     count = count ? parseInt(count) + 1 : 1;
-//     localStorage.setItem("visitorCount", count);
-//     setVisitorCount(count);
-//   }, []);
-
-//   return (
-//     <footer className="footer">
-//       <div className="footer-container">
-        
-//         {/* About Section */}
-//         <div className="footer-section about">
-//           <h3>ERNESTWELL</h3>
-//           <p>{footerContent.aboutText || "Empowering Businesses through Technology."}</p>
-
-//           {/* Social Links */}
-//           <div className="social-icons">
-//             <a href={footerContent.linkedin || "#"} className="social-icon"><FaLinkedinIn /></a>
-//             <a href={footerContent.facebook || "#"} className="social-icon"><FaFacebookF /></a>
-//             <a href={footerContent.twitter || "#"} className="social-icon"><FaTwitter /></a>
-//             <a href={footerContent.instagram || "#"} className="social-icon"><FaInstagram /></a>
-//           </div>
-//         </div>
-
-//         {/* Quick Links Section */}
-//         <div className="footer-section foot-2">
-//           <h3>Quick Links</h3>
-//           <ul>
-//             {footerContent.quickLinks?.map((link, index) => (
-//               <li key={index}>
-//                 <a href={link.url}>{link.text}</a>
-//               </li>
-//             ))}
-//           </ul>
-//         </div>
-
-//         {/* Services Section */}
-//         <div className="footer-section foot-3">
-//           <h3>Services</h3>
-//           <div className="services-grid-1">
-//             {[0, 4].map((startIndex) => (
-//               <ul key={startIndex}>
-//                 {footerContent.services?.slice(startIndex, startIndex + 4).map((service, index) => {
-//                   const IconComponent = ICONS[service.icon]; // Get icon component
-//                   return (
-//                     <li key={index}>
-//                       <a href={service.url}>
-//                         {IconComponent && <IconComponent className="icon" />} {service.text}
-//                       </a>
-//                     </li>
-//                   );
-//                 })}
-//               </ul>
-//             ))}
-//           </div>
-//         </div>
-
-//         {/* Connect Section */}
-//         <div className="footer-section foot-4">
-//           <h3>Connect</h3>
-//           <div className="email-container">
-//             <input type="email" placeholder="Enter email" className="email-input" />
-//             <button className="email-button"><FaPaperPlane /></button>
-//           </div>
-
-//           <h3 className="visi">VISITORS</h3>
-//           <div className="visitor-counter">
-//             {visitorCount.toString().split("").map((digit, index) => (
-//               <span key={index} className={`visitor-digit digit-${digit}`}>
-//                 {digit}
-//               </span>
-//             ))}
-//           </div>
-//         </div>
-//       </div>
-
-//       {/* Footer Bottom */}
-//       <div className="footer-bottom">
-//         <div className="footer-bottom-left">
-//           &copy; 2025 Ernestwell. All Rights Reserved. | 
-//           <a href={footerContent.privacyPolicy || "#"}> Privacy Policy</a> | 
-//           <a href={footerContent.termsOfUse || "#"}> Terms of Use</a> | 
-//           <a href={footerContent.sitemap || "#"}> Sitemap</a>
-//         </div>
-//       </div>
-//     </footer>
-//   );
-// };
-
-// export default Footer;

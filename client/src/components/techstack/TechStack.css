@@ -678,20 +678,31 @@ body {
 }
  */
 
-.tech-stack-container {
+ .tech-stack-container {
   background-image: 
     linear-gradient(rgba(58, 57, 57, 0.05) 1px, transparent 1.3px),
     linear-gradient(90deg, rgba(53, 52, 52, 0.05) 1px, transparent 1.3px);
   background-size: 100px 100px;
   padding: 80px 5%;
   text-align: center;
-  overflow-x: hidden;
+  overflow: visible; /* Changed from 'hidden' to 'visible' */
   padding-bottom: 40px;
 }
 
-.tech-stack-section {
-  max-width: 1200px;
+.tech-stack-grid {
+  display: grid;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  padding: 50px;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  max-width: 900px;
   margin: auto;
+  max-height: 420px;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: #2e5077;
+  padding-left: 0; /* Removed left padding */
 }
 
 .tech-stack-title {
