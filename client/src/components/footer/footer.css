@@ -225,17 +225,17 @@
   /* background: rgba(255, 255, 255, 0.1); */
   border-radius: 8px;
   backdrop-filter: blur(8px);
-  max-width: 200px;
   margin: auto;
   /* margin-top: 10px; */
-  margin-left: 65px;
+  max-width: 250px;
+  /* margin-left: 30px; */
 }
 
 .visitor-digit {
   font-size: 20px;
   font-weight: bold;
   padding:5px 10px;
-  border-radius: 6px;
+  border-radius: 50%;
   background: white;
   color: #2e5077;
   box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.2);
@@ -330,7 +330,7 @@
 }
 .email-container {
   position: relative;
-  width: 80%;
+  width: 250px;
   max-width: 400px;
   margin: auto;
   display: flex;
@@ -338,7 +338,6 @@
   border: 2px solid #fabb12;
   border-radius: 50px;
   overflow: hidden;
-  margin-left: 50px;
   margin-bottom: 10px;
 }
 
