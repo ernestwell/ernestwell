@@ -324,9 +324,6 @@
   .visitor-counter{
     margin: auto;
   }
-  .footer-bottom a{
-    display: none;
-  }
 }
 .email-container {
   position: relative;
@@ -563,7 +560,7 @@
 }
 .foot-3 ul{
   margin-top: 15px;
-  margin-left: 20px;
+  /* margin-left: 20px; */
 }
 .foot-2 ul a{
   font-weight: 600;
@@ -591,7 +588,7 @@
   .foot-3,
   .foot-4 {
     padding-left: 0;
-    margin-left: 0;
+    /* margin-left: 0; */
   }
   .foot-2 h3,
   .foot-3 h3,
@@ -673,6 +670,13 @@
   .email-container{
     width: 70%;
     margin: auto;
+    margin-bottom: 5px;
+  }
+  .foot-3 ul{
+    margin: auto;
+  }
+  .foot-4{
+    margin-bottom: 15px;
   }
 }
 .footer-section .about p{

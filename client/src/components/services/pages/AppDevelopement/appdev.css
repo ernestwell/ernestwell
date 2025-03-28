@@ -302,6 +302,9 @@ body {
     max-width: 200px;
     max-height: 200px;
   }
+  .image-container-2{
+    display: None;
+  }
 }
 
 @media (max-width: 480px) {
@@ -319,6 +322,9 @@ body {
 
   h2 {
     font-size: 1.2rem;
+  }
+  .image-container-2{
+    display: None;
   }
 }
 /* Center the form with padding between navbar and bottom */

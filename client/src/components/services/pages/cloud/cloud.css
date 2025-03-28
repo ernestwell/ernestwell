@@ -282,6 +282,9 @@ body {
     max-width: 200px;
     max-height: 200px;
   }
+  .image-container-3{
+    display: None;
+  }
 }
 
 @media (max-width: 480px) {
@@ -299,6 +302,9 @@ body {
 
   h2 {
     font-size: 1.2rem;
+  }
+  .image-container-3{
+    display: None;
   }
 }
 .demo-form-container {
