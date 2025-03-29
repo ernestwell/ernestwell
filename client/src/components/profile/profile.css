@@ -150,15 +150,6 @@
   text-transform: uppercase;
   letter-spacing: 1px;
 }
-.projects-section h2::after{
-  content: '';
-  width: 80px;
-  height: 4px;
-  background: rgba(255, 193, 7, 0.7);
-  display: block;
-  margin: 10px auto;
-  border-radius: 10px;
-}
 
 .projects-container {
   display: flex;
@@ -350,4 +341,29 @@
   display: block;
   margin: 10px auto;
   border-radius: 10px;
+}
+.projects-section h2::after{
+  content: '';
+  width: 80px;
+  height: 4px;
+  background: rgba(255, 193, 7, 0.7);
+  display: block;
+  margin: 10px auto;
+  border-radius: 10px;
+}
+.project-logo {
+  width: 60px; /* Adjust size as needed */
+  height: auto;
+  margin: 0 auto 15px;
+  display: block;
+  transition: transform 0.3s ease-in-out;
+}
+
+.project-card:hover .project-logo {
+  transform: scale(1.1); /* Subtle zoom effect on hover */
+}
+
+/* Ensure logo is well positioned */
+.project-card h3 {
+  margin-top: 10px;
 }

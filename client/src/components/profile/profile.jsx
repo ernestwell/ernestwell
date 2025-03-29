@@ -116,6 +116,7 @@
 // };
 
 // export default ProfilePage;
+import React from "react";
 import "./profile.css";
 import AboutUs from "./images/co-workers-sharing-jokes-office.jpg";
 import Client1 from "./images/portrait-expressive-young-woman.jpg";
@@ -164,12 +165,27 @@ const AboutUsSection = () => {
     </section>
   );
 };
-
+import c from "./logos/cafe.svg"
 const ProjectsSection = () => {
   const projects = [
-    { id: 1, name: "Project Alpha", desc: "Web application designed to optimize workflows." },
-    { id: 2, name: "Project Beta", desc: "An AI-driven platform to automate processes and boost productivity." },
-    { id: 3, name: "Project Gamma", desc: "A collaborative tool designed for seamless project management." },
+    { 
+      id: 1, 
+      name: "Project Alpha", 
+      desc: "Web application designed to optimize workflows.", 
+      logo: c
+    },
+    { 
+      id: 2, 
+      name: "Project Beta", 
+      desc: "An AI-driven platform to automate processes and boost productivity.", 
+      logo: c 
+    },
+    { 
+      id: 3, 
+      name: "Project Gamma", 
+      desc: "A collaborative tool designed for seamless project management.", 
+      logo: c
+    },
   ];
 
   return (
@@ -178,6 +194,7 @@ const ProjectsSection = () => {
       <div className="projects-container">
         {projects.map((project) => (
           <div key={project.id} className="project-card">
+            <img src={project.logo} alt={`${project.name} logo`} className="project-logo" />
             <h3>{project.name}</h3>
             <p>{project.desc}</p>
           </div>
