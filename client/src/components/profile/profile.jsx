@@ -166,6 +166,7 @@ const AboutUsSection = () => {
   );
 };
 import c from "./logos/cafe.svg"
+import u from "./logos/uni.png"
 const ProjectsSection = () => {
   const projects = [
     { 
@@ -178,7 +179,7 @@ const ProjectsSection = () => {
       id: 2, 
       name: "Project Beta", 
       desc: "An AI-driven platform to automate processes and boost productivity.", 
-      logo: c 
+      logo: u
     },
     { 
       id: 3, 
