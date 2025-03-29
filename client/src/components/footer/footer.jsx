@@ -378,7 +378,7 @@ const Footer = () => {
         <div className="footer-bottom-left">
           &copy; 2025 Ernestwell. All Rights Reserved. | 
           <a href="/privacy-policy"> Privacy Policy</a> | 
-          <a href="/terms"> Terms & Conditions</a> | 
+          <a href="/privacy-policy"> Terms & Conditions</a> | 
           <a href="/sitemap"> Sitemap</a>
         </div>
       </div>

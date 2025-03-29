@@ -116,7 +116,6 @@
 // };
 
 // export default ProfilePage;
-import React from "react";
 import "./profile.css";
 import AboutUs from "./images/co-workers-sharing-jokes-office.jpg";
 import Client1 from "./images/portrait-expressive-young-woman.jpg";

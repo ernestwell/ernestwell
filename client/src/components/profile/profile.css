@@ -150,7 +150,7 @@
   text-transform: uppercase;
   letter-spacing: 1px;
 }
-.project-section h2::after{
+.projects-section h2::after{
   content: '';
   width: 80px;
   height: 4px;
@@ -159,6 +159,7 @@
   margin: 10px auto;
   border-radius: 10px;
 }
+
 .projects-container {
   display: flex;
   justify-content: center;

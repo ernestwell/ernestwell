@@ -397,7 +397,7 @@ const servicesData = [
   { title: "Apps Development", description: "Develop user-friendly mobile apps for iOS and Android platforms.", image: mobileDevImage, className: "apps-development-card", link: "/app-development" },
   { title: "SERVICES", description: "Unlock exclusive, tailor-made tech solutions designed for businesses that demand innovation.",image:img, className: "exclusive-service-card", link: "/exclusive-services" },
   { title: "IT Support", description: "Reliable IT support to keep your systems up and running smoothly.", image: itSupportImage, className: "it-support-card", link: "/ITsupport" },
-  { title: "Cloud Solutions", description: "Secure and scalable cloud solutions to manage your data and applications.", image: cloudSolutionsImage, className: "cloud-solutions-card", link: "/cloudsolutions" },
+  { title: "AI Software", description: "We deliver AI-powered automation, intelligence, and data solutions.", image: cloudSolutionsImage, className: "cloud-solutions-card", link: "/cloudsolutions" },
   { title: "Cybersecurity", description: "Protect your business from cyber threats with robust security measures.", image: cybersecurityImage, className: "cybersecurity-card", link: "/CybersecuritySolutions" },
   { title: "Digital Marketing", description: "Reach your audience effectively through digital marketing strategies.", image: digitalMarketingImage, className: "digital-marketing-card", link: "/digitalmarketing" }
 ];
