@@ -233,6 +233,7 @@ const TestimonialsSection = () => {
   return (
     <section className="testimonials-section">
       <h2>OUR PROJECTS</h2>
+      <h3>We deliver innovative solutions across <span>Web development, Mobile apps, UI/UX design, AI integrations, and Enterprise software,</span> transforming ideas into impactful digital experiences.</h3>
       <div className="testimonials-container">
         {testimonials.map((testimonial) => (
           <div key={testimonial.id} className="testimonial-card">

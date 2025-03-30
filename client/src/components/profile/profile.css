@@ -97,6 +97,7 @@
   position: relative;
   display: inline-block;
   padding-bottom: 20px;
+  font-family: "Josefin Sans";
 }
 
 .about-content h2::after {
@@ -116,6 +117,7 @@
   font-size: 1.2rem;
   line-height: 1.8;
   color: black;
+  font-family: "Josefin Sans";
 }
 
 .about-image {
@@ -140,6 +142,7 @@
     linear-gradient(90deg, rgba(53, 52, 52, 0.05) 1px, transparent 1px);
   background-size: 100px 100px;
   position: relative;
+  font-family: "Josefin Sans";
 }
 
 .projects-section h2 {
@@ -149,6 +152,7 @@
   margin-bottom: 30px;
   text-transform: uppercase;
   letter-spacing: 1px;
+  font-family: "Josefin Sans";
 }
 
 .projects-container {
@@ -240,16 +244,35 @@
   font-size: 2.5rem;
   font-weight: 700;
   color: #2e5077;
-  margin-bottom: 100px;
   text-transform: uppercase;
   letter-spacing: 1px;
+  font-family: "Josefin Sans";
+}
+.testimonials-section h3 {
+  font-size: 1rem;
+  font-weight: 700;
+  margin-top: 50px;
+  margin-bottom: 80px;
+  line-height: 2;
+  color: #fab12f;
+  letter-spacing: 1px;
+  font-family: "Josefin Sans";
+  max-width: 1100px;
+  text-align: center; /* Center the text */
+  margin-left: auto;  /* Centering block element */
+  margin-right: auto; /* Centering block element */
 }
 
+.testimonials-section h3 span{
+  color: #2e5077;
+  font-family: "Josefin Sans";
+}
 .testimonials-container {
   display: flex;
   justify-content: center;
   gap: 30px;
   flex-wrap: wrap;
+  font-family: "Josefin Sans";
 }
 
 .testimonial-card {
@@ -264,6 +287,7 @@
   backdrop-filter: blur(20px);
   border: 3px solid #FAB12F;
   position: relative;
+  font-family: "Josefin Sans";
 }
 
 .testimonial-card:hover {
@@ -290,6 +314,7 @@
   line-height: 1.8;
   font-weight: 500;
   margin-top: 30px;
+  font-family: "Josefin Sans";
 }
 
 .testimonial-card strong {
@@ -366,4 +391,5 @@
 /* Ensure logo is well positioned */
 .project-card h3 {
   margin-top: 10px;
+  font-family: "Josefin Sans";
 }
