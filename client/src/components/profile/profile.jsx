@@ -171,13 +171,13 @@ const ProjectsSection = () => {
   const projects = [
     { 
       id: 1, 
-      name: "Project Alpha", 
+      name: "CAFE APP", 
       desc: "Web application designed to optimize workflows.", 
       logo: c
     },
     { 
       id: 2, 
-      name: "Project Beta", 
+      name: "UNIBRITIND", 
       desc: "An AI-driven platform to automate processes and boost productivity.", 
       logo: u
     },

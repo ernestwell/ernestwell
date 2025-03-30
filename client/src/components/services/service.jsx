@@ -393,11 +393,11 @@ import img from "./serviceimages/exclusive.svg";
 const servicesData = [
   { title: "Web Development", description: "Build responsive, high-performing websites tailored to your needs.", image: webDevImage, className: "web-development-card", link: "/web-development" },
   { title: "Custom Software", description: "Create custom software solutions to meet specific business needs.", image: customSoftwareImage, className: "custom-software-card", link: "/custom-development" },
-  { title: "ERP Solutions", description: "Optimize business operations with our ERP system integrations.", image: erpImage, className: "erp-solutions-card", link: "/erp-development" },
+  { title: "ERP & CRM", description: "Optimize business operations with our ERP system integrations.", image: erpImage, className: "erp-solutions-card", link: "/erp-development" },
   { title: "Apps Development", description: "Develop user-friendly mobile apps for iOS and Android platforms.", image: mobileDevImage, className: "apps-development-card", link: "/app-development" },
-  { title: "SERVICES", description: "Unlock exclusive, tailor-made tech solutions designed for businesses that demand innovation.",image:img, className: "exclusive-service-card", link: "/exclusive-services" },
+  { title: "E-commerce Dev", description: "We develop and optimize e-commerce stores for seamless shopping experiences.", image: img, className: "it-support-card", link: "/ITsupport" },
   { title: "IT Support", description: "Reliable IT support to keep your systems up and running smoothly.", image: itSupportImage, className: "it-support-card", link: "/ITsupport" },
-  { title: "AI Software", description: "We deliver AI-powered automation, intelligence, and data solutions.", image: cloudSolutionsImage, className: "cloud-solutions-card", link: "/cloudsolutions" },
+  { title: "AI Agent", description: "We deliver AI-powered automation, intelligence, and data solutions.", image: cloudSolutionsImage, className: "cloud-solutions-card", link: "/cloudsolutions" },
   { title: "Cybersecurity", description: "Protect your business from cyber threats with robust security measures.", image: cybersecurityImage, className: "cybersecurity-card", link: "/CybersecuritySolutions" },
   { title: "Digital Marketing", description: "Reach your audience effectively through digital marketing strategies.", image: digitalMarketingImage, className: "digital-marketing-card", link: "/digitalmarketing" }
 ];

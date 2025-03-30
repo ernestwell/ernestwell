@@ -176,12 +176,13 @@ const Navbar = () => {
               <ul className="dropdown-menu-nav">
                 <li><Link to="/web-development">Web Development</Link></li>
                 <li><Link to="/app-development">App Development</Link></li>
-                <li><Link to="/cloudsolutions">Cloud Solutions</Link></li>
+                <li><Link to="/cloudsolutions">AI Agent</Link></li>
                 <li><Link to="/CybersecuritySolutions">Cyber Security</Link></li>
                 <li><Link to="/ITsupport">IT Support</Link></li>
-                <li><Link to="/erp-development">ERP Services</Link></li>
+                <li><Link to="/erp-development">ERP & CRM</Link></li>
                 <li><Link to="/custom-development">Custom Solutions</Link></li>
                 <li><Link to="/digitalmarketing">Digital Marketing</Link></li>
+                <li><Link to="/digitalmarketing">E-Commerce Dev</Link></li>
               </ul>
             )}
           </li>
