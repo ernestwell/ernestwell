@@ -165,61 +165,61 @@ const AboutUsSection = () => {
     </section>
   );
 };
-import c from "./logos/cafe.svg"
+import c from "./logos/Brown and White Illustration Coffee Shop Logo.png"
 import u from "./logos/uni.png"
-const ProjectsSection = () => {
-  const projects = [
-    { 
-      id: 1, 
-      name: "CAFE APP", 
-      desc: "Web application designed to optimize workflows.", 
-      logo: c
-    },
-    { 
-      id: 2, 
-      name: "UNIBRITIND", 
-      desc: "An AI-driven platform to automate processes and boost productivity.", 
-      logo: u
-    },
-    { 
-      id: 3, 
-      name: "Project Gamma", 
-      desc: "A collaborative tool designed for seamless project management.", 
-      logo: c
-    },
-  ];
+// const ProjectsSection = () => {
+//   const projects = [
+//     { 
+//       id: 1, 
+//       name: "CAFE APP", 
+//       desc: "Web application designed to optimize workflows.", 
+//       logo: c
+//     },
+//     { 
+//       id: 2, 
+//       name: "UNIBRITIND", 
+//       desc: "An AI-driven platform to automate processes and boost productivity.", 
+//       logo: u
+//     },
+//     { 
+//       id: 3, 
+//       name: "Project Gamma", 
+//       desc: "A collaborative tool designed for seamless project management.", 
+//       logo: c
+//     },
+//   ];
 
-  return (
-    <section className="projects-section">
-      <h2>Our Projects</h2>
-      <div className="projects-container">
-        {projects.map((project) => (
-          <div key={project.id} className="project-card">
-            <img src={project.logo} alt={`${project.name} logo`} className="project-logo" />
-            <h3>{project.name}</h3>
-            <p>{project.desc}</p>
-          </div>
-        ))}
-      </div>
-    </section>
-  );
-};
+//   return (
+//     <section className="projects-section">
+//       <h2>Our Projects</h2>
+//       <div className="projects-container">
+//         {projects.map((project) => (
+//           <div key={project.id} className="project-card">
+//             <img src={project.logo} alt={`${project.name} logo`} className="project-logo" />
+//             <h3>{project.name}</h3>
+//             <p>{project.desc}</p>
+//           </div>
+//         ))}
+//       </div>
+//     </section>
+//   );
+// };
 
 const TestimonialsSection = () => {
   const testimonials = [
     {
       id: 1,
       quote:
-        "ErnestWell transformed our business with their innovative solutions. Their team is professional, creative, and always delivers on time.",
-      name: "Alex Johnson, CEO of InnovateTech",
-      image: Client1,
+         "We crafted a sleek and engaging website for AuraCafe, designed to elevate its digital presence and customer experience.",   
+      name: "Alex Johnson, CEO of AURA CAFE",
+      image:c,
     },
     {
       id: 2,
       quote:
-        "We've seen a 200% increase in efficiency after implementing their platform. I highly recommend their services!",
-      name: "Priya Sharma, CTO of Bright Solutions",
-      image: Client2,
+        "We built a user-centric website for Unibritind Global, streamlining the study abroad experience for aspiring international students.",
+      name: "Maxwell Gerald Baldrey, CEO of UNIBRITIND GLOBAL",
+      image: u,
     },
     {
       id: 3,
@@ -232,13 +232,12 @@ const TestimonialsSection = () => {
 
   return (
     <section className="testimonials-section">
-      <h2>What Our Clients Say</h2>
+      <h2>OUR PROJECTS</h2>
       <div className="testimonials-container">
         {testimonials.map((testimonial) => (
           <div key={testimonial.id} className="testimonial-card">
             <img src={testimonial.image} alt={testimonial.name} className="client-image" />
             <p>"{testimonial.quote}"</p>
-            <strong>- {testimonial.name}</strong>
           </div>
         ))}
       </div>
@@ -251,7 +250,6 @@ const ProfilePage = () => {
     <>
       <VisionSection />
       <AboutUsSection />
-      <ProjectsSection />
       <TestimonialsSection />
     </>
   );
