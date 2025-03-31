@@ -276,6 +276,10 @@ import {
   FaBriefcase, FaEnvelope, FaPhone, FaCode, FaMobileAlt, FaServer, FaCloud,
   FaShieldAlt, FaLightbulb, FaCogs, FaUsers
 } from "react-icons/fa";
+import LinkedInLogo from "./images/linkedin.svg";
+import FacebookLogo from "./images/Facebook_f_logo_(2019).svg";
+import XLogo from "./images/twitter.svg";
+import InstagramLogo from "./images/Instagram_logo_2016.svg";
 
 const GOOGLE_SCRIPT_URL =
   "https://script.google.com/macros/s/AKfycbyk33lnJ06c9Rfjyb0keAE5zPUXnijTwctKBYlivTtaCoIGU161CdlsleiiK9T86g_Z/exec";
@@ -315,10 +319,18 @@ const Footer = () => {
           <h3>ERNESTWELL</h3>
           <p>Empowering Businesses through Technology.</p>
           <div className="social-icons">
-            <a href="https://www.linkedin.com/company/ernestwell-business-solution/?viewAsMember=true" className="social-icon"><FaLinkedinIn /></a>
-            <a href="https://www.facebook.com/profile.php?id=61573618348231" className="social-icon"><FaFacebookF /></a>
-            <a href="https://x.com/erneswellBS" className="social-icon"><FaTwitter /></a>
-            <a href="https://instagram.com/yourpage" className="social-icon"><FaInstagram /></a> 
+            <a href="https://www.linkedin.com/company/ernestwell-business-solution/?viewAsMember=true" className="social-icon">
+              <img src={LinkedInLogo} alt="LinkedIn" width="30" />
+            </a>
+            <a href="https://www.facebook.com/profile.php?id=61573618348231" className="social-icon">
+              <img src={FacebookLogo} alt="Facebook" width="30" />
+            </a>
+            <a href="https://x.com/erneswellBS" className="social-icon">
+              <img src={XLogo} alt="Twitter X" width="30" />
+            </a>
+            <a href="https://instagram.com/yourpage" className="social-icon">
+              <img src={InstagramLogo} alt="Instagram" width="30" />
+            </a>
           </div>
         </div>
 
