@@ -22,7 +22,6 @@ body {
   border-radius: 20%;
   margin: 90px auto;
   margin-bottom: 20px;
-  max-width: 80%;
   /* border: 10px double #2e5077; */
 }
 
@@ -48,7 +47,6 @@ body {
 .digital-marketing-container {
   color: #2e5077;
   padding: 0 20px;
-  max-width: 90%;
   margin: auto;
 }
 

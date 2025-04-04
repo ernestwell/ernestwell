@@ -156,7 +156,7 @@
   color: #2e5077;
   font-family: "Josefin Sans";
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 950px) {
   .footer-container {
     flex-direction: column;
     text-align: center;
@@ -288,7 +288,7 @@
   color: #fabb12;
   text-decoration: underline;
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 950px) {
   .footer-container {
     flex-direction: column;
     text-align: center;
@@ -534,7 +534,7 @@
   font-weight: 600;
   font-family: "Josefin Sans";
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 950px) {
   .footer-container {
     flex-direction: column;
     text-align: center;
@@ -581,7 +581,7 @@
      border-radius: 30px; 
   }
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 950px) {
   .footer-container {
     flex-direction: column;
     text-align: center;

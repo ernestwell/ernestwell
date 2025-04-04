@@ -43,35 +43,56 @@ const CloudSolutions = () => {
     setScheduleMeeting(false);
   };
 
-  const handleFormSubmit = (event) => {
-    event.preventDefault();
-    handleCloseForm(); // Close form after submission
-    setShowPopup(true); // Show popup after form submission
-  };
-
   const handlePopupClose = () => {
     setShowPopup(false); // Manually close the popup when user clicks "Close"
   };
-  return (
-    <div className="cloud-container">
+  const handleFormSubmit = (event) => {
+    event.preventDefault();
+    const formData = new FormData(event.target);
+    const name = formData.get("name");
+    const email = formData.get("email");
+    const meetingDate = formData.get("meetingDate");
 
-      <header className="cloud-header">
-        <h1>CLOUD SOLUTIONS</h1>
-        <p>
-          Unlock new opportunities for growth and efficiency with our comprehensive cloud services. From storage to tailored SaaS products, we provide the tools and expertise to elevate your business to the next level.
-        </p>
+    let year, month, day;
+    if (scheduleMeeting && meetingDate) {
+      const selectedDate = new Date(meetingDate);
+      year = selectedDate.getFullYear();
+      month = selectedDate.getMonth() + 1;
+      day = selectedDate.getDate();
+    }
+
+    const googleFormURL = "https://docs.google.com/forms/u/0/d/e/1FAIpQLSdUoX9R5YpNEBNCfhcmStK5sLMPBSRqM46kd7reZvISLVwxBg/formResponse";
+    const formDataToSend = new URLSearchParams();
+    formDataToSend.append("entry.630075460", name);
+    formDataToSend.append("entry.657108051", email);
+    if (scheduleMeeting) {
+      formDataToSend.append("entry.908925682_year", year);
+      formDataToSend.append("entry.908925682_month", month);
+      formDataToSend.append("entry.908925682_day", day);
+    }
+
+    fetch(googleFormURL, { method: "POST", body: formDataToSend, mode: "no-cors" })
+      .then(() => {
+        handleCloseForm();
+        setShowPopup(true);
+      })
+      .catch((error) => console.error("Error submitting form:", error));
+  };
+
+  return (
+    <div className="mobiledev-container">
+      <header className="mobiledev-header">
+        <h1>APP DEVELOPMENT SERVICES</h1>
+        <p>Transform your business with high-quality, custom mobile app solutions.</p>
       </header>
-      <section className="cloud-services">
+      <section className="mobiledev-services">
         {services.map((service, index) => (
-          <div key={service.id} className={`cloud-service ${index % 2 === 0 ? "reverse" : ""}`}>
-            <div className="image-container-3">
-              <img src={service.image} alt={service.title} />
-            </div>
-            <div className="content-container-3">
+          <div key={service.id} className={`mobiledev-service ${index % 2 === 0 ? "reverse" : ""}`}>
+            <div className="image-container-2"><img src={service.image} alt={service.title} /></div>
+            <div className="content-container-2">
               <h2>{service.title}</h2>
               <p>{service.description}</p>
-              <button className="primary-btn-3" onClick={() => handleShowForm(service)}>See Demo</button>
-              
+              <button className="primary-btn-2" onClick={() => handleShowForm(service)}>See Demo</button>
             </div>
           </div>
         ))}
@@ -82,69 +103,27 @@ const CloudSolutions = () => {
           <form className="demo-form" onSubmit={handleFormSubmit}>
             <div className="form-group">
               <label htmlFor="name">Your Name</label>
-              <input type="text" id="name" placeholder="Enter your name" required />
+              <input type="text" id="name" name="name" placeholder="Enter your name" required />
             </div>
             <div className="form-group">
               <label htmlFor="email">Your Email</label>
-              <input type="email" id="email" placeholder="Enter your email" required />
+              <input type="email" id="email" name="email" placeholder="Enter your email" required />
             </div>
-            {/* <div className="form-group">
-              <label htmlFor="message">Your Message</label>
-              <textarea id="message" rows="4" placeholder="Enter your message"></textarea>
-            </div> */}
-
-            {/* Schedule Meeting Option */}
             <div className="form-group" style={{ display: "flex", alignItems: "center" }}>
-              <input 
-                type="checkbox" 
-                id="scheduleMeeting" 
-                checked={scheduleMeeting} 
-                onChange={() => setScheduleMeeting(!scheduleMeeting)} 
-                style={{ marginRight: "10px",marginTop:"0px" }} // Adds spacing between checkbox and label
-              />
+              <input type="checkbox" id="scheduleMeeting" checked={scheduleMeeting} onChange={() => setScheduleMeeting(!scheduleMeeting)} style={{ marginRight: "10px" }} />
               <label htmlFor="scheduleMeeting">I want to schedule a meeting</label>
             </div>
-
             {scheduleMeeting && (
-                  <div 
-                    className="form-group centered" 
-                    style={{
-                      display: "flex", 
-                      flexDirection: "column", 
-                      alignItems: "center", 
-                      justifyContent: "center", 
-                      height: "10vh"
-                    }}
-                  >
-                    <label htmlFor="meetingDate">Select a Date & Time</label>
-                    <input 
-                      type="datetime-local" 
-                      id="meetingDate" 
-                      name="meetingDate" 
-                      required 
-                      style={{ marginTop: "10px" }} // Adds space between label and input
-                    />
-                  </div>
+              <div className="form-group centered" style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
+                <label htmlFor="meetingDate">Select a Date & Time</label>
+                <input type="datetime-local" id="meetingDate" name="meetingDate" required style={{ marginTop: "10px" }} />
+              </div>
             )}
-
-
             <div className="form-buttons">
               <button type="submit" className="primary-btn">Submit Request</button>
               <button type="button" className="secondary-btn" onClick={handleCloseForm}>Close</button>
             </div>
           </form>
-        </div>
-      )}
-
-      {/* Success Popup with Manual Close */}
-      {showPopup && (
-        <div className="popup-overlay">
-          <div className="popup">
-            <p>✅ Thank you! Your request has been received. We will get back to you soon.</p>
-            <button onClick={handlePopupClose} className="primary-btn">
-              Close
-            </button>
-          </div>
         </div>
       )}
       <section className="faq-section">

@@ -1,8 +1,8 @@
 import  { useState } from "react";
 import "./itsupport.css";
-import image1 from "../../serviceimages/cloud.svg";
-import image2 from "../../serviceimages/custom.svg";
-import image3 from "../../serviceimages/erp.svg";
+import image1 from "./supportimages/undraw_miro_pu4s.svg";
+import image2 from "./supportimages/undraw_product-iteration_r2wg.svg";
+import image3 from "./supportimages/undraw_work-time_zbsw.svg";
 
 const services = [
   {
@@ -44,12 +44,40 @@ const ITSupport = () => {
 
   const handleFormSubmit = (event) => {
     event.preventDefault();
-    handleCloseForm();
-    setShowPopup(true);
+    const formData = new FormData(event.target);
+    const name = formData.get("name");
+    const email = formData.get("email");
+    const meetingDate = formData.get("meetingDate");
+
+    let year, month, day;
+    if (scheduleMeeting && meetingDate) {
+      const selectedDate = new Date(meetingDate);
+      year = selectedDate.getFullYear();
+      month = selectedDate.getMonth() + 1;
+      day = selectedDate.getDate();
+    }
+
+    const googleFormURL =
+      "https://docs.google.com/forms/u/0/d/e/1FAIpQLSdUoX9R5YpNEBNCfhcmStK5sLMPBSRqM46kd7reZvISLVwxBg/formResponse";
+    const formDataToSend = new URLSearchParams();
+    formDataToSend.append("entry.630075460", name);
+    formDataToSend.append("entry.657108051", email);
+    if (scheduleMeeting) {
+      formDataToSend.append("entry.908925682_year", year);
+      formDataToSend.append("entry.908925682_month", month);
+      formDataToSend.append("entry.908925682_day", day);
+    }
+
+    fetch(googleFormURL, { method: "POST", body: formDataToSend, mode: "no-cors" })
+      .then(() => {
+        handleCloseForm();
+        setShowPopup(true);
+      })
+      .catch((error) => console.error("Error submitting form:", error));
   };
 
   const handlePopupClose = () => {
-    setShowPopup(false);
+    setShowPopup(false); // Manually close the popup when user clicks "Close"
   };
 
   return (
@@ -89,52 +117,22 @@ const ITSupport = () => {
           <form className="demo-form" onSubmit={handleFormSubmit}>
             <div className="form-group">
               <label htmlFor="name">Your Name</label>
-              <input type="text" id="name" placeholder="Enter your name" required />
+              <input type="text" id="name" name="name" placeholder="Enter your name" required />
             </div>
             <div className="form-group">
               <label htmlFor="email">Your Email</label>
-              <input type="email" id="email" placeholder="Enter your email" required />
+              <input type="email" id="email" name="email" placeholder="Enter your email" required />
             </div>
-            {/* <div className="form-group">
-              <label htmlFor="message">Your Message</label>
-              <textarea id="message" rows="4" placeholder="Enter your message"></textarea>
-            </div> */}
-
-            {/* Schedule Meeting Option */}
             <div className="form-group" style={{ display: "flex", alignItems: "center" }}>
-              <input 
-                type="checkbox" 
-                id="scheduleMeeting" 
-                checked={scheduleMeeting} 
-                onChange={() => setScheduleMeeting(!scheduleMeeting)} 
-                style={{ marginRight: "10px",marginTop:"0px" }} // Adds spacing between checkbox and label
-              />
+              <input type="checkbox" id="scheduleMeeting" checked={scheduleMeeting} onChange={() => setScheduleMeeting(!scheduleMeeting)} style={{ marginRight: "10px" }} />
               <label htmlFor="scheduleMeeting">I want to schedule a meeting</label>
             </div>
-
             {scheduleMeeting && (
-                  <div 
-                    className="form-group centered" 
-                    style={{
-                      display: "flex", 
-                      flexDirection: "column", 
-                      alignItems: "center", 
-                      justifyContent: "center", 
-                      height: "10vh"
-                    }}
-                  >
-                    <label htmlFor="meetingDate">Select a Date & Time</label>
-                    <input 
-                      type="datetime-local" 
-                      id="meetingDate" 
-                      name="meetingDate" 
-                      required 
-                      style={{ marginTop: "10px" }} // Adds space between label and input
-                    />
-                  </div>
+              <div className="form-group centered" style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
+                <label htmlFor="meetingDate">Select a Date & Time</label>
+                <input type="datetime-local" id="meetingDate" name="meetingDate" required style={{ marginTop: "10px" }} />
+              </div>
             )}
-
-
             <div className="form-buttons">
               <button type="submit" className="primary-btn">Submit Request</button>
               <button type="button" className="secondary-btn" onClick={handleCloseForm}>Close</button>
