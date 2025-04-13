@@ -626,9 +626,6 @@
   .visitor-counter{
     margin: auto;
   }
-  .footer-bottom a{
-    display: none;
-  }
   .email-container{
     width: 70%;
     margin: auto;
@@ -658,8 +655,8 @@
 
 .social-icon {
   display: inline-block;
-  width: 30px;
-  height: 30px;
+  width: 27px;
+  height: 27px;
 }
 
 .social-icon img {
@@ -685,4 +682,18 @@
 }
 .footer-bottom-left{
   font-family: "Josefin Sans";
+}
+@media (max-width: 576px) {
+  .footer-bottom {
+    font-size: 12px;
+    padding: 10px 8px;
+    line-height: 1.4;
+  }
+
+  .footer-bottom a {
+    font-size: 12px;
+    display: inline-block;
+    margin: 4px 2px;
+    word-break: break-word;
+  }
 }

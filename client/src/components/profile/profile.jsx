@@ -117,6 +117,7 @@
 
 // export default ProfilePage;
 import React from "react";
+import { useState,useEffect } from "react";
 import "./profile.css";
 import AboutUs from "./images/co-workers-sharing-jokes-office.jpg";
 import Client1 from "./images/portrait-expressive-young-woman.jpg";
@@ -207,44 +208,56 @@ import u from "./logos/uni.png"
 
 const TestimonialsSection = () => {
   const testimonials = [
-    {
-      id: 1,
-      quote:
-         "We crafted a sleek and engaging website for AuraCafe, designed to elevate its digital presence and customer experience.",   
-      name: "Alex Johnson, CEO of AURA CAFE",
-      image:c,
-    },
-    {
-      id: 2,
-      quote:
-        "We built a user-centric website for Unibritind Global, streamlining the study abroad experience for aspiring international students.",
-      name: "Maxwell Gerald Baldrey, CEO of UNIBRITIND GLOBAL",
-      image: u,
-    },
-    {
-      id: 3,
-      quote:
-        "Their creativity and technical expertise are unmatched. The team truly understands our vision and makes it a reality.",
-      name: "Mark Wilson, Founder of Visionary Brands",
-      image: Client3,
-    },
+    { id: 1, name: 'AURA CAFE', image: c },
+    { id: 2, name: 'UNIBRITIND GLOBAL', image: u },
+    { id: 3, name: 'VISIONARY BRANDS', image: Client3 },
   ];
+
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentIndex((prev) => (prev + 1) % testimonials.length);
+    }, 3000); // Change every 3 seconds
+    return () => clearInterval(interval);
+  }, [testimonials.length]);
 
   return (
     <section className="testimonials-section">
-      <h2>OUR PROJECTS</h2>
-      <h3>We deliver innovative solutions across <span>Web development, Mobile apps, UI/UX design, AI integrations, and Enterprise software,</span> transforming ideas into impactful digital experiences.</h3>
-      <div className="testimonials-container">
-        {testimonials.map((testimonial) => (
-          <div key={testimonial.id} className="testimonial-card">
-            <img src={testimonial.image} alt={testimonial.name} className="client-image" />
-            <p>"{testimonial.quote}"</p>
-          </div>
-        ))}
+      <h2>WE WORKED WITH</h2>
+      <div className="logo-slider-container">
+        <div className="logo-wrapper">
+          {testimonials.map((testimonial, index) => {
+            let position = 'hidden';
+            if (index === currentIndex) position = 'center';
+            else if (index === (currentIndex + 1) % testimonials.length) position = 'right';
+            else if (index === (currentIndex - 1 + testimonials.length) % testimonials.length) position = 'left';
+
+            return (
+              <div
+                key={testimonial.id}
+                className={`logo-slide ${position}`}
+              >
+                <img src={testimonial.image} alt={testimonial.name} />
+              </div>
+            );
+          })}
+        </div>
+
+        <div className="dot-indicators">
+          {testimonials.map((_, index) => (
+            <span
+              key={index}
+              className={`dot ${index === currentIndex ? 'active' : ''}`}
+              onClick={() => setCurrentIndex(index)}
+            />
+          ))}
+        </div>
       </div>
     </section>
   );
 };
+
 
 const ProfilePage = () => {
   return (

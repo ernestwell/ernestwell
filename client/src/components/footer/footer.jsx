@@ -338,10 +338,10 @@ const Footer = () => {
         <div className="footer-section foot-2">
           <h3>Quick Links</h3>
           <ul>
-            <li><a href="#"><FaHome className="icon" /> About Us</a></li>
-            <li><a href="#"><FaBriefcase className="icon" /> Careers</a></li>
-            <li><a href="#"><FaEnvelope className="icon" /> Contact</a></li>
-            <li><a href="#"><FaPhone className="icon" /> Support</a></li>
+            <li><a href="/profile"><FaHome className="icon" /> About Us</a></li>
+            <li><a href="/careers"><FaBriefcase className="icon" /> Careers</a></li>
+            <li><a href="/contact"><FaEnvelope className="icon" /> Contact</a></li>
+            <li><a href="/contact"><FaPhone className="icon" /> Support</a></li>
           </ul>
         </div>
 
@@ -350,16 +350,16 @@ const Footer = () => {
           <h3>Services</h3>
           <div className="services-grid-1">
             <ul>
-              <li><a href="#"><FaCode className="icon" /> Web Dev</a></li>
-              <li><a href="#"><FaMobileAlt className="icon" /> App Dev</a></li>
-              <li><a href="#"><FaServer className="icon" /> IT Support</a></li>
-              <li><a href="#"><FaCloud className="icon" /> Cloud</a></li>
+              <li><a href="/web-development"><FaCode className="icon" /> Web Dev</a></li>
+              <li><a href="/app-development"><FaMobileAlt className="icon" /> App Dev</a></li>
+              <li><a href="/ITsupport"><FaServer className="icon" /> IT Support</a></li>
+              <li><a href="/cloudsolutions"><FaCloud className="icon" />AI Agent</a></li>
             </ul>
             <ul>
-              <li><a href="#"><FaShieldAlt className="icon" /> Security</a></li>
-              <li><a href="#"><FaLightbulb className="icon" /> Custom</a></li>
-              <li><a href="#"><FaCogs className="icon" /> ERP</a></li>
-              <li><a href="#"><FaUsers className="icon" /> Consulting</a></li>
+              <li><a href="/CybersecuritySolutions"><FaShieldAlt className="icon" /> Security</a></li>
+              <li><a href="/custom-development"><FaLightbulb className="icon" /> Custom</a></li>
+              <li><a href="/erp-development"><FaCogs className="icon" /> ERP</a></li>
+              <li><a href="/digitalmarketing"><FaUsers className="icon" />Marketing</a></li>
             </ul>
           </div>
         </div>
@@ -390,8 +390,7 @@ const Footer = () => {
         <div className="footer-bottom-left">
           &copy; 2025 Ernestwell. All Rights Reserved. | 
           <a href="/privacy-policy"> Privacy Policy</a> | 
-          <a href="/privacy-policy"> Terms & Conditions</a> | 
-          <a href="/sitemap"> Sitemap</a>
+          <a href="/privacy-policy"> Terms & Conditions</a>
         </div>
       </div>
     </footer>

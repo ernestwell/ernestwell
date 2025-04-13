@@ -346,50 +346,119 @@
     margin-top: 40px;
   }
 }
-.testimonial-card .client-image {
-  width: 70px;
-  height: 70px;
+.testimonials-section {
+  text-align: center;
+  padding: 3rem 1rem;
+  width: 100%;
+}
+
+.testimonials-section h2 {
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: #2e5077;
+  position: relative;
+  display: inline-block;
+  padding-bottom: 20px;
+  font-family: "Josefin Sans", sans-serif;
+}
+
+.testimonials-section h2::after {
+  content: '';
+  width: 80px;
+  height: 4px;
+  background: #fab12f;
+  display: block;
+  margin: 10px auto;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.logo-slider-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.logo-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap; /* Allows wrapping on smaller screens */
+  width: 100%;
+  max-width: 1000px;
+  position: relative;
+  gap: clamp(3rem, 8vw, 15rem); /* Responsive spacing */
+  margin-bottom: 1.5rem;
+}
+
+.logo-slide {
+  margin-top: 2rem;
+  width: clamp(80px, 15vw, 150px); /* Responsive logo size */
+  height: clamp(80px, 15vw, 150px);
   border-radius: 50%;
+  overflow: hidden;
+  transition: all 0.4s ease;
+  opacity: 0.3;
+  filter: blur(3px);
+  transform: scale(0.8);
+}
+
+.logo-slide img {
+  width: 100%;
+  height: 100%;
   object-fit: cover;
-  border-bottom: 3px solid #2e5077;
-  border-bottom-right-radius: 3px solid #2e5077;
-  border-bottom-left-radius: 3px solid #2e5077;
-  border-top: 3px solid #2e5077;
-  margin-top: -10px;
-  background: white;
-}
-.testimonials-section h2::after{
-  content: '';
-  width: 80px;
-  height: 4px;
-  background: rgba(255, 193, 7, 0.7);
-  display: block;
-  margin: 10px auto;
-  border-radius: 10px;
-}
-.projects-section h2::after{
-  content: '';
-  width: 80px;
-  height: 4px;
-  background: rgba(255, 193, 7, 0.7);
-  display: block;
-  margin: 10px auto;
-  border-radius: 10px;
-}
-.project-logo {
-  width: 60px; /* Adjust size as needed */
-  height: auto;
-  margin: 0 auto 15px;
-  display: block;
-  transition: transform 0.3s ease-in-out;
+  border-radius: 50%;
 }
 
-.project-card:hover .project-logo {
-  transform: scale(1.1); /* Subtle zoom effect on hover */
+.logo-slide.center {
+  opacity: 1;
+  filter: blur(0);
+  transform: scale(1.2);
 }
 
-/* Ensure logo is well positioned */
-.project-card h3 {
-  margin-top: 10px;
-  font-family: "Josefin Sans";
+.logo-slide.left,
+.logo-slide.right {
+  opacity: 0.5;
+  filter: blur(2px);
+}
+
+.logo-slide.hidden {
+  display: none;
+}
+
+.dot-indicators {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: #bbb;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.dot.active {
+  background-color: #2e5077;
+}
+
+/* Extra responsiveness for small screens */
+@media (max-width: 600px) {
+  .testimonials-section h2 {
+    font-size: 2rem;
+  }
+
+  .dot-indicators {
+    gap: 12px;
+  }
+
+  .dot {
+    width: 10px;
+    height: 10px;
+  }
 }
