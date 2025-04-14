@@ -10,19 +10,21 @@ import img from "./images/custom.svg"
 const jobListings = [
   { 
     id: 1, 
-    title: "WEB DEVELOPER", 
-    location: "Remote", 
-    type: "Full-Time", 
+    title: "Php Developer Internship (Unpaid) ", 
+    location: "Remote-(3 Months)", 
+    type: "Part-Time", 
     icon: <FaCode />, 
-    role: "Frontend Developer", 
-    skills: "HTML, CSS, JavaScript, React",
+    role: "Full-Stack Developer", 
+    skills: "HTML, CSS, JavaScript,PHP,MYSql,AJAX",
     image: img,
     description: [
-      "Develop and maintain modern, responsive websites using React, JavaScript, and CSS.",
-      "Optimize web applications for speed, scalability, and cross-browser compatibility.",
-      "Collaborate with UI/UX designers to implement user-friendly interfaces.",
-      "Integrate RESTful APIs and ensure seamless data flow.",
-      "Debug and resolve frontend issues, improving performance and usability.",
+      "Develop and maintain web applications using CodeIgniter, Laravel, and Perfex CRM.",
+      "Customize Perfex CRM to meet business needs",
+      "Integrate APIs and third-party tools",
+      "Debug, troubleshoot, and provide support for ongoing projects",
+      "Write clean, maintainable, and well-documented code",
+      "Participate in code reviews, testing, and QA processes",
+      "Stay updated with the latest tech trends and backend best practices"
     ],
     candidateSkills: [
       "0-2 years of experience in Frontend Development.",
@@ -34,19 +36,21 @@ const jobListings = [
   },
   { 
     id: 2, 
-    title: "APP DEVELOPER", 
-    location: "Remote", 
-    type: "Full-Time", 
+    title: "Laravel Developer Internship (Unpaid)", 
+    location: "Remote-(3 Months)", 
+    type: "Part-Time", 
     icon: <FaMobileAlt />, 
-    role: "Mobile Developer", 
-    skills: "Flutter, React Native, Swift, Kotlin",
+    role: "Full Stack Developer", 
+    skills: "PHP, Laravel, JavaScript,HTML,CSS,React/Vue.js",
     image: img, 
     description: [
-      "Develop cross-platform mobile applications using Flutter or React Native.",
-      "Ensure application compatibility across different devices and operating systems.",
-      "Optimize mobile applications for performance and responsiveness.",
-      "Collaborate with backend developers for API integration.",
-      "Troubleshoot and debug mobile applications to enhance user experience."
+      "Basic knowledge of PHP, Laravel, JavaScript, and modern frontend frameworks (React or Vue.js)",
+      "Familiarity with Git, RESTful APIs, and general backend/frontend development ",
+      "Willingness to learn, adapt, and contribute to real projects",
+      "Good problem-solving and communication skills ",
+      "Write clean, modular code and contribute to project architecture and logic",
+      "Learn the CodeCanyon submission process, quality standards, and documentation practices",
+      "Work alongside experienced developers and designers in a startup-style environment"
     ],
     candidateSkills: [
       "0-2 years of experience in mobile app development.",
@@ -56,102 +60,102 @@ const jobListings = [
       "Fresher with mobile development certification(s) can also apply."
     ]
   },
-  { 
-    id: 3, 
-    title: "ERP CONSULTANT", 
-    location: "Hybrid", 
-    type: "Contract", 
-    icon: <FaDatabase />, 
-    role: "Business Consultant", 
-    skills: "SAP, Oracle ERP, Microsoft Dynamics",
-    image: img,
-    description: [
-      "Assist businesses in implementing and optimizing ERP solutions.",
-      "Analyze business processes and recommend ERP configurations.",
-      "Train employees on ERP functionalities and workflows.",
-      "Troubleshoot ERP system issues and provide technical support.",
-      "Ensure compliance with industry standards and best practices."
-    ],
-    candidateSkills: [
-      "1-3 years of experience in ERP consulting or implementation.",
-      "Strong knowledge of SAP, Oracle ERP, or Microsoft Dynamics.",
-      "Excellent problem-solving and analytical skills.",
-      "Ability to communicate technical concepts to non-technical users.",
-      "Certification in ERP software is a plus."
-    ]
-  },
-  { 
-    id: 4, 
-    title: "UI/UX DESIGNER", 
-    location: "On-Site", 
-    type: "Full-Time", 
-    icon: <FaPencilRuler />, 
-    role: "UI/UX Designer", 
-    skills: "Figma, Adobe XD, Wireframing",
-    image:img,
-    description: [
-      "Create user-friendly and visually appealing UI designs.",
-      "Conduct user research and apply findings to design solutions.",
-      "Develop wireframes, prototypes, and high-fidelity mockups.",
-      "Optimize UI components for accessibility and responsiveness.",
-      "Collaborate with developers to ensure seamless design-to-code implementation."
-    ],
-    candidateSkills: [
-      "0-2 years of experience as a UI/Graphical Designer.",
-      "Portfolio of design projects showcasing creativity.",
-      "Up-to-date knowledge of Figma, Adobe XD, and design trends.",
-      "Good time-management skills and ability to meet deadlines.",
-      "Fresher with UI/UX design certification(s) can also apply."
-    ]
-  },
-  { 
-    id: 5, 
-    title: "QA ENGINEER", 
-    location: "Remote", 
-    type: "Full-Time", 
-    icon: <FaBug />, 
-    role: "QA Engineer", 
-    skills: "Automation Testing, Selenium, Jest",
-    image: img, 
-    description: [
-      "Ensure software quality through rigorous testing methodologies.",
-      "Develop automated test scripts using Selenium and Jest.",
-      "Identify and report software defects and inconsistencies.",
-      "Collaborate with developers to improve application stability.",
-      "Maintain detailed documentation of test cases and reports."
-    ],
-    candidateSkills: [
-      "0-2 years of experience in software testing or quality assurance.",
-      "Knowledge of automation testing tools like Selenium and Jest.",
-      "Strong analytical and problem-solving skills.",
-      "Understanding of software development lifecycle and testing methodologies.",
-      "Fresher with QA certification(s) can also apply."
-    ]
-  },
-  { 
-    id: 5, 
-    title: "QA ENGINEER", 
-    location: "Remote", 
-    type: "Full-Time", 
-    icon: <FaBug />, 
-    role: "QA Engineer", 
-    skills: "Automation Testing, Selenium, Jest",
-    image: img, 
-    description: [
-      "Ensure software quality through rigorous testing methodologies.",
-      "Develop automated test scripts using Selenium and Jest.",
-      "Identify and report software defects and inconsistencies.",
-      "Collaborate with developers to improve application stability.",
-      "Maintain detailed documentation of test cases and reports."
-    ],
-    candidateSkills: [
-      "0-2 years of experience in software testing or quality assurance.",
-      "Knowledge of automation testing tools like Selenium and Jest.",
-      "Strong analytical and problem-solving skills.",
-      "Understanding of software development lifecycle and testing methodologies.",
-      "Fresher with QA certification(s) can also apply."
-    ]
-  }
+  // { 
+  //   id: 3, 
+  //   title: "ERP CONSULTANT", 
+  //   location: "Hybrid", 
+  //   type: "Contract", 
+  //   icon: <FaDatabase />, 
+  //   role: "Business Consultant", 
+  //   skills: "SAP, Oracle ERP, Microsoft Dynamics",
+  //   image: img,
+  //   description: [
+  //     "Assist businesses in implementing and optimizing ERP solutions.",
+  //     "Analyze business processes and recommend ERP configurations.",
+  //     "Train employees on ERP functionalities and workflows.",
+  //     "Troubleshoot ERP system issues and provide technical support.",
+  //     "Ensure compliance with industry standards and best practices."
+  //   ],
+  //   candidateSkills: [
+  //     "1-3 years of experience in ERP consulting or implementation.",
+  //     "Strong knowledge of SAP, Oracle ERP, or Microsoft Dynamics.",
+  //     "Excellent problem-solving and analytical skills.",
+  //     "Ability to communicate technical concepts to non-technical users.",
+  //     "Certification in ERP software is a plus."
+  //   ]
+  // },
+  // { 
+  //   id: 4, 
+  //   title: "UI/UX DESIGNER", 
+  //   location: "On-Site", 
+  //   type: "Full-Time", 
+  //   icon: <FaPencilRuler />, 
+  //   role: "UI/UX Designer", 
+  //   skills: "Figma, Adobe XD, Wireframing",
+  //   image:img,
+  //   description: [
+  //     "Create user-friendly and visually appealing UI designs.",
+  //     "Conduct user research and apply findings to design solutions.",
+  //     "Develop wireframes, prototypes, and high-fidelity mockups.",
+  //     "Optimize UI components for accessibility and responsiveness.",
+  //     "Collaborate with developers to ensure seamless design-to-code implementation."
+  //   ],
+  //   candidateSkills: [
+  //     "0-2 years of experience as a UI/Graphical Designer.",
+  //     "Portfolio of design projects showcasing creativity.",
+  //     "Up-to-date knowledge of Figma, Adobe XD, and design trends.",
+  //     "Good time-management skills and ability to meet deadlines.",
+  //     "Fresher with UI/UX design certification(s) can also apply."
+  //   ]
+  // },
+  // { 
+  //   id: 5, 
+  //   title: "QA ENGINEER", 
+  //   location: "Remote", 
+  //   type: "Full-Time", 
+  //   icon: <FaBug />, 
+  //   role: "QA Engineer", 
+  //   skills: "Automation Testing, Selenium, Jest",
+  //   image: img, 
+  //   description: [
+  //     "Ensure software quality through rigorous testing methodologies.",
+  //     "Develop automated test scripts using Selenium and Jest.",
+  //     "Identify and report software defects and inconsistencies.",
+  //     "Collaborate with developers to improve application stability.",
+  //     "Maintain detailed documentation of test cases and reports."
+  //   ],
+  //   candidateSkills: [
+  //     "0-2 years of experience in software testing or quality assurance.",
+  //     "Knowledge of automation testing tools like Selenium and Jest.",
+  //     "Strong analytical and problem-solving skills.",
+  //     "Understanding of software development lifecycle and testing methodologies.",
+  //     "Fresher with QA certification(s) can also apply."
+  //   ]
+  // },
+  // { 
+  //   id: 5, 
+  //   title: "QA ENGINEER", 
+  //   location: "Remote", 
+  //   type: "Full-Time", 
+  //   icon: <FaBug />, 
+  //   role: "QA Engineer", 
+  //   skills: "Automation Testing, Selenium, Jest",
+  //   image: img, 
+  //   description: [
+  //     "Ensure software quality through rigorous testing methodologies.",
+  //     "Develop automated test scripts using Selenium and Jest.",
+  //     "Identify and report software defects and inconsistencies.",
+  //     "Collaborate with developers to improve application stability.",
+  //     "Maintain detailed documentation of test cases and reports."
+  //   ],
+  //   candidateSkills: [
+  //     "0-2 years of experience in software testing or quality assurance.",
+  //     "Knowledge of automation testing tools like Selenium and Jest.",
+  //     "Strong analytical and problem-solving skills.",
+  //     "Understanding of software development lifecycle and testing methodologies.",
+  //     "Fresher with QA certification(s) can also apply."
+  //   ]
+  // }
 ];
 
 // Group jobs by role
@@ -251,7 +255,6 @@ const CareersPage = () => {
             <div className="job-header">
               <div className="job-icon">{selectedJob.icon}</div>
               <h2>{selectedJob.title}</h2>
-              <p className="job-role">{selectedJob.role}</p>
             </div>
             
             <div className="job-info">

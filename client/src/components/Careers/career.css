@@ -150,6 +150,7 @@ body {
   color: #2e5077;
   margin-bottom: 0.3rem;
   font-family: "Josefin Sans";
+  line-height: 1.5;
 }
 .job-info h3::after {
   content: '';
@@ -227,6 +228,7 @@ body {
   gap: 1rem;
   margin-bottom: 1rem;
   font-family: "Josefin Sans";
+  line-height: 1.2;
 }
 
 .job-icon {
