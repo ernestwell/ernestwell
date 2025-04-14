@@ -397,9 +397,9 @@ const servicesData = [
   { title: "Apps Development", description: "Develop user-friendly mobile apps for iOS and Android platforms.", image: mobileDevImage, className: "apps-development-card", link: "/app-development" },
   { title: "E-commerce Dev", description: "We develop and optimize e-commerce stores for seamless shopping experiences.", image: img, className: "it-support-card", link: "/ITsupport" },
   { title: "IT Support", description: "Reliable IT support to keep your systems up and running smoothly.", image: itSupportImage, className: "it-support-card", link: "/ITsupport" },
-  { title: "AI Agent", description: "We deliver AI-powered automation, intelligence, and data solutions.", image: cloudSolutionsImage, className: "cloud-solutions-card", link: "/cloudsolutions" },
+  { title: "AI Agent", description: "We deliver AI-powered automation, intelligence, and data solutions.", image: cloudSolutionsImage, className: "cloud-solutions-card", link: "/AIAgentSolutions" },
   { title: "Cybersecurity", description: "Protect your business from cyber threats with robust security measures.", image: cybersecurityImage, className: "cybersecurity-card", link: "/CybersecuritySolutions" },
-  { title: "Digital Marketing", description: "Reach your audience effectively through digital marketing strategies.", image: digitalMarketingImage, className: "digital-marketing-card", link: "/digitalmarketing" }
+  { title: "Digital Marketing", description: "Reach your audience effectively through digital marketing strategies.", image: digitalMarketingImage, className: "digital-marketing-card", link: "/ECommerce" }
 ];
 
 const Service = () => (

@@ -1,41 +1,38 @@
 import { useState } from "react";
-import "./digital.css";
-import image1 from "./digitalimages/undraw_social-strategy_v9qr.svg";
-import image2 from "./digitalimages/undraw_mobile-marketing_x9am.svg";
-import image3 from "./digitalimages/undraw_creative-team_wfty.svg";
-import image4 from "./digitalimages/undraw_wait-in-line_fbdq.svg";
+import "./e-commerce.css";
+import image1 from "./ecom/undraw_development_s4gv.svg";
+import image2 from "./ecom/undraw_web-devices_i15y.svg";
+import image3 from "./ecom/undraw_web-shopping_m3o2.svg";
+import image4 from "./ecom/undraw_window-shopping_9l2k.svg";
+
 const services = [
   {
     id: 1,
-    title: "SEO & Social Media Management",
-    description:
-      "Boost your online presence with tailored SEO strategies and strategic social media management. We optimize your website for search engines and engage your audience with curated posts, campaigns, and platform-specific strategies.",
-    image: image1
+    title: "Online Store Development",
+    description: "Launch your own feature-rich online store with a secure, scalable, and responsive design that works across all devices.",
+    image: image1,
   },
   {
     id: 2,
-    title: "Email Marketing Solutions",
-    description:
-      "Drive sales and customer engagement with effective email marketing. We create personalized campaigns, automate workflows, segment audiences, and track performance to maximize open rates and conversions.",
-    image: image2
+    title: "Shopping Cart & Checkout",
+    description: "We build optimized, user-friendly shopping carts and smooth checkout flows that reduce abandonment and increase conversions.",
+    image: image2,
   },
   {
     id: 3,
-    title: "Branding & Logo Design",
-    description:
-      "Build a strong brand identity with professional branding and logo design. We craft visually striking logos and cohesive brand strategies that reflect your vision and make a lasting impact.",
-    image: image3
+    title: "Secure Payment Integration",
+    description: "Accept payments seamlessly with secure integration of gateways like Stripe, PayPal, Razorpay, and more.",
+    image: image3,
   },
   {
     id: 4,
-    title: "Content Creation & Management",
-    description:
-      "Engage your audience with high-quality content, from blogs and articles to videos and graphics. Our team ensures SEO optimization and consistent content delivery across all platforms.",
-    image: image4
+    title: "E-Commerce Analytics & Reports",
+    description: "Track sales, user behavior, and KPIs with advanced analytics and dashboard integration for smarter decision-making.",
+    image: image4,
   },
 ];
 
-const DigitalMarketingSolutions = () => {
+const ECommerce = () => {
   const [showForm, setShowForm] = useState(false);
   const [selectedService, setSelectedService] = useState(null);
   const [showPopup, setShowPopup] = useState(false);
@@ -88,8 +85,8 @@ const DigitalMarketingSolutions = () => {
   return (
     <div className="mobiledev-container">
       <header className="mobiledev-header">
-        <h1>DIGITAL MARKETING SERVICES</h1>
-        <p>Drive growth and boost engagement with result-oriented digital marketing strategies.</p>
+        <h1>E-COMMERCE DEVELOPMENT</h1>
+        <p>Build, scale, and grow your online store with cutting-edge e-commerce solutions tailored to your business.</p>
       </header>
       <section className="mobiledev-services">
         {services.map((service, index) => (
@@ -143,21 +140,24 @@ const DigitalMarketingSolutions = () => {
       <section className="faq-section">
         <h2>Frequently Asked Questions</h2>
         <details className="faq-item">
-          <summary>Which digital marketing service is right for my business?</summary>
-          <p>It depends on your business needs. SEO is great for long-term visibility, social media can help you engage directly with your audience, email marketing is effective for lead nurturing, branding establishes your company’s identity, and content management keeps your audience engaged consistently.</p>
+          <summary>Which e-commerce platform should I choose for my business?</summary>
+          <p>The choice depends on your business size and goals. We can help you select the right platform—whether it's Shopify for quick deployment, WooCommerce for WordPress integration, or a custom-built solution for full control and scalability.</p>
         </details>
         <details className="faq-item">
-          <summary>How do I track the performance of my digital marketing campaigns?</summary>
-          <p>We provide detailed analytics for all services. From tracking website traffic for SEO to monitoring open rates and conversions for email marketing, we offer transparent and data-driven insights to optimize your campaigns.</p>
+          <summary>Can you integrate payment gateways like Stripe or Razorpay?</summary>
+          <p>Yes, we support all major payment gateways, including Stripe, Razorpay, PayPal, and more. We ensure secure, seamless, and reliable transactions for your customers.</p>
         </details>
         <details className="faq-item">
-          <summary>Can you help with ongoing management of my digital marketing efforts?</summary>
-          <p>Absolutely! We offer ongoing support for all our services, including regular updates, performance analysis, and adjustments to strategies to ensure continuous growth.</p>
+          <summary>Will my e-commerce site be mobile-friendly?</summary>
+          <p>Absolutely. We design responsive e-commerce websites that work beautifully across devices, ensuring a smooth experience for users on smartphones, tablets, and desktops.</p>
+        </details>
+        <details className="faq-item">
+          <summary>Do you offer post-launch support and maintenance?</summary>
+          <p>Yes, we offer flexible post-launch maintenance plans to keep your e-commerce site updated, secure, and optimized for performance and sales.</p>
         </details>
       </section>
-
     </div>
   );
 };
 
-export default DigitalMarketingSolutions;
+export default ECommerce;

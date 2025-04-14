@@ -388,7 +388,7 @@
   width: 100%;
   max-width: 1000px;
   position: relative;
-  gap: clamp(3rem, 8vw, 15rem); /* Responsive spacing */
+  gap: clamp(3rem, 8vw, 10rem); /* Responsive spacing */
   margin-bottom: 1.5rem;
 }
 
