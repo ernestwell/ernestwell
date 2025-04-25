@@ -10,7 +10,7 @@ import img from "./images/custom.svg"
 const jobListings = [
   { 
     id: 1, 
-    title: "Php Developer Internship (Unpaid) ", 
+    title: "Php Developer Internship", 
     location: "Remote-(3 Months)", 
     type: "Part-Time", 
     icon: <FaCode />, 
@@ -18,6 +18,7 @@ const jobListings = [
     skills: "HTML, CSS, JavaScript,PHP,MYSql,AJAX",
     image: img,
     description: [
+      "Php Developer Internship (Unpaid)",
       "Develop and maintain web applications using CodeIgniter, Laravel, and Perfex CRM.",
       "Customize Perfex CRM to meet business needs",
       "Integrate APIs and third-party tools",
@@ -36,7 +37,7 @@ const jobListings = [
   },
   { 
     id: 2, 
-    title: "Laravel Developer Internship (Unpaid)", 
+    title: "Laravel Developer Internship", 
     location: "Remote-(3 Months)", 
     type: "Part-Time", 
     icon: <FaMobileAlt />, 
@@ -44,6 +45,7 @@ const jobListings = [
     skills: "PHP, Laravel, JavaScript,HTML,CSS,React/Vue.js",
     image: img, 
     description: [
+      "Laravel Developer Internship (Unpaid)",
       "Basic knowledge of PHP, Laravel, JavaScript, and modern frontend frameworks (React or Vue.js)",
       "Familiarity with Git, RESTful APIs, and general backend/frontend development ",
       "Willingness to learn, adapt, and contribute to real projects",
