@@ -120,9 +120,13 @@ import React from "react";
 import { useState,useEffect } from "react";
 import "./profile.css";
 import AboutUs from "./images/co-workers-sharing-jokes-office.jpg";
-import Client1 from "./images/portrait-expressive-young-woman.jpg";
-import Client2 from "./images/portrait-expressive-young-woman.jpg"; // Use different images if needed
-import Client3 from "./images/portrait-expressive-young-woman.jpg"; // Use different images if needed
+import Client3 from "./images/portrait-expressive-young-woman.jpg";
+import Client4 from "./logos/WhatsApp Image 2025-04-26 at 20.18.36_39ccf9ef.png";
+import Client5 from "./logos/WhatsApp Image 2025-04-26 at 20.18.36_a26ad5d7.png";
+import Client6 from "./logos/WhatsApp Image 2025-04-26 at 20.18.37_bf9ec41d.png";
+import Client7 from "./logos/WhatsApp Image 2025-04-26 at 20.19.48_00abdbb2.png";
+
+
 
 const VisionSection = () => {
   const scrollToAbout = () => {
@@ -210,7 +214,10 @@ const TestimonialsSection = () => {
   const testimonials = [
     { id: 1, name: 'AURA CAFE', image: c },
     { id: 2, name: 'UNIBRITIND GLOBAL', image: u },
-    { id: 3, name: 'VISIONARY BRANDS', image: Client3 },
+    { id: 3, name: 'VISIONARY BRANDS', image: Client4 },
+    { id: 4, name: 'VISIONARY BRANDS', image: Client5 },
+    { id: 5, name: 'VISIONARY BRANDS', image: Client6 },
+    { id: 6, name: 'VISIONARY BRANDS', image: Client7 },
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
