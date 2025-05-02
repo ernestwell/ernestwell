@@ -176,18 +176,24 @@ const Navbar = () => {
               <ul className="dropdown-menu-nav">
                 <li><Link to="/web-development">Web Development</Link></li>
                 <li><Link to="/app-development">App Development</Link></li>
-                <li><Link to="/cloudsolutions">Cloud Solutions</Link></li>
+                <li><Link to="/AIAgentSolutions">AI Agent</Link></li>
                 <li><Link to="/CybersecuritySolutions">Cyber Security</Link></li>
                 <li><Link to="/ITsupport">IT Support</Link></li>
-                <li><Link to="/erp-development">ERP Services</Link></li>
+                <li><Link to="/erp-development">ERP & CRM</Link></li>
                 <li><Link to="/custom-development">Custom Solutions</Link></li>
                 <li><Link to="/digitalmarketing">Digital Marketing</Link></li>
+                <li><Link to="/ECommerce">E-Commerce Dev</Link></li>
               </ul>
             )}
           </li>
 
           <li><Link to="/careers" className="nav-item" onClick={() => setMenuOpen(false)}>Careers</Link></li>
           <li><Link to="/contact" className="nav-item contact" onClick={() => setMenuOpen(false)}>Contact</Link></li>
+          {!user && (
+            <li className="signin-dropdown">
+              <Link to="/sign-in" className="signin-link">Sign In</Link>
+            </li>
+          )}
         </ul>
 
         {user ? (

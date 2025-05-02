@@ -1,10 +1,9 @@
 import { useState } from "react";
-import {  FaQuestionCircle } from "react-icons/fa";
 import "./digital.css";
-import image1 from "../../serviceimages/cloud.svg";
-import image2 from "../../serviceimages/custom.svg";
-import image3 from "../../serviceimages/erp.svg";
-import image4 from "../../serviceimages/no.svg";
+import image1 from "./digitalimages/undraw_social-strategy_v9qr.svg";
+import image2 from "./digitalimages/undraw_mobile-marketing_x9am.svg";
+import image3 from "./digitalimages/undraw_creative-team_wfty.svg";
+import image4 from "./digitalimages/undraw_wait-in-line_fbdq.svg";
 const services = [
   {
     id: 1,
@@ -36,54 +35,73 @@ const services = [
   },
 ];
 
-
 const DigitalMarketingSolutions = () => {
   const [showForm, setShowForm] = useState(false);
-      const [selectedService, setSelectedService] = useState(null);
-      const [showPopup, setShowPopup] = useState(false);
-      const [scheduleMeeting, setScheduleMeeting] = useState(false);
-    
-      const handleShowForm = (service) => {
-        setSelectedService(service);
-        setShowForm(true);
-      };
-    
-      const handleCloseForm = () => {
-        setShowForm(false);
-        setSelectedService(null);
-        setScheduleMeeting(false);
-      };
-    
-      const handleFormSubmit = (event) => {
-        event.preventDefault();
-        handleCloseForm(); // Close form after submission
-        setShowPopup(true); // Show popup after form submission
-      };
-    
-      const handlePopupClose = () => {
-        setShowPopup(false); // Manually close the popup when user clicks "Close"
-      };
+  const [selectedService, setSelectedService] = useState(null);
+  const [showPopup, setShowPopup] = useState(false);
+  const [scheduleMeeting, setScheduleMeeting] = useState(false);
+
+  const handleShowForm = (service) => {
+    setSelectedService(service);
+    setShowForm(true);
+  };
+
+  const handleCloseForm = () => {
+    setShowForm(false);
+    setSelectedService(null);
+    setScheduleMeeting(false);
+  };
+
+  const handleFormSubmit = (event) => {
+    event.preventDefault();
+    const formData = new FormData(event.target);
+    const name = formData.get("name");
+    const email = formData.get("email");
+    const meetingDate = formData.get("meetingDate");
+
+    let year, month, day;
+    if (scheduleMeeting && meetingDate) {
+      const selectedDate = new Date(meetingDate);
+      year = selectedDate.getFullYear();
+      month = selectedDate.getMonth() + 1;
+      day = selectedDate.getDate();
+    }
+
+    const googleFormURL = "https://docs.google.com/forms/u/0/d/e/1FAIpQLSdUoX9R5YpNEBNCfhcmStK5sLMPBSRqM46kd7reZvISLVwxBg/formResponse";
+    const formDataToSend = new URLSearchParams();
+    formDataToSend.append("entry.630075460", name);
+    formDataToSend.append("entry.657108051", email);
+    if (scheduleMeeting) {
+      formDataToSend.append("entry.908925682_year", year);
+      formDataToSend.append("entry.908925682_month", month);
+      formDataToSend.append("entry.908925682_day", day);
+    }
+
+    fetch(googleFormURL, { method: "POST", body: formDataToSend, mode: "no-cors" })
+      .then(() => {
+        handleCloseForm();
+        setShowPopup(true);
+      })
+      .catch((error) => console.error("Error submitting form:", error));
+  };
+
   return (
-    <div className="digital-marketing-container">
+    <div className="mobiledev-container">
       <header className="mobiledev-header">
-        <h1>Digital Marketing Solutions</h1>
-        <p>Enhance your online presence with tailored strategies in SEO, social media, email marketing, branding, and content management.</p>
+        <h1>DIGITAL MARKETING SERVICES</h1>
+        <p>Drive growth and boost engagement with result-oriented digital marketing strategies.</p>
       </header>
-      <section className="mobiledev-container">
-        <div className="mobiledev-services">
-          {services.map((service, index) => (
-            <div key={service.id} className={`mobiledev-service ${index % 2 === 0 ? "reverse" : ""}`}>
-              <div className="image-container-6">
-                <img src={service.image} alt={service.title} />
-              </div>
-              <div className="content-container-6">
-                <h2>{service.title}</h2>
-                <p>{service.description}</p>
-                <button className="primary-btn-6" onClick={() => handleShowForm(service)}>See Demo</button>
-              </div>
+      <section className="mobiledev-services">
+        {services.map((service, index) => (
+          <div key={service.id} className={`mobiledev-service ${index % 2 === 0 ? "reverse" : ""}`}>
+            <div className="image-container-2"><img src={service.image} alt={service.title} /></div>
+            <div className="content-container-2">
+              <h2>{service.title}</h2>
+              <p>{service.description}</p>
+              <button className="primary-btn-2" onClick={() => handleShowForm(service)}>See Demo</button>
             </div>
-          ))}
-        </div>
+          </div>
+        ))}
       </section>
       {showForm && (
         <div className="demo-form-container">
@@ -91,52 +109,22 @@ const DigitalMarketingSolutions = () => {
           <form className="demo-form" onSubmit={handleFormSubmit}>
             <div className="form-group">
               <label htmlFor="name">Your Name</label>
-              <input type="text" id="name" placeholder="Enter your name" required />
+              <input type="text" id="name" name="name" placeholder="Enter your name" required />
             </div>
             <div className="form-group">
               <label htmlFor="email">Your Email</label>
-              <input type="email" id="email" placeholder="Enter your email" required />
+              <input type="email" id="email" name="email" placeholder="Enter your email" required />
             </div>
-            {/* <div className="form-group">
-              <label htmlFor="message">Your Message</label>
-              <textarea id="message" rows="4" placeholder="Enter your message"></textarea>
-            </div> */}
-
-            {/* Schedule Meeting Option */}
             <div className="form-group" style={{ display: "flex", alignItems: "center" }}>
-              <input 
-                type="checkbox" 
-                id="scheduleMeeting" 
-                checked={scheduleMeeting} 
-                onChange={() => setScheduleMeeting(!scheduleMeeting)} 
-                style={{ marginRight: "10px",marginTop:"0px" }} // Adds spacing between checkbox and label
-              />
+              <input type="checkbox" id="scheduleMeeting" checked={scheduleMeeting} onChange={() => setScheduleMeeting(!scheduleMeeting)} style={{ marginRight: "10px" }} />
               <label htmlFor="scheduleMeeting">I want to schedule a meeting</label>
             </div>
-
             {scheduleMeeting && (
-                  <div 
-                    className="form-group centered" 
-                    style={{
-                      display: "flex", 
-                      flexDirection: "column", 
-                      alignItems: "center", 
-                      justifyContent: "center", 
-                      height: "10vh"
-                    }}
-                  >
-                    <label htmlFor="meetingDate">Select a Date & Time</label>
-                    <input 
-                      type="datetime-local" 
-                      id="meetingDate" 
-                      name="meetingDate" 
-                      required 
-                      style={{ marginTop: "10px" }} // Adds space between label and input
-                    />
-                  </div>
+              <div className="form-group centered" style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
+                <label htmlFor="meetingDate">Select a Date & Time</label>
+                <input type="datetime-local" id="meetingDate" name="meetingDate" required style={{ marginTop: "10px" }} />
+              </div>
             )}
-
-
             <div className="form-buttons">
               <button type="submit" className="primary-btn">Submit Request</button>
               <button type="button" className="secondary-btn" onClick={handleCloseForm}>Close</button>
@@ -144,20 +132,16 @@ const DigitalMarketingSolutions = () => {
           </form>
         </div>
       )}
-
-      {/* Success Popup with Manual Close */}
       {showPopup && (
         <div className="popup-overlay">
           <div className="popup">
             <p>✅ Thank you! Your request has been received. We will get back to you soon.</p>
-            <button onClick={handlePopupClose} className="primary-btn">
-              Close
-            </button>
+            <button onClick={() => setShowPopup(false)} className="primary-btn">Close</button>
           </div>
         </div>
       )}
       <section className="faq-section">
-        <h2><FaQuestionCircle className="faq-icon" /> Frequently Asked Questions</h2>
+        <h2>Frequently Asked Questions</h2>
         <details className="faq-item">
           <summary>Which digital marketing service is right for my business?</summary>
           <p>It depends on your business needs. SEO is great for long-term visibility, social media can help you engage directly with your audience, email marketing is effective for lead nurturing, branding establishes your company’s identity, and content management keeps your audience engaged consistently.</p>
@@ -171,6 +155,7 @@ const DigitalMarketingSolutions = () => {
           <p>Absolutely! We offer ongoing support for all our services, including regular updates, performance analysis, and adjustments to strategies to ensure continuous growth.</p>
         </details>
       </section>
+
     </div>
   );
 };

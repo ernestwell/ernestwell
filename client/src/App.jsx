@@ -20,6 +20,9 @@ import CareersPage from "./components/Careers/career";
 import TechStack from "./components/techstack/techstack";
 import CareerDescription from "./components/Careers/description";
 import AdminPanel from "./components/admin/admin";
+import PrivacyPolicy from "./components/privacyPolicy/privacypolicy";
+import AIAgentSolutions from "./components/services/pages/Ai_agent/ai";
+import ECommerce from "./components/services/pages/ecommerce/e-commerce"
 function App() {
 
 
@@ -49,10 +52,14 @@ function App() {
         <Route path="/digitalmarketing" element={<DigitalMarketingSolutions />} />
         <Route path="/cloudsolutions" element={<CloudSolutions />} />
         <Route path="/CybersecuritySolutions" element={<CybersecuritySolutions />} />
+        <Route path="/AIAgentSolutions" element={<AIAgentSolutions />} />
+        <Route path="ECommerce" element={<ECommerce />} />
         <Route path="/ITsupport" element={<ITSupport />} />
         <Route path="/sign-in" element={<SignIn/>}/>
         <Route path="/job-description" element={<CareerDescription/>}/>
         <Route path="/admin" element={<AdminPanel />} />
+
+        <Route path="/privacy-policy" element={<PrivacyPolicy />} />
       </Routes>
       <Footer />
     </Router>
