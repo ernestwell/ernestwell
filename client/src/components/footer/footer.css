@@ -357,7 +357,6 @@
 }
 
 .email-button {
-  background-color: #2e5077;
   color: #fabb12;
   border: none;
   padding: 12px 16px;
@@ -368,11 +367,6 @@
   font-size: 18px;
   border-radius: 0 50px 50px 0;
 }
-
-.email-button:hover {
-  background-color: #1e3a5f;
-}
-
 
 .footer-links {
   /* display: flex; */
@@ -696,4 +690,35 @@
     margin: 4px 2px;
     word-break: break-word;
   }
+}
+
+.email-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.email-input {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+
+.email-button { /* Primary color */
+  color: #2e5077;
+  border: none;
+  padding: 10px 15px;
+  font-size: 18px;
+  border-radius: 70px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.email-button:focus {
+  outline: none;
 }
