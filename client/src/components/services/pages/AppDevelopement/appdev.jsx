@@ -228,12 +228,11 @@ const MobileDevelopment = () => {
         <div className="demo-form-container">
           <h2>Request a Demo for {selectedService.title}</h2>
           <form className="demo-form" onSubmit={handleFormSubmit}>
+
             <div className="form-group">
-              <label htmlFor="name">Your Name</label>
               <input type="text" id="name" name="name" placeholder="Enter your name" required />
             </div>
             <div className="form-group">
-              <label htmlFor="email">Your Email</label>
               <input type="email" id="email" name="email" placeholder="Enter your email" required />
             </div>
             <div className="form-group" style={{ display: "flex", alignItems: "center" }}>
@@ -246,8 +245,8 @@ const MobileDevelopment = () => {
                 <input type="datetime-local" id="meetingDate" name="meetingDate" required style={{ marginTop: "10px" }} />
               </div>
             )}
-            <div className="form-buttons">
-              <button type="submit" className="primary-btn">Submit Request</button>
+            <div className="form-group form-buttons">
+              <button type="submit" className="secondary-btn">Submit Request</button>
               <button type="button" className="secondary-btn" onClick={handleCloseForm}>Close</button>
             </div>
           </form>

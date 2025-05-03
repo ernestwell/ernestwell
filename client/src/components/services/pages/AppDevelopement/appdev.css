@@ -346,12 +346,11 @@ body {
 .demo-form-container h2 {
   text-align: center;
 }
+
 .demo-form {
   display: flex;
   flex-direction: column;
 }
-
-
 .demo-form .form-group label {
   font-size: 16px;
   color: #555;
@@ -381,11 +380,12 @@ body {
 }
 .form-group{
   margin-top: 20px;
+  display: flex;
+  justify-content: center;
 }
 
 .demo-form .form-buttons {
   display: flex;
-  justify-content: space-between;
   margin-top: 20px;
 }
 
