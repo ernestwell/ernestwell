@@ -1,8 +1,15 @@
+<<<<<<< HEAD
 name: Deploy to Hostinger via FTP
+=======
+# .github/workflows/deploy.yml
+
+name: Deploy React App to Hostinger
+>>>>>>> master
 
 on:
   push:
     branches:
+<<<<<<< HEAD
       - master
 
 jobs:
@@ -32,3 +39,34 @@ jobs:
           password: ${{ secrets.FTP_PASSWORD }}
           server-dir: /public_html/ # Adjust based on your folder
           local-dir: ./dist
+=======
+      - main  # or your preferred branch
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: 18
+
+    - name: Install dependencies
+      run: npm install
+
+    - name: Build React app
+      run: npm run build
+
+    - name: Deploy via FTP
+      uses: SamKirkland/FTP-Deploy-Action@v4
+      with:
+        server: ftp.yourdomain.com  # replace with your actual FTP host
+        username: ${{ secrets.FTP_USERNAME }}
+        password: ${{ secrets.FTP_PASSWORD }}
+        local-dir: build/
+        server-dir: public_html/
+>>>>>>> master

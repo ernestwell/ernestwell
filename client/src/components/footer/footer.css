@@ -1,4 +1,4 @@
-
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;500;700&display=swap');
 .footer {
   background-image: 
   linear-gradient(rgba(58, 57, 57, 0.05) 1px, transparent 1px),
@@ -40,6 +40,7 @@
   display: inline-block;
   margin-bottom: 12px;
   padding-bottom: 4px;
+  font-family: "Josefin Sans";
 }
 
 .footer h3::after {
@@ -60,12 +61,14 @@
   list-style: none;
   padding: 0;
   margin: 0;
+  font-family: "Josefin Sans";
 }
 
 .footer ul li {
   display: flex;
   align-items: center;
   margin-bottom: 12px;
+  font-family: "Josefin Sans";
 }
 
 .footer ul li a {
@@ -76,6 +79,7 @@
   align-items: center;
   gap: 8px;
   transition: all 0.3s ease-in-out;
+  font-family: "Josefin Sans";
 }
 
 .footer ul li a:hover {
@@ -110,6 +114,7 @@
 .footer-bottom a {
   color: #2e5077;
   text-decoration: none;
+  font-family: "Josefin Sans";
 }
 
 .footer-bottom a:hover {
@@ -125,10 +130,6 @@
   padding-top: 20px;
   /* padding-left: 20px; */
   max-width: 210px;
-}
-
-.foot-3 {
-  max-width: 250px;
 }
 
 .foot-3 h3 {
@@ -153,8 +154,9 @@
 .about {
   margin-left: 30px;
   color: #2e5077;
+  font-family: "Josefin Sans";
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 950px) {
   .footer-container {
     flex-direction: column;
     text-align: center;
@@ -209,6 +211,7 @@
   box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
   max-width: 200p;
   margin: auto;
+  font-family: "Josefin Sans";
 }
 
 .visitor-title {
@@ -218,6 +221,7 @@
   letter-spacing: 1px;
   color: #fabb12;
   margin-bottom: 10px;
+  font-family: "Josefin Sans";
 }
 
 .visitor-counter {
@@ -229,17 +233,17 @@
   /* background: rgba(255, 255, 255, 0.1); */
   border-radius: 8px;
   backdrop-filter: blur(8px);
-  max-width: 200px;
   margin: auto;
   /* margin-top: 10px; */
-  margin-left: 65px;
+  max-width: 250px;
+  /* margin-left: 30px; */
 }
 
 .visitor-digit {
   font-size: 20px;
   font-weight: bold;
   padding:5px 10px;
-  border-radius: 6px;
+  border-radius: 50%;
   background: white;
   color: #2e5077;
   box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.2);
@@ -255,6 +259,7 @@
   margin-left: 40px;
   margin-bottom: 5px;
   font-weight: 600;
+  font-family: "Josefin Sans";
 }
 
 .footer-bottom {
@@ -283,7 +288,7 @@
   color: #fabb12;
   text-decoration: underline;
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 950px) {
   .footer-container {
     flex-direction: column;
     text-align: center;
@@ -328,13 +333,10 @@
   .visitor-counter{
     margin: auto;
   }
-  .footer-bottom a{
-    display: none;
-  }
 }
 .email-container {
   position: relative;
-  width: 80%;
+  width: 250px;
   max-width: 400px;
   margin: auto;
   display: flex;
@@ -342,7 +344,6 @@
   border: 2px solid #fabb12;
   border-radius: 50px;
   overflow: hidden;
-  margin-left: 50px;
   margin-bottom: 10px;
 }
 
@@ -371,32 +372,8 @@
 .email-button:hover {
   background-color: #1e3a5f;
 }
-.social-icons {
-  display: flex;
-  gap: 10px;
-  margin-top: 20px;
-  margin-left: 0px;
-}
 
-.social-icon {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 40px;
-  height: 40px;
-  background-color: #fabb12; 
-  color: #2e5077; 
-  border-radius: 50%;
-  font-size: 18px;
-  transition: all 0.3s ease-in-out;
-  text-decoration: none;
-}
 
-.social-icon:hover {
-  background-color: #2e5077; 
-  color: #fabb12; 
-  transform: scale(1.1);
-}
 .footer-links {
   /* display: flex; */
   justify-content: center;
@@ -519,30 +496,6 @@
   transform: translateX(5px);
 }
 
-.social-icons {
-  display: flex;
-  gap: 12px;
-  margin-top: 15px;
-}
-
-.social-icon {
-  width: 40px;
-  height: 40px;
-  background-color: #fabb12;
-  color: #2e5077;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 18px;
-  transition: all 0.3s;
-}
-
-.social-icon:hover {
-  background-color: #2e5077;
-  color: #fabb12;
-  transform: scale(1.1);
-}
 
 .footer-bottom {
   text-align: center;
@@ -568,7 +521,7 @@
 }
 .foot-3 ul{
   margin-top: 15px;
-  margin-left: 20px;
+  /* margin-left: 20px; */
 }
 .foot-2 ul a{
   font-weight: 600;
@@ -579,8 +532,9 @@
 .about{
   color: #2e5077;
   font-weight: 600;
+  font-family: "Josefin Sans";
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 950px) {
   .footer-container {
     flex-direction: column;
     text-align: center;
@@ -596,7 +550,7 @@
   .foot-3,
   .foot-4 {
     padding-left: 0;
-    margin-left: 0;
+    /* margin-left: 0; */
   }
   .foot-2 h3,
   .foot-3 h3,
@@ -627,7 +581,7 @@
      border-radius: 30px; 
   }
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 950px) {
   .footer-container {
     flex-direction: column;
     text-align: center;
@@ -672,12 +626,16 @@
   .visitor-counter{
     margin: auto;
   }
-  .footer-bottom a{
-    display: none;
-  }
   .email-container{
     width: 70%;
     margin: auto;
+    margin-bottom: 5px;
+  }
+  .foot-3 ul{
+    margin: auto;
+  }
+  .foot-4{
+    margin-bottom: 15px;
   }
 }
 .footer-section .about p{
@@ -689,7 +647,53 @@
   margin-left: 0px;
   margin-top: 15px;
 }
-.social-icons{
-  margin-left: 0px;
-  margin-top: 18px;
+.social-icons {
+  display: flex;
+  gap: 15px;
+  margin-top: 20px; /* Space between icons */
+}
+
+.social-icon {
+  display: inline-block;
+  width: 27px;
+  height: 27px;
+}
+
+.social-icon img {
+  width: 100%;
+  height: 100%;
+}
+
+/* Hover Effects */
+.social-icon:hover {
+  transform: scale(1.1);
+  opacity: 0.8;
+}
+
+/* Individual Icon Hover Colors */
+.social-icon:nth-child(1) img { filter: drop-shadow(0 0 5px #0077B5); } /* LinkedIn */
+.social-icon:nth-child(2) img { filter: drop-shadow(0 0 5px #1877F2); } /* Facebook */
+.social-icon:nth-child(3) img { filter: drop-shadow(0 0 5px #000000); } /* Twitter X */
+.social-icon:nth-child(4) img { filter: drop-shadow(0 0 5px #E4405F); } /* Instagram */
+
+.footer-section p{
+  font-family: "Josefin Sans";
+  line-height: 1.5;
+}
+.footer-bottom-left{
+  font-family: "Josefin Sans";
+}
+@media (max-width: 576px) {
+  .footer-bottom {
+    font-size: 12px;
+    padding: 10px 8px;
+    line-height: 1.4;
+  }
+
+  .footer-bottom a {
+    font-size: 12px;
+    display: inline-block;
+    margin: 4px 2px;
+    word-break: break-word;
+  }
 }

@@ -241,6 +241,16 @@ body {
     padding-left: 0;
     text-align: center;
   }
+  .cybersecurity-container{
+    max-width: 100%;
+  }
+  .image-container-5 img{
+    max-width: 250px;
+    max-height:250px;
+  }
+  .image-container-5{
+    display:None;
+  }
 }
 
 @media (max-width: 480px) {
@@ -258,6 +268,9 @@ body {
 
   h2 {
     font-size: 1.2rem;
+  }
+  .image-container-5{
+    display:None;
   }
 }
 .demo-form-container {

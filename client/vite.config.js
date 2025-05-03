@@ -2,12 +2,10 @@ import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 
 export default defineConfig({
+  base: './', // Use relative base path when deploying to subdirectory (like GitHub Pages)
   plugins: [react()],
-  base: './',  // 👈 Add this line
-
   build: {
     outDir: "dist",
-
     rollupOptions: {
       output: {
         manualChunks(id) {
@@ -21,7 +19,6 @@ export default defineConfig({
         },
       },
     },
-
     chunkSizeWarningLimit: 1000,
   },
 });

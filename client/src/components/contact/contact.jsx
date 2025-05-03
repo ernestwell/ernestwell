@@ -100,11 +100,16 @@ import { useEffect, useState } from "react";
 import "./contact.css";
 import { FaFacebookF, FaTwitter, FaLinkedinIn, FaInstagram } from "react-icons/fa";
 
+const GOOGLE_FORM_ACTION_URL = "https://docs.google.com/forms/u/1/d/e/1FAIpQLSdZG8xen5L_yrmD10fD38CnAjeiwBIw3f40hRkKjyTGKvG2cg/formResponse";
+const FIELD_NAME = "entry.1158759791"; // Replace with actual entry ID for "Name"
+const FIELD_EMAIL = "entry.1586154007"; // Replace with actual entry ID for "Email"
+const FIELD_MESSAGE = "entry.1649842156"; // Replace with actual entry ID for "Message"
+
 const ContactForm = () => {
   const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    message: "",
+    [FIELD_NAME]: "",
+    [FIELD_EMAIL]: "",
+    [FIELD_MESSAGE]: "",
   });
 
   const [status, setStatus] = useState("");
@@ -127,22 +132,28 @@ const ContactForm = () => {
     setStatus("Sending...");
 
     try {
-      const response = await fetch("http://localhost:5000/api/contact", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
+      const form = document.createElement("form");
+      form.method = "POST";
+      form.action = GOOGLE_FORM_ACTION_URL;
+      form.style.display = "none";
+
+      Object.entries(formData).forEach(([key, value]) => {
+        const input = document.createElement("input");
+        input.type = "hidden";
+        input.name = key;
+        input.value = value;
+        form.appendChild(input);
       });
 
-      const result = await response.json();
-      if (response.ok) {
-        setStatus("Message sent successfully!");
-        setFormData({ name: "", email: "", message: "" }); // Clear form
-      } else {
-        setStatus(result.error || "Failed to send message.");
-      }
+      document.body.appendChild(form);
+      form.submit();
+      document.body.removeChild(form);
+
+      setStatus("Message sent successfully!");
+      setFormData({ [FIELD_NAME]: "", [FIELD_EMAIL]: "", [FIELD_MESSAGE]: "" }); // Clear form
     } catch (err) {
-      console.error("Error sending message:", err);
-      setStatus("Error sending message. Try again later.");
+      console.error("Error submitting form:", err);
+      setStatus("Error submitting message. Try again later.");
     } finally {
       setIsSending(false);
     }
@@ -163,14 +174,14 @@ const ContactForm = () => {
         </div>
       </div>
       <div className="contact-right slide-in">
-        <h1>Contact Us</h1>
         <form className="contact-form" onSubmit={handleSubmit}>
+          <h1>Contact Us</h1>
           <div className="input-group">
             <input
               type="text"
-              name="name"
+              name={FIELD_NAME}
               placeholder="Your Name"
-              value={formData.name}
+              value={formData[FIELD_NAME]}
               onChange={handleChange}
               required
             />
@@ -178,25 +189,25 @@ const ContactForm = () => {
           <div className="input-group">
             <input
               type="email"
-              name="email"
+              name={FIELD_EMAIL}
               placeholder="Your Email"
-              value={formData.email}
+              value={formData[FIELD_EMAIL]}
               onChange={handleChange}
               required
             />
           </div>
           <div className="input-group">
             <textarea
-              name="message"
+              name={FIELD_MESSAGE}
               placeholder="Your Message"
               rows="5"
-              value={formData.message}
+              value={formData[FIELD_MESSAGE]}
               onChange={handleChange}
               required
             ></textarea>
           </div>
           <button type="submit" className="submit-btn pulse" disabled={isSending}>
-            {isSending ? "Sending..." : "Send Message"}
+            {isSending ? "Sending..." : "Send"}
           </button>
           {status && <p className="status-message">{status}</p>}
         </form>

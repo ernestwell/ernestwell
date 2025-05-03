@@ -1,32 +1,26 @@
 import  { useState } from "react";
 import "./itsupport.css";
-import image1 from "../../serviceimages/cloud.svg";
-import image2 from "../../serviceimages/custom.svg";
-import image3 from "../../serviceimages/erp.svg";
+import image1 from "./supportimages/undraw_miro_pu4s.svg";
+import image2 from "./supportimages/undraw_product-iteration_r2wg.svg";
+import image3 from "./supportimages/undraw_work-time_zbsw.svg";
 
 const services = [
   {
     id: 1,
-    title: "Managed IT Services",
-    description: `Managed IT services provide businesses with comprehensive support to oversee their IT infrastructure, including network monitoring, troubleshooting, and cloud management. Outsourcing IT operations helps reduce downtime, improve performance, and stay updated with technology trends.
-
-      Services include proactive network security, threat detection, firewall management, and system optimization. Regular software updates, performance tuning, and preventive maintenance ensure peak efficiency. Businesses benefit from 24/7 expert support, available remotely or on-site for immediate issue resolution.`,
+    title: "IT Services",
+    description: `Managed IT services provide businesses with comprehensive support to oversee their IT infrastructure, including network monitoring, troubleshooting, and cloud management. Outsourcing IT operations helps reduce downtime, improve performance, and stay updated with technology trends.`,
     image: image1,
   },
   {
     id: 2,
-    title: "Remote Technical Support",
-    description: `Remote technical support allows businesses to resolve IT issues quickly without on-site visits. Using secure remote tools, technicians diagnose and fix problems in real-time, ensuring minimal disruption.
-
-      Services include troubleshooting desktops, servers, and networks, as well as software installation, updates, and virus removal. This provides rapid response and expert assistance without the overhead of an in-house IT team.`,
+    title: "Technical Support",
+    description: `Remote technical support allows businesses to resolve IT issues quickly without on-site visits. Using secure remote tools, technicians diagnose and fix problems in real-time, ensuring minimal disruption.`,
     image: image2,
   },
   {
     id: 3,
     title: "System Setup & Maintenance",
-    description: `System setup and maintenance ensure businesses have optimized IT infrastructure from the start. Experts handle hardware, software, and network installation, ensuring seamless integration and security.
-
-      Ongoing maintenance includes software updates, security patches, and hardware upkeep to prevent downtime and enhance performance. IT professionals also recommend upgrades to keep systems efficient and scalable, reducing unexpected issues and costly repairs.`,
+    description: `System setup and maintenance ensure businesses have optimized IT infrastructure from the start. Experts handle hardware, software, and network installation, ensuring seamless integration and security.`,
     image: image3,
   },
 ];
@@ -50,20 +44,48 @@ const ITSupport = () => {
 
   const handleFormSubmit = (event) => {
     event.preventDefault();
-    handleCloseForm();
-    setShowPopup(true);
+    const formData = new FormData(event.target);
+    const name = formData.get("name");
+    const email = formData.get("email");
+    const meetingDate = formData.get("meetingDate");
+
+    let year, month, day;
+    if (scheduleMeeting && meetingDate) {
+      const selectedDate = new Date(meetingDate);
+      year = selectedDate.getFullYear();
+      month = selectedDate.getMonth() + 1;
+      day = selectedDate.getDate();
+    }
+
+    const googleFormURL =
+      "https://docs.google.com/forms/u/0/d/e/1FAIpQLSdUoX9R5YpNEBNCfhcmStK5sLMPBSRqM46kd7reZvISLVwxBg/formResponse";
+    const formDataToSend = new URLSearchParams();
+    formDataToSend.append("entry.630075460", name);
+    formDataToSend.append("entry.657108051", email);
+    if (scheduleMeeting) {
+      formDataToSend.append("entry.908925682_year", year);
+      formDataToSend.append("entry.908925682_month", month);
+      formDataToSend.append("entry.908925682_day", day);
+    }
+
+    fetch(googleFormURL, { method: "POST", body: formDataToSend, mode: "no-cors" })
+      .then(() => {
+        handleCloseForm();
+        setShowPopup(true);
+      })
+      .catch((error) => console.error("Error submitting form:", error));
   };
 
   const handlePopupClose = () => {
-    setShowPopup(false);
+    setShowPopup(false); // Manually close the popup when user clicks "Close"
   };
 
   return (
     <div className="itsupport-container">
       <header className="itsupport-header">
-        <h1>IT Support Solutions</h1>
+        <h1>IT SUPPORT</h1>
         <p>
-          Our IT support services are designed to ensure that your technology infrastructure runs smoothly and securely. From managed IT services to system setup and remote technical support, we provide the tools and expertise your business needs to stay ahead in today digital landscape.
+          Our IT support services are designed to ensure that your technology infrastructure runs smoothly and securely. From managed IT services to system setup and remote technical support.
         </p>
       </header>
 
@@ -95,52 +117,22 @@ const ITSupport = () => {
           <form className="demo-form" onSubmit={handleFormSubmit}>
             <div className="form-group">
               <label htmlFor="name">Your Name</label>
-              <input type="text" id="name" placeholder="Enter your name" required />
+              <input type="text" id="name" name="name" placeholder="Enter your name" required />
             </div>
             <div className="form-group">
               <label htmlFor="email">Your Email</label>
-              <input type="email" id="email" placeholder="Enter your email" required />
+              <input type="email" id="email" name="email" placeholder="Enter your email" required />
             </div>
-            {/* <div className="form-group">
-              <label htmlFor="message">Your Message</label>
-              <textarea id="message" rows="4" placeholder="Enter your message"></textarea>
-            </div> */}
-
-            {/* Schedule Meeting Option */}
             <div className="form-group" style={{ display: "flex", alignItems: "center" }}>
-              <input 
-                type="checkbox" 
-                id="scheduleMeeting" 
-                checked={scheduleMeeting} 
-                onChange={() => setScheduleMeeting(!scheduleMeeting)} 
-                style={{ marginRight: "10px",marginTop:"0px" }} // Adds spacing between checkbox and label
-              />
+              <input type="checkbox" id="scheduleMeeting" checked={scheduleMeeting} onChange={() => setScheduleMeeting(!scheduleMeeting)} style={{ marginRight: "10px" }} />
               <label htmlFor="scheduleMeeting">I want to schedule a meeting</label>
             </div>
-
             {scheduleMeeting && (
-                  <div 
-                    className="form-group centered" 
-                    style={{
-                      display: "flex", 
-                      flexDirection: "column", 
-                      alignItems: "center", 
-                      justifyContent: "center", 
-                      height: "10vh"
-                    }}
-                  >
-                    <label htmlFor="meetingDate">Select a Date & Time</label>
-                    <input 
-                      type="datetime-local" 
-                      id="meetingDate" 
-                      name="meetingDate" 
-                      required 
-                      style={{ marginTop: "10px" }} // Adds space between label and input
-                    />
-                  </div>
+              <div className="form-group centered" style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
+                <label htmlFor="meetingDate">Select a Date & Time</label>
+                <input type="datetime-local" id="meetingDate" name="meetingDate" required style={{ marginTop: "10px" }} />
+              </div>
             )}
-
-
             <div className="form-buttons">
               <button type="submit" className="primary-btn">Submit Request</button>
               <button type="button" className="secondary-btn" onClick={handleCloseForm}>Close</button>
