@@ -102,7 +102,7 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { FaBars, FaTimes, FaUser } from "react-icons/fa";
-import { auth, loginWithGoogle, logout } from "../../Firebase";
+import { auth, logout } from "../../Firebase";
 import "./navbar.css";
 
 const Navbar = () => {

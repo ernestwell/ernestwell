@@ -39,7 +39,7 @@ const jobListings = [
     id: 2, 
     title: "Laravel Developer Internship", 
     location: "Remote-(3 Months)", 
-    type: "Part-Time", 
+    type: "Part-Time(Unpaid)", 
     icon: <FaMobileAlt />, 
     role: "Full Stack Developer", 
     skills: "PHP, Laravel, JavaScript,HTML,CSS,React/Vue.js",
@@ -62,54 +62,58 @@ const jobListings = [
       "Fresher with mobile development certification(s) can also apply."
     ]
   },
-  // { 
-  //   id: 3, 
-  //   title: "ERP CONSULTANT", 
-  //   location: "Hybrid", 
-  //   type: "Contract", 
-  //   icon: <FaDatabase />, 
-  //   role: "Business Consultant", 
-  //   skills: "SAP, Oracle ERP, Microsoft Dynamics",
-  //   image: img,
-  //   description: [
-  //     "Assist businesses in implementing and optimizing ERP solutions.",
-  //     "Analyze business processes and recommend ERP configurations.",
-  //     "Train employees on ERP functionalities and workflows.",
-  //     "Troubleshoot ERP system issues and provide technical support.",
-  //     "Ensure compliance with industry standards and best practices."
-  //   ],
-  //   candidateSkills: [
-  //     "1-3 years of experience in ERP consulting or implementation.",
-  //     "Strong knowledge of SAP, Oracle ERP, or Microsoft Dynamics.",
-  //     "Excellent problem-solving and analytical skills.",
-  //     "Ability to communicate technical concepts to non-technical users.",
-  //     "Certification in ERP software is a plus."
-  //   ]
-  // },
-  // { 
-  //   id: 4, 
-  //   title: "UI/UX DESIGNER", 
-  //   location: "On-Site", 
-  //   type: "Full-Time", 
-  //   icon: <FaPencilRuler />, 
-  //   role: "UI/UX Designer", 
-  //   skills: "Figma, Adobe XD, Wireframing",
-  //   image:img,
-  //   description: [
-  //     "Create user-friendly and visually appealing UI designs.",
-  //     "Conduct user research and apply findings to design solutions.",
-  //     "Develop wireframes, prototypes, and high-fidelity mockups.",
-  //     "Optimize UI components for accessibility and responsiveness.",
-  //     "Collaborate with developers to ensure seamless design-to-code implementation."
-  //   ],
-  //   candidateSkills: [
-  //     "0-2 years of experience as a UI/Graphical Designer.",
-  //     "Portfolio of design projects showcasing creativity.",
-  //     "Up-to-date knowledge of Figma, Adobe XD, and design trends.",
-  //     "Good time-management skills and ability to meet deadlines.",
-  //     "Fresher with UI/UX design certification(s) can also apply."
-  //   ]
-  // },
+  { 
+    id: 3, 
+    title: " Web Developer Internship ", 
+    location: "Remote-(3 Months )", 
+    type: "Part-Time(Unpaid)", 
+    icon: <FaDatabase />, 
+    role: "Web Developer Intern ", 
+    skills: "HTML,CSS,JavaScript,WordPress or Webflow",
+    image: img,
+    description: [
+      "Assist in developing and maintaining websites",
+      "Implement clean, responsive UI designs",
+      "Collaborate with designers and content teams",
+      "Mentorship from experienced developers",
+      "Letter of Recommendation & Internship Certificate will be provided",
+    ],
+    candidateSkills: [
+      "1-3 years of experience in ERP consulting or implementation.",
+      "Strong knowledge of SAP, Oracle ERP, or Microsoft Dynamics.",
+      "Excellent problem-solving and analytical skills.",
+      "Ability to communicate technical concepts to non-technical users.",
+      "Certification in ERP software is a plus."
+    ]
+  },
+  { 
+    id: 4, 
+    title: "AI Agent Developer Internship ", 
+    location: "Remote - (3 Months)", 
+    type: "Part-Time(Unpaid)", 
+    icon: <FaPencilRuler />, 
+    role: "AI Agent Developer Intern", 
+    skills: "Python, APIs,LLMs, NLP and machine learning workflows",
+    image:img,
+    description: [
+      "Collaborate on real-world projects that impact businesses",
+      "Design intelligent agents capable of autonomous task execution, planning, and decision-making.",
+      "Integrate LLMs and NLP models for natural language understanding and contextual communication.",
+      "Develop multi-agent systems to manage complex workflows and collaborative tasks.",
+      "Enable tool and API usage for dynamic information retrieval and real-world interactions.",
+      "Implement memory and retrieval systems (e.g., RAG, embeddings) for context retention and reasoning.",
+      "Optimize agent performance for efficiency, accuracy, and real-time responsiveness.",
+      "students, recent graduates, or self-learners in Computer Science, AI, or related fields",
+      "Certificate and letter of recommendation upon completion will be Provided"
+    ],
+    candidateSkills: [
+      "0-2 years of experience as a UI/Graphical Designer.",
+      "Portfolio of design projects showcasing creativity.",
+      "Up-to-date knowledge of Figma, Adobe XD, and design trends.",
+      "Good time-management skills and ability to meet deadlines.",
+      "Fresher with UI/UX design certification(s) can also apply."
+    ]
+  },
   // { 
   //   id: 5, 
   //   title: "QA ENGINEER", 

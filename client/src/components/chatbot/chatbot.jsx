@@ -50,7 +50,7 @@ const Chatbot = () => {
             "Web Design & Development",
           ];
         } else if (lowerCaseInput === "get in touch") {
-          botResponse = "You can reach us at **support@example.com** or call us at **+1234567890**.";
+          botResponse = "You can reach us at info@ernestwelltech.com or Whatsapp us at (+44)7880234123";
         } else if (lowerCaseInput === "frequently asked questions") {
           botResponse =
             "Here are some common topics: pricing, project timelines, and support services. What would you like to learn more about?";
